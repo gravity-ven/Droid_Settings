@@ -173,7 +173,7 @@ class AgentParallelExecutor:
                 [command] + args,
                 capture_output=True,
                 text=True,
-                timeout=300
+                timeout=604800
             )
             
             return result.returncode == 0, {

@@ -37,7 +37,7 @@
   "settings": {
     "logLevel": "INFO",
     "maxConcurrentProcesses": 5,
-    "timeoutSeconds": 3600,
+    "timeoutSeconds": 604800,
     "enableNotifications": true
   }
 }

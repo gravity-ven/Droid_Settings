@@ -55,7 +55,7 @@ class ParallelTask:
     result: Optional[Any] = None
     error: Optional[str] = None
     dependencies: List[str] = None
-    max_wait_time: int = 300  # Maximum wait time in seconds
+    max_wait_time: int = 604800  # Maximum wait time in seconds
     resource_requirements: Dict[str, Any] = None
     
     def __post_init__(self):
@@ -244,7 +244,7 @@ class ParallelTaskScheduler:
             status=TaskStatus.PENDING,
             created_at=datetime.now(),
             dependencies=task_data.get('dependencies', []),
-            max_wait_time=task_data.get('max_wait_time', 300),
+            max_wait_time=task_data.get('max_wait_time', 604800),
             resource_requirements=task_data.get('resource_requirements', {})
         )
         
