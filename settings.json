@@ -1,12 +1,12 @@
 // Factory CLI Settings
-// This file contains your Factory CLI configuration with Claude integration.
+// This file contains your Factory CLI configuration.
 {
   "model": "glm-4.6",
   "reasoningEffort": "medium",
   "cloudSessionSync": true,
   "diffMode": "github",
   "ideExtensionPromptedAt": "SPARTAN",
-  "autonomyMode": "auto-high",
+  "autonomyMode": "normal",
   "ideActivationNudgedForVersion": {},
   "enableCompletionBell": false,
   "completionSound": "off",
@@ -58,11 +58,11 @@
     "powershell Remove-Item -Recurse -Force"
   ],
   "enableCustomDroids": true,
+  "enableHooks": false,
   "includeCoAuthoredByDroid": true,
   "enableDroidShield": true,
   "enableReadinessReport": false,
   "todoDisplayMode": "pinned",
-  // Claude Integration Settings
   "claudeIntegration": {
     "enabled": true,
     "watcherSystem": {
@@ -81,7 +81,6 @@
       "skillPath": "~/.factory/skills"
     }
   },
-  // TOON Integration DNA - Core System Integration with Claude Repository DNA
   "toonIntegration": {
     "enabled": true,
     "coreSystem": true,
