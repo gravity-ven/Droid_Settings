@@ -2,11 +2,6 @@
   "name": "Claude Integration Droid",
   "version": "1.0.0",
   "description": "Integrates Claude Code capabilities with Droid system",
-  "enabled": true,
-  "hooks": {
-    "onStart": "~/.factory/droids/unified_intelligence_startup.sh",
-    "onPrompt": "~/.factory/droids/orchestrator_hook.sh"
-  },
   "watchers": {
     "enabled": true,
     "scripts": [
