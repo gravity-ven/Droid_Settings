@@ -6,7 +6,7 @@
   "cloudSessionSync": true,
   "diffMode": "github",
   "ideExtensionPromptedAt": "SPARTAN",
-  "autonomyMode": "auto-low",
+  "autonomyMode": "auto-high",
   "ideActivationNudgedForVersion": {},
   "enableCompletionBell": false,
   "completionSound": "off",
