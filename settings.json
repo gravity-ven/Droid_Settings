@@ -2,10 +2,10 @@
 // This file contains your Factory CLI configuration with Claude integration.
 {
   "model": "glm-4.6",
-  "reasoningEffort": "none",
+  "reasoningEffort": "medium",
   "cloudSessionSync": true,
   "diffMode": "github",
-  "ideExtensionPromptedAt": {},
+  "ideExtensionPromptedAt": "SPARTAN",
   "autonomyMode": "auto-high",
   "ideActivationNudgedForVersion": {},
   "enableCompletionBell": false,
@@ -81,7 +81,7 @@
       "skillPath": "~/.factory/skills"
     }
   },
-  // TOON Integration DNA - Core System Integration
+  // TOON Integration DNA - Core System Integration with Claude Repository DNA
   "toonIntegration": {
     "enabled": true,
     "coreSystem": true,
@@ -95,6 +95,27 @@
     "intelligentTruncation": true,
     "contextOptimization": true,
     "agentInterception": true,
-    "nestedLearning": true
+    "nestedLearning": true,
+    "claudeRepositoryDNA": {
+      "enabled": true,
+      "integratedAgencies": [
+        "ai_agency_trading_agent",
+        "claude_watcher_system_agent"
+      ],
+      "integratedSkills": [
+        "claude_negotiation_skill"
+      ],
+      "DNAIntegrationLevel": "deep",
+      "repositoriesIntegrated": [
+        "gravity-ven/ai_agency",
+        "gravity-ven/Claude_Code",
+        "gravity-ven/ai_agency_claude"
+      ],
+      "lastIntegration": "2025-11-15T15:06:00Z",
+      "nestedLearningDNA": true,
+      "teamDecisionEnhancement": true,
+      "watcherSystemIntegration": true,
+      "negotiationSkillIntegration": true
+    }
   }
 }
