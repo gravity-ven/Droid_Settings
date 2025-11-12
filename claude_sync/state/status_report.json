@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-12T15:10:00.299938",
+  "timestamp": "2025-11-12T15:20:00.536200",
   "directory_status": {
     ".claude": {
       "type": "directory",
@@ -7,7 +7,7 @@
     },
     "agents": {
       "type": "directory",
-      "file_count": 14
+      "file_count": 16
     },
     "state": {
       "type": "directory",
@@ -48,13 +48,13 @@
   },
   "sync_status": {
     "status": "active",
-    "last_health_check": "2025-11-12T15:09:57.244384",
+    "last_health_check": "2025-11-12T15:20:00.419453",
     "direction": "bidirectional"
   },
   "health_status": {
     "status": "healthy",
     "issues": [],
-    "free_space_mb": 167736
+    "free_space_mb": 167378
   },
   "optimizations": {
     "status": "not_optimized"
