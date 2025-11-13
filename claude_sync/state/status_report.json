@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-13T11:00:01.114676",
+  "timestamp": "2025-11-13T11:10:00.661726",
   "directory_status": {
     ".claude": {
       "type": "directory",
@@ -48,13 +48,13 @@
   },
   "sync_status": {
     "status": "active",
-    "last_health_check": "2025-11-13T11:00:00.913127",
+    "last_health_check": "2025-11-13T11:10:00.535813",
     "direction": "bidirectional"
   },
   "health_status": {
     "status": "healthy",
     "issues": [],
-    "free_space_mb": 150630
+    "free_space_mb": 149997
   },
   "optimizations": {
     "status": "not_optimized"
