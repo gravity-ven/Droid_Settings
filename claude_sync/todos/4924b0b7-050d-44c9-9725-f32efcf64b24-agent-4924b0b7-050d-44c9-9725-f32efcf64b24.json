@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Analyze existing macro data infrastructure and identify gaps",
+    "status": "completed",
+    "activeForm": "Analyzing existing macro data infrastructure"
+  },
+  {
+    "content": "Design Macro Regime Tracker architecture with real data endpoints",
+    "status": "completed",
+    "activeForm": "Designing Macro Regime Tracker architecture"
+  },
+  {
+    "content": "Create API server for macro economic indicators (FRED integration)",
+    "status": "completed",
+    "activeForm": "Creating macro economic indicators API server"
+  },
+  {
+    "content": "Build frontend dashboard for Macro Regime Tracker",
+    "status": "completed",
+    "activeForm": "Building Macro Regime Tracker dashboard"
+  },
+  {
+    "content": "Add to BULLETPROOF_STARTUP.py orchestrator",
+    "status": "completed",
+    "activeForm": "Adding macro API to startup orchestrator"
+  },
+  {
+    "content": "Test all data endpoints and validate data quality",
+    "status": "in_progress",
+    "activeForm": "Testing and validating macro data endpoints"
+  },
+  {
+    "content": "Create documentation for Macro Regime Tracker",
+    "status": "pending",
+    "activeForm": "Creating Macro Regime Tracker documentation"
+  }
+]
