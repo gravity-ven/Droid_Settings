@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Capital Flow Dashboard | Gravity Ven</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #ffffff;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px 0;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #b8b8d4;
+        }
+
+        .last-updated {
+            display: inline-block;
+            background: rgba(102, 126, 234, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 25px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .card-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .card-icon {
+            font-size: 1.5rem;
+        }
+
+        .regime-container {
+            margin-bottom: 30px;
+        }
+
+        .regime-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+        }
+
+        .regime-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .regime-item:hover {
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+
+        .regime-item.active {
+            background: rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+
+        .regime-name {
+            font-size: 0.9rem;
+            color: #b8b8d4;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .regime-probability {
+            font-size: 2rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .flow-indicator {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .flow-label {
+            font-size: 0.95rem;
+            color: #d0d0e8;
+        }
+
+        .flow-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .flow-positive {
+            color: #10b981;
+        }
+
+        .flow-negative {
+            color: #ef4444;
+        }
+
+        .flow-neutral {
+            color: #f59e0b;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .status-strong {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+
+        .status-weak {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        .status-moderate {
+            background: rgba(245, 158, 11, 0.2);
+            color: #f59e0b;
+        }
+
+        .chart-container {
+            height: 200px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .chart-bar {
+            flex: 1;
+            background: linear-gradient(to top, #667eea, #764ba2);
+            border-radius: 5px 5px 0 0;
+            position: relative;
+            transition: all 0.3s ease;
+            min-height: 20px;
+        }
+
+        .chart-bar:hover {
+            opacity: 0.8;
+            transform: scaleY(1.05);
+        }
+
+        .chart-label {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.75rem;
+            color: #b8b8d4;
+            white-space: nowrap;
+        }
+
+        .chart-value {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin: 40px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgba(102, 126, 234, 0.3);
+        }
+
+        .info-box {
+            background: rgba(102, 126, 234, 0.1);
+            border-left: 4px solid #667eea;
+            padding: 15px 20px;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+
+        .info-box h3 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #667eea;
+        }
+
+        .info-box p {
+            color: #d0d0e8;
+            font-size: 0.95rem;
+        }
+
+        .data-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .data-table th,
+        .data-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .data-table th {
+            background: rgba(255, 255, 255, 0.05);
+            font-weight: 600;
+            color: #b8b8d4;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .data-table tr:hover {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .tab-container {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tab {
+            padding: 12px 24px;
+            background: transparent;
+            border: none;
+            color: #b8b8d4;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .tab:hover {
+            color: #ffffff;
+        }
+
+        .tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+
+        .live-indicator {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #10b981;
+            border-radius: 50%;
+            margin-right: 8px;
+            animation: pulse 2s infinite;
+        }
+
+        .metric-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .metric-item {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 3px solid #667eea;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .metric-item:hover {
+            background: rgba(255, 255, 255, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .metric-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: #b8b8d4;
+            margin-bottom: 5px;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .metric-change {
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 3px 8px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+
+        .metric-change.up {
+            background: rgba(16, 185, 129, 0.2);
+            color: #10b981;
+        }
+
+        .metric-change.down {
+            background: rgba(239, 68, 68, 0.2);
+            color: #ef4444;
+        }
+
+        .metric-explanation {
+            font-size: 0.85rem;
+            color: #b8b8d4;
+            line-height: 1.5;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .info-icon {
+            cursor: help;
+            color: #667eea;
+            font-size: 1.2rem;
+            margin-left: 5px;
+        }
+
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 300px;
+            background-color: rgba(30, 30, 50, 0.98);
+            color: #fff;
+            text-align: left;
+            border-radius: 8px;
+            padding: 15px;
+            position: absolute;
+            z-index: 1000;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -150px;
+            opacity: 0;
+            transition: opacity 0.3s;
+            border: 1px solid rgba(102, 126, 234, 0.5);
+            font-size: 0.85rem;
+            line-height: 1.5;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .tooltip .tooltiptext::after {
+            content: "";
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -5px;
+            border-width: 5px;
+            border-style: solid;
+            border-color: rgba(30, 30, 50, 0.98) transparent transparent transparent;
+        }
+
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .country-flag {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        .data-source {
+            font-size: 0.75rem;
+            color: #888;
+            margin-top: 5px;
+        }
+
+        .trend-indicator {
+            font-size: 0.9rem;
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 Global Capital Flow Dashboard</h1>
+            <p>Real-time monitoring of international capital movements and macro regimes</p>
+            <div class="last-updated">
+                <span class="live-indicator"></span>
+                Last Updated: December 2024 | Data through November 2024
+            </div>
+        </header>
+
+        <!-- Macro Regime Probabilities -->
+        <section class="regime-container">
+            <h2 class="section-title">🎯 Macro Regime Probabilities</h2>
+            <div class="regime-grid">
+                <div class="regime-item active">
+                    <div class="regime-name">Goldilocks</div>
+                    <div class="regime-probability">45%</div>
+                </div>
+                <div class="regime-item active">
+                    <div class="regime-name">Reflation</div>
+                    <div class="regime-probability">35%</div>
+                </div>
+                <div class="regime-item">
+                    <div class="regime-name">Expansion</div>
+                    <div class="regime-probability">15%</div>
+                </div>
+                <div class="regime-item">
+                    <div class="regime-name">Stagflation</div>
+                    <div class="regime-probability">5%</div>
+                </div>
+                <div class="regime-item">
+                    <div class="regime-name">Deflation</div>
+                    <div class="regime-probability">0%</div>
+                </div>
+                <div class="regime-item">
+                    <div class="regime-name">Crisis</div>
+                    <div class="regime-probability">0%</div>
+                </div>
+            </div>
+            <div class="info-box">
+                <h3>Current Environment: Soft Landing ✅</h3>
+                <p>The US economy is successfully navigating a soft landing between Goldilocks (ideal conditions) and Reflation (growth with moderate inflation risk). The Fed's data-dependent approach and slower rate cut pace reflect cautious optimism about achieving 2% inflation without triggering recession.</p>
+            </div>
+        </section>
+
+        <!-- Key Economic Indicators -->
+        <section>
+            <h2 class="section-title">📊 Key Economic Indicators with Explanations</h2>
+
+            <!-- Quick Reference Table -->
+            <div class="card" style="margin-bottom: 30px; background: rgba(102, 126, 234, 0.08);">
+                <h3 style="margin-bottom: 20px; font-size: 1.2rem; text-align: center;">📋 Quick Reference Summary</h3>
+                <table class="data-table" style="margin-top: 0;">
+                    <thead>
+                        <tr>
+                            <th>Indicator</th>
+                            <th style="text-align: center;">Value</th>
+                            <th>What It Means</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PCE Inflation</strong></td>
+                            <td style="text-align: center;"><span class="flow-positive" style="font-size: 1.2rem; font-weight: 700;">2.4%</span></td>
+                            <td>Near Fed's 2% target. Inflation cooling, Fed can continue cutting rates slowly.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Core PCE</strong></td>
+                            <td style="text-align: center;"><span class="flow-neutral" style="font-size: 1.2rem; font-weight: 700;">2.8%</span></td>
+                            <td>Still elevated above target. Why Fed only expects 2 cuts in 2025 (not 4).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>CPI</strong></td>
+                            <td style="text-align: center;"><span class="flow-neutral" style="font-size: 1.2rem; font-weight: 700;">2.7%</span></td>
+                            <td>Ticked up from 2.6%. Shelter & groceries driving - watch for disinflation stall.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>GDP Growth</strong></td>
+                            <td style="text-align: center;"><span class="flow-positive" style="font-size: 1.2rem; font-weight: 700;">2.3%</span></td>
+                            <td>Goldilocks level. Strong enough growth without overheating the economy.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Unemployment</strong></td>
+                            <td style="text-align: center;"><span class="flow-positive" style="font-size: 1.2rem; font-weight: 700;">4.1%</span></td>
+                            <td>Perfect "full employment" level. Not too hot (inflation risk) or cold (recession).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>NFCI</strong></td>
+                            <td style="text-align: center;"><span class="flow-positive" style="font-size: 1.2rem; font-weight: 700;">-0.48</span></td>
+                            <td>Very loose financial conditions. Easiest conditions in years = bullish for stocks.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fed Funds Rate</strong></td>
+                            <td style="text-align: center;"><span style="font-size: 1.2rem; font-weight: 700;">4.25-4.5%</span></td>
+                            <td>Restrictive but easing. 3 cuts in 2024, slowing pace to 2 cuts in 2025.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Real Wage Growth</strong></td>
+                            <td style="text-align: center;"><span class="flow-positive" style="font-size: 1.2rem; font-weight: 700;">Positive</span></td>
+                            <td>Wages outpacing inflation. Supports consumer spending (70% of GDP).</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top: 15px; padding: 15px; background: rgba(102, 126, 234, 0.1); border-radius: 5px; text-align: center;">
+                    <small style="color: #b8b8d4;">💡 <strong>Bottom Line:</strong> Soft landing scenario playing out. Inflation moderating, growth solid, labor market healthy. Bullish for equities but Fed staying cautious.</small>
+                </div>
+            </div>
+
+            <div class="metric-row">
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <div>
+                            <div class="metric-label">
+                                PCE Inflation (Personal Consumption Expenditures)
+                                <span class="tooltip">
+                                    <span class="info-icon">ℹ️</span>
+                                    <span class="tooltiptext">
+                                        <strong>What it is:</strong> The Fed's preferred inflation measure tracking price changes in consumer goods and services.<br><br>
+                                        <strong>Why it matters:</strong> Unlike CPI, PCE accounts for substitution (when people switch to cheaper alternatives). Fed targets 2% PCE inflation.<br><br>
+                                        <strong>Current reading:</strong> 2.4% is close to target, suggesting inflation is moderating but not yet at goal.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="metric-value flow-positive">2.4%</div>
+                        </div>
+                        <div class="metric-change up">▲ 0.1% MoM</div>
+                    </div>
+                    <div class="metric-explanation">
+                        <strong>Nov 2024:</strong> Near Fed's 2% target. Monthly increase of just 0.1% shows cooling inflation. Good for stocks as aggressive rate hikes less likely.
+                    </div>
+                    <div class="data-source">Source: Bureau of Economic Analysis (BEA)</div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <div>
+                            <div class="metric-label">
+                                Core PCE (Excluding Food & Energy)
+                                <span class="tooltip">
+                                    <span class="info-icon">ℹ️</span>
+                                    <span class="tooltiptext">
+                                        <strong>What it is:</strong> PCE inflation minus volatile food and energy prices.<br><br>
+                                        <strong>Why it matters:</strong> Shows underlying inflation trends without noise from gas and grocery swings. Fed watches this closely for policy decisions.<br><br>
+                                        <strong>Current reading:</strong> 2.8% is still above 2% target, explaining why Fed remains cautious about cutting rates.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="metric-value flow-neutral">2.8%</div>
+                        </div>
+                        <div class="metric-change up">▲ 0.1% MoM</div>
+                    </div>
+                    <div class="metric-explanation">
+                        <strong>Nov 2024:</strong> Sticky above target at 2.8%. Services inflation remains elevated. This is why Fed slowed rate cut pace from 4 to 2 cuts expected in 2025.
+                    </div>
+                    <div class="data-source">Source: Bureau of Economic Analysis (BEA)</div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <div>
+                            <div class="metric-label">
+                                CPI (Consumer Price Index)
+                                <span class="tooltip">
+                                    <span class="info-icon">ℹ️</span>
+                                    <span class="tooltiptext">
+                                        <strong>What it is:</strong> Measures average price changes for a basket of consumer goods and services.<br><br>
+                                        <strong>Why it matters:</strong> Most widely reported inflation metric. Affects cost-of-living adjustments for Social Security. Higher than PCE due to methodology differences.<br><br>
+                                        <strong>Current reading:</strong> 2.7% shows inflation ticked up from October's 2.6%, driven by shelter and groceries.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="metric-value flow-neutral">2.7%</div>
+                        </div>
+                        <div class="metric-change up">▲ 0.3% MoM</div>
+                    </div>
+                    <div class="metric-explanation">
+                        <strong>Nov 2024:</strong> Acceleration from 2.6% in Oct. Shelter (+0.3% MoM) and groceries (+0.5% MoM) main drivers. Egg prices up 38% YoY. Disinflation has stalled.
+                    </div>
+                    <div class="data-source">Source: Bureau of Labor Statistics (BLS)</div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <div>
+                            <div class="metric-label">
+                                GDP Growth (Real, Annualized Q4 2024)
+                                <span class="tooltip">
+                                    <span class="info-icon">ℹ️</span>
+                                    <span class="tooltiptext">
+                                        <strong>What it is:</strong> Real Gross Domestic Product measures total economic output adjusted for inflation, annualized.<br><br>
+                                        <strong>Why it matters:</strong> Key indicator of economic health. 2-3% growth considered healthy. Below 0% is recession. Affects corporate earnings expectations.<br><br>
+                                        <strong>Current reading:</strong> 2.3% shows solid growth without overheating. Slower than Q3's 2.8% but still healthy.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="metric-value flow-positive">2.3%</div>
+                        </div>
+                        <div class="metric-change down">▼ from 2.8% Q3</div>
+                    </div>
+                    <div class="metric-explanation">
+                        <strong>Q4 2024:</strong> Moderated from Q3's 2.8% but still solid. Consumer spending, exports, and federal spending drove growth. Full year 2024: 2.3% vs 3.2% in 2023.
+                    </div>
+                    <div class="data-source">Source: Bureau of Economic Analysis (BEA)</div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <div>
+                            <div class="metric-label">
+                                Unemployment Rate
+                                <span class="tooltip">
+                                    <span class="info-icon">ℹ️</span>
+                                    <span class="tooltiptext">
+                                        <strong>What it is:</strong> Percentage of labor force actively seeking work but unemployed.<br><br>
+                                        <strong>Why it matters:</strong> Low unemployment = tight labor market = wage pressure = inflation risk. Fed watches for "maximum employment" mandate (3.5-4.5% range is healthy).<br><br>
+                                        <strong>Current reading:</strong> 4.1% is at Fed's full employment estimate. Ticked down from mid-2024 highs near 4.3%.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="metric-value flow-positive">4.1%</div>
+                        </div>
+                        <div class="metric-change down">▼ Stable in Q4</div>
+                    </div>
+                    <div class="metric-explanation">
+                        <strong>Dec 2024:</strong> Healthy level at 4.1%. Job growth averaged 170K/month in Q4. Labor market cooling from pandemic tightness but not deteriorating. Goldilocks territory.
+                    </div>
+                    <div class="data-source">Source: Bureau of Labor Statistics (BLS)</div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <div>
+                            <div class="metric-label">
+                                NFCI (National Financial Conditions Index)
+                                <span class="tooltip">
+                                    <span class="info-icon">ℹ️</span>
+                                    <span class="tooltiptext">
+                                        <strong>What it is:</strong> Chicago Fed's index tracking 105 indicators of financial stress (credit spreads, volatility, funding costs).<br><br>
+                                        <strong>Why it matters:</strong> Negative = loose financial conditions = easy credit = bullish for risk assets. Positive = tight conditions = stress = bearish.<br><br>
+                                        <strong>Current reading:</strong> -0.48 indicates very accommodative financial conditions, supporting equity markets.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="metric-value flow-positive">-0.48</div>
+                        </div>
+                        <div class="metric-change">Loose Conditions</div>
+                    </div>
+                    <div class="metric-explanation">
+                        <strong>Dec 2024:</strong> Deeply negative reading shows looser-than-average conditions. Low volatility, tight credit spreads, easy funding. Very supportive for equities and risk-taking.
+                    </div>
+                    <div class="data-source">Source: Chicago Fed</div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <div>
+                            <div class="metric-label">
+                                Fed Funds Rate
+                                <span class="tooltip">
+                                    <span class="info-icon">ℹ️</span>
+                                    <span class="tooltiptext">
+                                        <strong>What it is:</strong> The interest rate at which banks lend to each other overnight. Set by Federal Reserve.<br><br>
+                                        <strong>Why it matters:</strong> Most important rate in economy. Affects mortgages, corporate borrowing, savings rates. Fed uses it to control inflation and employment.<br><br>
+                                        <strong>Current reading:</strong> 4.25-4.5% after three consecutive cuts in 2024. Fed now more cautious about further cuts due to sticky inflation.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="metric-value">4.25-4.5%</div>
+                        </div>
+                        <div class="metric-change down">▼ Cut 0.25% Dec</div>
+                    </div>
+                    <div class="metric-explanation">
+                        <strong>Dec 2024:</strong> Fed cut by 25 bps but signaled only 2 cuts in 2025 (down from 4 projected in Sep). Rate cuts slowing due to sticky core inflation at 2.8%.
+                    </div>
+                    <div class="data-source">Source: Federal Reserve</div>
+                </div>
+
+                <div class="metric-item">
+                    <div class="metric-header">
+                        <div>
+                            <div class="metric-label">
+                                Real Wage Growth
+                                <span class="tooltip">
+                                    <span class="info-icon">ℹ️</span>
+                                    <span class="tooltiptext">
+                                        <strong>What it is:</strong> Nominal wage growth minus inflation = actual purchasing power gains.<br><br>
+                                        <strong>Why it matters:</strong> Positive real wage growth = consumers can buy more = supports consumer spending (70% of GDP). But too high = inflation pressure.<br><br>
+                                        <strong>Current reading:</strong> Positive for most workers as wages outpaced 2.6% inflation, supporting consumption.
+                                    </span>
+                                </span>
+                            </div>
+                            <div class="metric-value flow-positive">Positive</div>
+                        </div>
+                        <div class="metric-change up">▲ Above inflation</div>
+                    </div>
+                    <div class="metric-explanation">
+                        <strong>2024:</strong> Wages growing faster than inflation for most workers, supporting consumer spending. Fed watching for wage-price spiral risk, but productivity gains help contain this.
+                    </div>
+                    <div class="data-source">Source: BLS, Fed Analysis</div>
+                </div>
+            </div>
+
+            <div class="info-box" style="background: rgba(102, 126, 234, 0.15); border-color: #667eea;">
+                <h3>📖 How to Read These Indicators</h3>
+                <p>
+                    <strong>Inflation metrics (PCE, Core PCE, CPI):</strong> Closer to 2% = better for stocks. Above 3% = Fed may raise rates = bearish.<br>
+                    <strong>GDP:</strong> 2-3% = goldilocks. Above 4% = overheating risk. Below 1% = recession concerns.<br>
+                    <strong>Unemployment:</strong> 3.5-4.5% = healthy. Above 5% = weakness. Below 3% = inflation risk.<br>
+                    <strong>NFCI:</strong> Negative = good for risk assets. Positive = tightening conditions = defensive.<br>
+                    <strong>Fed Funds:</strong> Higher = more expensive borrowing = bearish. Lower = stimulative = bullish.
+                </p>
+            </div>
+        </section>
+
+        <!-- Regional Capital Flows -->
+        <section>
+            <h2 class="section-title">💰 Regional Capital Flows</h2>
+            <div class="grid">
+                <!-- United States -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <span class="country-flag">🇺🇸</span>
+                            <span class="card-title">United States</span>
+                        </div>
+                        <span class="status-badge status-strong">Strong Inflows</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">Sep 2024 (Peak)</span>
+                        <span class="flow-value flow-positive">+$398.4B</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">Oct 2024</span>
+                        <span class="flow-value flow-positive">+$203.6B</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">Nov 2024</span>
+                        <span class="flow-value flow-positive">+$159.9B</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">Dec 2024</span>
+                        <span class="flow-value flow-positive">+$87.1B</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">Long-Term Securities (Sep)</span>
+                        <span class="flow-value flow-positive">+$263.1B</span>
+                    </div>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <small style="color: #b8b8d4;">💡 <strong>Trading Impact:</strong> Massive inflows support US equity rally. Foreign capital chasing US growth story. Bullish for SPY, QQQ, large-cap tech. Look for swing long opportunities (2-4 week holds) on dips with tight stops.</small>
+                    </div>
+                </div>
+
+                <!-- China -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <span class="country-flag">🇨🇳</span>
+                            <span class="card-title">China</span>
+                        </div>
+                        <span class="status-badge status-weak">Severe Outflows</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">Portfolio Flows</span>
+                        <span class="flow-value flow-negative">Record Outflows</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">FDI (Foreign Direct Investment)</span>
+                        <span class="flow-value flow-negative">Weakening</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">Trend Since 2022</span>
+                        <span class="flow-value flow-negative">Persistent Weakness</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">H1 2024</span>
+                        <span class="flow-value flow-negative">Resumed Outflows</span>
+                    </div>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <small style="color: #b8b8d4;">⚠️ <strong>Trading Impact:</strong> Capital flight crushing Chinese equities. Avoid Chinese ADRs (BABA, JD, PDD, BIDU). Consider tactical shorts or KWEB put spreads. Wait for sustained inflow reversal before going long.</small>
+                    </div>
+                </div>
+
+                <!-- Emerging Markets -->
+                <div class="card">
+                    <div class="card-header">
+                        <div>
+                            <span class="country-flag">🌏</span>
+                            <span class="card-title">EM (ex-China)</span>
+                        </div>
+                        <span class="status-badge status-strong">Strong Inflows</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">2024 Total Projected</span>
+                        <span class="flow-value flow-positive">+$903B</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">YoY Growth</span>
+                        <span class="flow-value flow-positive">+32%</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">Portfolio Flows</span>
+                        <span class="flow-value flow-positive">3-Year Highs</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">FDI Recovery</span>
+                        <span class="flow-value flow-positive">Strong Rebound</span>
+                    </div>
+                    <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(255,255,255,0.1);">
+                        <small style="color: #b8b8d4;">✅ <strong>Trading Impact:</strong> Bullish for selective EM exposure. Long EEM (avoid high China weight), INDA (India pure play), EWZ (Brazil), or VWO. Use 4-8 week swing timeframes. India and Brazil showing strongest momentum.</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- US TIC Data Trends -->
+        <section>
+            <h2 class="section-title">📈 US TIC Data Trends (2024)</h2>
+            <div class="card">
+                <p style="color: #b8b8d4; margin-bottom: 20px;">
+                    <strong>TIC (Treasury International Capital) Data</strong> tracks foreign purchases of US securities.
+                    Positive = inflows (bullish), Negative = outflows (bearish). Sep's $398B was strongest month of 2024.
+                </p>
+                <div class="chart-container">
+                    <div class="chart-bar" style="height: 95%;">
+                        <div class="chart-value">$398B</div>
+                        <div class="chart-label">Sep</div>
+                    </div>
+                    <div class="chart-bar" style="height: 50%;">
+                        <div class="chart-value">$204B</div>
+                        <div class="chart-label">Oct</div>
+                    </div>
+                    <div class="chart-bar" style="height: 40%;">
+                        <div class="chart-value">$160B</div>
+                        <div class="chart-label">Nov</div>
+                    </div>
+                    <div class="chart-bar" style="height: 22%;">
+                        <div class="chart-value">$87B</div>
+                        <div class="chart-label">Dec</div>
+                    </div>
+                    <div class="chart-bar" style="height: 12%; background: linear-gradient(to top, #ef4444, #dc2626);">
+                        <div class="chart-value flow-negative">-$49B</div>
+                        <div class="chart-label">Jan</div>
+                    </div>
+                </div>
+                <div style="margin-top: 50px;">
+                    <p style="color: #b8b8d4; text-align: center;">Net Treasury International Capital Flows (Billions USD)</p>
+                    <p style="color: #888; text-align: center; font-size: 0.8rem; margin-top: 10px;">
+                        Source: U.S. Treasury Department | Released ~6 weeks after month-end
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Flow Reversal Warning System -->
+        <section>
+            <h2 class="section-title">⚠️ Flow Reversal Warning System</h2>
+
+            <div class="card" style="background: rgba(239, 68, 68, 0.08); border: 2px solid rgba(239, 68, 68, 0.3);">
+                <h3 style="color: #ef4444; margin-bottom: 20px; font-size: 1.3rem;">🚨 Critical Indicator: TIC Flow Reversal Alert</h3>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-bottom: 30px;">
+                    <!-- Current Status Gauge -->
+                    <div style="text-align: center; padding: 30px; background: rgba(16, 185, 129, 0.1); border-radius: 10px; border: 2px solid #10b981;">
+                        <div style="font-size: 0.9rem; color: #b8b8d4; margin-bottom: 15px;">CURRENT STATUS</div>
+                        <div style="font-size: 3.5rem; margin-bottom: 10px;">🟢</div>
+                        <div style="font-size: 1.8rem; font-weight: 700; color: #10b981; margin-bottom: 10px;">ALL CLEAR</div>
+                        <div style="font-size: 0.95rem; color: #d0d0e8;">Strong inflows for 4+ consecutive months</div>
+                        <div style="margin-top: 15px; padding: 10px; background: rgba(16, 185, 129, 0.15); border-radius: 5px;">
+                            <div style="font-size: 0.85rem; color: #10b981; font-weight: 600;">Last Negative Month: January 2024</div>
+                        </div>
+                    </div>
+
+                    <!-- 6-Month Trend -->
+                    <div style="padding: 20px; background: rgba(255, 255, 255, 0.03); border-radius: 10px;">
+                        <div style="font-size: 0.9rem; color: #b8b8d4; margin-bottom: 15px; text-align: center;">6-MONTH TIC FLOW TREND</div>
+                        <div style="display: flex; justify-content: space-around; align-items: flex-end; height: 120px; gap: 8px;">
+                            <div style="flex: 1; text-align: center;">
+                                <div style="height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <div style="background: linear-gradient(to top, #ef4444, #dc2626); height: 15%; border-radius: 3px; margin-bottom: 5px;"></div>
+                                </div>
+                                <div style="font-size: 0.7rem; color: #888; margin-top: 5px;">Jul</div>
+                                <div style="font-size: 0.75rem; color: #ef4444;">-$49B</div>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                                <div style="height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <div style="background: linear-gradient(to top, #10b981, #059669); height: 45%; border-radius: 3px; margin-bottom: 5px;"></div>
+                                </div>
+                                <div style="font-size: 0.7rem; color: #888; margin-top: 5px;">Aug</div>
+                                <div style="font-size: 0.75rem; color: #10b981;">+$180B</div>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                                <div style="height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <div style="background: linear-gradient(to top, #10b981, #059669); height: 100%; border-radius: 3px; margin-bottom: 5px;"></div>
+                                </div>
+                                <div style="font-size: 0.7rem; color: #888; margin-top: 5px;">Sep</div>
+                                <div style="font-size: 0.75rem; color: #10b981;">+$398B</div>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                                <div style="height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <div style="background: linear-gradient(to top, #10b981, #059669); height: 55%; border-radius: 3px; margin-bottom: 5px;"></div>
+                                </div>
+                                <div style="font-size: 0.7rem; color: #888; margin-top: 5px;">Oct</div>
+                                <div style="font-size: 0.75rem; color: #10b981;">+$204B</div>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                                <div style="height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <div style="background: linear-gradient(to top, #10b981, #059669); height: 42%; border-radius: 3px; margin-bottom: 5px;"></div>
+                                </div>
+                                <div style="font-size: 0.7rem; color: #888; margin-top: 5px;">Nov</div>
+                                <div style="font-size: 0.75rem; color: #10b981;">+$160B</div>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                                <div style="height: 100%; display: flex; flex-direction: column; justify-content: flex-end;">
+                                    <div style="background: linear-gradient(to top, #10b981, #059669); height: 25%; border-radius: 3px; margin-bottom: 5px;"></div>
+                                </div>
+                                <div style="font-size: 0.7rem; color: #888; margin-top: 5px;">Dec</div>
+                                <div style="font-size: 0.75rem; color: #10b981;">+$87B</div>
+                            </div>
+                        </div>
+                        <div style="margin-top: 15px; text-align: center; font-size: 0.8rem; color: #10b981; font-weight: 600;">
+                            ✅ 5 of 6 months positive = Healthy trend
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Explanation -->
+                <div style="background: rgba(0, 0, 0, 0.3); padding: 25px; border-radius: 10px; margin-bottom: 20px;">
+                    <h4 style="color: #ef4444; margin-bottom: 15px; font-size: 1.1rem;">📖 What is a Flow Reversal?</h4>
+                    <p style="color: #d0d0e8; line-height: 1.7; margin-bottom: 15px;">
+                        A <strong>flow reversal</strong> occurs when the TIC (Treasury International Capital) data turns negative for 2 or more consecutive months. This means foreign investors are <strong>net sellers</strong> of US securities (stocks, bonds, treasuries) rather than buyers.
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
+                        <div>
+                            <h5 style="color: #667eea; margin-bottom: 10px;">🔴 Why 2+ Months is Critical:</h5>
+                            <ul style="color: #d0d0e8; font-size: 0.9rem; line-height: 1.6; padding-left: 20px;">
+                                <li><strong>One month</strong> = Could be noise, rebalancing, or temporary</li>
+                                <li><strong>Two months</strong> = Suggests a trend change in sentiment</li>
+                                <li><strong>Three+ months</strong> = Confirmed capital flight pattern</li>
+                            </ul>
+                        </div>
+
+                        <div>
+                            <h5 style="color: #667eea; margin-bottom: 10px;">⚡ What It Signals:</h5>
+                            <ul style="color: #d0d0e8; font-size: 0.9rem; line-height: 1.6; padding-left: 20px;">
+                                <li>Loss of confidence in US assets</li>
+                                <li>Potential USD weakness (less foreign demand)</li>
+                                <li>Higher bond yields needed to attract capital</li>
+                                <li>Equity market vulnerable to correction</li>
+                                <li>Often precedes recession or crisis</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Historical Context -->
+                <div style="background: rgba(245, 158, 11, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid #f59e0b; margin-bottom: 20px;">
+                    <h4 style="color: #f59e0b; margin-bottom: 12px; font-size: 1rem;">📊 Historical Examples of Flow Reversals:</h4>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                        <div style="background: rgba(0, 0, 0, 0.2); padding: 12px; border-radius: 5px;">
+                            <div style="font-size: 0.85rem; color: #f59e0b; font-weight: 600; margin-bottom: 5px;">2008 Financial Crisis</div>
+                            <div style="font-size: 0.8rem; color: #d0d0e8;">Sustained outflows Q3-Q4 2008. S&P 500 fell -38% from peak.</div>
+                        </div>
+                        <div style="background: rgba(0, 0, 0, 0.2); padding: 12px; border-radius: 5px;">
+                            <div style="font-size: 0.85rem; color: #f59e0b; font-weight: 600; margin-bottom: 5px;">COVID Crash (March 2020)</div>
+                            <div style="font-size: 0.8rem; color: #d0d0e8;">Sharp but brief outflows. -34% SPX drop in 23 days.</div>
+                        </div>
+                        <div style="background: rgba(0, 0, 0, 0.2); padding: 12px; border-radius: 5px;">
+                            <div style="font-size: 0.85rem; color: #f59e0b; font-weight: 600; margin-bottom: 5px;">2022 Rate Hikes</div>
+                            <div style="font-size: 0.8rem; color: #d0d0e8;">Intermittent outflows as Fed raised rates. Tech down -33%.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Warning Levels -->
+                <div style="margin-bottom: 20px;">
+                    <h4 style="color: #667eea; margin-bottom: 15px; font-size: 1rem;">🚦 Alert Levels & Trader Actions:</h4>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                        <!-- Green - All Clear -->
+                        <div style="background: rgba(16, 185, 129, 0.15); padding: 15px; border-radius: 8px; border: 2px solid #10b981;">
+                            <div style="text-align: center; margin-bottom: 10px;">
+                                <div style="font-size: 2rem;">🟢</div>
+                                <div style="color: #10b981; font-weight: 600; margin-top: 5px;">GREEN - ALL CLEAR</div>
+                            </div>
+                            <div style="font-size: 0.85rem; color: #d0d0e8; margin-bottom: 10px;">
+                                <strong>Condition:</strong> Positive flows for 2+ months
+                            </div>
+                            <div style="font-size: 0.85rem; color: #d0d0e8;">
+                                <strong>Action:</strong><br>
+                                • Swing long with confidence<br>
+                                • Buy dips to support<br>
+                                • Normal position sizing<br>
+                                • 2-4 week holds safe
+                            </div>
+                        </div>
+
+                        <!-- Yellow - Caution -->
+                        <div style="background: rgba(245, 158, 11, 0.15); padding: 15px; border-radius: 8px; border: 2px solid #f59e0b;">
+                            <div style="text-align: center; margin-bottom: 10px;">
+                                <div style="font-size: 2rem;">🟡</div>
+                                <div style="color: #f59e0b; font-weight: 600; margin-top: 5px;">YELLOW - CAUTION</div>
+                            </div>
+                            <div style="font-size: 0.85rem; color: #d0d0e8; margin-bottom: 10px;">
+                                <strong>Condition:</strong> 1 month of negative flows
+                            </div>
+                            <div style="font-size: 0.85rem; color: #d0d0e8;">
+                                <strong>Action:</strong><br>
+                                • Reduce position sizes by 30%<br>
+                                • Tighten stops to recent support<br>
+                                • Take partial profits<br>
+                                • Wait for next month's data
+                            </div>
+                        </div>
+
+                        <!-- Red - Danger -->
+                        <div style="background: rgba(239, 68, 68, 0.15); padding: 15px; border-radius: 8px; border: 2px solid #ef4444;">
+                            <div style="text-align: center; margin-bottom: 10px;">
+                                <div style="font-size: 2rem;">🔴</div>
+                                <div style="color: #ef4444; font-weight: 600; margin-top: 5px;">RED - DANGER</div>
+                            </div>
+                            <div style="font-size: 0.85rem; color: #d0d0e8; margin-bottom: 10px;">
+                                <strong>Condition:</strong> 2+ months negative flows
+                            </div>
+                            <div style="font-size: 0.85rem; color: #d0d0e8;">
+                                <strong>Action:</strong><br>
+                                • Exit all swing longs<br>
+                                • Go to cash or defensive<br>
+                                • Consider SPY/QQQ puts<br>
+                                • Short-term trades only (&lt;1 week)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- How to Monitor -->
+                <div style="background: rgba(102, 126, 234, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid #667eea;">
+                    <h4 style="color: #667eea; margin-bottom: 12px; font-size: 1rem;">🔍 How to Monitor This Indicator:</h4>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                        <div>
+                            <div style="font-size: 0.9rem; color: #d0d0e8; margin-bottom: 10px;">
+                                <strong style="color: #667eea;">Data Source:</strong> U.S. Treasury Department TIC Reports
+                            </div>
+                            <div style="font-size: 0.9rem; color: #d0d0e8; margin-bottom: 10px;">
+                                <strong style="color: #667eea;">Release Schedule:</strong> ~6 weeks after month-end (around 15th of month)
+                            </div>
+                            <div style="font-size: 0.9rem; color: #d0d0e8;">
+                                <strong style="color: #667eea;">URL:</strong> <a href="https://home.treasury.gov/data/treasury-international-capital-tic-system" style="color: #667eea; text-decoration: underline;">home.treasury.gov/data/tic</a>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="font-size: 0.9rem; color: #d0d0e8; margin-bottom: 8px;">
+                                <strong style="color: #667eea;">What to Check:</strong>
+                            </div>
+                            <ul style="font-size: 0.85rem; color: #d0d0e8; padding-left: 20px; line-height: 1.7;">
+                                <li>Look for "Net TIC Flows" in monthly report</li>
+                                <li>Positive = Inflows (good), Negative = Outflows (bad)</li>
+                                <li>Track last 6 months for trend</li>
+                                <li>2+ consecutive negative = RED ALERT</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Swing Trading Strategies -->
+        <section>
+            <h2 class="section-title">🎯 Swing Trading Strategies by Capital Flow</h2>
+
+            <div class="tab-container">
+                <button class="tab active" onclick="switchTab(event, 'equity')">Equity Strategies</button>
+                <button class="tab" onclick="switchTab(event, 'currency')">Currency Strategies</button>
+                <button class="tab" onclick="switchTab(event, 'sector')">Sector Rotation</button>
+            </div>
+
+            <div id="equity" class="tab-content active">
+                <div class="grid">
+                    <div class="card">
+                        <h3 style="margin-bottom: 15px;">🟢 Positive Inflows Strategy</h3>
+                        <p style="color: #d0d0e8; margin-bottom: 15px;">When capital inflows are strong (like US in Sep-Dec 2024)</p>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Bias</span>
+                            <span class="flow-value flow-positive">Bullish</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Setup</span>
+                            <span class="flow-value">Long large-caps (SPY, QQQ)</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Duration</span>
+                            <span class="flow-value">2-4 weeks</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Entry</span>
+                            <span class="flow-value">Buy dips to support</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Stop Loss</span>
+                            <span class="flow-value">Below recent swing low</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Risk</span>
+                            <span class="flow-value">Lower volatility expected</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin-bottom: 15px;">🔴 Outflows Strategy</h3>
+                        <p style="color: #d0d0e8; margin-bottom: 15px;">When capital is leaving (like China in 2024)</p>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Bias</span>
+                            <span class="flow-value flow-negative">Bearish</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Setup</span>
+                            <span class="flow-value">Avoid longs, consider shorts</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Duration</span>
+                            <span class="flow-value">Stay defensive/cash</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Entry (Shorts)</span>
+                            <span class="flow-value">Rally to resistance</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Stop Loss</span>
+                            <span class="flow-value">Tight above resistance</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Risk</span>
+                            <span class="flow-value">Higher volatility, gaps down</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="currency" class="tab-content">
+                <div class="card">
+                    <h3 style="margin-bottom: 15px;">💱 Currency Flow Strategies</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Flow Direction</th>
+                                <th>Currency Impact</th>
+                                <th>Trade Setup</th>
+                                <th>Duration</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="flow-positive">Strong Inflows (USD)</span></td>
+                                <td>Currency Appreciation</td>
+                                <td>Long DXY vs EM currencies</td>
+                                <td>2-4 weeks</td>
+                            </tr>
+                            <tr>
+                                <td><span class="flow-negative">Outflows (CNY)</span></td>
+                                <td>Currency Depreciation</td>
+                                <td>Short CNY vs USD (USDCNY long)</td>
+                                <td>4-8 weeks</td>
+                            </tr>
+                            <tr>
+                                <td><span class="flow-positive">EM Inflows</span></td>
+                                <td>EM Currency Strength</td>
+                                <td>Long BRL, INR vs USD</td>
+                                <td>4-12 weeks</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div id="sector" class="tab-content">
+                <div class="grid">
+                    <div class="card">
+                        <h3 style="margin-bottom: 15px;">Equity Inflows Favor</h3>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Large-Cap Growth</span>
+                            <span class="flow-value">AAPL, MSFT, NVDA, GOOGL</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Dividend Aristocrats</span>
+                            <span class="flow-value">JNJ, PG, KO, MCD</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Mega-Cap ETFs</span>
+                            <span class="flow-value">SPY, QQQ (high liquidity)</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Financials</span>
+                            <span class="flow-value">JPM, BAC, GS (XLF)</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin-bottom: 15px;">Bond Inflows Favor</h3>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Defensive Sectors</span>
+                            <span class="flow-value">Utilities (XLU), Staples (XLP)</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Quality Growth</span>
+                            <span class="flow-value">Lower beta, stable earnings</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Risk Profile</span>
+                            <span class="flow-value">Flight to safety mode</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">REITS</span>
+                            <span class="flow-value">Income-oriented (VNQ)</span>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3 style="margin-bottom: 15px;">Outflows Hit Hardest</h3>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Small/Mid Caps</span>
+                            <span class="flow-value flow-negative">IWM, MDY - first to sell</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">High Beta Stocks</span>
+                            <span class="flow-value flow-negative">Speculative tech, crypto</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Illiquid Names</span>
+                            <span class="flow-value flow-negative">Wide spreads, gaps</span>
+                        </div>
+                        <div class="flow-indicator">
+                            <span class="flow-label">Emerging Markets</span>
+                            <span class="flow-value flow-negative">Especially China exposure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real-Time Monitoring -->
+        <section>
+            <h2 class="section-title">🔔 Real-Time Flow Indicators for Traders</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Daily Tracking</span>
+                        <span class="card-icon">📅</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">ETF Flows</span>
+                        <span class="flow-value">SPY, QQQ, IWM, EEM</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">Options Flow</span>
+                        <span class="flow-value">Block trades & unusual sweeps</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">Dark Pool Activity</span>
+                        <span class="flow-value">Institutional positioning</span>
+                    </div>
+                    <div class="metric-explanation">
+                        <strong>How to use:</strong> Check ETF.com or Bloomberg for SPY/QQQ net inflows. Sustained inflows (3+ days) = bullish continuation. Outflows = reversal risk.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Weekly Tracking</span>
+                        <span class="card-icon">📊</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">EPFR Data</span>
+                        <span class="flow-value">Global fund flows by region</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">Mutual Fund Flows</span>
+                        <span class="flow-value">Creation/redemption trends</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">Sector Flows</span>
+                        <span class="flow-value">XLF, XLK, XLE rotation</span>
+                    </div>
+                    <div class="metric-explanation">
+                        <strong>How to use:</strong> EPFR weekly reports show which regions/sectors are getting flows. Rotate into sectors seeing consistent inflows.
+                    </div>
+                </div>
+
+                <div class="card">
+                    <div class="card-header">
+                        <span class="card-title">Monthly Tracking</span>
+                        <span class="card-icon">📈</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">TIC Data</span>
+                        <span class="flow-value">Released ~6 weeks delayed</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">IIF EM Flows</span>
+                        <span class="flow-value">Emerging market capital tracker</span>
+                    </div>
+                    <div class="flow-indicator">
+                        <span class="flow-label">FX Reserves</span>
+                        <span class="flow-value">Central bank data</span>
+                    </div>
+                    <div class="metric-explanation">
+                        <strong>How to use:</strong> TIC data confirms multi-month trends. Use for longer-term (1-3 month) positioning. Not for short-term trading.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Takeaways -->
+        <section style="margin-bottom: 50px;">
+            <h2 class="section-title">💡 Current Market Assessment & Action Items</h2>
+            <div class="info-box" style="background: rgba(16, 185, 129, 0.1); border-color: #10b981;">
+                <h3 style="color: #10b981;">🇺🇸 United States: Strong Buy Signal for Swing Traders</h3>
+                <p>
+                    <strong>Evidence:</strong> $398B Sep inflow (highest 2024), $204B Oct, $160B Nov. Long-term securities purchases at $263B.<br>
+                    <strong>Trade:</strong> Long SPY/QQQ on 2-5% pullbacks. Target 2-4 week swings. Stop below recent swing low.<br>
+                    <strong>Best Sectors:</strong> Tech (QQQ), Financials (XLF), Large-cap Growth.<br>
+                    <strong>Risk:</strong> Low. NFCI at -0.48 = loose conditions supporting rally.
+                </p>
+            </div>
+
+            <div class="info-box" style="background: rgba(239, 68, 68, 0.1); border-color: #ef4444;">
+                <h3 style="color: #ef4444;">🇨🇳 China: Avoid Long Exposure / Consider Shorts</h3>
+                <p>
+                    <strong>Evidence:</strong> Record portfolio outflows since 2022, FDI weakening, H1 2024 outflows resumed.<br>
+                    <strong>Trade:</strong> Avoid BABA, JD, PDD, BIDU. Consider KWEB put spreads or short via inverse ETFs.<br>
+                    <strong>Alternative:</strong> If bullish on Asia, play India (INDA) or ex-China EM (EMXC) instead.<br>
+                    <strong>Wait for:</strong> 2-3 months of sustained inflows before considering longs.
+                </p>
+            </div>
+
+            <div class="info-box" style="background: rgba(102, 126, 234, 0.1); border-color: #667eea;">
+                <h3 style="color: #667eea;">🌏 Emerging Markets (ex-China): Selective Swing Opportunities</h3>
+                <p>
+                    <strong>Evidence:</strong> $903B projected 2024 inflows (+32% YoY), portfolio flows at 3-year highs.<br>
+                    <strong>Trade:</strong> Long EEM (but watch China weight), INDA (India pure play), EWZ (Brazil).<br>
+                    <strong>Duration:</strong> 4-8 week swings. These are longer timeframe trades than US.<br>
+                    <strong>Best Plays:</strong> India (demographics + tech growth) and Brazil (commodity cycle).
+                </p>
+            </div>
+
+            <div class="info-box" style="background: rgba(245, 158, 11, 0.1); border-color: #f59e0b;">
+                <h3 style="color: #f59e0b;">⚠️ Risks to Monitor</h3>
+                <p>
+                    <strong>1. Flow Reversal:</strong> If US TIC data turns negative for 2+ consecutive months = major red flag.<br>
+                    <strong>2. Core PCE Acceleration:</strong> Above 3% could force Fed to pause cuts or even hike.<br>
+                    <strong>3. NFCI Turns Positive:</strong> Would signal tightening financial conditions = bearish.<br>
+                    <strong>4. Geopolitical Shocks:</strong> Can override fundamentals temporarily. Use stops.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        function switchTab(event, tabName) {
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => content.classList.remove('active'));
+
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+
+            document.getElementById(tabName).classList.add('active');
+            event.currentTarget.classList.add('active');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const regimeItems = document.querySelectorAll('.regime-item');
+            regimeItems.forEach((item, index) => {
+                setTimeout(() => {
+                    item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
+                    setTimeout(() => {
+                        item.style.transition = 'all 0.5s ease';
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, 50);
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
