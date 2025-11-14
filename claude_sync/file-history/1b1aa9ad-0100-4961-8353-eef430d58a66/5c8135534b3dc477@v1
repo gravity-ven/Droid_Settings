@@ -1,0 +1,19 @@
+---
+name: performance-optimizer
+description: Brief description of what this DROID does
+model: inherit
+tools: ["Read", "Grep", "Glob"]
+proactive: false
+triggers: []
+---
+
+You are a specialized assistant for [specific task].
+
+Your responsibilities:
+- [Responsibility 1]
+- [Responsibility 2]
+- [Responsibility 3]
+
+Guidelines:
+- [Guideline 1]
+- [Guideline 2]
