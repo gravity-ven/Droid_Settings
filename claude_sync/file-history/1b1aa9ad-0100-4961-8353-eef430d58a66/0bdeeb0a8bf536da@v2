@@ -1,0 +1,491 @@
+# DROID System for Claude Code
+
+**DROIDs** (Specialized Development Agents) are intelligent, reusable AI subagents inspired by Factory.ai's approach to specialized coding assistants.
+
+## Quick Start
+
+### Setup
+
+The DROID system is already installed and ready to use! Add the CLI to your PATH:
+
+```bash
+# Add to your ~/.zshrc or ~/.bashrc
+export PATH="$HOME/.claude:$PATH"
+
+# Or create an alias
+alias droid='python3 ~/.claude/droid_cli.py'
+
+# Reload your shell
+source ~/.zshrc  # or source ~/.bashrc
+```
+
+### List Available DROIDs
+
+```bash
+python3 ~/.claude/droid_cli.py list
+```
+
+### Use a DROID
+
+Simply ask Claude:
+```
+"Use the security-auditor DROID to review src/auth.ts"
+"Have the code-reviewer DROID check this PR"
+"Let the test-writer DROID create tests for this module"
+```
+
+Or mention trigger keywords:
+```
+"Can you review this for security issues?"
+→ Claude auto-suggests security-auditor
+
+"This code is slow"
+→ Claude auto-suggests performance-optimizer
+```
+
+## What Are DROIDs?
+
+DROIDs are specialized AI agents with:
+
+✅ **Custom Expertise** - Tailored system prompts for specific tasks
+✅ **Tool Safety** - Restricted to appropriate tools (read-only for auditors)
+✅ **Model Flexibility** - Can use different models per DROID
+✅ **Proactive Activation** - Auto-suggested based on context
+✅ **Team Sharing** - Project DROIDs shared via git
+✅ **Reusability** - Define once, use forever
+
+## Pre-Built DROIDs
+
+| DROID | Purpose | Triggers |
+|-------|---------|----------|
+| 🔒 **security-auditor** | OWASP Top 10 & vulnerability scanning | security, vulnerability, audit |
+| 👀 **code-reviewer** | Best practices & code quality | review, PR, code quality |
+| 🧪 **test-writer** | Comprehensive test generation | test, testing, coverage |
+| 🐛 **debugger** | Root cause analysis | bug, error, crash, debug |
+| ♻️ **refactoring-specialist** | Safe code improvements | refactor, cleanup, technical debt |
+| 📚 **documentation-writer** | READMEs & API docs | document, readme, API docs |
+| ⚡ **performance-optimizer** | Performance bottlenecks | performance, slow, optimization |
+
+## Architecture
+
+```
+~/.claude/
+├── droids/                    # User-level DROIDs (personal)
+│   ├── security-auditor.md
+│   ├── code-reviewer.md
+│   ├── test-writer.md
+│   ├── debugger.md
+│   ├── refactoring-specialist.md
+│   └── documentation-writer.md
+├── .claude/
+│   └── droids/                # Project-level DROIDs (team-shared)
+│       └── performance-optimizer.md
+├── droid_loader.py            # DROID parsing & loading
+├── droid_cli.py               # CLI management tool
+├── droid                      # Shell wrapper script
+├── DROID_GUIDE.md             # Comprehensive guide
+└── README_DROIDS.md           # This file
+```
+
+## Key Features Compared to Regular Agents
+
+| Feature | Regular Agents | DROIDs |
+|---------|---------------|--------|
+| Specialization | Generic prompts | Domain-specific expertise |
+| Reusability | One-off invocations | Defined once, used everywhere |
+| Tool Safety | All tools available | Restricted per DROID |
+| Team Sharing | Not supported | Project DROIDs in git |
+| Proactive | Manual invocation | Auto-suggested by context |
+| Customization | Per-request | Configured in .md files |
+
+## How DROIDs Differ from Factory.ai's Approach
+
+Factory.ai pioneered the DROID concept. Our implementation adapts their ideas for Claude Code:
+
+**Similarities**:
+- ✅ Reusable specialized agents with custom prompts
+- ✅ Tool restrictions for safety
+- ✅ Two-tier storage (user + project level)
+- ✅ Model flexibility per DROID
+- ✅ Markdown-based configuration
+
+**Our Additions**:
+- ✅ Proactive trigger system (auto-suggest based on keywords)
+- ✅ Pre-built DROID library (6 ready-to-use DROIDs)
+- ✅ Comprehensive CLI management tool
+- ✅ Detailed documentation per DROID
+- ✅ Easy customization via frontmatter
+
+## DROID Management CLI
+
+### Commands
+
+```bash
+# List all DROIDs
+python3 ~/.claude/droid_cli.py list
+
+# Verbose listing with full config
+python3 ~/.claude/droid_cli.py list -v
+
+# Show DROID details
+python3 ~/.claude/droid_cli.py info security-auditor
+
+# Create new DROID (user-level)
+python3 ~/.claude/droid_cli.py create my-droid
+
+# Create new DROID (project-level)
+python3 ~/.claude/droid_cli.py create team-droid --project
+
+# Edit DROID
+python3 ~/.claude/droid_cli.py edit my-droid
+
+# Delete DROID
+python3 ~/.claude/droid_cli.py delete my-droid
+
+# Reload all DROIDs
+python3 ~/.claude/droid_cli.py reload
+
+# Get suggestions based on context
+python3 ~/.claude/droid_cli.py suggest "security review"
+```
+
+## Creating Custom DROIDs
+
+### 1. Create Template
+
+```bash
+python3 ~/.claude/droid_cli.py create api-tester
+```
+
+### 2. Edit Configuration
+
+```markdown
+---
+name: api-tester
+description: Tests REST API endpoints comprehensively
+model: sonnet
+tools: ["Read", "Write", "Bash", "Grep", "Glob"]
+proactive: true
+triggers: ["api", "endpoint", "rest api", "api test"]
+---
+
+You are an **API Testing DROID** specializing in REST API validation.
+
+## Your Mission
+Test API endpoints with happy paths, edge cases, and error scenarios.
+
+## Testing Approach
+1. Discover all endpoints
+2. Test authentication
+3. Validate request/response formats
+4. Check error handling
+5. Generate test suite
+
+[... detailed instructions ...]
+```
+
+### 3. Use Your DROID
+
+Ask Claude:
+```
+"Use the api-tester DROID to test our user API"
+```
+
+Or mention triggers:
+```
+"Test the REST API endpoints"
+→ Claude suggests api-tester
+```
+
+## Advanced Usage
+
+### DROID Chaining
+
+DROIDs can invoke other DROIDs:
+
+```markdown
+---
+name: deployment-checker
+---
+
+You are a deployment validation DROID.
+
+Before approving deployment:
+1. Use security-auditor to check for vulnerabilities
+2. Use test-writer to verify test coverage > 80%
+3. Use performance-optimizer to identify bottlenecks
+4. Use code-reviewer to ensure quality standards
+5. Only then approve deployment
+```
+
+### Team Workflows
+
+Create project-specific DROIDs for team standards:
+
+```markdown
+---
+name: style-enforcer
+description: Enforces team code style guide
+---
+
+You enforce our team's coding standards:
+- TypeScript strict mode required
+- ESLint + Prettier configuration
+- Max function length: 50 lines
+- React functional components only
+- Jest for all tests
+
+Review code and flag violations with specific line numbers.
+```
+
+### Custom Tool Combinations
+
+Different tool sets for different purposes:
+
+**Read-only DROIDs** (auditors, reviewers):
+```yaml
+tools: ["Read", "Grep", "Glob"]
+```
+
+**Writer DROIDs** (documenters, test generators):
+```yaml
+tools: ["Read", "Write", "Edit", "Grep", "Glob"]
+```
+
+**Executor DROIDs** (testers, deployers):
+```yaml
+tools: ["Read", "Write", "Bash", "Grep", "Glob"]
+```
+
+## Configuration Reference
+
+### YAML Frontmatter Fields
+
+| Field | Type | Required | Description | Example |
+|-------|------|----------|-------------|---------|
+| `name` | string | Yes | Lowercase, hyphens/underscores | `api-tester` |
+| `description` | string | No | Max 500 chars | "Tests REST APIs" |
+| `model` | string | No | `inherit`, `sonnet`, `opus`, `haiku` | `sonnet` |
+| `tools` | array | No | Tool allowlist (omit for all) | `["Read", "Grep"]` |
+| `proactive` | boolean | No | Auto-suggest when triggered | `true` |
+| `triggers` | array | No | Keywords for suggestions | `["api", "test"]` |
+
+### Available Tools
+
+- **Read**: Read files
+- **Write**: Create new files
+- **Edit**: Modify existing files
+- **Bash**: Execute shell commands
+- **Grep**: Search code
+- **Glob**: Find files by pattern
+- **WebFetch**: Fetch web content
+- **WebSearch**: Search the web
+- **Task**: Launch subagents
+- **TodoWrite**: Manage todos
+- **AskUserQuestion**: Ask user for input
+- **NotebookEdit**: Edit Jupyter notebooks
+- **BashOutput**: Read background shell output
+- **KillShell**: Terminate background shells
+
+## Best Practices
+
+### 1. Single Responsibility
+Each DROID should have one clear purpose.
+
+✅ Good: `security-auditor`, `test-writer`, `api-tester`
+❌ Bad: `code-helper`, `dev-assistant`, `utility-bot`
+
+### 2. Detailed System Prompts
+Provide comprehensive instructions:
+- Mission statement
+- Specific responsibilities
+- Output format examples
+- Guidelines and constraints
+- Examples of expected behavior
+
+### 3. Appropriate Tool Restrictions
+Match tools to DROID's role:
+- Auditors: Read-only
+- Writers: Read + Write + Edit
+- Testers: Read + Write + Bash
+
+### 4. Meaningful Triggers
+Use natural language keywords:
+
+✅ Good: `["security", "vulnerability", "audit", "OWASP"]`
+❌ Bad: `["sec", "vuln", "chk"]`
+
+### 5. Test Before Sharing
+For project DROIDs:
+- Test with various inputs
+- Verify tool restrictions
+- Check output quality
+- Get team feedback
+
+## Use Cases
+
+### Code Review Workflow
+```
+User: "Review this PR comprehensively"
+→ security-auditor: Checks vulnerabilities
+→ code-reviewer: Checks best practices
+→ test-writer: Suggests missing tests
+→ Comprehensive review complete
+```
+
+### Bug Investigation
+```
+User: "App crashes when processing large files"
+→ debugger: Analyzes root cause
+→ performance-optimizer: Identifies memory issue
+→ test-writer: Creates reproduction test
+→ refactoring-specialist: Suggests fix
+```
+
+### New Feature Development
+```
+User: "Implement user authentication"
+→ security-auditor: Reviews auth design
+→ test-writer: Creates auth tests
+→ code-reviewer: Validates implementation
+→ documentation-writer: Documents API
+```
+
+## Troubleshooting
+
+### DROID Not Found
+
+```bash
+# Reload DROIDs
+python3 ~/.claude/droid_cli.py reload
+
+# List to verify
+python3 ~/.claude/droid_cli.py list
+```
+
+### DROID Not Auto-Suggesting
+
+Check configuration:
+- `proactive: true` in frontmatter
+- `triggers` array has relevant keywords
+- No YAML syntax errors
+
+### Tool Restrictions Not Working
+
+Verify `tools` array in frontmatter:
+```yaml
+tools: ["Read", "Grep", "Glob"]  # Explicit allowlist
+```
+
+### YAML Parsing Errors
+
+Common issues:
+- Missing `---` delimiters
+- Invalid YAML syntax
+- Tabs instead of spaces
+- Unquoted special characters
+
+Validate with:
+```bash
+python3 ~/.claude/droid_cli.py info <name>
+```
+
+## Examples by Tech Stack
+
+### React Projects
+- `react-reviewer` - Component best practices
+- `hooks-optimizer` - Custom hooks review
+- `accessibility-checker` - WCAG compliance
+
+### Backend APIs
+- `api-designer` - REST/GraphQL design
+- `auth-specialist` - Authentication review
+- `database-optimizer` - Query optimization
+
+### DevOps
+- `docker-helper` - Dockerfile optimization
+- `ci-cd-builder` - Pipeline configuration
+- `deployment-checker` - Pre-deploy validation
+
+## Performance Considerations
+
+DROIDs are lightweight:
+- Markdown files (< 50KB each)
+- Loaded once at startup
+- No runtime overhead
+- Invoked only when needed
+
+## Security
+
+DROIDs enhance security:
+- Tool restrictions prevent unauthorized actions
+- Read-only DROIDs can't modify code
+- Project DROIDs version-controlled in git
+- Custom prompts encode security policies
+
+## Contributing
+
+Share useful DROIDs with your team:
+
+1. Create in `.claude/droids/` (project scope)
+2. Test thoroughly
+3. Document triggers and use cases
+4. Commit to git
+5. Team gets DROIDs automatically
+
+## Resources
+
+- **Comprehensive Guide**: `~/.claude/DROID_GUIDE.md`
+- **DROID Loader**: `~/.claude/droid_loader.py`
+- **DROID CLI**: `~/.claude/droid_cli.py`
+- **User DROIDs**: `~/.claude/droids/`
+- **Project DROIDs**: `.claude/droids/`
+
+## Roadmap
+
+Future enhancements:
+- [ ] Web UI for DROID management
+- [ ] DROID marketplace/registry
+- [ ] Analytics (usage tracking)
+- [ ] DROID templates library
+- [ ] VS Code extension integration
+- [ ] DROID chaining workflows
+- [ ] Performance profiling
+- [ ] CI/CD integration
+
+## FAQ
+
+**Q: How do DROIDs differ from regular Claude agents?**
+A: DROIDs are reusable, specialized, and configurable. Regular agents are one-off with generic prompts.
+
+**Q: Can DROIDs call other DROIDs?**
+A: Yes! Use the Task tool in a DROID's system prompt.
+
+**Q: Do DROIDs work offline?**
+A: DROID definitions are local, but they still require Claude API for execution.
+
+**Q: How do I share DROIDs with my team?**
+A: Create in `.claude/droids/` (project scope) and commit to git.
+
+**Q: Can I override a user DROID with a project one?**
+A: Yes! Project DROIDs take precedence over user DROIDs with the same name.
+
+**Q: What's the maximum system prompt length?**
+A: No hard limit, but keep under 2000 words for best performance.
+
+## Credits
+
+Inspired by [Factory.ai's DROID system](https://factory.ai) - pioneering the concept of specialized coding agents with custom prompts and tool restrictions.
+
+Implemented for Claude Code with enhancements:
+- Proactive trigger system
+- Pre-built DROID library
+- CLI management tools
+- Comprehensive documentation
+
+---
+
+**Built with Claude Code**
+**Powered by Anthropic's Claude**
+
+For support and feedback: https://github.com/anthropics/claude-code
