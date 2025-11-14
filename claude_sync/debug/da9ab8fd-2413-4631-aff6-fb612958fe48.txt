@@ -1654,3 +1654,6 @@
     at X (/$bunfs/root/claude:86:5167)
     at <anonymous> (node:fs:243:13)
     at processTicksAndRejections (native:7:39)
+[DEBUG] Checking for native installer update to version 2.0.37
+[DEBUG] Version 2.0.37 already installed, updating symlink
+[DEBUG] Successfully updated to version 2.0.37
