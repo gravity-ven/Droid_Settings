@@ -1,0 +1,76 @@
+# Repository Tracking - Gravity Ven
+
+Last Updated: 2025-11-14
+
+## Claude Repositories
+
+### Desktop/claude-repos/
+1. **Claude_Code**
+   - Path: `/Users/spartan/Desktop/claude-repos/Claude_Code`
+   - Status: Active, syncing
+   - Description: Claude Code repository
+
+2. **BMAD-ENHANCED**
+   - Path: `/Users/spartan/Desktop/claude-repos/BMAD-ENHANCED`
+   - Status: Active, syncing
+   - Recent: Updated 2025-11-14 with new agents, skills, and n8n conversion tools
+   - Description: BMAD methodology enhanced framework with multi-agent orchestration
+
+### Documents/GitHub/Claude_*
+3. **Claude_Settings**
+   - Path: `/Users/spartan/Documents/GitHub/Claude_Settings`
+   - Status: Active, syncing
+
+4. **Claude_Mobile**
+   - Path: `/Users/spartan/Documents/GitHub/Claude_Mobile`
+   - Status: Active, syncing
+
+### Configuration
+5. **.factory** (Droid_Settings)
+   - Path: `/Users/spartan/.factory`
+   - Remote: `https://github.com/gravity-ven/Droid_Settings.git`
+   - Status: Active, syncing
+   - Description: Claude sync configuration and state
+
+## Spartan Labs Repositories
+
+### spartanlabs_repos/
+1. **mindless**
+   - Path: `/Users/spartan/spartanlabs_repos/mindless`
+   - Status: Active, syncing
+
+2. **DefinitelyTyped**
+   - Path: `/Users/spartan/spartanlabs_repos/DefinitelyTyped`
+   - Status: Active, syncing
+
+3. **mindless-aws-lambda-sample-app**
+   - Path: `/Users/spartan/spartanlabs_repos/mindless-aws-lambda-sample-app`
+   - Status: Active, syncing
+
+### Documents/GitHub/
+4. **Spartan_Labs**
+   - Path: `/Users/spartan/Documents/GitHub/Spartan_Labs`
+   - Remote: `https://github.com/gravity-ven/Spartan_Labs.git`
+   - Status: Active, syncing
+   - Recent: New branch `claude/capital-flows-research-webpage-01Hfrc3dVRxZocYCLbtogqew`
+
+## Auto-Sync Configuration
+
+**Service:** `com.gravityven.github-autosync`
+**Frequency:** Every 10 minutes
+**Status:** Active and running
+
+**Credentials:**
+- Username: gravity.ven@gmail.com
+- Token: Stored in macOS Keychain
+
+**Helper Commands:**
+- `github-sync-status` - Check sync status
+- `github-sync-now` - Trigger immediate sync
+
+## Notes
+
+- All repos automatically pull/push every 10 minutes
+- Uncommitted changes are auto-committed with timestamp
+- Diverged branches are auto-merged when possible
+- Logs: `~/.local/log/github-autosync.log`
