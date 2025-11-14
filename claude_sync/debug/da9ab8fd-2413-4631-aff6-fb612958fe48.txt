@@ -1846,3 +1846,129 @@
 [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
 [DEBUG] Found 0 hook matchers in settings
 [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 2520efdd-3519-4f80-b034-a6a7c41e8758
+[DEBUG] FileHistory: Added snapshot for 2520efdd-3519-4f80-b034-a6a7c41e8758, tracking 5 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: WebSearch
+[DEBUG] Getting matching hook commands for PreToolUse with query: WebSearch
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "WebSearch" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: WebSearch
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "WebSearch" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: WebSearch
+[DEBUG] Getting matching hook commands for PreToolUse with query: WebSearch
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "WebSearch" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: WebSearch
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "WebSearch" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: WebSearch
+[DEBUG] Getting matching hook commands for PreToolUse with query: WebSearch
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "WebSearch" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: Web search error: unavailable
+    at Fy_ (/$bunfs/root/claude:2343:1786)
+    at call (/$bunfs/root/claude:2343:5747)
+    at async VH_ (unknown)
+    at processTicksAndRejections (native:7:39)
+[DEBUG] Getting matching hook commands for PostToolUse with query: WebSearch
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "WebSearch" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: 
+    at TX (/$bunfs/root/claude:1227:4395)
+    at <anonymous> (/$bunfs/root/claude:1227:4117)
+    at map (native:1:11)
+    at HI (/$bunfs/root/claude:1227:4109)
+    at A3B (/$bunfs/root/claude:1592:2883)
+    at B7 (/$bunfs/root/claude:102:19663)
+    at e3 (/$bunfs/root/claude:104:42806)
+    at aF (/$bunfs/root/claude:104:38344)
+    at u1 (/$bunfs/root/claude:104:38272)
+    at ZJ (/$bunfs/root/claude:104:38126)
+[ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: 
+    at TX (/$bunfs/root/claude:1227:4395)
+    at <anonymous> (/$bunfs/root/claude:1227:4117)
+    at map (native:1:11)
+    at HI (/$bunfs/root/claude:1227:4109)
+    at A3B (/$bunfs/root/claude:1592:2883)
+    at B7 (/$bunfs/root/claude:102:19663)
+    at e3 (/$bunfs/root/claude:104:42806)
+    at aF (/$bunfs/root/claude:104:38344)
+    at u1 (/$bunfs/root/claude:104:38272)
+    at ZJ (/$bunfs/root/claude:104:38126)
+[ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: 
+    at TX (/$bunfs/root/claude:1227:4395)
+    at <anonymous> (/$bunfs/root/claude:1227:4117)
+    at map (native:1:11)
+    at HI (/$bunfs/root/claude:1227:4109)
+    at A3B (/$bunfs/root/claude:1592:2883)
+    at B7 (/$bunfs/root/claude:102:19663)
+    at e3 (/$bunfs/root/claude:104:42806)
+    at aF (/$bunfs/root/claude:104:38344)
+    at u1 (/$bunfs/root/claude:104:38272)
+    at ZJ (/$bunfs/root/claude:104:38126)
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.8250.1763161815821
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40790 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.8250.1763161815821 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.8250.1763161815852
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40790 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.8250.1763161815852 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
