@@ -1,0 +1,754 @@
+# CLAUDE.md - Spartan Research Station
+
+## 🚨 PLATINUM RULE #1: ABSOLUTELY ZERO FAKE DATA (SUPREME PRIORITY - NON-NEGOTIABLE)
+
+**NEVER FAKE DATA. EVER. NO EXCEPTIONS.**
+
+This is the **ABSOLUTE HIGHEST PRIORITY** rule. Above everything else.
+
+### ❌ ABSOLUTELY FORBIDDEN - ZERO TOLERANCE:
+1. ❌ **NO Math.random()** for ANY financial, economic, or market data
+2. ❌ **NO made-up statistics** - No "60%", "0.87 correlation", etc. without verified sources
+3. ❌ **NO fake percentages** - If you don't have the real number, don't make one up
+4. ❌ **NO sample/mock/placeholder data** - Real data or nothing
+5. ❌ **NO hallucinations** - Don't claim facts you haven't verified
+6. ❌ **NO assumptions presented as facts** - State uncertainty clearly
+7. ❌ **NO "approximately" for made-up numbers** - Don't disguise fake data
+8. ❌ **NO random generation** - Data must be deterministic from real sources
+
+### ✅ REQUIRED BEHAVIOR - ALWAYS:
+1. ✅ **Use ONLY verified data** from official sources (BLS, Census, Fed, etc.)
+2. ✅ **State "Data not available"** if real data doesn't exist yet
+3. ✅ **Mark placeholders CLEARLY** with warnings in console and UI
+4. ✅ **Cite sources** for any specific numbers or statistics
+5. ✅ **Say "Unverified"** if uncertain about facts
+6. ✅ **General truthful statements** instead of fake precision
+7. ✅ **Ask user** if unsure whether data is available
+8. ✅ **Check sources** before claiming correlations or relationships
+
+### 🔥 WHY THIS IS SUPREME PRIORITY:
+- Users make **REAL financial decisions** with **REAL money**
+- Fake data = **Securities fraud** = **ILLEGAL**
+- Fake statistics = **Misleading investors** = **Lawsuits**
+- Random data = **Financial losses** = **Destroyed lives**
+- **Professional reputation** = **DESTROYED** if caught
+- **Legal liability** = **MASSIVE** for financial misinformation
+
+### 📝 ENFORCEMENT:
+- Check EVERY piece of data before displaying
+- Question EVERY statistic without a source
+- If in doubt, DON'T show it
+- Better to say "Data unavailable" than show fake data
+- User trust is **PRICELESS** - don't destroy it with lies
+
+**VIOLATIONS OF THIS RULE ARE CAREER-ENDING AND POTENTIALLY CRIMINAL.**
+
+---
+
+## 💎 DIAMOND RULE: FIX BEFORE THE USER KNOWS (SECOND PRIORITY)
+
+**The user should NEVER see errors, bugs, or broken functionality.**
+
+###  Autonomous Self-Healing Philosophy:
+1. ✅ **Detect issues autonomously** - Check everything before opening
+2. ✅ **Fix silently** - Self-heal without user intervention
+3. ✅ **Validate completely** - Test all pages load correctly
+4. ✅ **Clear cache automatically** - No stale data ever
+5. ✅ **Open only when perfect** - Browser launches when 100% ready
+6. ✅ **Zero user friction** - Seamless experience, always
+
+### Implementation:
+- **Script**: `BULLETPROOF_STARTUP.py` - Permanent solution that GUARANTEES zero errors
+- **Launcher**: `START_SPARTAN_BULLETPROOF.bat` - One-click startup (works every time)
+- **Checks**: Port availability, server health, HTTP response validation, page loading
+- **Auto-fixes**: Port conflicts, stuck processes, server restart, cache-busting
+- **Result**: User sees ZERO errors, only working website - GUARANTEED
+
+### 🛡️ BULLETPROOF STARTUP SYSTEM (PERMANENT SOLUTION):
+
+**Problem Solved**: "127.0.0.1 refused to connect" - will NEVER happen again!
+
+**Usage**:
+1. **Manual Start**: Double-click `START_SPARTAN_BULLETPROOF.bat`
+2. **Auto-Start**: Run `INSTALL_AUTO_STARTUP.bat` (starts on Windows boot)
+3. **Diagnostics**: Run `DIAGNOSE_STARTUP.bat` if issues occur
+
+**How It Works**:
+1. ✅ Kills any stuck processes on port 9000
+2. ✅ Starts server in background
+3. ✅ Waits for server to be FULLY ready (health checks)
+4. ✅ Tests that HTTP responses are working
+5. ✅ Only THEN opens browser with cache-busting
+6. ✅ Keeps server running in background
+
+**Guarantees**:
+- ✅ Server is 100% ready before browser opens
+- ✅ No "connection refused" errors - ever
+- ✅ Works on first try, every time
+- ✅ Automatic port cleanup and conflict resolution
+- ✅ Comprehensive health checks before launch
+
+**Files**:
+- `BULLETPROOF_STARTUP.py` - Core startup engine
+- `START_SPARTAN_BULLETPROOF.bat` - Windows launcher (USE THIS)
+- `INSTALL_AUTO_STARTUP.bat` - Add to Windows startup
+- `DIAGNOSE_STARTUP.py` / `.bat` - Troubleshooting tools
+- `STARTUP_README.txt` - Complete documentation
+
+**This is THE MOST IMPORTANT RULE. Everything else serves this.**
+
+---
+
+## 🏆 GOLDEN RULES - ENFORCED ACROSS ENTIRE WEBSITE
+
+These rules apply to **EVERY PAGE, EVERY FEATURE, EVERY LINE OF CODE** on this website. No exceptions.
+
+---
+
+## 🚨 GOLDEN RULE #1: NO MOCK/FAKE DATA - EVER (MOST CRITICAL)
+
+**NEVER USE MOCK, SAMPLE, FAKE, OR MADE-UP DATA ANYWHERE ON THIS WEBSITE.**
+
+This is the **#1 PRIORITY** rule. Users make real trading decisions with real money.
+
+### Absolutely Forbidden:
+- ❌ `Math.random()` for ANY financial metric
+- ❌ Hardcoded prices, returns, percentages
+- ❌ Simulated/generated data
+- ❌ "Demo" or "sample" datasets
+- ❌ Fake correlations or statistics
+
+### Only Allowed:
+- ✅ Real APIs (Alpha Vantage, Yahoo Finance, CoinGecko, etc.)
+- ✅ Official exchange data
+- ✅ Calculations FROM real data only
+- ✅ Clear warnings when using templates
+
+**See**: `NO_MOCK_DATA_RULE.md` for complete enforcement details
+
+---
+
+## 🚨 GOLDEN RULE #2: Single Global Symbol Database (MUST ENFORCE)
+
+**THERE IS ONE AND ONLY ONE SYMBOL DATABASE FOR THIS ENTIRE WEBSITE:**
+- **File**: `symbols_database.json`
+- **Contains**: ALL SYMBOLS ON PLANET EARTH (11,902+ and growing)
+- **Coverage**: EVERY exchange, EVERY country, EVERY market cap, EVERY asset class
+- **Scope**: Global - from penny stocks in India to mega-caps in the USA
+
+### NEVER DO THIS:
+- ❌ Create separate symbol databases for individual pages
+- ❌ Hardcode symbol lists in HTML/JavaScript
+- ❌ Duplicate symbols across multiple files
+- ❌ Create page-specific symbol JSON files
+
+### ALWAYS DO THIS:
+- ✅ Load symbols from `symbols_database.json` using `fetch('symbols_database.json')`
+- ✅ Reference `SYMBOLS_DATABASE_RULE.md` for implementation details
+- ✅ Check for duplicates before adding new symbols
+- ✅ Update all pages to use this single database
+
+**For detailed implementation**, see: `SYMBOLS_DATABASE_RULE.md`
+
+---
+
+## 🚨 CRITICAL RULE #2: NO MOCK/FAKE DATA - EVER (SERIOUSLY ENFORCED)
+
+**NEVER USE MOCK, SAMPLE, FAKE, OR MADE-UP DATA ANYWHERE ON THIS WEBSITE.**
+
+### This Means:
+- ❌ NO `Math.random()` for prices, returns, percentages
+- ❌ NO hardcoded sample values
+- ❌ NO simulated/generated financial data
+- ❌ NO "AI-generated" seasonality patterns
+- ❌ NO fake correlations
+
+### Only Use:
+- ✅ Real APIs (Alpha Vantage, Yahoo Finance, CoinGecko)
+- ✅ Official exchange data (NASDAQ FTP, CME)
+- ✅ Calculated values FROM real data only
+- ✅ Clear "Loading..." or error states when data unavailable
+
+### Why This is Serious:
+Users make **real trading decisions** with **real money** based on this data.
+Fake data = financial losses = lawsuits = destroyed reputation.
+
+**For complete details**, see: `NO_MOCK_DATA_RULE.md`
+
+**Violations**: Report and fix immediately. No exceptions.
+
+---
+
+This file provides guidance to Claude Code when working with the Spartan Research Station website and ensures the **Ultimate Global Symbol Database** is always available in memory.
+
+## Environment Overview
+
+**Spartan Research Station** is a comprehensive financial market research platform featuring:
+- Real-time symbol analysis across 12,000+ global instruments
+- Coverage of 25+ international stock exchanges
+- VIX correlation analysis with dual-axis charting
+- AI-powered novel insights and trading recommendations
+- ROCE (Return on Capital Employed) research
+- Harmonic cycle forecasting
+- Interactive network visualizations
+
+**Design Theme**: Spartan aesthetic with dark blue (#0a1628, #050b14), gold (#FFD700), green (#00ff88), and primary blue (#0096FF) accents.
+
+**Deployment**: Python HTTP server on port 8081 with auto-start scripts.
+
+## Ultimate Global Symbol Database (v4.0 - COMPREHENSIVE GLOBAL COVERAGE)
+
+### Database Location
+**Primary Source**: `/symbols_database.json` (13,000+ instruments from 25+ countries, auto-updated every 24 hours)
+
+### Database Structure
+```json
+{
+  "stocks": [12,200+ entries],  // ALL US stocks + 480 international stocks from 26 exchanges
+  "futures": [43 entries],      // Index, Energy, Metals, Agriculture, Bonds, Volatility
+  "forex": [41 entries],        // Majors, Minors, Exotics
+  "crypto": [250+ entries],     // Top cryptocurrencies by market cap
+  "etfs": [100+ entries],       // Equity, Sector, Commodity, Bond, Leveraged
+  "indices": [18 entries],      // Global market indices
+  "metadata": {
+    "total_symbols": 13000+,
+    "version": "4.0 - COMPREHENSIVE GLOBAL DATABASE - 25+ EXCHANGES",
+    "exchanges_covered": [
+      "US: NASDAQ, NYSE",
+      "India: NSE (National Stock Exchange), BSE (Bombay Stock Exchange)",
+      "Asia: TSE (Japan), HKEX, SSE, SZSE (China), ASX, NZX, SGX, KOSPI, TWSE",
+      "Europe: LSE, XETRA, Euronext (Paris/Amsterdam/Brussels), SIX, BME, BIT, OMX",
+      "Americas: TSX (Canada), B3 (Brazil), BMV (Mexico)",
+      "Middle East/Africa: TASE (Israel), JSE (South Africa)"
+    ],
+    "countries_covered": [
+      "USA", "India", "Japan", "China", "Hong Kong", "Australia", "New Zealand",
+      "Singapore", "South Korea", "Taiwan", "UK", "Germany", "France", "Netherlands",
+      "Belgium", "Switzerland", "Spain", "Italy", "Sweden", "Denmark", "Canada",
+      "Brazil", "Mexico", "Israel", "South Africa"
+    ]
+  }
+}
+```
+
+### Autonomous Update System
+- **Auto-Updater**: `auto_update_symbols.py` and `autonomous_symbol_downloader.py`
+- **Update Frequency**: Every 24 hours automatically
+- **Data Sources**:
+  - NASDAQ Official FTP (nasdaqtrader.com) - Complete US listings
+  - NYSE Official FTP (nasdaqtrader.com) - Complete US listings
+  - 26 International Stock Exchanges (see list above)
+  - CoinGecko API (top 250+ crypto by market cap)
+  - CME/CBOT/NYMEX/ICE/CFE futures (comprehensive global coverage)
+  - Major global forex pairs (Majors, Minors, Exotics)
+  - Major global ETF providers
+- **Launch**: Run `START_AUTO_SYMBOL_UPDATER.bat` for autonomous operation
+- **Manual**: Run `python3 autonomous_symbol_downloader.py` for immediate update
+
+### Symbol Object Schema
+```javascript
+{
+  "symbol": "AAPL",           // Ticker symbol
+  "name": "Apple Inc.",       // Full company/instrument name
+  "exchange": "NASDAQ",       // Primary exchange
+  "sector": "Technology",     // Sector/category
+  "marketCap": "3.5T",       // Market capitalization (stocks only)
+  "type": "Stock",           // Asset type
+  "country": "USA"           // Primary country
+}
+```
+
+## Complete Symbol Database (Load into Memory)
+
+**NOTE: Database contains ALL 11,785 US stocks (complete NASDAQ + NYSE listings). The sections below show the most commonly traded instruments for quick reference.**
+
+### STOCKS (11,785 Total - ALL US Stocks)
+
+#### Most Popular US Stocks (Quick Reference)
+
+#### US Technology (20)
+- **AAPL** - Apple Inc. (NASDAQ, $3.5T)
+- **MSFT** - Microsoft Corporation (NASDAQ, $3.2T)
+- **NVDA** - NVIDIA Corporation (NASDAQ, $2.8T)
+- **GOOGL** - Alphabet Inc. (NASDAQ, $1.9T)
+- **AMZN** - Amazon.com Inc. (NASDAQ, $1.8T)
+- **META** - Meta Platforms Inc. (NASDAQ, $1.2T)
+- **TSLA** - Tesla Inc. (NASDAQ, $850B)
+- **AVGO** - Broadcom Inc. (NASDAQ, $720B)
+- **ORCL** - Oracle Corporation (NYSE, $380B)
+- **CRM** - Salesforce Inc. (NYSE, $290B)
+- **ADBE** - Adobe Inc. (NASDAQ, $260B)
+- **CSCO** - Cisco Systems (NASDAQ, $240B)
+- **INTC** - Intel Corporation (NASDAQ, $180B)
+- **AMD** - Advanced Micro Devices (NASDAQ, $280B)
+- **QCOM** - Qualcomm Inc. (NASDAQ, $210B)
+- **TXN** - Texas Instruments (NASDAQ, $175B)
+- **AMAT** - Applied Materials (NASDAQ, $165B)
+- **LRCX** - Lam Research (NASDAQ, $140B)
+- **KLAC** - KLA Corporation (NASDAQ, $110B)
+- **SNPS** - Synopsys Inc. (NASDAQ, $95B)
+
+#### US Financial (10)
+- **JPM** - JPMorgan Chase (NYSE, $580B)
+- **V** - Visa Inc. (NYSE, $550B)
+- **MA** - Mastercard Inc. (NYSE, $420B)
+- **BAC** - Bank of America (NYSE, $320B)
+- **WFC** - Wells Fargo (NYSE, $210B)
+- **GS** - Goldman Sachs (NYSE, $140B)
+- **MS** - Morgan Stanley (NYSE, $170B)
+- **SCHW** - Charles Schwab (NYSE, $140B)
+- **AXP** - American Express (NYSE, $180B)
+- **BLK** - BlackRock Inc. (NYSE, $130B)
+
+#### US Healthcare (8)
+- **UNH** - UnitedHealth Group (NYSE, $520B)
+- **JNJ** - Johnson & Johnson (NYSE, $410B)
+- **LLY** - Eli Lilly (NYSE, $780B)
+- **ABBV** - AbbVie Inc. (NYSE, $310B)
+- **MRK** - Merck & Co. (NYSE, $280B)
+- **TMO** - Thermo Fisher Scientific (NYSE, $220B)
+- **ABT** - Abbott Laboratories (NYSE, $210B)
+- **PFE** - Pfizer Inc. (NYSE, $170B)
+
+#### US Energy (6)
+- **XOM** - Exxon Mobil (NYSE, $480B)
+- **CVX** - Chevron Corporation (NYSE, $310B)
+- **COP** - ConocoPhillips (NYSE, $140B)
+- **SLB** - Schlumberger (NYSE, $75B)
+- **EOG** - EOG Resources (NYSE, $82B)
+- **PSX** - Phillips 66 (NYSE, $65B)
+
+#### US Consumer (10)
+- **WMT** - Walmart Inc. (NYSE, $520B)
+- **HD** - Home Depot (NYSE, $410B)
+- **COST** - Costco Wholesale (NASDAQ, $360B)
+- **MCD** - McDonald's Corp. (NYSE, $220B)
+- **NKE** - Nike Inc. (NYSE, $180B)
+- **SBUX** - Starbucks Corp. (NASDAQ, $120B)
+- **TGT** - Target Corporation (NYSE, $75B)
+- **LOW** - Lowe's Companies (NYSE, $150B)
+- **DIS** - Walt Disney (NYSE, $210B)
+- **NFLX** - Netflix Inc. (NASDAQ, $280B)
+
+#### International (480+ stocks from 26 exchanges - Selected Examples)
+
+**India (45 stocks total)**
+- **RELIANCE.NS** - Reliance Industries Limited (NSE, India's largest company)
+- **TCS.NS** - Tata Consultancy Services (NSE, IT Services)
+- **HDFCBANK.NS** - HDFC Bank (NSE, Banking)
+- **INFY.NS** - Infosys (NSE, IT Services)
+- **RELIANCE.BO** - Reliance Industries (BSE)
+
+**Japan (30 stocks)**
+- **7203.T** - Toyota Motor (TSE)
+- **6758.T** - Sony Group (TSE)
+- **9984.T** - SoftBank Group (TSE)
+
+**China (69 stocks total)**
+- **0700.HK** - Tencent Holdings (HKEX)
+- **9988.HK** - Alibaba Group (HKEX)
+- **600519.SS** - Kweichow Moutai (SSE Shanghai)
+- **000858.SZ** - Wuliangye Yibin (SZSE Shenzhen)
+
+**Europe**
+- **HSBA.L** - HSBC Holdings (LSE, UK)
+- **SAP.DE** - SAP SE (XETRA, Germany)
+- **MC.PA** - LVMH (Euronext Paris, France)
+- **ASML.AS** - ASML Holding (Euronext Amsterdam, Netherlands)
+- **NESN.SW** - Nestlé (SIX Swiss Exchange, Switzerland)
+- **ITX.MC** - Inditex (BME Madrid, Spain)
+
+**Americas**
+- **RY.TO** - Royal Bank of Canada (TSX)
+- **SHOP.TO** - Shopify (TSX, Canada)
+- **PETR4.SA** - Petrobras (B3, Brazil)
+- **VALE3.SA** - Vale (B3, Brazil)
+- **AMXL.MX** - América Móvil (BMV, Mexico)
+
+**Asia-Pacific**
+- **BHP.AX** - BHP Group (ASX, Australia)
+- **CBA.AX** - Commonwealth Bank (ASX, Australia)
+- **D05.SI** - DBS Group (SGX, Singapore)
+- **005930.KS** - Samsung Electronics (KOSPI, South Korea)
+- **2330.TW** - Taiwan Semiconductor (TWSE, Taiwan)
+
+**Middle East & Africa**
+- **ICL.TA** - ICL Group (TASE, Israel)
+- **NPN.JO** - Naspers (JSE, South Africa)
+
+### FUTURES (43 Total)
+
+#### Index Futures (8)
+- **ES** - E-mini S&P 500 (CME)
+- **NQ** - E-mini NASDAQ-100 (CME)
+- **YM** - E-mini Dow (CBOT)
+- **RTY** - E-mini Russell 2000 (CME)
+- **MES** - Micro E-mini S&P 500 (CME)
+- **MNQ** - Micro E-mini NASDAQ (CME)
+- **M2K** - Micro E-mini Russell 2000 (CME)
+- **VX** - VIX Futures (CFE)
+
+#### Energy Futures (6)
+- **CL** - Crude Oil WTI (NYMEX)
+- **NG** - Natural Gas (NYMEX)
+- **RB** - RBOB Gasoline (NYMEX)
+- **HO** - Heating Oil (NYMEX)
+- **BZ** - Brent Crude (ICE)
+- **QM** - E-mini Crude Oil (NYMEX)
+
+#### Metals Futures (6)
+- **GC** - Gold (COMEX)
+- **SI** - Silver (COMEX)
+- **HG** - Copper (COMEX)
+- **PL** - Platinum (NYMEX)
+- **PA** - Palladium (NYMEX)
+- **MGC** - Micro Gold (COMEX)
+
+#### Agriculture Futures (11)
+- **ZC** - Corn (CBOT)
+- **ZS** - Soybeans (CBOT)
+- **ZW** - Wheat (CBOT)
+- **ZL** - Soybean Oil (CBOT)
+- **ZM** - Soybean Meal (CBOT)
+- **ZR** - Rough Rice (CBOT)
+- **ZO** - Oats (CBOT)
+- **LE** - Live Cattle (CME)
+- **GF** - Feeder Cattle (CME)
+- **HE** - Lean Hogs (CME)
+- **KC** - Coffee (ICE)
+
+#### Bond Futures (4)
+- **ZN** - 10-Year T-Note (CBOT)
+- **ZB** - 30-Year T-Bond (CBOT)
+- **ZF** - 5-Year T-Note (CBOT)
+- **ZT** - 2-Year T-Note (CBOT)
+
+#### Volatility Futures (2)
+- **VX** - VIX Futures (CFE)
+- **VXM** - Mini VIX Futures (CFE)
+
+### FOREX (41 Total)
+
+#### Major Pairs (7)
+- **EURUSD** - Euro / US Dollar
+- **GBPUSD** - British Pound / US Dollar
+- **USDJPY** - US Dollar / Japanese Yen
+- **USDCHF** - US Dollar / Swiss Franc
+- **USDCAD** - US Dollar / Canadian Dollar
+- **AUDUSD** - Australian Dollar / US Dollar
+- **NZDUSD** - New Zealand Dollar / US Dollar
+
+#### Cross Pairs (19)
+- **EURJPY** - Euro / Japanese Yen
+- **EURGBP** - Euro / British Pound
+- **EURCHF** - Euro / Swiss Franc
+- **EURAUD** - Euro / Australian Dollar
+- **EURCAD** - Euro / Canadian Dollar
+- **EURNZD** - Euro / New Zealand Dollar
+- **GBPJPY** - British Pound / Japanese Yen
+- **GBPCHF** - British Pound / Swiss Franc
+- **GBPAUD** - British Pound / Australian Dollar
+- **GBPCAD** - British Pound / Canadian Dollar
+- **GBPNZD** - British Pound / New Zealand Dollar
+- **AUDJPY** - Australian Dollar / Japanese Yen
+- **AUDCAD** - Australian Dollar / Canadian Dollar
+- **AUDNZD** - Australian Dollar / New Zealand Dollar
+- **CADJPY** - Canadian Dollar / Japanese Yen
+- **CHFJPY** - Swiss Franc / Japanese Yen
+- **NZDJPY** - New Zealand Dollar / Japanese Yen
+- **NZDCAD** - New Zealand Dollar / Canadian Dollar
+- **NZDCHF** - New Zealand Dollar / Swiss Franc
+
+#### Exotic Pairs (10)
+- **USDMXN** - US Dollar / Mexican Peso
+- **USDBRL** - US Dollar / Brazilian Real
+- **USDZAR** - US Dollar / South African Rand
+- **USDTRY** - US Dollar / Turkish Lira
+- **USDINR** - US Dollar / Indian Rupee
+- **USDSGD** - US Dollar / Singapore Dollar
+- **USDHKD** - US Dollar / Hong Kong Dollar
+- **USDKRW** - US Dollar / South Korean Won
+- **USDRUB** - US Dollar / Russian Ruble
+- **USDPLN** - US Dollar / Polish Zloty
+
+### CRYPTO (239 Total - Top Cryptocurrencies by Market Cap)
+- **BTCUSD** - Bitcoin ($1.2T)
+- **ETHUSD** - Ethereum ($380B)
+- **BNBUSD** - Binance Coin ($95B)
+- **XRPUSD** - XRP ($35B)
+- **ADAUSD** - Cardano ($18B)
+- **DOGUSD** - Dogecoin ($12B)
+- **SOLUSD** - Solana ($48B)
+- **MATUSD** - Polygon ($8B)
+- **DOTUSD** - Polkadot ($9B)
+- **SHIUSD** - Shiba Inu ($6B)
+- **AVAUSD** - Avalanche ($14B)
+- **LTCUSD** - Litecoin ($7B)
+- **LINKUSD** - Chainlink ($11B)
+- **BCHUSD** - Bitcoin Cash ($5B)
+- **XLMUSD** - Stellar ($3B)
+- **ATOMUSD** - Cosmos ($4B)
+- **ETCUSD** - Ethereum Classic ($3.5B)
+- **XMRUSD** - Monero ($2.8B)
+- **ALGOUSD** - Algorand ($2.2B)
+- **VETUSD** - VeChain ($1.9B)
+
+### ETFs (73 Total)
+
+#### Equity ETFs (6)
+- **SPY** - SPDR S&P 500 ETF ($520B)
+- **QQQ** - Invesco QQQ Trust ($240B)
+- **IWM** - iShares Russell 2000 ($68B)
+- **DIA** - SPDR Dow Jones Industrial ($32B)
+- **VOO** - Vanguard S&P 500 ETF ($420B)
+- **VTI** - Vanguard Total Stock Market ($380B)
+
+#### Sector ETFs (9)
+- **XLK** - Technology Select Sector SPDR ($62B)
+- **XLF** - Financial Select Sector SPDR ($45B)
+- **XLE** - Energy Select Sector SPDR ($38B)
+- **XLV** - Health Care Select Sector SPDR ($42B)
+- **XLI** - Industrial Select Sector SPDR ($21B)
+- **XLP** - Consumer Staples Select Sector ($19B)
+- **XLY** - Consumer Discretionary Select ($22B)
+- **XLU** - Utilities Select Sector SPDR ($16B)
+- **XLB** - Materials Select Sector SPDR ($9B)
+
+#### Commodity ETFs (5)
+- **GLD** - SPDR Gold Shares ($72B)
+- **SLV** - iShares Silver Trust ($15B)
+- **USO** - United States Oil Fund ($2.1B)
+- **UNG** - United States Natural Gas ($950M)
+- **DBA** - Invesco DB Agriculture ($1.2B)
+
+#### Bond ETFs (6)
+- **TLT** - iShares 20+ Year Treasury ($48B)
+- **AGG** - iShares Core US Aggregate Bond ($110B)
+- **BND** - Vanguard Total Bond Market ($105B)
+- **LQD** - iShares iBoxx Investment Grade ($42B)
+- **HYG** - iShares iBoxx High Yield Corporate ($24B)
+- **TIP** - iShares TIPS Bond ($38B)
+
+#### International ETFs (5)
+- **EFA** - iShares MSCI EAFE ($95B)
+- **EEM** - iShares MSCI Emerging Markets ($28B)
+- **VWO** - Vanguard FTSE Emerging Markets ($92B)
+- **FXI** - iShares China Large-Cap ($6.8B)
+- **EWJ** - iShares MSCI Japan ($14B)
+
+#### Leveraged ETFs (6)
+- **TQQQ** - ProShares UltraPro QQQ ($21B)
+- **SQQQ** - ProShares UltraPro Short QQQ ($6.5B)
+- **UPRO** - ProShares UltraPro S&P 500 ($3.2B)
+- **SPXU** - ProShares UltraPro Short S&P 500 ($850M)
+- **UVXY** - ProShares Ultra VIX Short-Term ($650M)
+- **VXX** - iPath Series B S&P 500 VIX ($1.1B)
+
+### INDICES (18 Total)
+
+#### US Indices (5)
+- **SPX** - S&P 500 Index
+- **NDX** - NASDAQ-100 Index
+- **DJI** - Dow Jones Industrial Average
+- **RUT** - Russell 2000 Index
+- **VIX** - CBOE Volatility Index
+
+#### European Indices (4)
+- **DAX** - DAX Performance Index (Germany)
+- **FTSE** - FTSE 100 Index (UK)
+- **CAC** - CAC 40 Index (France)
+- **STOXX50** - Euro Stoxx 50 Index
+
+#### Asian Indices (4)
+- **NIKKEI** - Nikkei 225 Index (Japan)
+- **HSI** - Hang Seng Index (Hong Kong)
+- **SSE** - Shanghai Composite Index (China)
+- **SENSEX** - S&P BSE Sensex (India)
+
+#### Other Global (2)
+- **IBOV** - IBOVESPA Index (Brazil)
+- **ASX** - S&P/ASX 200 Index (Australia)
+
+## Page Architecture
+
+### Core Pages
+1. **index.html** - Main navigation dashboard with all research tools
+2. **symbol_research.html** - Interactive symbol search with database access
+3. **symbol_search_connections.html** - VIX correlation analysis with dual-axis charts
+4. **roce_research.html** - Return on Capital Employed analysis
+5. **force_fresh.html** - Cache-clearing page with auto-redirect
+6. **test_symbol_database.html** - Database diagnostic and validation
+
+### Server Infrastructure
+- **serve_website.py** - Main HTTP server on port 8081
+- **spartan_api_server.py** - Harmonic API server for cycle forecasting
+- **SPARTAN_AUTO_START.bat** - Windows auto-launch script
+
+### Database Generation
+- **build_ultimate_global_database.py** - Database builder script (211 symbols)
+
+## VIX Correlation Analysis
+
+### Correlation Interpretation
+```javascript
+// Negative correlation (-0.9 to -0.5): Inverse relationship with fear
+// Symbol rises when VIX falls (normal market behavior)
+// Examples: SPY, QQQ, most stocks
+
+// Positive correlation (+0.5 to +0.9): Direct relationship with fear
+// Symbol rises when VIX rises (defensive assets)
+// Examples: VXX, UVXY, TLT, GLD
+
+// Weak correlation (-0.3 to +0.3): Independent of fear
+// Examples: Some commodities, currency pairs
+```
+
+### Sector-Specific VIX Relationships
+```javascript
+const sectorAdjustments = {
+    'Technology': -0.05,        // Slightly more fear-sensitive
+    'Financial': -0.03,         // Leveraged to market conditions
+    'Healthcare': +0.02,        // Defensive characteristics
+    'Utilities': +0.05,         // Safe haven sector
+    'Consumer Staples': +0.03,  // Defensive consumer goods
+    'Energy': -0.02,            // Commodity-driven volatility
+    'Materials': -0.02,         // Cyclical sensitivity
+    'Real Estate': +0.01        // Income-oriented defensive
+};
+```
+
+## Novel Insights Generation
+
+### Insight Categories
+1. **VIX Relationship Insights** - Based on correlation strength
+2. **Sector-Specific Analysis** - Industry dynamics and trends
+3. **Asset Class Characteristics** - Behavioral patterns
+4. **Market Cap Implications** - Size-based analysis
+
+### Buy/Sell Recommendation Logic
+```javascript
+// Daily Timeframe: Short-term (1-5 days)
+// - VIX level weighted more heavily
+// - Technical setup considerations
+// - Risk/reward ratio analysis
+
+// Weekly Timeframe: Medium-term (1-4 weeks)
+// - Broader trend analysis
+// - Fundamental factors
+// - Sector rotation dynamics
+```
+
+## Color Scheme Variables
+```css
+:root {
+    --bg-dark: #0a1628;         /* Primary background */
+    --bg-darker: #050b14;       /* Darker sections */
+    --gold: #FFD700;            /* Titles, accents */
+    --green: #00ff88;           /* Success, data */
+    --primary: #0096FF;         /* Links, primary actions */
+    --red: #ff6b6b;             /* Sell signals, alerts */
+    --orange: #ff9500;          /* VIX theme */
+    --purple: #9d4edd;          /* Insights theme */
+}
+```
+
+## Cache Prevention
+All pages implement aggressive cache prevention:
+```html
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+```
+
+## Quick Symbol Lookups
+
+### Most Popular Trading Instruments
+**Stocks**: AAPL, MSFT, NVDA, GOOGL, AMZN, META, TSLA
+**Futures**: ES, NQ, GC, CL, NG
+**Forex**: EURUSD, GBPUSD, USDJPY
+**Crypto**: BTCUSD, ETHUSD, SOLUSD
+**ETFs**: SPY, QQQ, TLT, GLD, VXX
+**Indices**: SPX, NDX, VIX
+
+### High VIX Correlation (Defensive)
+VXX, UVXY, TLT, GLD, utilities, consumer staples
+
+### Negative VIX Correlation (Risk-On)
+Tech stocks, growth stocks, leveraged ETFs (TQQQ, UPRO)
+
+### VIX-Independent
+Commodities (agriculture), exotic forex pairs, some international stocks
+
+## Development Commands
+
+### Start Server
+```bash
+# Navigate to website directory
+cd /mnt/c/Users/Quantum/Downloads/Spartan_Labs/Spartan_Website
+
+# Start Python server on port 8081
+python3 serve_website.py
+
+# Or use Windows auto-start
+SPARTAN_AUTO_START.bat
+```
+
+### Rebuild Database
+```bash
+# Generate new database with latest symbols
+python3 build_ultimate_global_database.py
+
+# Verify database structure
+python3 -c "import json; print(json.load(open('symbols_database.json'))['metadata'])"
+```
+
+### Open in Browser
+```bash
+# Windows CMD from WSL
+/mnt/c/Windows/System32/cmd.exe /c start http://localhost:8081/index.html
+
+# Direct page access
+/mnt/c/Windows/System32/cmd.exe /c start http://localhost:8081/symbol_search_connections.html
+```
+
+## Important Notes
+
+- **Database is cached in browser**: Use force_fresh.html to clear cache
+- **All prices are simulated**: Real-time data requires API integration
+- **VIX correlations are deterministic**: Seeded random generation ensures consistency
+- **Spartan theme is mandatory**: Maintain color scheme across all pages
+- **211 symbols available**: Comprehensive coverage across all asset classes
+- **Cache prevention required**: Always implement no-cache headers on new pages
+
+## Symbol Search Tips
+
+### By Type
+```javascript
+// Search by asset class
+type:"Stock"     // All equities
+type:"Futures"   // All futures contracts
+type:"Forex"     // All currency pairs
+type:"Crypto"    // All cryptocurrencies
+type:"ETF"       // All exchange-traded funds
+type:"Index"     // All market indices
+```
+
+### By Sector
+```javascript
+sector:"Technology"
+sector:"Financial"
+sector:"Healthcare"
+sector:"Energy"
+sector:"Consumer"
+```
+
+### By Country
+```javascript
+country:"USA"
+country:"China"
+country:"Japan"
+country:"Germany"
+country:"Global"
+```
+
+This database is now permanently loaded into Claude Code's memory for instant access when working in this directory.

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+find ~ -maxdepth 3 -name ".git" -type d 2>/dev/null | while IFS= read -r gitdir; do
+  repo_dir=$(dirname "$gitdir")
+  cd "$repo_dir" 2>/dev/null || continue
+  if git remote -v 2>/dev/null | grep -q "github.com"; then
+    echo "$repo_dir"
+  fi
+done

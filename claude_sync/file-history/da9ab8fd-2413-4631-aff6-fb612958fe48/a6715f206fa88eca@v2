@@ -1,0 +1,19 @@
+#!/bin/bash
+
+# Find all git repositories and pull from GitHub
+find ~ -name ".git" -type d -prune 2>/dev/null | while IFS= read -r gitdir; do
+  repo_dir=$(dirname "$gitdir")
+  echo "================================================"
+  echo "Repository: $repo_dir"
+  echo "================================================"
+  cd "$repo_dir" || continue
+
+  # Check if there's a GitHub remote configured
+  if git remote -v 2>/dev/null | grep -q "github.com"; then
+    echo "Pulling from GitHub..."
+    git pull 2>&1 || echo "Failed to pull (may have uncommitted changes or conflicts)"
+  else
+    echo "No GitHub remote found, skipping..."
+  fi
+  echo ""
+done

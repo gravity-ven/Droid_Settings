@@ -1,17 +1,33 @@
 {
-  "timestamp": "2025-11-14T22:20:00.761847",
+  "timestamp": "2025-11-14T22:30:00.972084",
   "directory_status": {
+    "droid": {
+      "type": "file",
+      "size_bytes": 214
+    },
+    "droids": {
+      "type": "directory",
+      "file_count": 6
+    },
     "projects": {
       "type": "directory",
-      "file_count": 16
+      "file_count": 19
     },
     "session-env": {
       "type": "directory",
       "file_count": 0
     },
+    "droid_cli.py": {
+      "type": "file",
+      "size_bytes": 8893
+    },
+    "settings.local.json": {
+      "type": "file",
+      "size_bytes": 125
+    },
     ".claude": {
       "type": "directory",
-      "file_count": 0
+      "file_count": 1
     },
     "agents": {
       "type": "directory",
@@ -20,6 +36,14 @@
     "state": {
       "type": "directory",
       "file_count": 1
+    },
+    "DROID_GUIDE.md": {
+      "type": "file",
+      "size_bytes": 11521
+    },
+    "droid_loader.py": {
+      "type": "file",
+      "size_bytes": 8785
     },
     "statsig": {
       "type": "directory",
@@ -35,15 +59,15 @@
     },
     "todos": {
       "type": "directory",
-      "file_count": 7
+      "file_count": 8
     },
     "history.jsonl": {
       "type": "file",
-      "size_bytes": 2964
+      "size_bytes": 3921
     },
     "file-history": {
       "type": "directory",
-      "file_count": 12
+      "file_count": 20
     },
     "downloads": {
       "type": "directory",
@@ -59,18 +83,18 @@
     },
     "debug": {
       "type": "directory",
-      "file_count": 10
+      "file_count": 11
     }
   },
   "sync_status": {
     "status": "active",
-    "last_health_check": "2025-11-14T22:20:00.500002",
+    "last_health_check": "2025-11-14T22:30:00.882172",
     "direction": "bidirectional"
   },
   "health_status": {
     "status": "healthy",
     "issues": [],
-    "free_space_mb": 131465
+    "free_space_mb": 131439
   },
   "optimizations": {
     "status": "not_optimized"
