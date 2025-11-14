@@ -9,7 +9,7 @@
 [DEBUG] LSP manager initialized with 0 servers
 [DEBUG] LSP server manager initialized successfully
 [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
-[DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/spartan/.claude/skills, project=/Users/spartan/.claude/.claude/skills
+[DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/spartan/.claude/skills, project=/Users/spartan/Downloads/.claude/skills
 [DEBUG] >>>>> getPluginSkills CALLED <<<<<
 [DEBUG] getPluginSkills: Processing 0 enabled plugins
 [DEBUG] Total plugin skills loaded: 0
@@ -21,62 +21,69 @@
 [DEBUG] Creating shell snapshot for zsh (/bin/zsh)
 [DEBUG] Looking for shell config file: /Users/spartan/.zshrc
 [DEBUG] Snapshots directory: /Users/spartan/.claude/shell-snapshots
-[DEBUG] Creating snapshot at: /Users/spartan/.claude/shell-snapshots/snapshot-zsh-1763118641686-szaqul.sh
+[DEBUG] Creating snapshot at: /Users/spartan/.claude/shell-snapshots/snapshot-zsh-1763119590659-rdxfoz.sh
 [DEBUG] Shell binary exists: true
 [DEBUG] Execution timeout: 10000ms
-[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json.tmp.24859.1763118641688
+[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763119590660
 [DEBUG] Temp file written successfully, size: 2 bytes
-[DEBUG] Renaming /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json.tmp.24859.1763118641688 to /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json
-[DEBUG] File /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json written atomically
-[DEBUG] Total plugin agents loaded: 0
-[DEBUG] Shell snapshot created successfully (2667 bytes)
-[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.24859.1763118641873
+[DEBUG] Renaming /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763119590660 to /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json
+[DEBUG] File /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763119590669
 [DEBUG] Preserving file permissions: 100600
-[DEBUG] Temp file written successfully, size: 40489 bytes
+[DEBUG] Temp file written successfully, size: 40684 bytes
 [DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude.json.tmp.24859.1763118641873 to /Users/spartan/.claude.json
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763119590669 to /Users/spartan/.claude.json
 [DEBUG] File /Users/spartan/.claude.json written atomically
-[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.24859.1763118641877
+[DEBUG] Total plugin agents loaded: 0
+[DEBUG] Shell snapshot created successfully (2792 bytes)
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763119590839
 [DEBUG] Preserving file permissions: 100600
-[DEBUG] Temp file written successfully, size: 40489 bytes
+[DEBUG] Temp file written successfully, size: 40684 bytes
 [DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude.json.tmp.24859.1763118641877 to /Users/spartan/.claude.json
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763119590839 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763119590841
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40684 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763119590841 to /Users/spartan/.claude.json
 [DEBUG] File /Users/spartan/.claude.json written atomically
 [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/spartan/.local/share/claude/versions/2.0.37)
-[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.24859.1763118642537
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763119591549
 [DEBUG] Preserving file permissions: 100600
-[DEBUG] Temp file written successfully, size: 40489 bytes
+[DEBUG] Temp file written successfully, size: 40684 bytes
 [DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude.json.tmp.24859.1763118642537 to /Users/spartan/.claude.json
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763119591549 to /Users/spartan/.claude.json
 [DEBUG] File /Users/spartan/.claude.json written atomically
 [DEBUG] Getting matching hook commands for SessionStart with query: startup
 [DEBUG] Found 0 hook matchers in settings
 [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
 [DEBUG] Skills and commands included in Skill tool:
 [DEBUG] Slash commands included in SlashCommand tool:
-[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.24859.1763118642559
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763119591582
 [DEBUG] Preserving file permissions: 100600
-[DEBUG] Temp file written successfully, size: 40594 bytes
+[DEBUG] Temp file written successfully, size: 40789 bytes
 [DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude.json.tmp.24859.1763118642559 to /Users/spartan/.claude.json
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763119591582 to /Users/spartan/.claude.json
 [DEBUG] File /Users/spartan/.claude.json written atomically
-[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.24859.1763118642585
+[DEBUG] Summarizing all 255 messages (~57018 tokens)
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763119591610
 [DEBUG] Preserving file permissions: 100600
-[DEBUG] Temp file written successfully, size: 40489 bytes
+[DEBUG] Temp file written successfully, size: 40684 bytes
 [DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude.json.tmp.24859.1763118642585 to /Users/spartan/.claude.json
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763119591610 to /Users/spartan/.claude.json
 [DEBUG] File /Users/spartan/.claude.json written atomically
-[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.24859.1763118642587
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763119591612
 [DEBUG] Preserving file permissions: 100600
-[DEBUG] Temp file written successfully, size: 40489 bytes
+[DEBUG] Temp file written successfully, size: 40684 bytes
 [DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude.json.tmp.24859.1763118642587 to /Users/spartan/.claude.json
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763119591612 to /Users/spartan/.claude.json
 [DEBUG] File /Users/spartan/.claude.json written atomically
-[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.24859.1763118642588
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763119591613
 [DEBUG] Preserving file permissions: 100600
-[DEBUG] Temp file written successfully, size: 40489 bytes
+[DEBUG] Temp file written successfully, size: 40684 bytes
 [DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude.json.tmp.24859.1763118642588 to /Users/spartan/.claude.json
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763119591613 to /Users/spartan/.claude.json
 [DEBUG] File /Users/spartan/.claude.json written atomically
 [DEBUG] AutoUpdaterWrapper: Installation type: native
 [DEBUG] performStartupChecks called
@@ -84,7 +91,10 @@
 [DEBUG] performBackgroundPluginInstallations called
 [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
 [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
 [DEBUG] Checking for native installer update to version 2.0.37
+[DEBUG] Summarizing all 248 messages (~73388 tokens)
 [DEBUG] Stream started - received first chunk
 [DEBUG] Stream started - received first chunk
 [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
@@ -93,6 +103,21 @@
 [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
 [DEBUG] Found 0 hook matchers in settings
 [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[ERROR] Error: Error: Lock file is already being held
+    at <anonymous> (/$bunfs/root/claude:87:11857)
+    at X (/$bunfs/root/claude:86:5167)
+    at <anonymous> (node:fs:243:13)
+    at processTicksAndRejections (native:7:39)
+[DEBUG] AutoUpdaterWrapper: Installation type: native
+[DEBUG] AutoUpdaterWrapper: Installation type: native
+[DEBUG] Checking for native installer update to version 2.0.37
+[ERROR] Error: Error: Lock file is already being held
+    at <anonymous> (/$bunfs/root/claude:87:11857)
+    at X (/$bunfs/root/claude:86:5167)
+    at <anonymous> (node:fs:243:13)
+    at processTicksAndRejections (native:7:39)
+[DEBUG] AutoUpdaterWrapper: Installation type: native
+[DEBUG] Checking for native installer update to version 2.0.37
 [ERROR] Error: Error: Lock file is already being held
     at <anonymous> (/$bunfs/root/claude:87:11857)
     at X (/$bunfs/root/claude:86:5167)
@@ -108,80 +133,11 @@
 [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
 [DEBUG] Found 0 hook matchers in settings
 [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
-[DEBUG] FileHistory: Added snapshot for 58330e28-883a-40cd-bd9c-21d63ce59784, tracking 0 files
+[DEBUG] FileHistory: Added snapshot for fce615a9-35a0-43f2-b3cd-3c1c0f11d906, tracking 0 files
 [DEBUG] Skills and commands included in Skill tool:
 [DEBUG] Slash commands included in SlashCommand tool:
 [DEBUG] Stream started - received first chunk
 [DEBUG] Stream started - received first chunk
-[DEBUG] Stream started - received first chunk
-[DEBUG] executePreToolHooks called for tool: WebFetch
-[DEBUG] executePreToolHooks called for tool: WebFetch
-[DEBUG] executePreToolHooks called for tool: WebSearch
-[DEBUG] Getting matching hook commands for PreToolUse with query: WebFetch
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "WebFetch" (0 before deduplication)
-[DEBUG] Getting matching hook commands for PreToolUse with query: WebFetch
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "WebFetch" (0 before deduplication)
-[DEBUG] Getting matching hook commands for PreToolUse with query: WebSearch
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "WebSearch" (0 before deduplication)
-[DEBUG] Stream started - received first chunk
-[DEBUG] Stream started - received first chunk
-[DEBUG] Stream started - received first chunk
-[DEBUG] Getting matching hook commands for PostToolUse with query: WebFetch
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "WebFetch" (0 before deduplication)
-[DEBUG] Getting matching hook commands for PostToolUse with query: WebFetch
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "WebFetch" (0 before deduplication)
-[DEBUG] Getting matching hook commands for PostToolUse with query: WebSearch
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "WebSearch" (0 before deduplication)
-[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
-[DEBUG] LSP Diagnostics: Checking registry - 0 pending
-[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
-[DEBUG] Hooks: getAsyncHookResponseAttachments called
-[DEBUG] Hooks: checkForNewResponses called
-[DEBUG] Hooks: Found 0 total hooks in registry
-[DEBUG] Hooks: checkForNewResponses returning 0 responses
-[DEBUG] Skills and commands included in Skill tool:
-[DEBUG] Slash commands included in SlashCommand tool:
-[DEBUG] Stream started - received first chunk
-[DEBUG] executePreToolHooks called for tool: WebFetch
-[DEBUG] Getting matching hook commands for PreToolUse with query: WebFetch
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "WebFetch" (0 before deduplication)
-[DEBUG] Stream started - received first chunk
-[DEBUG] Getting matching hook commands for PostToolUse with query: WebFetch
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "WebFetch" (0 before deduplication)
-[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
-[DEBUG] LSP Diagnostics: Checking registry - 0 pending
-[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
-[DEBUG] Hooks: getAsyncHookResponseAttachments called
-[DEBUG] Hooks: checkForNewResponses called
-[DEBUG] Hooks: Found 0 total hooks in registry
-[DEBUG] Hooks: checkForNewResponses returning 0 responses
-[DEBUG] Skills and commands included in Skill tool:
-[DEBUG] Slash commands included in SlashCommand tool:
-[DEBUG] Stream started - received first chunk
-[DEBUG] executePreToolHooks called for tool: Glob
-[DEBUG] Getting matching hook commands for PreToolUse with query: Glob
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
-[DEBUG] Getting matching hook commands for PostToolUse with query: Glob
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
-[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
-[DEBUG] LSP Diagnostics: Checking registry - 0 pending
-[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
-[DEBUG] Hooks: getAsyncHookResponseAttachments called
-[DEBUG] Hooks: checkForNewResponses called
-[DEBUG] Hooks: Found 0 total hooks in registry
-[DEBUG] Hooks: checkForNewResponses returning 0 responses
-[DEBUG] Skills and commands included in Skill tool:
-[DEBUG] Slash commands included in SlashCommand tool:
 [DEBUG] Stream started - received first chunk
 [DEBUG] executePreToolHooks called for tool: Bash
 [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
@@ -202,14 +158,82 @@
 [DEBUG] Slash commands included in SlashCommand tool:
 [DEBUG] Stream started - received first chunk
 [DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763119722285
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40684 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763119722285 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763119722297
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40684 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763119722297 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message d1387d26-6eb6-4ac9-9712-cd25301649a3
+[DEBUG] FileHistory: Added snapshot for d1387d26-6eb6-4ac9-9712-cd25301649a3, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763119793523
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 1299 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763119793523 to /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json
+[DEBUG] File /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
 [DEBUG] executePreToolHooks called for tool: Bash
 [DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] executePreToolHooks called for tool: Glob
 [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
 [DEBUG] Found 0 hook matchers in settings
 [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
 [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
 [DEBUG] Found 0 hook matchers in settings
 [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
 [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
 [DEBUG] Found 0 hook matchers in settings
 [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
@@ -228,20 +252,577 @@
 [DEBUG] Stream started - received first chunk
 [DEBUG] Stream started - received first chunk
 [DEBUG] Stream started - received first chunk
-[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.24859.1763118799163
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763119824511
 [DEBUG] Preserving file permissions: 100600
-[DEBUG] Temp file written successfully, size: 40550 bytes
+[DEBUG] Temp file written successfully, size: 40684 bytes
 [DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude.json.tmp.24859.1763118799163 to /Users/spartan/.claude.json
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763119824511 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763119825397
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 1415 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763119825397 to /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json
+[DEBUG] File /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763119844026
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 1394 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763119844026 to /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json
+[DEBUG] File /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763119956814
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40685 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763119956814 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763120038887
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40685 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763120038887 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] executePreToolHooks called for tool: Write
+[DEBUG] Getting matching hook commands for PreToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html.tmp.27341.1763120044068
+[DEBUG] Temp file written successfully, size: 59080 bytes
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html.tmp.27341.1763120044068 to /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763120053995
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 1077 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763120053995 to /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json
+[DEBUG] File /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: BashOutput
+[DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: BashOutput
+[DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: BashOutput
+[DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763120118822
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 1079 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763120118822 to /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json
+[DEBUG] File /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: BashOutput
+[DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: BashOutput
+[DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763120156429
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json.tmp.27341.1763120156429 to /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json
+[DEBUG] File /Users/spartan/.claude/todos/21595c3b-ca8a-42e0-896f-017f80bee01d-agent-21595c3b-ca8a-42e0-896f-017f80bee01d.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: BashOutput
+[DEBUG] executePreToolHooks called for tool: BashOutput
+[DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: BashOutput
+[DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763120210729
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40685 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763120210729 to /Users/spartan/.claude.json
 [DEBUG] File /Users/spartan/.claude.json written atomically
 [DEBUG] Getting matching hook commands for Stop with query: undefined
 [DEBUG] Found 0 hook matchers in settings
 [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
-[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.24859.1763118799172
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763120210739
 [DEBUG] Preserving file permissions: 100600
-[DEBUG] Temp file written successfully, size: 40580 bytes
+[DEBUG] Temp file written successfully, size: 40685 bytes
 [DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude.json.tmp.24859.1763118799172 to /Users/spartan/.claude.json
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763120210739 to /Users/spartan/.claude.json
 [DEBUG] File /Users/spartan/.claude.json written atomically
 [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
 [DEBUG] Found 0 hook matchers in settings
@@ -256,25 +837,28 @@
 [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
 [DEBUG] Found 0 hook matchers in settings
 [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
-[DEBUG] FileHistory: Making snapshot for message 9aa2d1c1-a000-462d-9441-b54e8317fced
-[DEBUG] FileHistory: Added snapshot for 9aa2d1c1-a000-462d-9441-b54e8317fced, tracking 0 files
+[DEBUG] FileHistory: Making snapshot for message d500d0a4-db36-44b2-af0b-f4e2d03b014a
+[DEBUG] FileHistory: Added snapshot for d500d0a4-db36-44b2-af0b-f4e2d03b014a, tracking 1 files
 [DEBUG] Skills and commands included in Skill tool:
 [DEBUG] Slash commands included in SlashCommand tool:
 [DEBUG] Stream started - received first chunk
 [DEBUG] Stream started - received first chunk
-[DEBUG] executePreToolHooks called for tool: TodoWrite
-[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] executePreToolHooks called for tool: BashOutput
+[DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
 [DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
-[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json.tmp.24859.1763119225402
-[DEBUG] Preserving file permissions: 100644
-[DEBUG] Temp file written successfully, size: 1134 bytes
-[DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json.tmp.24859.1763119225402 to /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json
-[DEBUG] File /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json written atomically
-[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
 [DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
 [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
 [DEBUG] LSP Diagnostics: Checking registry - 0 pending
 [DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
@@ -285,6 +869,470 @@
 [DEBUG] Skills and commands included in Skill tool:
 [DEBUG] Slash commands included in SlashCommand tool:
 [DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120449209
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 25831 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120449209 to /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120449272
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 25873 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120449272 to /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120465911
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 25923 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120465911 to /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120487308
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 25977 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120487308 to /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120498989
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 26027 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120498989 to /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120512359
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 26077 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120512359 to /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: BashOutput
+[DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120600613
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 26115 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120600613 to /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120630027
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 28264 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120630027 to /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
 [DEBUG] executePreToolHooks called for tool: Bash
 [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
 [DEBUG] Found 0 hook matchers in settings
@@ -306,19 +1354,13 @@
 [DEBUG] Slash commands included in SlashCommand tool:
 [DEBUG] Stream started - received first chunk
 [DEBUG] Stream started - received first chunk
-[DEBUG] executePreToolHooks called for tool: TodoWrite
-[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
 [DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
-[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json.tmp.24859.1763119237620
-[DEBUG] Preserving file permissions: 100644
-[DEBUG] Temp file written successfully, size: 1136 bytes
-[DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json.tmp.24859.1763119237620 to /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json
-[DEBUG] File /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json written atomically
-[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
 [DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
 [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
 [DEBUG] LSP Diagnostics: Checking registry - 0 pending
 [DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
@@ -329,18 +1371,50 @@
 [DEBUG] Skills and commands included in Skill tool:
 [DEBUG] Slash commands included in SlashCommand tool:
 [DEBUG] Stream started - received first chunk
-[DEBUG] executePreToolHooks called for tool: Write
-[DEBUG] Getting matching hook commands for PreToolUse with query: Write
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
 [DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
-[DEBUG] FileHistory: Tracked file modification for /Users/spartan/.claude/droid_loader.py
-[DEBUG] Writing to temp file: /Users/spartan/.claude/droid_loader.py.tmp.24859.1763119270445
-[DEBUG] Temp file written successfully, size: 8785 bytes
-[DEBUG] Renaming /Users/spartan/.claude/droid_loader.py.tmp.24859.1763119270445 to /Users/spartan/.claude/droid_loader.py
-[DEBUG] File /Users/spartan/.claude/droid_loader.py written atomically
-[DEBUG] Getting matching hook commands for PostToolUse with query: Write
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
 [DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763120686842
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40685 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763120686842 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763120690541
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40685 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763120690541 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120699606
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 29120 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120699606 to /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
 [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
 [DEBUG] LSP Diagnostics: Checking registry - 0 pending
 [DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
@@ -355,113 +1429,98 @@
 [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
 [DEBUG] Found 0 hook matchers in settings
 [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
 [DEBUG] Stream started - received first chunk
 [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
 [DEBUG] Found 0 hook matchers in settings
 [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
-[DEBUG] executePreToolHooks called for tool: TodoWrite
-[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
 [DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
-[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json.tmp.24859.1763119280792
-[DEBUG] Preserving file permissions: 100644
-[DEBUG] Temp file written successfully, size: 1138 bytes
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763120773340
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40685 bytes
 [DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json.tmp.24859.1763119280792 to /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json
-[DEBUG] File /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json written atomically
-[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763120773340 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
 [DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
-[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
-[DEBUG] LSP Diagnostics: Checking registry - 0 pending
-[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
-[DEBUG] Hooks: getAsyncHookResponseAttachments called
-[DEBUG] Hooks: checkForNewResponses called
-[DEBUG] Hooks: Found 0 total hooks in registry
-[DEBUG] Hooks: checkForNewResponses returning 0 responses
-[DEBUG] Skills and commands included in Skill tool:
-[DEBUG] Slash commands included in SlashCommand tool:
-[DEBUG] Stream started - received first chunk
-[DEBUG] Stream started - received first chunk
-[DEBUG] executePreToolHooks called for tool: Write
-[DEBUG] Getting matching hook commands for PreToolUse with query: Write
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
-[DEBUG] FileHistory: Tracked file modification for /Users/spartan/.claude/droids/security-auditor.md
-[DEBUG] Writing to temp file: /Users/spartan/.claude/droids/security-auditor.md.tmp.24859.1763119310427
-[DEBUG] Temp file written successfully, size: 4880 bytes
-[DEBUG] Renaming /Users/spartan/.claude/droids/security-auditor.md.tmp.24859.1763119310427 to /Users/spartan/.claude/droids/security-auditor.md
-[DEBUG] File /Users/spartan/.claude/droids/security-auditor.md written atomically
-[DEBUG] Getting matching hook commands for PostToolUse with query: Write
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
-[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
-[DEBUG] LSP Diagnostics: Checking registry - 0 pending
-[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
-[DEBUG] Hooks: getAsyncHookResponseAttachments called
-[DEBUG] Hooks: checkForNewResponses called
-[DEBUG] Hooks: Found 0 total hooks in registry
-[DEBUG] Hooks: checkForNewResponses returning 0 responses
-[DEBUG] Skills and commands included in Skill tool:
-[DEBUG] Slash commands included in SlashCommand tool:
-[DEBUG] Stream started - received first chunk
-[DEBUG] executePreToolHooks called for tool: Write
-[DEBUG] Getting matching hook commands for PreToolUse with query: Write
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
-[DEBUG] FileHistory: Tracked file modification for /Users/spartan/.claude/droids/code-reviewer.md
-[DEBUG] Writing to temp file: /Users/spartan/.claude/droids/code-reviewer.md.tmp.24859.1763119351519
-[DEBUG] Temp file written successfully, size: 7003 bytes
-[DEBUG] Renaming /Users/spartan/.claude/droids/code-reviewer.md.tmp.24859.1763119351519 to /Users/spartan/.claude/droids/code-reviewer.md
-[DEBUG] File /Users/spartan/.claude/droids/code-reviewer.md written atomically
-[DEBUG] Getting matching hook commands for PostToolUse with query: Write
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
-[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
-[DEBUG] LSP Diagnostics: Checking registry - 0 pending
-[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
-[DEBUG] Hooks: getAsyncHookResponseAttachments called
-[DEBUG] Hooks: checkForNewResponses called
-[DEBUG] Hooks: Found 0 total hooks in registry
-[DEBUG] Hooks: checkForNewResponses returning 0 responses
-[DEBUG] Skills and commands included in Skill tool:
-[DEBUG] Slash commands included in SlashCommand tool:
-[DEBUG] Stream started - received first chunk
-[DEBUG] executePreToolHooks called for tool: Write
-[DEBUG] Getting matching hook commands for PreToolUse with query: Write
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
-[DEBUG] FileHistory: Tracked file modification for /Users/spartan/.claude/droids/test-writer.md
-[DEBUG] Writing to temp file: /Users/spartan/.claude/droids/test-writer.md.tmp.24859.1763119398971
-[DEBUG] Temp file written successfully, size: 9087 bytes
-[DEBUG] Renaming /Users/spartan/.claude/droids/test-writer.md.tmp.24859.1763119398971 to /Users/spartan/.claude/droids/test-writer.md
-[DEBUG] File /Users/spartan/.claude/droids/test-writer.md written atomically
-[DEBUG] Getting matching hook commands for PostToolUse with query: Write
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
-[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
-[DEBUG] LSP Diagnostics: Checking registry - 0 pending
-[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
-[DEBUG] Hooks: getAsyncHookResponseAttachments called
-[DEBUG] Hooks: checkForNewResponses called
-[DEBUG] Hooks: Found 0 total hooks in registry
-[DEBUG] Hooks: checkForNewResponses returning 0 responses
-[DEBUG] Skills and commands included in Skill tool:
-[DEBUG] Slash commands included in SlashCommand tool:
-[DEBUG] Stream started - received first chunk
-[DEBUG] executePreToolHooks called for tool: TodoWrite
-[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
-[DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
-[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json.tmp.24859.1763119406606
-[DEBUG] Preserving file permissions: 100644
-[DEBUG] Temp file written successfully, size: 1140 bytes
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763120773362
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40685 bytes
 [DEBUG] Applied original permissions to temp file
-[DEBUG] Renaming /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json.tmp.24859.1763119406606 to /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json
-[DEBUG] File /Users/spartan/.claude/todos/1b1aa9ad-0100-4961-8353-eef430d58a66-agent-1b1aa9ad-0100-4961-8353-eef430d58a66.json written atomically
-[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763120773362 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
 [DEBUG] Found 0 hook matchers in settings
-[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message aef9a7f0-a99d-48cf-9746-7e7a53792d42
+[DEBUG] FileHistory: Added snapshot for aef9a7f0-a99d-48cf-9746-7e7a53792d42, tracking 2 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
 [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
 [DEBUG] LSP Diagnostics: Checking registry - 0 pending
 [DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
@@ -471,4 +1530,312 @@
 [DEBUG] Hooks: checkForNewResponses returning 0 responses
 [DEBUG] Skills and commands included in Skill tool:
 [DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120865236
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 29917 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120865236 to /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120892299
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 32105 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120892299 to /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120917839
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 33343 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py.tmp.27341.1763120917839 to /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/macro_regime_tracker_api.py written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763121006251
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40685 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763121006251 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.27341.1763121006276
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 40685 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.27341.1763121006276 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 8adf6c49-d108-4e84-a1bd-81a0c1f5b428
+[DEBUG] FileHistory: Added snapshot for 8adf6c49-d108-4e84-a1bd-81a0c1f5b428, tracking 2 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html.tmp.27341.1763121293886
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 60044 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html.tmp.27341.1763121293886 to /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html.tmp.27341.1763121335445
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 64697 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html.tmp.27341.1763121335445 to /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html
+[DEBUG] File /Users/spartan/Downloads/spartan_labs/website/global_capital_markets.html written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for PreCompact with query: auto
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "auto" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
 [DEBUG] Stream started - received first chunk

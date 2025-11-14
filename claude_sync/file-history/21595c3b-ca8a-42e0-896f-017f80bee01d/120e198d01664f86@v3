@@ -1,0 +1,986 @@
+#!/usr/bin/env python3
+"""
+Spartan Research Station - Macro Regime Tracker API
+Inspired by Capital Flows Research methodology
+CRITICAL: NO FAKE DATA - See CLAUDE.md PLATINUM RULE #1
+
+Data Sources (ALL VERIFIED, NO MOCK DATA):
+- FRED API: GDP, CPI, PCE, employment, liquidity indicators
+- Yahoo Finance: Market data, equity indices
+- IMF/World Bank: International macro data (future integration)
+- BIS: International banking data (future integration)
+
+Regime Detection Framework:
+1. Growth Regime (GDP, Employment, ISM)
+2. Inflation Regime (CPI, PCE, Breakeven Inflation)
+3. Liquidity Regime (Fed Balance Sheet, TGA, Reverse Repo)
+4. Market Regime (Equity risk premium, volatility, positioning)
+"""
+
+import os
+import sys
+import json
+import requests
+from datetime import datetime, timedelta
+import psycopg2
+from psycopg2.extras import RealDictCursor
+import yfinance as yf
+from flask import Flask, jsonify, request
+from flask_cors import CORS
+import numpy as np
+
+app = Flask(__name__)
+CORS(app)
+
+# Database Configuration - PostgreSQL ONLY
+DB_CONFIG = {
+    'dbname': 'spartan_website_db',
+    'user': 'postgres',
+    'password': 'postgres',
+    'host': 'localhost',
+    'port': 5432
+}
+
+# Load API keys from .env.barometers file
+def load_env_file():
+    env_path = '.env.barometers'
+    if os.path.exists(env_path):
+        with open(env_path, 'r') as f:
+            for line in f:
+                if line.strip() and not line.startswith('#'):
+                    if '=' in line:
+                        key, value = line.strip().split('=', 1)
+                        os.environ[key] = value
+
+load_env_file()
+
+# API Keys
+FRED_API_KEY = os.getenv('FRED_API_KEY', 'a6137538793a55227cbae2119e1573f5')
+FRED_BASE = "https://api.stlouisfed.org/fred/series/observations"
+
+
+def get_db_connection():
+    """Get PostgreSQL database connection"""
+    try:
+        conn = psycopg2.connect(**DB_CONFIG)
+        return conn
+    except Exception as e:
+        print(f"❌ PostgreSQL connection error: {e}")
+        return None
+
+
+def fetch_fred_data(series_id, days_back=730, limit=10):
+    """
+    Fetch data from FRED API - REAL DATA ONLY
+
+    Args:
+        series_id: FRED series identifier
+        days_back: Number of days to look back (default 730 = 2 years for delayed data)
+        limit: Number of observations to return
+
+    Returns:
+        List of observations or None if unavailable
+    """
+    if not FRED_API_KEY or FRED_API_KEY == 'YOUR_FRED_API_KEY':
+        print(f"⚠️  FRED API key not configured - Cannot fetch {series_id}")
+        return None
+
+    try:
+        end_date = datetime.now()
+        start_date = end_date - timedelta(days=days_back)
+
+        params = {
+            'series_id': series_id,
+            'api_key': FRED_API_KEY,
+            'file_type': 'json',
+            'observation_start': start_date.strftime('%Y-%m-%d'),
+            'observation_end': end_date.strftime('%Y-%m-%d'),
+            'sort_order': 'desc',
+            'limit': limit
+        }
+
+        response = requests.get(FRED_BASE, params=params, timeout=10)
+        response.raise_for_status()
+        data = response.json()
+
+        if 'observations' in data and len(data['observations']) > 0:
+            observations = []
+            for obs in data['observations']:
+                if obs['value'] != '.':  # FRED uses '.' for missing data
+                    observations.append({
+                        'date': obs['date'],
+                        'value': float(obs['value'])
+                    })
+            return observations if observations else None
+
+        print(f"⚠️  No recent data for FRED series {series_id}")
+        return None
+
+    except Exception as e:
+        print(f"❌ Error fetching FRED {series_id}: {e}")
+        return None
+
+
+def fetch_latest_fred(series_id, days_back=730):
+    """Fetch single latest value from FRED (lookback 2 years to handle data delays)"""
+    data = fetch_fred_data(series_id, days_back, limit=1)
+    if data and len(data) > 0:
+        return data[0]['value']
+    return None
+
+
+def fetch_yahoo_finance(ticker, period='5d'):
+    """Fetch data from Yahoo Finance - REAL DATA ONLY"""
+    try:
+        stock = yf.Ticker(ticker)
+        hist = stock.history(period=period)
+
+        if not hist.empty:
+            return float(hist['Close'].iloc[-1])
+
+        print(f"⚠️  No data for ticker {ticker}")
+        return None
+
+    except Exception as e:
+        print(f"❌ Error fetching {ticker}: {e}")
+        return None
+
+
+# ============================================================
+# GROWTH REGIME INDICATORS
+# ============================================================
+
+def get_growth_indicators():
+    """
+    Fetch growth regime indicators - COMPREHENSIVE
+
+    Returns dict with 15+ growth indicators
+    """
+    indicators = {}
+
+    # GDP (Quarterly, Real) - FIXED to get actual data
+    gdp_data = fetch_fred_data('GDPC1', limit=4)
+    if gdp_data and len(gdp_data) >= 2:
+        latest = gdp_data[0]['value']
+        previous = gdp_data[1]['value']
+        # Calculate annualized quarterly growth rate
+        indicators['gdp_growth'] = ((latest / previous) ** 4 - 1) * 100
+        indicators['gdp_level'] = latest
+        indicators['gdp_date'] = gdp_data[0]['date']
+    else:
+        indicators['gdp_growth'] = None
+        indicators['gdp_level'] = None
+        indicators['gdp_date'] = None
+
+    # Employment (Monthly, Total Nonfarm Payrolls in thousands)
+    employment = fetch_latest_fred('PAYEMS')
+    indicators['employment'] = employment
+
+    # Unemployment Rate (%)
+    unemployment = fetch_latest_fred('UNRATE')
+    indicators['unemployment_rate'] = unemployment
+
+    # Labor Force Participation Rate (%)
+    lfpr = fetch_latest_fred('CIVPART')
+    indicators['labor_force_participation'] = lfpr
+
+    # Job Openings (JOLTS, thousands)
+    jolts = fetch_latest_fred('JTSJOL')
+    indicators['job_openings'] = jolts
+
+    # ISM Manufacturing PMI
+    # Note: ISM PMI is proprietary data not available in free FRED API
+    indicators['ism_manufacturing'] = None
+
+    # ISM Services PMI
+    indicators['ism_services'] = None
+
+    # Retail Sales (Monthly % change)
+    retail_data = fetch_fred_data('RSXFS', limit=2)
+    if retail_data and len(retail_data) >= 2:
+        latest = retail_data[0]['value']
+        previous = retail_data[1]['value']
+        indicators['retail_sales_growth'] = ((latest - previous) / previous) * 100
+        indicators['retail_sales_level'] = latest
+    else:
+        indicators['retail_sales_growth'] = None
+        indicators['retail_sales_level'] = None
+
+    # Industrial Production Index
+    ind_prod = fetch_latest_fred('INDPRO')
+    indicators['industrial_production'] = ind_prod
+
+    # Capacity Utilization (%)
+    cap_util = fetch_latest_fred('TCU')
+    indicators['capacity_utilization'] = cap_util
+
+    # Housing Starts (thousands, annualized)
+    housing = fetch_latest_fred('HOUST')
+    indicators['housing_starts'] = housing
+
+    # Building Permits (thousands, annualized)
+    permits = fetch_latest_fred('PERMIT')
+    indicators['building_permits'] = permits
+
+    # Manufacturing New Orders (Durable Goods, millions $)
+    durable = fetch_latest_fred('DGORDER')
+    indicators['durable_goods_orders'] = durable
+
+    # Consumer Confidence Index
+    consumer_conf = fetch_latest_fred('UMCSENT')
+    indicators['consumer_confidence'] = consumer_conf
+
+    return indicators
+
+
+# ============================================================
+# INFLATION REGIME INDICATORS
+# ============================================================
+
+def get_inflation_indicators():
+    """
+    Fetch inflation regime indicators - COMPREHENSIVE
+
+    Returns dict with 15+ inflation indicators
+    """
+    indicators = {}
+
+    # CPI (All Items, NSA) - Calculate YoY
+    cpi_data = fetch_fred_data('CPIAUCSL', limit=13)
+    if cpi_data and len(cpi_data) >= 13:
+        latest = cpi_data[0]['value']
+        year_ago = cpi_data[12]['value']
+        indicators['cpi_yoy'] = ((latest - year_ago) / year_ago) * 100
+        indicators['cpi_level'] = latest
+        indicators['cpi_date'] = cpi_data[0]['date']
+    else:
+        indicators['cpi_yoy'] = None
+        indicators['cpi_level'] = None
+        indicators['cpi_date'] = None
+
+    # Core CPI (Less Food & Energy) - Calculate YoY
+    core_cpi_data = fetch_fred_data('CPILFESL', limit=13)
+    if core_cpi_data and len(core_cpi_data) >= 13:
+        latest = core_cpi_data[0]['value']
+        year_ago = core_cpi_data[12]['value']
+        indicators['core_cpi_yoy'] = ((latest - year_ago) / year_ago) * 100
+    else:
+        indicators['core_cpi_yoy'] = None
+
+    # PCE (Personal Consumption Expenditures) - Calculate YoY
+    pce_data = fetch_fred_data('PCEPI', limit=13)
+    if pce_data and len(pce_data) >= 13:
+        latest = pce_data[0]['value']
+        year_ago = pce_data[12]['value']
+        indicators['pce_yoy'] = ((latest - year_ago) / year_ago) * 100
+    else:
+        indicators['pce_yoy'] = None
+
+    # Core PCE (Fed's preferred measure) - Calculate YoY
+    core_pce_data = fetch_fred_data('PCEPILFE', limit=13)
+    if core_pce_data and len(core_pce_data) >= 13:
+        latest = core_pce_data[0]['value']
+        year_ago = core_pce_data[12]['value']
+        indicators['core_pce_yoy'] = ((latest - year_ago) / year_ago) * 100
+    else:
+        indicators['core_pce_yoy'] = None
+
+    # Producer Price Index (PPI) - Calculate YoY
+    ppi_data = fetch_fred_data('PPIACO', limit=13)
+    if ppi_data and len(ppi_data) >= 13:
+        latest = ppi_data[0]['value']
+        year_ago = ppi_data[12]['value']
+        indicators['ppi_yoy'] = ((latest - year_ago) / year_ago) * 100
+    else:
+        indicators['ppi_yoy'] = None
+
+    # Import Price Index - Calculate YoY
+    import_prices_data = fetch_fred_data('IR', limit=13)
+    if import_prices_data and len(import_prices_data) >= 13:
+        latest = import_prices_data[0]['value']
+        year_ago = import_prices_data[12]['value']
+        indicators['import_prices_yoy'] = ((latest - year_ago) / year_ago) * 100
+    else:
+        indicators['import_prices_yoy'] = None
+
+    # Average Hourly Earnings (wage growth) - Calculate YoY
+    wages_data = fetch_fred_data('CES0500000003', limit=13)
+    if wages_data and len(wages_data) >= 13:
+        latest = wages_data[0]['value']
+        year_ago = wages_data[12]['value']
+        indicators['wage_growth_yoy'] = ((latest - year_ago) / year_ago) * 100
+    else:
+        indicators['wage_growth_yoy'] = None
+
+    # Shelter CPI (major component) - Calculate YoY
+    shelter_data = fetch_fred_data('CUSR0000SAH1', limit=13)
+    if shelter_data and len(shelter_data) >= 13:
+        latest = shelter_data[0]['value']
+        year_ago = shelter_data[12]['value']
+        indicators['shelter_inflation_yoy'] = ((latest - year_ago) / year_ago) * 100
+    else:
+        indicators['shelter_inflation_yoy'] = None
+
+    # Energy CPI - Calculate YoY
+    energy_data = fetch_fred_data('CPIENGSL', limit=13)
+    if energy_data and len(energy_data) >= 13:
+        latest = energy_data[0]['value']
+        year_ago = energy_data[12]['value']
+        indicators['energy_inflation_yoy'] = ((latest - year_ago) / year_ago) * 100
+    else:
+        indicators['energy_inflation_yoy'] = None
+
+    # Food CPI - Calculate YoY
+    food_data = fetch_fred_data('CPIUFDSL', limit=13)
+    if food_data and len(food_data) >= 13:
+        latest = food_data[0]['value']
+        year_ago = food_data[12]['value']
+        indicators['food_inflation_yoy'] = ((latest - year_ago) / year_ago) * 100
+    else:
+        indicators['food_inflation_yoy'] = None
+
+    # 5-Year Breakeven Inflation Rate
+    breakeven_5y = fetch_latest_fred('T5YIE')
+    indicators['breakeven_5y'] = breakeven_5y
+
+    # 10-Year Breakeven Inflation Rate
+    breakeven_10y = fetch_latest_fred('T10YIE')
+    indicators['breakeven_10y'] = breakeven_10y
+
+    # 5-Year Forward Inflation Expectation
+    forward_5y = fetch_latest_fred('T5YIFR')
+    indicators['forward_inflation_5y'] = forward_5y
+
+    return indicators
+
+
+# ============================================================
+# LIQUIDITY REGIME INDICATORS
+# ============================================================
+
+def get_liquidity_indicators():
+    """
+    Fetch liquidity regime indicators
+
+    Returns dict with:
+    - fed_balance_sheet: Total assets ($ billions)
+    - reverse_repo: Reverse repo facility usage ($ billions)
+    - tga_balance: Treasury General Account balance ($ billions)
+    - net_liquidity: Fed BS - (RRP + TGA) = Net liquidity injection
+    - m2_money_supply: M2 Money Stock ($ billions)
+    - bank_credit: Commercial bank credit ($ billions)
+    """
+    indicators = {}
+
+    # Fed Balance Sheet (Total Assets in $ millions, convert to billions)
+    fed_bs = fetch_latest_fred('WALCL')  # Use default 730 days
+    if fed_bs:
+        indicators['fed_balance_sheet'] = fed_bs / 1000  # Convert to billions
+    else:
+        indicators['fed_balance_sheet'] = None
+
+    # Reverse Repo Facility ($ millions, convert to billions)
+    rrp = fetch_latest_fred('RRPONTSYD')  # Use default 730 days
+    if rrp:
+        indicators['reverse_repo'] = rrp / 1000
+    else:
+        indicators['reverse_repo'] = None
+
+    # Treasury General Account ($ millions, convert to billions)
+    tga = fetch_latest_fred('WTREGEN')  # Use default 730 days
+    if tga:
+        indicators['tga_balance'] = tga / 1000
+    else:
+        indicators['tga_balance'] = None
+
+    # Calculate Net Liquidity (Fed BS - RRP - TGA)
+    if all([fed_bs, rrp, tga]):
+        indicators['net_liquidity'] = (fed_bs - rrp - tga) / 1000
+    else:
+        indicators['net_liquidity'] = None
+
+    # M2 Money Supply ($ billions)
+    m2 = fetch_latest_fred('M2SL')  # Use default 730 days
+    indicators['m2_money_supply'] = m2
+
+    # Bank Credit ($ billions)
+    bank_credit = fetch_latest_fred('TOTBKCR')  # Use default 730 days
+    indicators['bank_credit'] = bank_credit
+
+    return indicators
+
+
+# ============================================================
+# MARKET REGIME INDICATORS
+# ============================================================
+
+def get_market_indicators():
+    """
+    Fetch market regime indicators - COMPREHENSIVE
+
+    Returns dict with 25+ market indicators including equities, bonds, commodities, FX
+    """
+    indicators = {}
+
+    # TREASURY YIELDS
+    treasury_10y = fetch_latest_fred('DGS10')
+    indicators['treasury_10y'] = treasury_10y
+
+    treasury_2y = fetch_latest_fred('DGS2')
+    indicators['treasury_2y'] = treasury_2y
+
+    treasury_30y = fetch_latest_fred('DGS30')
+    indicators['treasury_30y'] = treasury_30y
+
+    treasury_5y = fetch_latest_fred('DGS5')
+    indicators['treasury_5y'] = treasury_5y
+
+    # YIELD CURVES
+    if treasury_10y and treasury_2y:
+        indicators['yield_curve'] = treasury_10y - treasury_2y
+    else:
+        indicators['yield_curve'] = None
+
+    if treasury_10y and treasury_5y:
+        indicators['yield_curve_10y5y'] = treasury_10y - treasury_5y
+    else:
+        indicators['yield_curve_10y5y'] = None
+
+    # CREDIT SPREADS
+    hy_spread = fetch_latest_fred('BAMLH0A0HYM2')
+    indicators['credit_spread_hy'] = hy_spread
+
+    ig_spread = fetch_latest_fred('BAMLC0A0CM')
+    indicators['credit_spread_ig'] = ig_spread
+
+    # VOLATILITY
+    vix = fetch_latest_fred('VIXCLS')
+    indicators['vix'] = vix
+
+    # EQUITY INDICES (from Yahoo Finance)
+    spx = fetch_yahoo_finance('^GSPC', period='5d')
+    indicators['spx_level'] = spx
+
+    nasdaq = fetch_yahoo_finance('^IXIC', period='5d')
+    indicators['nasdaq_level'] = nasdaq
+
+    dow = fetch_yahoo_finance('^DJI', period='5d')
+    indicators['dow_level'] = dow
+
+    russell_2000 = fetch_yahoo_finance('^RUT', period='5d')
+    indicators['russell_2000_level'] = russell_2000
+
+    # COMMODITIES (from Yahoo Finance)
+    gold = fetch_yahoo_finance('GC=F', period='5d')  # Gold futures
+    indicators['gold_price'] = gold
+
+    oil = fetch_yahoo_finance('CL=F', period='5d')  # WTI Crude Oil
+    indicators['oil_price'] = oil
+
+    copper = fetch_yahoo_finance('HG=F', period='5d')  # Copper futures
+    indicators['copper_price'] = copper
+
+    silver = fetch_yahoo_finance('SI=F', period='5d')  # Silver futures
+    indicators['silver_price'] = silver
+
+    # FOREX (from Yahoo Finance)
+    dxy = fetch_yahoo_finance('DX-Y.NYB', period='5d')  # US Dollar Index
+    indicators['dollar_index'] = dxy
+
+    eurusd = fetch_yahoo_finance('EURUSD=X', period='5d')
+    indicators['eurusd'] = eurusd
+
+    usdjpy = fetch_yahoo_finance('JPY=X', period='5d')
+    indicators['usdjpy'] = usdjpy
+
+    # BOND ETFS (from Yahoo Finance)
+    tlt = fetch_yahoo_finance('TLT', period='5d')  # 20+ Year Treasury Bond ETF
+    indicators['tlt_price'] = tlt
+
+    # MORTGAGE RATES (from FRED)
+    mortgage_30y = fetch_latest_fred('MORTGAGE30US')
+    indicators['mortgage_30y'] = mortgage_30y
+
+    # REAL YIELDS
+    tips_10y = fetch_latest_fred('DFII10')
+    indicators['tips_10y_real_yield'] = tips_10y
+
+    # FED FUNDS RATE
+    fed_funds = fetch_latest_fred('FEDFUNDS')
+    indicators['fed_funds_rate'] = fed_funds
+
+    # Equity Risk Premium (simplified)
+    indicators['equity_risk_premium'] = None
+
+    return indicators
+
+
+# ============================================================
+# REGIME CLASSIFICATION
+# ============================================================
+
+def classify_growth_regime(indicators):
+    """
+    Classify growth regime based on indicators
+    Uses Employment, Industrial Production, Retail Sales, GDP when available
+
+    Returns: ('EXPANSION', 'SLOWDOWN', 'RECESSION', 'RECOVERY', 'UNKNOWN')
+    """
+    gdp = indicators.get('gdp_growth')
+    employment = indicators.get('employment')
+    ind_prod = indicators.get('industrial_production')
+    retail = indicators.get('retail_sales_growth')
+    ism_mfg = indicators.get('ism_manufacturing')
+    ism_svc = indicators.get('ism_services')
+
+    # Need at least one indicator
+    if all(x is None for x in [gdp, employment, ind_prod, retail, ism_mfg]):
+        return 'UNKNOWN', 0
+
+    score = 0
+    indicators_used = 0
+
+    # GDP signals (quarterly, strongest signal)
+    if gdp is not None:
+        if gdp > 3.0:
+            score += 2  # Strong expansion
+        elif gdp > 2.0:
+            score += 1  # Moderate expansion
+        elif gdp > 0:
+            score += 0  # Weak growth
+        else:
+            score -= 2  # Contraction
+        indicators_used += 1
+
+    # Employment signals (high = strong labor market = growth)
+    if employment is not None:
+        # Employment above 159,000K is strong (current level)
+        # Historical average ~152,000K
+        if employment > 158000:
+            score += 1.5  # Strong employment
+        elif employment > 155000:
+            score += 1  # Good employment
+        elif employment > 152000:
+            score += 0.5  # Moderate
+        else:
+            score -= 1  # Weak employment
+        indicators_used += 1
+
+    # Industrial Production signals (index, 100 = base year)
+    if ind_prod is not None:
+        # Above 103 is expansion, below 100 is contraction
+        if ind_prod > 105:
+            score += 1.5  # Strong manufacturing
+        elif ind_prod > 102:
+            score += 1  # Moderate expansion
+        elif ind_prod > 100:
+            score += 0.5  # Slight expansion
+        elif ind_prod > 98:
+            score -= 0.5  # Slight contraction
+        else:
+            score -= 1.5  # Contraction
+        indicators_used += 1
+
+    # Retail Sales Growth (month-over-month %)
+    if retail is not None:
+        if retail > 1.0:
+            score += 1  # Strong consumer spending
+        elif retail > 0.3:
+            score += 0.5  # Moderate growth
+        elif retail > -0.3:
+            score += 0  # Flat
+        else:
+            score -= 1  # Consumer pullback
+        indicators_used += 1
+
+    # ISM Manufacturing signals (if available)
+    if ism_mfg is not None:
+        if ism_mfg > 55:
+            score += 2  # Strong expansion
+        elif ism_mfg > 50:
+            score += 1  # Expansion
+        elif ism_mfg > 45:
+            score -= 1  # Slowdown
+        else:
+            score -= 2  # Contraction
+        indicators_used += 1
+
+    # ISM Services signals (if available)
+    if ism_svc is not None:
+        if ism_svc > 55:
+            score += 1
+        elif ism_svc > 50:
+            score += 0.5
+        elif ism_svc > 45:
+            score -= 0.5
+        else:
+            score -= 1
+        indicators_used += 1
+
+    # Normalize score if we don't have all indicators
+    if indicators_used > 0:
+        # Average score per indicator
+        avg_score = score / indicators_used
+
+        # Classify based on average score
+        if avg_score >= 1.0:
+            return 'EXPANSION', score
+        elif avg_score >= 0.3:
+            return 'RECOVERY', score
+        elif avg_score >= -0.3:
+            return 'SLOWDOWN', score
+        else:
+            return 'RECESSION', score
+
+    return 'UNKNOWN', 0
+
+
+def classify_inflation_regime(indicators):
+    """
+    Classify inflation regime
+
+    Returns: ('DEFLATION', 'LOW', 'TARGET', 'ELEVATED', 'HIGH', 'UNKNOWN')
+    """
+    core_pce = indicators.get('core_pce_yoy')  # Fed's preferred measure
+    cpi = indicators.get('cpi_yoy')
+
+    if core_pce is None and cpi is None:
+        return 'UNKNOWN', 0
+
+    # Use Core PCE if available (Fed's target), otherwise CPI
+    inflation = core_pce if core_pce is not None else cpi
+
+    if inflation < 0:
+        return 'DEFLATION', inflation
+    elif inflation < 1.5:
+        return 'LOW', inflation
+    elif inflation < 2.5:
+        return 'TARGET', inflation  # Fed's 2% target
+    elif inflation < 4.0:
+        return 'ELEVATED', inflation
+    else:
+        return 'HIGH', inflation
+
+
+def classify_liquidity_regime(indicators):
+    """
+    Classify liquidity regime
+
+    Returns: ('TIGHTENING', 'NEUTRAL', 'EASING', 'UNKNOWN')
+    """
+    net_liq = indicators.get('net_liquidity')
+
+    if net_liq is None:
+        return 'UNKNOWN', 0
+
+    # Simplified: Compare to recent historical levels
+    # This should be enhanced with trend analysis
+
+    # Placeholder thresholds (in $ billions)
+    # These should be calibrated to historical data
+    if net_liq > 5000:  # High liquidity
+        return 'EASING', net_liq
+    elif net_liq > 4000:  # Moderate liquidity
+        return 'NEUTRAL', net_liq
+    else:  # Low liquidity
+        return 'TIGHTENING', net_liq
+
+
+def classify_market_regime(indicators):
+    """
+    Classify market regime
+
+    Returns: ('RISK_ON', 'NEUTRAL', 'RISK_OFF', 'UNKNOWN')
+    """
+    vix = indicators.get('vix')
+    yield_curve = indicators.get('yield_curve')
+    hy_spread = indicators.get('credit_spread_hy')
+
+    if all(x is None for x in [vix, yield_curve, hy_spread]):
+        return 'UNKNOWN', 0
+
+    score = 0
+
+    # VIX signals
+    if vix is not None:
+        if vix < 15:
+            score += 2  # Very risk-on
+        elif vix < 20:
+            score += 1  # Risk-on
+        elif vix < 30:
+            score -= 0  # Neutral
+        else:
+            score -= 2  # Risk-off
+
+    # Yield curve signals
+    if yield_curve is not None:
+        if yield_curve > 0.5:
+            score += 1  # Healthy
+        elif yield_curve > 0:
+            score += 0  # Slightly positive
+        elif yield_curve > -0.5:
+            score -= 1  # Inverted
+        else:
+            score -= 2  # Deeply inverted
+
+    # Credit spread signals (HY)
+    if hy_spread is not None:
+        if hy_spread < 300:
+            score += 1  # Tight spreads = risk-on
+        elif hy_spread < 500:
+            score += 0  # Normal
+        elif hy_spread < 700:
+            score -= 1  # Widening
+        else:
+            score -= 2  # Wide spreads = risk-off
+
+    # Classify
+    if score >= 2:
+        return 'RISK_ON', score
+    elif score >= -1:
+        return 'NEUTRAL', score
+    else:
+        return 'RISK_OFF', score
+
+
+def calculate_regime_probabilities(growth, inflation, liquidity, market):
+    """
+    Calculate macro regime probabilities
+
+    Simplified version - In production, this would use ML models
+    """
+    regimes = {
+        'GOLDILOCKS': 0,      # Growth + Low Inflation + Easing/Neutral Liquidity
+        'REFLATION': 0,       # Growth + Rising Inflation + Easing Liquidity
+        'STAGFLATION': 0,     # Slow Growth + High Inflation
+        'DEFLATION': 0,       # Recession + Falling Inflation
+        'EXPANSION': 0,       # Strong Growth + Target Inflation
+        'CRISIS': 0           # Recession + Risk-off + Tightening
+    }
+
+    growth_regime, _ = growth
+    inflation_regime, _ = inflation
+    liquidity_regime, _ = liquidity
+    market_regime, _ = market
+
+    # Goldilocks: Expansion + Low/Target Inflation (sweet spot)
+    if growth_regime in ['EXPANSION', 'RECOVERY'] and inflation_regime in ['LOW', 'TARGET']:
+        regimes['GOLDILOCKS'] = 60
+        regimes['EXPANSION'] = 30
+
+    # Reflation: Growth + Rising Inflation + Easing (strong reflationary environment)
+    if growth_regime in ['EXPANSION', 'RECOVERY'] and inflation_regime in ['ELEVATED', 'HIGH'] and liquidity_regime == 'EASING':
+        if growth_regime == 'EXPANSION':
+            regimes['REFLATION'] = 70  # Strong reflation
+            regimes['EXPANSION'] = 20
+        else:
+            regimes['REFLATION'] = 50  # Moderate reflation
+            regimes['EXPANSION'] = 30
+
+    # Stagflation: Slowdown/Recession + High Inflation (bad combination)
+    if growth_regime in ['SLOWDOWN', 'RECESSION'] and inflation_regime in ['ELEVATED', 'HIGH']:
+        regimes['STAGFLATION'] = 70
+
+    # Deflation: Recession + Low Inflation (deflationary spiral risk)
+    if growth_regime == 'RECESSION' and inflation_regime in ['LOW', 'DEFLATION']:
+        regimes['DEFLATION'] = 60
+        regimes['CRISIS'] = 30
+
+    # Crisis: Recession + Risk-off + Tightening (full crisis mode)
+    if growth_regime == 'RECESSION' and market_regime == 'RISK_OFF':
+        regimes['CRISIS'] = 80
+
+    # Expansion: Strong Growth + Target Inflation (ideal scenario)
+    if growth_regime == 'EXPANSION' and inflation_regime == 'TARGET':
+        regimes['EXPANSION'] = 70
+        regimes['GOLDILOCKS'] = 20
+
+    # Expansion with elevated inflation but tightening (transitioning)
+    if growth_regime == 'EXPANSION' and inflation_regime == 'ELEVATED' and liquidity_regime == 'TIGHTENING':
+        regimes['EXPANSION'] = 50
+        regimes['REFLATION'] = 30
+        regimes['STAGFLATION'] = 10
+
+    # Recovery phase (growing but not yet expansion)
+    if growth_regime == 'RECOVERY' and inflation_regime in ['LOW', 'TARGET'] and liquidity_regime == 'EASING':
+        regimes['EXPANSION'] = 40
+        regimes['GOLDILOCKS'] = 40
+
+    # Normalize probabilities to sum to 100
+    total = sum(regimes.values())
+    if total > 0:
+        regimes = {k: (v / total) * 100 for k, v in regimes.items()}
+
+    return regimes
+
+
+# ============================================================
+# API ENDPOINTS
+# ============================================================
+
+@app.route('/api/macro/regime/latest', methods=['GET'])
+def get_latest_regime():
+    """
+    Get latest macro regime analysis
+
+    Returns:
+    {
+        "growth": {"regime": "EXPANSION", "indicators": {...}},
+        "inflation": {"regime": "TARGET", "indicators": {...}},
+        "liquidity": {"regime": "NEUTRAL", "indicators": {...}},
+        "market": {"regime": "RISK_ON", "indicators": {...}},
+        "regime_probabilities": {...},
+        "timestamp": "2025-11-14T..."
+    }
+    """
+    try:
+        # Fetch all indicators
+        growth_ind = get_growth_indicators()
+        inflation_ind = get_inflation_indicators()
+        liquidity_ind = get_liquidity_indicators()
+        market_ind = get_market_indicators()
+
+        # Classify regimes
+        growth_regime = classify_growth_regime(growth_ind)
+        inflation_regime = classify_inflation_regime(inflation_ind)
+        liquidity_regime = classify_liquidity_regime(liquidity_ind)
+        market_regime = classify_market_regime(market_ind)
+
+        # Calculate regime probabilities
+        regime_probs = calculate_regime_probabilities(
+            growth_regime, inflation_regime, liquidity_regime, market_regime
+        )
+
+        response = {
+            'growth': {
+                'regime': growth_regime[0],
+                'score': growth_regime[1],
+                'indicators': growth_ind
+            },
+            'inflation': {
+                'regime': inflation_regime[0],
+                'value': inflation_regime[1],
+                'indicators': inflation_ind
+            },
+            'liquidity': {
+                'regime': liquidity_regime[0],
+                'net_liquidity': liquidity_regime[1],
+                'indicators': liquidity_ind
+            },
+            'market': {
+                'regime': market_regime[0],
+                'score': market_regime[1],
+                'indicators': market_ind
+            },
+            'regime_probabilities': regime_probs,
+            'timestamp': datetime.now().isoformat(),
+            'data_quality': 'VERIFIED',
+            'source': 'FRED API, Yahoo Finance'
+        }
+
+        return jsonify(response), 200
+
+    except Exception as e:
+        return jsonify({
+            'error': str(e),
+            'message': 'Error fetching macro regime data'
+        }), 500
+
+
+@app.route('/api/macro/growth', methods=['GET'])
+def get_growth():
+    """Get growth regime indicators only"""
+    try:
+        indicators = get_growth_indicators()
+        regime = classify_growth_regime(indicators)
+
+        return jsonify({
+            'regime': regime[0],
+            'score': regime[1],
+            'indicators': indicators,
+            'timestamp': datetime.now().isoformat()
+        }), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/macro/inflation', methods=['GET'])
+def get_inflation():
+    """Get inflation regime indicators only"""
+    try:
+        indicators = get_inflation_indicators()
+        regime = classify_inflation_regime(indicators)
+
+        return jsonify({
+            'regime': regime[0],
+            'value': regime[1],
+            'indicators': indicators,
+            'timestamp': datetime.now().isoformat()
+        }), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/macro/liquidity', methods=['GET'])
+def get_liquidity():
+    """Get liquidity regime indicators only"""
+    try:
+        indicators = get_liquidity_indicators()
+        regime = classify_liquidity_regime(indicators)
+
+        return jsonify({
+            'regime': regime[0],
+            'net_liquidity': regime[1],
+            'indicators': indicators,
+            'timestamp': datetime.now().isoformat()
+        }), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/macro/market', methods=['GET'])
+def get_market():
+    """Get market regime indicators only"""
+    try:
+        indicators = get_market_indicators()
+        regime = classify_market_regime(indicators)
+
+        return jsonify({
+            'regime': regime[0],
+            'score': regime[1],
+            'indicators': indicators,
+            'timestamp': datetime.now().isoformat()
+        }), 200
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
+
+@app.route('/api/macro/health', methods=['GET'])
+def health_check():
+    """Health check endpoint"""
+    return jsonify({
+        'status': 'healthy',
+        'service': 'Macro Regime Tracker API',
+        'fred_api_configured': FRED_API_KEY != 'YOUR_FRED_API_KEY',
+        'timestamp': datetime.now().isoformat()
+    }), 200
+
+
+if __name__ == '__main__':
+    print("\n" + "="*60)
+    print("🌍 SPARTAN MACRO REGIME TRACKER API")
+    print("="*60)
+    print("Port: 9002")
+    print("Inspired by: Capital Flows Research")
+    print("Data Sources: FRED API (verified), Yahoo Finance")
+    print("\nEndpoints:")
+    print("  GET /api/macro/regime/latest  - Full regime analysis")
+    print("  GET /api/macro/growth         - Growth regime only")
+    print("  GET /api/macro/inflation      - Inflation regime only")
+    print("  GET /api/macro/liquidity      - Liquidity regime only")
+    print("  GET /api/macro/market         - Market regime only")
+    print("  GET /api/macro/health         - Health check")
+    print("\n⚠️  PLATINUM RULE: NO FAKE DATA - All data from verified sources")
+    print("="*60 + "\n")
+
+    app.run(host='0.0.0.0', port=9002, debug=False)

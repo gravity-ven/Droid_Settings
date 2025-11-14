@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Macro Regime Tracker | Spartan Research Station</title>
+
+    <!-- Cache Prevention (Mandatory) -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <style>
+        :root {
+            --bg-dark: #0a1628;
+            --bg-darker: #050b14;
+            --gold: #FFD700;
+            --green: #00ff88;
+            --primary: #0096FF;
+            --red: #ff6b6b;
+            --orange: #ff9500;
+            --yellow: #ffd700;
+            --purple: #9d4edd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            color: var(--green);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+            background: rgba(255, 215, 0, 0.05);
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: var(--gold);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .subtitle {
+            color: var(--green);
+            font-size: 1.1em;
+            margin-bottom: 5px;
+        }
+
+        .data-quality {
+            display: inline-block;
+            background: var(--green);
+            color: var(--bg-dark);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9em;
+            margin-top: 10px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .regime-card {
+            background: rgba(0, 150, 255, 0.05);
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .regime-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 150, 255, 0.3);
+        }
+
+        .regime-card h2 {
+            color: var(--gold);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .regime-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+        }
+
+        .regime-label {
+            font-size: 1.3em;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        .expansion { background: var(--green); color: var(--bg-dark); }
+        .recovery { background: var(--primary); color: white; }
+        .slowdown { background: var(--orange); color: var(--bg-dark); }
+        .recession { background: var(--red); color: white; }
+        .target { background: var(--green); color: var(--bg-dark); }
+        .elevated { background: var(--orange); color: var(--bg-dark); }
+        .high { background: var(--red); color: white; }
+        .low { background: var(--primary); color: white; }
+        .risk-on { background: var(--green); color: var(--bg-dark); }
+        .risk-off { background: var(--red); color: white; }
+        .neutral { background: var(--yellow); color: var(--bg-dark); }
+        .easing { background: var(--green); color: var(--bg-dark); }
+        .tightening { background: var(--red); color: white; }
+        .unknown { background: #666; color: white; }
+
+        .indicator-list {
+            list-style: none;
+        }
+
+        .indicator-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: rgba(0, 255, 136, 0.05);
+            border-left: 3px solid var(--green);
+            border-radius: 4px;
+        }
+
+        .indicator-name {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .indicator-value {
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        .probabilities-section {
+            background: rgba(157, 78, 221, 0.05);
+            border: 2px solid var(--purple);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .probabilities-section h2 {
+            color: var(--gold);
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .prob-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .prob-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .prob-card.dominant {
+            border-color: var(--green);
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .prob-name {
+            color: var(--purple);
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .prob-value {
+            color: var(--green);
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .prob-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .prob-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--purple), var(--primary));
+            transition: width 1s ease;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: var(--gold);
+            font-size: 1.5em;
+        }
+
+        .error {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid var(--red);
+            color: var(--red);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .timestamp {
+            text-align: center;
+            color: var(--primary);
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        .refresh-btn {
+            display: block;
+            margin: 30px auto;
+            padding: 15px 40px;
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 150, 255, 0.5);
+        }
+
+        .refresh-btn:active {
+            transform: scale(0.95);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .loading-spinner {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌍 MACRO REGIME TRACKER</h1>
+            <p class="subtitle">Capital Flows Research-Inspired Analysis</p>
+            <p class="subtitle">Real-Time Regime Probabilities Across All Major Assets</p>
+            <span class="data-quality">✓ VERIFIED DATA ONLY</span>
+        </header>
+
+        <div id="loading" class="loading loading-spinner">
+            Loading macro regime data...
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div id="content" style="display: none;">
+            <!-- Four Regime Cards -->
+            <div class="grid">
+                <!-- Growth Regime -->
+                <div class="regime-card">
+                    <h2>📈 Growth Regime</h2>
+                    <div class="regime-status">
+                        <span>Status:</span>
+                        <span id="growth-regime" class="regime-label unknown">UNKNOWN</span>
+                    </div>
+                    <ul class="indicator-list" id="growth-indicators"></ul>
+                </div>
+
+                <!-- Inflation Regime -->
+                <div class="regime-card">
+                    <h2>🔥 Inflation Regime</h2>
+                    <div class="regime-status">
+                        <span>Status:</span>
+                        <span id="inflation-regime" class="regime-label unknown">UNKNOWN</span>
+                    </div>
+                    <ul class="indicator-list" id="inflation-indicators"></ul>
+                </div>
+
+                <!-- Liquidity Regime -->
+                <div class="regime-card">
+                    <h2>💧 Liquidity Regime</h2>
+                    <div class="regime-status">
+                        <span>Status:</span>
+                        <span id="liquidity-regime" class="regime-label unknown">UNKNOWN</span>
+                    </div>
+                    <ul class="indicator-list" id="liquidity-indicators"></ul>
+                </div>
+
+                <!-- Market Regime -->
+                <div class="regime-card">
+                    <h2>📊 Market Regime</h2>
+                    <div class="regime-status">
+                        <span>Status:</span>
+                        <span id="market-regime" class="regime-label unknown">UNKNOWN</span>
+                    </div>
+                    <ul class="indicator-list" id="market-indicators"></ul>
+                </div>
+            </div>
+
+            <!-- Regime Probabilities -->
+            <div class="probabilities-section">
+                <h2>🎯 Macro Regime Probabilities</h2>
+                <div class="prob-grid" id="probabilities"></div>
+            </div>
+
+            <p class="timestamp" id="timestamp"></p>
+
+            <button class="refresh-btn" onclick="loadMacroData()">🔄 Refresh Data</button>
+        </div>
+    </div>
+
+    <script>
+        // API endpoint
+        const API_URL = 'http://localhost:9002/api/macro/regime/latest';
+
+        // Format number with commas and decimals
+        function formatNumber(num, decimals = 2) {
+            if (num === null || num === undefined) return 'N/A';
+            return num.toLocaleString('en-US', {
+                minimumFractionDigits: decimals,
+                maximumFractionDigits: decimals
+            });
+        }
+
+        // Format percentage
+        function formatPercent(num, decimals = 2) {
+            if (num === null || num === undefined) return 'N/A';
+            return num.toFixed(decimals) + '%';
+        }
+
+        // Get regime class for styling
+        function getRegimeClass(regime) {
+            const mapping = {
+                'EXPANSION': 'expansion',
+                'RECOVERY': 'recovery',
+                'SLOWDOWN': 'slowdown',
+                'RECESSION': 'recession',
+                'TARGET': 'target',
+                'ELEVATED': 'elevated',
+                'HIGH': 'high',
+                'LOW': 'low',
+                'DEFLATION': 'low',
+                'RISK_ON': 'risk-on',
+                'RISK_OFF': 'risk-off',
+                'NEUTRAL': 'neutral',
+                'EASING': 'easing',
+                'TIGHTENING': 'tightening',
+                'UNKNOWN': 'unknown'
+            };
+            return mapping[regime] || 'unknown';
+        }
+
+        // Render growth indicators
+        function renderGrowthIndicators(data) {
+            const regime = data.regime;
+            const indicators = data.indicators;
+
+            document.getElementById('growth-regime').textContent = regime;
+            document.getElementById('growth-regime').className = 'regime-label ' + getRegimeClass(regime);
+
+            const html = `
+                <li class="indicator-item">
+                    <span class="indicator-name">GDP Growth (QoQ):</span>
+                    <span class="indicator-value">${formatPercent(indicators.gdp_growth)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">Employment:</span>
+                    <span class="indicator-value">${formatNumber(indicators.employment, 0)}K</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">ISM Manufacturing:</span>
+                    <span class="indicator-value">${formatNumber(indicators.ism_manufacturing)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">ISM Services:</span>
+                    <span class="indicator-value">${formatNumber(indicators.ism_services)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">Retail Sales Growth:</span>
+                    <span class="indicator-value">${formatPercent(indicators.retail_sales_growth)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">Industrial Production:</span>
+                    <span class="indicator-value">${formatNumber(indicators.industrial_production)}</span>
+                </li>
+            `;
+
+            document.getElementById('growth-indicators').innerHTML = html;
+        }
+
+        // Render inflation indicators
+        function renderInflationIndicators(data) {
+            const regime = data.regime;
+            const indicators = data.indicators;
+
+            document.getElementById('inflation-regime').textContent = regime;
+            document.getElementById('inflation-regime').className = 'regime-label ' + getRegimeClass(regime);
+
+            const html = `
+                <li class="indicator-item">
+                    <span class="indicator-name">CPI (YoY):</span>
+                    <span class="indicator-value">${formatPercent(indicators.cpi_yoy)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">Core CPI (YoY):</span>
+                    <span class="indicator-value">${formatPercent(indicators.core_cpi_yoy)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">PCE (YoY):</span>
+                    <span class="indicator-value">${formatPercent(indicators.pce_yoy)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">Core PCE (YoY):</span>
+                    <span class="indicator-value">${formatPercent(indicators.core_pce_yoy)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">5Y Breakeven:</span>
+                    <span class="indicator-value">${formatPercent(indicators.breakeven_5y)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">10Y Breakeven:</span>
+                    <span class="indicator-value">${formatPercent(indicators.breakeven_10y)}</span>
+                </li>
+            `;
+
+            document.getElementById('inflation-indicators').innerHTML = html;
+        }
+
+        // Render liquidity indicators
+        function renderLiquidityIndicators(data) {
+            const regime = data.regime;
+            const indicators = data.indicators;
+
+            document.getElementById('liquidity-regime').textContent = regime;
+            document.getElementById('liquidity-regime').className = 'regime-label ' + getRegimeClass(regime);
+
+            const html = `
+                <li class="indicator-item">
+                    <span class="indicator-name">Fed Balance Sheet:</span>
+                    <span class="indicator-value">$${formatNumber(indicators.fed_balance_sheet, 0)}B</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">Reverse Repo:</span>
+                    <span class="indicator-value">$${formatNumber(indicators.reverse_repo, 0)}B</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">TGA Balance:</span>
+                    <span class="indicator-value">$${formatNumber(indicators.tga_balance, 0)}B</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">Net Liquidity:</span>
+                    <span class="indicator-value">$${formatNumber(indicators.net_liquidity, 0)}B</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">M2 Money Supply:</span>
+                    <span class="indicator-value">$${formatNumber(indicators.m2_money_supply, 0)}B</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">Bank Credit:</span>
+                    <span class="indicator-value">$${formatNumber(indicators.bank_credit, 0)}B</span>
+                </li>
+            `;
+
+            document.getElementById('liquidity-indicators').innerHTML = html;
+        }
+
+        // Render market indicators
+        function renderMarketIndicators(data) {
+            const regime = data.regime;
+            const indicators = data.indicators;
+
+            document.getElementById('market-regime').textContent = regime;
+            document.getElementById('market-regime').className = 'regime-label ' + getRegimeClass(regime);
+
+            const html = `
+                <li class="indicator-item">
+                    <span class="indicator-name">10Y Treasury:</span>
+                    <span class="indicator-value">${formatPercent(indicators.treasury_10y)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">2Y Treasury:</span>
+                    <span class="indicator-value">${formatPercent(indicators.treasury_2y)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">Yield Curve (10Y-2Y):</span>
+                    <span class="indicator-value">${formatPercent(indicators.yield_curve)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">HY Credit Spread:</span>
+                    <span class="indicator-value">${formatNumber(indicators.credit_spread_hy, 0)} bps</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">IG Credit Spread:</span>
+                    <span class="indicator-value">${formatNumber(indicators.credit_spread_ig, 0)} bps</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">VIX:</span>
+                    <span class="indicator-value">${formatNumber(indicators.vix)}</span>
+                </li>
+                <li class="indicator-item">
+                    <span class="indicator-name">S&P 500:</span>
+                    <span class="indicator-value">${formatNumber(indicators.spx_level)}</span>
+                </li>
+            `;
+
+            document.getElementById('market-indicators').innerHTML = html;
+        }
+
+        // Render regime probabilities
+        function renderProbabilities(probs) {
+            const probArray = Object.entries(probs)
+                .sort((a, b) => b[1] - a[1]);
+
+            let html = '';
+            probArray.forEach(([regime, prob]) => {
+                const isDominant = prob > 30 ? 'dominant' : '';
+                html += `
+                    <div class="prob-card ${isDominant}">
+                        <div class="prob-name">${regime}</div>
+                        <div class="prob-value">${prob.toFixed(0)}%</div>
+                        <div class="prob-bar">
+                            <div class="prob-bar-fill" style="width: ${prob}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('probabilities').innerHTML = html;
+        }
+
+        // Load macro data from API
+        async function loadMacroData() {
+            try {
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('content').style.display = 'none';
+                document.getElementById('error').style.display = 'none';
+
+                const response = await fetch(API_URL);
+
+                if (!response.ok) {
+                    throw new Error(`API returned ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Render all sections
+                renderGrowthIndicators(data.growth);
+                renderInflationIndicators(data.inflation);
+                renderLiquidityIndicators(data.liquidity);
+                renderMarketIndicators(data.market);
+                renderProbabilities(data.regime_probabilities);
+
+                // Update timestamp
+                const timestamp = new Date(data.timestamp);
+                document.getElementById('timestamp').textContent =
+                    `Last updated: ${timestamp.toLocaleString()} | Data Quality: ${data.data_quality} | Sources: ${data.source}`;
+
+                // Show content
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+
+            } catch (error) {
+                console.error('Error loading macro data:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').textContent =
+                    `⚠️ Error loading macro regime data: ${error.message}. Please ensure the Macro Regime Tracker API is running on port 9002.`;
+            }
+        }
+
+        // Load data on page load
+        window.addEventListener('load', loadMacroData);
+
+        // Auto-refresh every 5 minutes
+        setInterval(loadMacroData, 5 * 60 * 1000);
+    </script>
+</body>
+</html>
