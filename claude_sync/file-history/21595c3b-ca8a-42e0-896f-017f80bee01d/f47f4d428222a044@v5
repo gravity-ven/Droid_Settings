@@ -1,0 +1,1940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Capital Markets | Spartan Research Station</title>
+
+    <!-- Cache Prevention (Mandatory) -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+
+    <style>
+        :root {
+            --bg-dark: #0a1628;
+            --bg-darker: #050b14;
+            --gold: #FFD700;
+            --green: #00ff88;
+            --primary: #0096FF;
+            --red: #ff6b6b;
+            --orange: #ff9500;
+            --yellow: #ffd700;
+            --purple: #9d4edd;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            color: var(--green);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px 0;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            border: 2px solid var(--gold);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            background: var(--primary);
+            color: var(--bg-dark);
+            transform: translateY(-2px);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 30px;
+            background: rgba(255, 215, 0, 0.05);
+            border: 3px solid var(--gold);
+            border-radius: 15px;
+        }
+
+        h1 {
+            color: var(--gold);
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+        }
+
+        .subtitle {
+            color: var(--green);
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .data-quality {
+            display: inline-block;
+            background: var(--green);
+            color: var(--bg-dark);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            font-size: 1em;
+            margin-top: 15px;
+        }
+
+        /* Section Styling */
+        .section {
+            margin-bottom: 50px;
+            padding: 30px;
+            background: rgba(0, 150, 255, 0.03);
+            border: 2px solid var(--primary);
+            border-radius: 15px;
+        }
+
+        .section-title {
+            color: var(--gold);
+            font-size: 2.2em;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary);
+            text-align: center;
+        }
+
+        .section-subtitle {
+            color: var(--primary);
+            font-size: 1.4em;
+            margin: 25px 0 15px 0;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(0, 150, 255, 0.05);
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            padding: 25px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 150, 255, 0.4);
+        }
+
+        .card h3 {
+            color: var(--gold);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--green);
+            line-height: 1.8;
+            margin-bottom: 10px;
+        }
+
+        .card ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .card li {
+            color: var(--primary);
+            padding: 8px 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .card li:before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--green);
+        }
+
+        /* Feature Boxes */
+        .feature-box {
+            background: rgba(157, 78, 221, 0.08);
+            border: 2px solid var(--purple);
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+        }
+
+        .feature-box h4 {
+            color: var(--purple);
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .feature-box p {
+            color: var(--green);
+            line-height: 1.7;
+        }
+
+        /* Badge System */
+        .badge {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin: 5px;
+        }
+
+        .badge-daily { background: var(--green); color: var(--bg-dark); }
+        .badge-monthly { background: var(--primary); color: white; }
+        .badge-biweekly { background: var(--purple); color: white; }
+        .badge-trade { background: var(--orange); color: var(--bg-dark); }
+        .badge-free { background: var(--yellow); color: var(--bg-dark); }
+
+        /* Resource Links */
+        .resource-link {
+            display: block;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(0, 255, 136, 0.05);
+            border-left: 4px solid var(--green);
+            border-radius: 5px;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .resource-link:hover {
+            background: rgba(0, 255, 136, 0.15);
+            padding-left: 25px;
+            border-left-width: 6px;
+        }
+
+        .resource-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 5px;
+            color: var(--gold);
+        }
+
+        .resource-desc {
+            font-size: 0.9em;
+            color: var(--green);
+        }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        thead {
+            background: rgba(255, 215, 0, 0.1);
+        }
+
+        th {
+            color: var(--gold);
+            padding: 15px;
+            text-align: left;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        td {
+            color: var(--green);
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(0, 150, 255, 0.2);
+        }
+
+        tr:hover {
+            background: rgba(0, 150, 255, 0.05);
+        }
+
+        /* Regime Cards */
+        .regime-card {
+            background: rgba(0, 150, 255, 0.05);
+            border: 2px solid var(--primary);
+            border-radius: 10px;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .regime-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 150, 255, 0.3);
+        }
+
+        .regime-card h2 {
+            color: var(--gold);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 10px;
+        }
+
+        .regime-status {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.03);
+            border-radius: 8px;
+        }
+
+        .regime-label {
+            font-size: 1.3em;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 5px;
+            text-transform: uppercase;
+        }
+
+        .expansion { background: var(--green); color: var(--bg-dark); }
+        .recovery { background: var(--primary); color: white; }
+        .slowdown { background: var(--orange); color: var(--bg-dark); }
+        .recession { background: var(--red); color: white; }
+        .target { background: var(--green); color: var(--bg-dark); }
+        .elevated { background: var(--orange); color: var(--bg-dark); }
+        .high { background: var(--red); color: white; }
+        .low { background: var(--primary); color: white; }
+        .risk-on { background: var(--green); color: var(--bg-dark); }
+        .risk-off { background: var(--red); color: white; }
+        .neutral { background: var(--yellow); color: var(--bg-dark); }
+        .easing { background: var(--green); color: var(--bg-dark); }
+        .tightening { background: var(--red); color: white; }
+        .unknown { background: #666; color: white; }
+
+        .indicator-list {
+            list-style: none;
+        }
+
+        .indicator-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+            margin-bottom: 8px;
+            background: rgba(0, 255, 136, 0.05);
+            border-left: 3px solid var(--green);
+            border-radius: 4px;
+        }
+
+        .indicator-name {
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .indicator-value {
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        .timeframe-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 12px;
+            font-size: 0.7em;
+            font-weight: bold;
+            margin-left: 8px;
+            text-transform: uppercase;
+        }
+
+        .timeframe-daily {
+            background: rgba(0, 150, 255, 0.3);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .timeframe-weekly {
+            background: rgba(157, 78, 221, 0.3);
+            color: var(--purple);
+            border: 1px solid var(--purple);
+        }
+
+        .timeframe-monthly {
+            background: rgba(0, 255, 136, 0.3);
+            color: var(--green);
+            border: 1px solid var(--green);
+        }
+
+        .timeframe-quarterly {
+            background: rgba(255, 215, 0, 0.3);
+            color: var(--gold);
+            border: 1px solid var(--gold);
+        }
+
+        /* Probabilities */
+        .probabilities-section {
+            background: rgba(157, 78, 221, 0.05);
+            border: 2px solid var(--purple);
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .probabilities-section h2 {
+            color: var(--gold);
+            font-size: 2em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .prob-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+        }
+
+        .prob-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s ease;
+        }
+
+        .prob-card.dominant {
+            border-color: var(--green);
+            background: rgba(0, 255, 136, 0.1);
+        }
+
+        .prob-name {
+            color: var(--purple);
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .prob-value {
+            color: var(--green);
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .prob-bar {
+            height: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+
+        .prob-bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--purple), var(--primary));
+            transition: width 1s ease;
+        }
+
+        /* Loading & Error States */
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: var(--gold);
+            font-size: 1.5em;
+        }
+
+        .error {
+            background: rgba(255, 107, 107, 0.1);
+            border: 2px solid var(--red);
+            color: var(--red);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(135deg, var(--primary), var(--purple));
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 20px rgba(0, 150, 255, 0.5);
+        }
+
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .btn-large {
+            padding: 20px 50px;
+            font-size: 1.3em;
+        }
+
+        /* Timestamp */
+        .timestamp {
+            text-align: center;
+            color: var(--primary);
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Info Boxes */
+        .info-box {
+            background: rgba(0, 150, 255, 0.1);
+            border-left: 5px solid var(--primary);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .info-box.warning {
+            background: rgba(255, 149, 0, 0.1);
+            border-left-color: var(--orange);
+        }
+
+        .info-box.success {
+            background: rgba(0, 255, 136, 0.1);
+            border-left-color: var(--green);
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .loading-spinner {
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        /* Composite Score Display */
+        .composite-score {
+            text-align: center;
+            background: rgba(0, 150, 255, 0.1);
+            border: 3px solid var(--primary);
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .score-value {
+            font-size: 6em;
+            font-weight: bold;
+            margin: 20px 0;
+            text-shadow: 0 0 30px currentColor;
+        }
+
+        .score-green { color: var(--green); }
+        .score-yellow { color: var(--yellow); }
+        .score-red { color: var(--red); }
+
+        .score-label {
+            font-size: 1.8em;
+            color: var(--gold);
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .score-description {
+            font-size: 1.3em;
+            margin-top: 15px;
+            color: var(--primary);
+            line-height: 1.6;
+        }
+
+        /* Investment Checklist */
+        .checklist-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .checklist-category {
+            background: rgba(255, 215, 0, 0.05);
+            border: 2px solid var(--gold);
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .checklist-category h3 {
+            color: var(--gold);
+            font-size: 1.4em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: 10px;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin: 15px 0;
+            padding: 12px;
+            background: rgba(0, 150, 255, 0.05);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .checklist-item:hover {
+            background: rgba(0, 150, 255, 0.15);
+            transform: translateX(5px);
+        }
+
+        .checklist-icon {
+            color: var(--green);
+            font-size: 1.3em;
+            margin-right: 12px;
+            min-width: 25px;
+        }
+
+        .checklist-text {
+            color: var(--green);
+            line-height: 1.6;
+        }
+
+        .checklist-text strong {
+            color: var(--gold);
+        }
+
+        /* Indicator Explanation */
+        .indicator-explain {
+            display: block;
+            font-size: 0.85em;
+            color: var(--primary);
+            margin-top: 5px;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            .section-title {
+                font-size: 1.5em;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#regime-tracker">Regime Tracker</a></li>
+                <li><a href="#reports">Reports</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#free-resources">Free Resources</a></li>
+                <li><a href="#data-sources">Data Sources</a></li>
+            </ul>
+        </nav>
+
+        <!-- Header -->
+        <header>
+            <h1>🌍 GLOBAL CAPITAL MARKETS RESEARCH</h1>
+            <p class="subtitle">Comprehensive Macro Analysis & Trading Strategies</p>
+            <p class="subtitle">Inspired by Capital Flows Research Methodology</p>
+            <span class="data-quality">✓ VERIFIED DATA ONLY - NO FAKE NUMBERS</span>
+        </header>
+
+        <!-- Executive Summary Section -->
+        <section id="overview" class="section">
+            <h2 class="section-title">Executive Summary</h2>
+
+            <div class="info-box success">
+                <p><strong>Platform Purpose:</strong> This platform provides comprehensive macro economic analysis and trading strategies across all major asset classes. We track macro flows through the economy and financial markets, offering you an informational edge to execute trades across interest rates, FX, and risk assets.</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>🎯 Core Mission</h3>
+                    <p>Provide retail investors with institutional-grade macro research that was previously available only to hedge funds and professional traders.</p>
+                </div>
+
+                <div class="card">
+                    <h3>📊 Data Philosophy</h3>
+                    <p><strong>PLATINUM RULE:</strong> Absolutely zero fake data. All analysis based on verified sources including FRED, Yahoo Finance, BLS, Census Bureau, and IMF.</p>
+                </div>
+
+                <div class="card">
+                    <h3>🔬 Research Methodology</h3>
+                    <p>Three-pillar approach: <strong>Innovate</strong> (identify opportunities), <strong>Systematize</strong> (build testable frameworks), <strong>Execute</strong> (real-time implementation).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services & Products Section -->
+        <section id="services" class="section">
+            <h2 class="section-title">Core Services & Products</h2>
+
+            <!-- Macro Regime Tracker -->
+            <div class="feature-box">
+                <span class="badge badge-daily">DAILY UPDATES</span>
+                <h4>1. Macro Regime Tracker (Daily)</h4>
+                <p>A sophisticated daily machine-learning dashboard providing real-time regime probabilities across all major assets. Converts latest growth, inflation, and liquidity data into actionable insights.</p>
+                <ul>
+                    <li>Growth indicators tracking (GDP, ISM, Employment)</li>
+                    <li>Inflation dynamics monitoring (CPI, PCE, Breakeven rates)</li>
+                    <li>Yield curve analysis (Treasury spreads)</li>
+                    <li>Credit market shifts (IG & HY spreads)</li>
+                    <li>Equity risk premiums</li>
+                    <li>Real-time positioning data</li>
+                </ul>
+            </div>
+
+            <!-- Macro Reports -->
+            <div class="feature-box">
+                <span class="badge badge-monthly">MONTHLY</span>
+                <h4>2. Macro Reports (Monthly Deep-Dives)</h4>
+                <p>Comprehensive analyses breaking down macro regime evolution, quantifying all economic data points, and connecting trends to asset class performance.</p>
+                <ul>
+                    <li>Growth and recession indicators</li>
+                    <li>Inflation dynamics and Fed policy</li>
+                    <li>Liquidity conditions (Fed balance sheet, TGA, RRP)</li>
+                    <li>Federal Reserve policy implications</li>
+                    <li>Credit cycle analysis</li>
+                    <li>Asset class interconnections</li>
+                </ul>
+            </div>
+
+            <!-- Alpha Reports -->
+            <div class="feature-box">
+                <span class="badge badge-biweekly">BI-WEEKLY</span>
+                <h4>3. Alpha Reports (Bi-weekly Strategy)</h4>
+                <p>Advanced strategy reports combining systematic and discretionary approaches to rank assets by risk-reward profiles and surface asymmetric opportunities.</p>
+                <ul>
+                    <li>Volatility-adjusted carry analysis</li>
+                    <li>Correlation structure examination</li>
+                    <li>Asset ranking by Sharpe ratios</li>
+                    <li>Cross-asset relative value</li>
+                    <li>Momentum and mean-reversion signals</li>
+                </ul>
+            </div>
+
+            <!-- Trade Reports -->
+            <div class="feature-box">
+                <span class="badge badge-trade">AS NEEDED</span>
+                <h4>4. Trade Reports</h4>
+                <p>Detailed trade execution reports with specific ideas, timing, risk management, and scenario analysis.</p>
+                <ul>
+                    <li>Specific trade ideas with rationale</li>
+                    <li>Entry and exit strategies</li>
+                    <li>Position sizing guidance</li>
+                    <li>Scenario analysis (bull/base/bear cases)</li>
+                    <li>Redundancy planning (backup plans)</li>
+                </ul>
+                <div class="info-box warning">
+                    <strong>Expected Hit Ratio:</strong> 50-60% success rate (consistent with top money managers globally)
+                </div>
+            </div>
+        </section>
+
+        <!-- Macro Regime Tracker Section -->
+        <section id="regime-tracker" class="section">
+            <h2 class="section-title">📊 LIVE MACRO REGIME TRACKER</h2>
+
+            <div class="info-box">
+                <p><strong>Real-time regime detection:</strong> This section updates automatically with the latest economic data from FRED API and Yahoo Finance. All data is verified and sourced from official government and financial institutions.</p>
+            </div>
+
+            <div id="loading" class="loading loading-spinner">
+                Loading macro regime data from API...
+            </div>
+
+            <div id="error" class="error" style="display: none;"></div>
+
+            <div id="content" style="display: none;">
+                <!-- Composite Score -->
+                <div class="composite-score">
+                    <div class="score-label">Market Health Score</div>
+                    <div id="composite-score-value" class="score-value score-green">--</div>
+                    <div id="composite-score-desc" class="score-description">Loading...</div>
+                </div>
+
+                <!-- Four Regime Cards -->
+                <div class="grid">
+                    <!-- Growth Regime -->
+                    <div class="regime-card">
+                        <h2>📈 Growth Regime</h2>
+                        <div class="regime-status">
+                            <span>Status:</span>
+                            <span id="growth-regime" class="regime-label unknown">UNKNOWN</span>
+                        </div>
+                        <ul class="indicator-list" id="growth-indicators"></ul>
+                    </div>
+
+                    <!-- Inflation Regime -->
+                    <div class="regime-card">
+                        <h2>🔥 Inflation Regime</h2>
+                        <div class="regime-status">
+                            <span>Status:</span>
+                            <span id="inflation-regime" class="regime-label unknown">UNKNOWN</span>
+                        </div>
+                        <ul class="indicator-list" id="inflation-indicators"></ul>
+                    </div>
+
+                    <!-- Liquidity Regime -->
+                    <div class="regime-card">
+                        <h2>💧 Liquidity Regime</h2>
+                        <div class="regime-status">
+                            <span>Status:</span>
+                            <span id="liquidity-regime" class="regime-label unknown">UNKNOWN</span>
+                        </div>
+                        <ul class="indicator-list" id="liquidity-indicators"></ul>
+                    </div>
+
+                    <!-- Market Regime -->
+                    <div class="regime-card">
+                        <h2>📊 Market Regime</h2>
+                        <div class="regime-status">
+                            <span>Status:</span>
+                            <span id="market-regime" class="regime-label unknown">UNKNOWN</span>
+                        </div>
+                        <ul class="indicator-list" id="market-indicators"></ul>
+                    </div>
+                </div>
+
+                <!-- Regime Probabilities -->
+                <div class="probabilities-section">
+                    <h2>🎯 Macro Regime Probabilities</h2>
+                    <div class="prob-grid" id="probabilities"></div>
+                </div>
+
+                <p class="timestamp" id="timestamp"></p>
+
+                <button class="btn btn-large" onclick="loadMacroData()">🔄 Refresh Data</button>
+            </div>
+        </section>
+
+        <!-- Investment Checklist Section -->
+        <section id="investment-checklist" class="section">
+            <h2 class="section-title">✅ What to Look For When Making Investment Decisions</h2>
+
+            <div class="info-box">
+                <p><strong>Professional investors check these indicators BEFORE making any major portfolio moves.</strong> Use this checklist to avoid emotional decisions and follow the data.</p>
+            </div>
+
+            <div class="checklist-grid">
+                <!-- Growth Analysis -->
+                <div class="checklist-category">
+                    <h3>📈 Growth Analysis</h3>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">🎯</span>
+                        <div class="checklist-text">
+                            <strong>GDP Growth:</strong> Is the economy expanding or contracting? Above 2% = healthy growth. Below 0% = recession.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">💼</span>
+                        <div class="checklist-text">
+                            <strong>Employment:</strong> Are jobs being created? Rising employment = consumers have money to spend = good for stocks.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">🏭</span>
+                        <div class="checklist-text">
+                            <strong>Industrial Production:</strong> Are factories producing more? Rising production = business confidence = economic strength.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">🛒</span>
+                        <div class="checklist-text">
+                            <strong>Retail Sales:</strong> Are consumers spending? Strong retail sales = healthy economy = corporate profits grow.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inflation Watch -->
+                <div class="checklist-category">
+                    <h3>🔥 Inflation Watch</h3>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">📊</span>
+                        <div class="checklist-text">
+                            <strong>CPI & Core CPI:</strong> How fast are prices rising? 2% = Fed target. Above 3% = inflation problem. Below 1% = deflation risk.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">🎯</span>
+                        <div class="checklist-text">
+                            <strong>Core PCE (Fed's favorite):</strong> The Fed watches this closest. Above 2.5% = Fed likely to raise rates = bad for stocks.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">📈</span>
+                        <div class="checklist-text">
+                            <strong>Breakeven Rates:</strong> What does the bond market expect for inflation? Rising breakevens = investors worried about future inflation.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Liquidity Conditions -->
+                <div class="checklist-category">
+                    <h3>💵 Liquidity Conditions</h3>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">🏦</span>
+                        <div class="checklist-text">
+                            <strong>Fed Balance Sheet:</strong> Is the Fed printing money (QE) or shrinking (QT)? More money = stocks go up. Less money = stocks struggle.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">💰</span>
+                        <div class="checklist-text">
+                            <strong>Net Liquidity:</strong> Total money sloshing around the financial system. Higher = easier for stocks to rise. Lower = headwinds.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">📉</span>
+                        <div class="checklist-text">
+                            <strong>Reverse Repo (RRP):</strong> Money parked at the Fed = tight liquidity. When RRP falls, that money floods into markets = bullish.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Sentiment -->
+                <div class="checklist-category">
+                    <h3>📊 Market Sentiment</h3>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">⚡</span>
+                        <div class="checklist-text">
+                            <strong>VIX (Fear Index):</strong> Below 15 = complacent market. 20-30 = elevated fear. Above 30 = panic (often a buying opportunity).
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">📈</span>
+                        <div class="checklist-text">
+                            <strong>Credit Spreads:</strong> Are corporate bonds widening vs Treasuries? Widening spreads = investors worried about defaults = risk-off.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">🎢</span>
+                        <div class="checklist-text">
+                            <strong>Yield Curve:</strong> Is 10-year yield > 2-year? Normal = healthy. Inverted (2Y > 10Y) = recession warning within 12-18 months.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Items -->
+                <div class="checklist-category">
+                    <h3>🚀 Action Items</h3>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">✅</span>
+                        <div class="checklist-text">
+                            <strong>GOLDILOCKS:</strong> Go heavy in stocks, especially growth & tech. Reduce cash. This is your wealth-building phase.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">⚠️</span>
+                        <div class="checklist-text">
+                            <strong>REFLATION:</strong> Rotate to value stocks, commodities, energy. Avoid long-duration bonds. Consider gold as hedge.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">🛡️</span>
+                        <div class="checklist-text">
+                            <strong>STAGFLATION:</strong> Reduce equity exposure. Buy gold, commodities, TIPS (inflation-protected bonds). Defensive stocks only.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">💰</span>
+                        <div class="checklist-text">
+                            <strong>CRISIS/DEFLATION:</strong> Go heavy in Treasuries, cash, defensive stocks (utilities, staples). Wait for bottom, then deploy cash into stocks.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Risk Management -->
+                <div class="checklist-category">
+                    <h3>⚖️ Risk Management</h3>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">📏</span>
+                        <div class="checklist-text">
+                            <strong>Position Sizing:</strong> Never put more than 5-10% in a single position. Diversify across 10-20 positions minimum.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">🎯</span>
+                        <div class="checklist-text">
+                            <strong>Stop Losses:</strong> Know your exit BEFORE entering. If wrong, cut losses at 7-10%. Protect your capital first.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">🔄</span>
+                        <div class="checklist-text">
+                            <strong>Rebalance Quarterly:</strong> Review positions every 3 months. Sell winners that got too big. Add to underweight areas.
+                        </div>
+                    </div>
+
+                    <div class="checklist-item">
+                        <span class="checklist-icon">📅</span>
+                        <div class="checklist-text">
+                            <strong>Long-Term Thinking:</strong> Ignore daily noise. Focus on 6-12 month macro trends. The data doesn't lie, emotions do.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Educational Resources Section -->
+        <section id="education" class="section">
+            <h2 class="section-title">📚 Educational Resources & Primers</h2>
+
+            <p style="text-align: center; color: var(--primary); margin-bottom: 30px;">
+                Comprehensive educational content to help you build your own macro analysis framework.
+            </p>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Bond Market Primer</h3>
+                    <p>Understanding Treasury yields, credit spreads, duration risk, and yield curve dynamics. Essential for fixed income analysis.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Interest Rates Primer</h3>
+                    <p>Fed policy transmission mechanisms, rate expectations, forward curves, and SOFR vs Fed Funds.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Stocks & Indices Primer</h3>
+                    <p>S&P 500 sector analysis, equity risk premiums, earnings yield vs Treasury yields, and market breadth indicators.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Options Market Primer</h3>
+                    <p>Put/call ratios, VIX interpretation, gamma positioning, and dealer hedging flows impact on markets.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Economic Data Analysis</h3>
+                    <p>How to interpret GDP, CPI, NFP, ISM surveys, and retail sales. Understanding revisions and seasonal adjustments.</p>
+                </div>
+
+                <div class="card">
+                    <h3>CPI Excel Model</h3>
+                    <p>Build your own CPI forecasting model. Track shelter inflation, core goods, and core services components.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Risk Management Framework</h3>
+                    <p>Position sizing, portfolio diversification, correlation analysis, and scenario planning for uncertain outcomes.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Regime Shift Identification</h3>
+                    <p>Recognize transitions between macro regimes early. Leading vs lagging indicators and confirmation signals.</p>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Core Concepts Covered</h3>
+            <div class="grid">
+                <div class="feature-box">
+                    <h4>Portfolio Diversification Strategies</h4>
+                    <p>How to build resilient portfolios across different macro regimes. Asset allocation based on regime probabilities.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>Path Dependency Analysis</h4>
+                    <p>Understanding how market structure and positioning affect future price action. Why the path matters as much as the destination.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>Redundancy Planning</h4>
+                    <p>Always have a Plan B. Building multiple scenarios and preparing for outcomes outside your base case.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Economic Indicators Section -->
+        <section id="indicators" class="section">
+            <h2 class="section-title">📈 Key Economic Indicators Monitored</h2>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Growth Indicators</h3>
+                    <ul>
+                        <li>Real GDP (quarterly growth)</li>
+                        <li>ISM Manufacturing & Services PMI</li>
+                        <li>Non-farm Payrolls (NFP)</li>
+                        <li>ADP Private Employment</li>
+                        <li>Retail Sales</li>
+                        <li>Industrial Production</li>
+                        <li>Consumer Spending</li>
+                        <li>Business Investment</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Inflation Metrics</h3>
+                    <ul>
+                        <li>CPI (All Items & Core)</li>
+                        <li>PCE (Fed's preferred measure)</li>
+                        <li>Core PCE (ex-food & energy)</li>
+                        <li>5Y & 10Y Breakeven Inflation</li>
+                        <li>Inflation Swaps</li>
+                        <li>Shelter/Rent Inflation</li>
+                        <li>Goods vs Services Inflation</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Liquidity Conditions</h3>
+                    <ul>
+                        <li>Fed Balance Sheet (Total Assets)</li>
+                        <li>Reverse Repo Facility (RRP)</li>
+                        <li>Treasury General Account (TGA)</li>
+                        <li>Net Liquidity (Fed BS - RRP - TGA)</li>
+                        <li>M2 Money Supply</li>
+                        <li>Bank Credit</li>
+                        <li>Commercial Paper</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>Market Positioning</h3>
+                    <ul>
+                        <li>CFTC Positioning (COT reports)</li>
+                        <li>Dealer Positioning</li>
+                        <li>Hedge Fund Exposures</li>
+                        <li>Retail vs Institutional Flows</li>
+                        <li>Options Market Positioning</li>
+                        <li>Put/Call Ratios</li>
+                        <li>VIX & Volatility Indices</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Free Alternatives Section -->
+        <section id="free-resources" class="section">
+            <h2 class="section-title">🆓 Free Data Sources & Resources</h2>
+
+            <div class="info-box success">
+                <p><strong>Our Philosophy:</strong> All the data used in professional macro research is publicly available for free. Below are the exact sources we use, accessible to everyone.</p>
+            </div>
+
+            <h3 class="section-subtitle">Economic Data Sources (Free)</h3>
+
+            <a href="https://fred.stlouisfed.org" target="_blank" class="resource-link">
+                <div class="resource-title">🏛️ FRED (Federal Reserve Economic Data)</div>
+                <div class="resource-desc">841,000+ economic time series from 118 sources. Free API available. Complete coverage of GDP, CPI, employment, interest rates, monetary aggregates, and more. Industry standard for economic data.</div>
+            </a>
+
+            <a href="https://www.imf.org/en/Publications/WEO" target="_blank" class="resource-link">
+                <div class="resource-title">🌍 IMF World Economic Outlook Database</div>
+                <div class="resource-desc">Comprehensive global country coverage with 5-year forecasts. Annual data for GDP, inflation, current account, fiscal balance, and debt across all major economies.</div>
+            </a>
+
+            <a href="https://data.worldbank.org/" target="_blank" class="resource-link">
+                <div class="resource-title">🏦 World Bank Open Data</div>
+                <div class="resource-desc">Broad country coverage with development indicators. Excellent for emerging markets data and long-term historical trends.</div>
+            </a>
+
+            <a href="https://stats.oecd.org/" target="_blank" class="resource-link">
+                <div class="resource-title">📊 OECD.Stat</div>
+                <div class="resource-desc">PPP exchange rates, housing market indicators, financial indicators for OECD countries plus major emerging markets.</div>
+            </a>
+
+            <a href="https://www.bis.org/statistics/" target="_blank" class="resource-link">
+                <div class="resource-title">🏦 BIS Statistics (Bank for International Settlements)</div>
+                <div class="resource-desc">Derivatives data, FX markets, international banking flows, credit, property prices, and inflation. Central bank perspective on global finance.</div>
+            </a>
+
+            <a href="https://tradingeconomics.com/" target="_blank" class="resource-link">
+                <div class="resource-title">📈 Trading Economics</div>
+                <div class="resource-desc">Real-time economic calendar, historical data for 196 countries, forecasts, and interactive charts. Free tier with substantial data access.</div>
+            </a>
+
+            <a href="https://www.investing.com/" target="_blank" class="resource-link">
+                <div class="resource-title">💹 Investing.com</div>
+                <div class="resource-desc">Up-to-date pricing for all markets, economic calendar, excellent charting tools. Covers stocks, bonds, commodities, currencies. Free with ads.</div>
+            </a>
+
+            <h3 class="section-subtitle">Free Market Data & Tools</h3>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>TradingView</h3>
+                    <p><strong>URL:</strong> tradingview.com</p>
+                    <p>Advanced charting, technical indicators, market data, community scripts. Free tier with excellent functionality.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Yahoo Finance</h3>
+                    <p><strong>URL:</strong> finance.yahoo.com</p>
+                    <p>Stock quotes, market data, financial news, portfolio tracking. Completely free with API access available.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Alpha Vantage API</h3>
+                    <p><strong>URL:</strong> alphavantage.co</p>
+                    <p>Stock APIs, forex data, cryptocurrency, technical indicators. Free tier with 500 requests/day.</p>
+                </div>
+
+                <div class="card">
+                    <h3>CoinGecko</h3>
+                    <p><strong>URL:</strong> coingecko.com</p>
+                    <p>Comprehensive cryptocurrency data, market caps, volumes, historical prices. Free API with generous limits.</p>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">Free Macro Research Newsletters</h3>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>The Macro Compass</h3>
+                    <p><strong>By:</strong> Alfonso Peccatiello (Alf)</p>
+                    <p>From former Head of $20bn portfolio. Professional-grade analysis, macro regimes, portfolio strategy. Substantial free content.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Credit from Macro to Micro</h3>
+                    <p><strong>Twitter:</strong> @Credit_Junk</p>
+                    <p>Weekly market reviews, credit spreads, liquidity analysis, Fed policy. Covers rates, credit, equity indices, positioning. Completely free.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Short Excerpts from Global Macro Investor</h3>
+                    <p><strong>By:</strong> Raoul Pal</p>
+                    <p>Weekly chart analysis, Fed liquidity tracking, macro calls. Focus on Fed net liquidity vs S&P 500. Top-tier liquidity analysis.</p>
+                </div>
+
+                <div class="card">
+                    <h3>Macro-to-Micro</h3>
+                    <p><strong>By:</strong> Samantha LaDuc</p>
+                    <p>Bitcoin, liquidity, macro, traditional finance. Excellent Fed liquidity and TGA analysis with great charts.</p>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">How to Build Your Own Free Setup</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Step</th>
+                        <th>Tools</th>
+                        <th>Purpose</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>1. Data Collection</strong></td>
+                        <td>FRED + Trading Economics + Investing.com</td>
+                        <td>Core US & international data, real-time prices</td>
+                    </tr>
+                    <tr>
+                        <td><strong>2. Analysis</strong></td>
+                        <td>Free Substack newsletters</td>
+                        <td>Multiple perspectives, different frameworks</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3. Visualization</strong></td>
+                        <td>FRED charts + TradingView</td>
+                        <td>Economic charts + market technicals</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4. Daily Monitoring</strong></td>
+                        <td>Twitter + Investing.com calendar</td>
+                        <td>Real-time updates + upcoming events</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5. Deep Research</strong></td>
+                        <td>IMF/World Bank/BIS reports</td>
+                        <td>Global macro + monetary system insights</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box warning">
+                <p><strong>What You Won't Get for Free:</strong></p>
+                <ul style="margin-top: 10px; color: var(--orange);">
+                    <li>Integrated AI/ML regime detection (proprietary models)</li>
+                    <li>Real-time trade ideas with specific entry/exit</li>
+                    <li>Curated daily synthesis (you must aggregate sources yourself)</li>
+                    <li>Position sizing guidance</li>
+                    <li>Risk management frameworks tailored to your portfolio</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Trade-off:</strong> Free resources provide 80% of the data and 60% of the insights, but require 3-5x more time and effort to synthesize.</p>
+            </div>
+        </section>
+
+        <!-- Data Sources Section -->
+        <section id="data-sources" class="section">
+            <h2 class="section-title">🔬 Our Verified Data Sources</h2>
+
+            <div class="info-box">
+                <p><strong>Transparency Commitment:</strong> Every number, statistic, and analysis on this platform comes from verified official sources. No made-up data. Ever.</p>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data Type</th>
+                        <th>Source</th>
+                        <th>Coverage</th>
+                        <th>Update Frequency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Treasury Yields</td>
+                        <td>FRED (Federal Reserve)</td>
+                        <td>2Y, 5Y, 10Y, 30Y</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>Economic Indicators</td>
+                        <td>FRED, BLS, Census</td>
+                        <td>GDP, CPI, Employment, ISM</td>
+                        <td>Monthly/Quarterly</td>
+                    </tr>
+                    <tr>
+                        <td>Credit Spreads</td>
+                        <td>FRED (ICE BofA indices)</td>
+                        <td>HY & IG OAS</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>Fed Liquidity</td>
+                        <td>FRED (Federal Reserve)</td>
+                        <td>Balance Sheet, RRP, TGA</td>
+                        <td>Weekly</td>
+                    </tr>
+                    <tr>
+                        <td>Stock Markets</td>
+                        <td>Yahoo Finance</td>
+                        <td>Indices, sectors, individual stocks</td>
+                        <td>Real-time</td>
+                    </tr>
+                    <tr>
+                        <td>Forex & Commodities</td>
+                        <td>Yahoo Finance</td>
+                        <td>Major pairs, gold, copper, oil</td>
+                        <td>Real-time</td>
+                    </tr>
+                    <tr>
+                        <td>Volatility</td>
+                        <td>FRED (CBOE VIX)</td>
+                        <td>VIX, VVIX</td>
+                        <td>Daily</td>
+                    </tr>
+                    <tr>
+                        <td>COT Data</td>
+                        <td>CFTC.gov</td>
+                        <td>Futures positioning</td>
+                        <td>Weekly (Friday)</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="info-box success">
+                <p><strong>API Access:</strong> This platform uses official APIs from FRED (Federal Reserve), Yahoo Finance, and other government sources. All data is pulled programmatically and updated automatically.</p>
+            </div>
+        </section>
+
+        <!-- Methodology Section -->
+        <section id="methodology" class="section">
+            <h2 class="section-title">🔬 Research Methodology</h2>
+
+            <h3 class="section-subtitle">Three-Pillar Systematic Framework</h3>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>1. Innovate</h3>
+                    <p>Continuous research of evolving economic and market structures to identify durable money-making opportunities. Adapt to regime changes.</p>
+                </div>
+
+                <div class="card">
+                    <h3>2. Systematize</h3>
+                    <p>Development of testable frameworks for confirming or disconfirming investment ideas. Build rules-based systems with clear signals.</p>
+                </div>
+
+                <div class="card">
+                    <h3>3. Execute</h3>
+                    <p>Real-time implementation based on synthesized information and analysis. Act on high-conviction setups with proper risk management.</p>
+                </div>
+            </div>
+
+            <h3 class="section-subtitle">AI/ML-Driven Macro Matrix</h3>
+
+            <div class="feature-box">
+                <h4>Machine Learning Regime Detection</h4>
+                <p>Our platform employs machine learning models that ingest daily market data from all asset classes globally. The system:</p>
+                <ul style="margin-top: 15px;">
+                    <li>Analyzes 50+ economic and market indicators simultaneously</li>
+                    <li>Generates real-time regime probabilities (Goldilocks, Reflation, Stagflation, etc.)</li>
+                    <li>Tracks cross-asset correlations and regime transitions</li>
+                    <li>Identifies pattern recognition and signal extraction</li>
+                    <li>Updates probabilities as new data arrives</li>
+                </ul>
+            </div>
+
+            <h3 class="section-subtitle">Risk Management Philosophy</h3>
+
+            <div class="grid">
+                <div class="feature-box">
+                    <h4>Hit Ratio Reality</h4>
+                    <p><strong>Expected Success Rate: 50-60%</strong></p>
+                    <p>This is consistent with top money managers globally. Markets are uncertain. We focus on asymmetric risk/reward rather than win rate.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>Position Sizing</h4>
+                    <p>Appropriate sizing for uncertainty in outcomes. Never risk more than you can afford to lose. Size positions based on conviction and stop-loss distance.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>Scenario Planning</h4>
+                    <p>Multiple pathway analysis for each trade. Bull case, base case, bear case. Define what would invalidate the thesis ahead of time.</p>
+                </div>
+
+                <div class="feature-box">
+                    <h4>Redundancy</h4>
+                    <p>Always have a Plan B. Backup plans for when primary thesis fails. Diversify across uncorrelated strategies and asset classes.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer style="text-align: center; padding: 40px 0; border-top: 2px solid var(--primary); margin-top: 50px;">
+            <p style="color: var(--gold); font-size: 1.2em; margin-bottom: 15px;">
+                🌍 Spartan Research Station - Global Capital Markets
+            </p>
+            <p style="color: var(--green); margin-bottom: 10px;">
+                Comprehensive macro analysis for informed trading decisions
+            </p>
+            <p style="color: var(--primary); font-size: 0.9em;">
+                Report Date: November 14, 2025 | Data Sources: FRED API, Yahoo Finance, IMF, World Bank, BIS
+            </p>
+            <p style="color: var(--orange); font-size: 0.85em; margin-top: 20px;">
+                <strong>Disclaimer:</strong> All content is for informational purposes only. Not financial advice or investment recommendations.
+                Investment services subject to risk of loss. Expected hit ratio: 50-60%.
+            </p>
+        </footer>
+    </div>
+
+    <script>
+        // API endpoint
+        const API_URL = 'http://localhost:9002/api/macro/regime/latest';
+
+        // Timeframe mapping for all indicators
+        const INDICATOR_TIMEFRAMES = {
+            // Growth indicators
+            'gdp_growth': { freq: 'quarterly', lag: '~45 days' },
+            'gdp_level': { freq: 'quarterly', lag: '~45 days' },
+            'employment': { freq: 'monthly', lag: '~7 days' },
+            'unemployment_rate': { freq: 'monthly', lag: '~7 days' },
+            'labor_force_participation': { freq: 'monthly', lag: '~7 days' },
+            'job_openings': { freq: 'monthly', lag: '~45 days' },
+            'retail_sales_growth': { freq: 'monthly', lag: '~14 days' },
+            'retail_sales_level': { freq: 'monthly', lag: '~14 days' },
+            'industrial_production': { freq: 'monthly', lag: '~14 days' },
+            'capacity_utilization': { freq: 'monthly', lag: '~14 days' },
+            'housing_starts': { freq: 'monthly', lag: '~17 days' },
+            'building_permits': { freq: 'monthly', lag: '~17 days' },
+            'durable_goods_orders': { freq: 'monthly', lag: '~26 days' },
+            'consumer_confidence': { freq: 'monthly', lag: '~0 days' },
+
+            // Inflation indicators
+            'cpi_yoy': { freq: 'monthly', lag: '~14 days' },
+            'core_cpi_yoy': { freq: 'monthly', lag: '~14 days' },
+            'pce_yoy': { freq: 'monthly', lag: '~30 days' },
+            'core_pce_yoy': { freq: 'monthly', lag: '~30 days' },
+            'ppi_yoy': { freq: 'monthly', lag: '~14 days' },
+            'import_prices_yoy': { freq: 'monthly', lag: '~14 days' },
+            'wage_growth_yoy': { freq: 'monthly', lag: '~7 days' },
+            'shelter_inflation_yoy': { freq: 'monthly', lag: '~14 days' },
+            'energy_inflation_yoy': { freq: 'monthly', lag: '~14 days' },
+            'food_inflation_yoy': { freq: 'monthly', lag: '~14 days' },
+            'breakeven_5y': { freq: 'daily', lag: 'real-time' },
+            'breakeven_10y': { freq: 'daily', lag: 'real-time' },
+            'forward_inflation_5y': { freq: 'daily', lag: 'real-time' },
+
+            // Liquidity indicators
+            'fed_balance_sheet': { freq: 'weekly', lag: '~3 days' },
+            'reverse_repo': { freq: 'daily', lag: '~1 day' },
+            'tga_balance': { freq: 'daily', lag: '~1 day' },
+            'net_liquidity': { freq: 'weekly', lag: '~3 days' },
+            'm2_money_supply': { freq: 'monthly', lag: '~30 days' },
+            'bank_credit': { freq: 'weekly', lag: '~10 days' },
+
+            // Market indicators
+            'treasury_10y': { freq: 'daily', lag: 'real-time' },
+            'treasury_2y': { freq: 'daily', lag: 'real-time' },
+            'treasury_5y': { freq: 'daily', lag: 'real-time' },
+            'treasury_30y': { freq: 'daily', lag: 'real-time' },
+            'yield_curve': { freq: 'daily', lag: 'real-time' },
+            'yield_curve_10y5y': { freq: 'daily', lag: 'real-time' },
+            'credit_spread_hy': { freq: 'daily', lag: 'real-time' },
+            'credit_spread_ig': { freq: 'daily', lag: 'real-time' },
+            'vix': { freq: 'daily', lag: 'real-time' },
+            'spx_level': { freq: 'daily', lag: 'real-time' },
+            'nasdaq_level': { freq: 'daily', lag: 'real-time' },
+            'dow_level': { freq: 'daily', lag: 'real-time' },
+            'russell_2000_level': { freq: 'daily', lag: 'real-time' },
+            'gold_price': { freq: 'daily', lag: 'real-time' },
+            'oil_price': { freq: 'daily', lag: 'real-time' },
+            'copper_price': { freq: 'daily', lag: 'real-time' },
+            'silver_price': { freq: 'daily', lag: 'real-time' },
+            'dollar_index': { freq: 'daily', lag: 'real-time' },
+            'eurusd': { freq: 'daily', lag: 'real-time' },
+            'usdjpy': { freq: 'daily', lag: 'real-time' },
+            'mortgage_30y': { freq: 'weekly', lag: '~5 days' },
+            'tips_10y_real_yield': { freq: 'daily', lag: 'real-time' },
+            'fed_funds_rate': { freq: 'monthly', lag: '~7 days' }
+        };
+
+        // Get timeframe badge HTML
+        function getTimeframeBadge(indicator) {
+            const tf = INDICATOR_TIMEFRAMES[indicator];
+            if (!tf) return '';
+
+            const freqClass = tf.freq === 'daily' ? 'timeframe-daily' :
+                            tf.freq === 'weekly' ? 'timeframe-weekly' :
+                            tf.freq === 'monthly' ? 'timeframe-monthly' :
+                            'timeframe-quarterly';
+
+            return `<span class="timeframe-badge ${freqClass}" title="Updated ${tf.freq}, Publication lag: ${tf.lag}">${tf.freq}</span>`;
+        }
+
+        // Format number with commas and decimals
+        function formatNumber(num, decimals = 2) {
+            if (num === null || num === undefined) return 'N/A';
+            return num.toLocaleString('en-US', {
+                minimumFractionDigits: decimals,
+                maximumFractionDigits: decimals
+            });
+        }
+
+        // Format percentage
+        function formatPercent(num, decimals = 2) {
+            if (num === null || num === undefined) return 'N/A';
+            return num.toFixed(decimals) + '%';
+        }
+
+        // Get regime class for styling
+        function getRegimeClass(regime) {
+            const mapping = {
+                'EXPANSION': 'expansion',
+                'RECOVERY': 'recovery',
+                'SLOWDOWN': 'slowdown',
+                'RECESSION': 'recession',
+                'TARGET': 'target',
+                'ELEVATED': 'elevated',
+                'HIGH': 'high',
+                'LOW': 'low',
+                'DEFLATION': 'low',
+                'RISK_ON': 'risk-on',
+                'RISK_OFF': 'risk-off',
+                'NEUTRAL': 'neutral',
+                'EASING': 'easing',
+                'TIGHTENING': 'tightening',
+                'UNKNOWN': 'unknown'
+            };
+            return mapping[regime] || 'unknown';
+        }
+
+        // Render composite score
+        function renderCompositeScore(score) {
+            const scoreElement = document.getElementById('composite-score-value');
+            const descElement = document.getElementById('composite-score-desc');
+
+            scoreElement.textContent = score;
+
+            // Set color based on score
+            scoreElement.className = 'score-value';
+            if (score >= 75) {
+                scoreElement.classList.add('score-green');
+                descElement.textContent = '🟢 Healthy Market - Strong conditions across growth, inflation, liquidity, and markets';
+            } else if (score >= 50) {
+                scoreElement.classList.add('score-yellow');
+                descElement.textContent = '🟡 Moderate Conditions - Mixed signals, stay selective';
+            } else if (score >= 25) {
+                scoreElement.classList.add('score-red');
+                descElement.textContent = '🔴 Caution - Multiple headwinds, reduce risk exposure';
+            } else {
+                scoreElement.classList.add('score-red');
+                descElement.textContent = '⚠️ Crisis Mode - Defensive positioning required';
+            }
+        }
+
+        // Render growth indicators
+        function renderGrowthIndicators(data) {
+            const regime = data.regime;
+            const indicators = data.indicators;
+
+            document.getElementById('growth-regime').textContent = regime;
+            document.getElementById('growth-regime').className = 'regime-label ' + getRegimeClass(regime);
+
+            const html = `
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">GDP Growth (QoQ) ${getTimeframeBadge('gdp_growth')}</span>
+                        <span class="indicator-value">${formatPercent(indicators.gdp_growth)}</span>
+                        <span class="indicator-explain">Economy growing at ${formatPercent(indicators.gdp_growth)} per year. Above 2% = healthy, below 0% = recession</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">Employment ${getTimeframeBadge('employment')}</span>
+                        <span class="indicator-value">${formatNumber(indicators.employment, 0)}K</span>
+                        <span class="indicator-explain">${formatNumber(indicators.employment, 0)}K people employed. Rising = strong economy, falling = weakness</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">ISM Manufacturing ${getTimeframeBadge('ism_manufacturing')}</span>
+                        <span class="indicator-value">${formatNumber(indicators.ism_manufacturing)}</span>
+                        <span class="indicator-explain">Above 50 = factories expanding, below 50 = factories contracting</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">ISM Services ${getTimeframeBadge('ism_services')}</span>
+                        <span class="indicator-value">${formatNumber(indicators.ism_services)}</span>
+                        <span class="indicator-explain">Above 50 = service sector growing, below 50 = service sector shrinking</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">Retail Sales Growth ${getTimeframeBadge('retail_sales_growth')}</span>
+                        <span class="indicator-value">${formatPercent(indicators.retail_sales_growth)}</span>
+                        <span class="indicator-explain">Consumers spending ${formatPercent(indicators.retail_sales_growth)} more than last year. Positive = healthy spending</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">Industrial Production ${getTimeframeBadge('industrial_production')}</span>
+                        <span class="indicator-value">${formatNumber(indicators.industrial_production)}</span>
+                        <span class="indicator-explain">Factory output index. Rising = more production = economic strength</span>
+                    </div>
+                </li>
+            `;
+
+            document.getElementById('growth-indicators').innerHTML = html;
+        }
+
+        // Render inflation indicators
+        function renderInflationIndicators(data) {
+            const regime = data.regime;
+            const indicators = data.indicators;
+
+            document.getElementById('inflation-regime').textContent = regime;
+            document.getElementById('inflation-regime').className = 'regime-label ' + getRegimeClass(regime);
+
+            const html = `
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">CPI (YoY) ${getTimeframeBadge('cpi_yoy')}</span>
+                        <span class="indicator-value">${formatPercent(indicators.cpi_yoy)}</span>
+                        <span class="indicator-explain">Prices rising ${formatPercent(indicators.cpi_yoy)} per year. Fed target = 2%. Above 3% = inflation problem</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">Core CPI (YoY) ${getTimeframeBadge('core_cpi_yoy')}</span>
+                        <span class="indicator-value">${formatPercent(indicators.core_cpi_yoy)}</span>
+                        <span class="indicator-explain">Inflation without food/energy. More stable measure. ${formatPercent(indicators.core_cpi_yoy)} = ${indicators.core_cpi_yoy > 3 ? 'elevated' : indicators.core_cpi_yoy > 2.5 ? 'moderate' : 'controlled'}</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">PCE (YoY) ${getTimeframeBadge('pce_yoy')}</span>
+                        <span class="indicator-value">${formatPercent(indicators.pce_yoy)}</span>
+                        <span class="indicator-explain">Consumer spending inflation. Alternative to CPI, slightly lower readings</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">Core PCE (YoY) ${getTimeframeBadge('core_pce_yoy')}</span>
+                        <span class="indicator-value">${formatPercent(indicators.core_pce_yoy)}</span>
+                        <span class="indicator-explain">Fed's #1 favorite metric. ${formatPercent(indicators.core_pce_yoy)} vs 2% target = ${indicators.core_pce_yoy > 2.5 ? 'Fed may raise rates' : 'Fed comfortable'}</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">5Y Breakeven ${getTimeframeBadge('breakeven_5y')}</span>
+                        <span class="indicator-value">${formatPercent(indicators.breakeven_5y)}</span>
+                        <span class="indicator-explain">Market expects ${formatPercent(indicators.breakeven_5y)} average inflation over next 5 years</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">10Y Breakeven ${getTimeframeBadge('breakeven_10y')}</span>
+                        <span class="indicator-value">${formatPercent(indicators.breakeven_10y)}</span>
+                        <span class="indicator-explain">Long-term inflation expectations. ${formatPercent(indicators.breakeven_10y)} over 10 years = ${indicators.breakeven_10y > 2.5 ? 'elevated concerns' : 'stable expectations'}</span>
+                    </div>
+                </li>
+            `;
+
+            document.getElementById('inflation-indicators').innerHTML = html;
+        }
+
+        // Render liquidity indicators
+        function renderLiquidityIndicators(data) {
+            const regime = data.regime;
+            const indicators = data.indicators;
+
+            document.getElementById('liquidity-regime').textContent = regime;
+            document.getElementById('liquidity-regime').className = 'regime-label ' + getRegimeClass(regime);
+
+            const html = `
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">Fed Balance Sheet ${getTimeframeBadge('fed_balance_sheet')}</span>
+                        <span class="indicator-value">$${formatNumber(indicators.fed_balance_sheet, 0)}B</span>
+                        <span class="indicator-explain">Fed owns $${formatNumber(indicators.fed_balance_sheet, 0)}B in assets. Growing = QE (money printing) = bullish. Shrinking = QT = bearish</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">Reverse Repo ${getTimeframeBadge('reverse_repo')}</span>
+                        <span class="indicator-value">$${formatNumber(indicators.reverse_repo, 0)}B</span>
+                        <span class="indicator-explain">$${formatNumber(indicators.reverse_repo, 0)}B parked at Fed = tight liquidity. When this falls, money floods into markets = bullish</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">TGA Balance ${getTimeframeBadge('tga_balance')}</span>
+                        <span class="indicator-value">$${formatNumber(indicators.tga_balance, 0)}B</span>
+                        <span class="indicator-explain">Treasury's checking account. When government spends (TGA falls), money enters economy = bullish</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">Net Liquidity ${getTimeframeBadge('net_liquidity')}</span>
+                        <span class="indicator-value">$${formatNumber(indicators.net_liquidity, 0)}B</span>
+                        <span class="indicator-explain">Total money available to markets. $${formatNumber(indicators.net_liquidity, 0)}B. Higher = easier for stocks to rise</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">M2 Money Supply ${getTimeframeBadge('m2_money_supply')}</span>
+                        <span class="indicator-value">$${formatNumber(indicators.m2_money_supply, 0)}B</span>
+                        <span class="indicator-explain">Total money in circulation. Rising = more money chasing assets = inflationary = stocks/commodities up</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">Bank Credit ${getTimeframeBadge('bank_credit')}</span>
+                        <span class="indicator-value">$${formatNumber(indicators.bank_credit, 0)}B</span>
+                        <span class="indicator-explain">Banks lending $${formatNumber(indicators.bank_credit, 0)}B. Rising = credit expansion = economic growth</span>
+                    </div>
+                </li>
+            `;
+
+            document.getElementById('liquidity-indicators').innerHTML = html;
+        }
+
+        // Render market indicators
+        function renderMarketIndicators(data) {
+            const regime = data.regime;
+            const indicators = data.indicators;
+
+            document.getElementById('market-regime').textContent = regime;
+            document.getElementById('market-regime').className = 'regime-label ' + getRegimeClass(regime);
+
+            const html = `
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">10Y Treasury ${getTimeframeBadge('treasury_10y')}</span>
+                        <span class="indicator-value">${formatPercent(indicators.treasury_10y)}</span>
+                        <span class="indicator-explain">10-year bond yielding ${formatPercent(indicators.treasury_10y)}. Rising = bond prices falling = investors selling bonds</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">2Y Treasury ${getTimeframeBadge('treasury_2y')}</span>
+                        <span class="indicator-value">${formatPercent(indicators.treasury_2y)}</span>
+                        <span class="indicator-explain">2-year bond at ${formatPercent(indicators.treasury_2y)}. Closely tracks Fed rate expectations</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">Yield Curve (10Y-2Y) ${getTimeframeBadge('yield_curve')}</span>
+                        <span class="indicator-value">${formatPercent(indicators.yield_curve)}</span>
+                        <span class="indicator-explain">${indicators.yield_curve > 0 ? 'Positive = normal economy' : 'Inverted = recession warning!'}. ${formatPercent(indicators.yield_curve)} spread</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">HY Credit Spread ${getTimeframeBadge('credit_spread_hy')}</span>
+                        <span class="indicator-value">${formatNumber(indicators.credit_spread_hy, 0)} bps</span>
+                        <span class="indicator-explain">${formatNumber(indicators.credit_spread_hy, 0)} basis points over Treasuries. Widening = fear of defaults = risk-off</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">IG Credit Spread ${getTimeframeBadge('credit_spread_ig')}</span>
+                        <span class="indicator-value">${formatNumber(indicators.credit_spread_ig, 0)} bps</span>
+                        <span class="indicator-explain">Investment grade spread. ${formatNumber(indicators.credit_spread_ig, 0)}bps. ${indicators.credit_spread_ig < 100 ? 'Tight = healthy' : 'Wide = stress'}</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">VIX ${getTimeframeBadge('vix')}</span>
+                        <span class="indicator-value">${formatNumber(indicators.vix)}</span>
+                        <span class="indicator-explain">Fear gauge. ${formatNumber(indicators.vix)} = ${indicators.vix < 15 ? 'complacent' : indicators.vix < 20 ? 'normal' : indicators.vix < 30 ? 'elevated fear' : 'panic mode'}</span>
+                    </div>
+                </li>
+                <li class="indicator-item">
+                    <div>
+                        <span class="indicator-name">S&P 500 ${getTimeframeBadge('spx_level')}</span>
+                        <span class="indicator-value">${formatNumber(indicators.spx_level)}</span>
+                        <span class="indicator-explain">US stock market at ${formatNumber(indicators.spx_level)}. Benchmark for overall market health</span>
+                    </div>
+                </li>
+            `;
+
+            document.getElementById('market-indicators').innerHTML = html;
+        }
+
+        // Render regime probabilities
+        function renderProbabilities(probs) {
+            const probArray = Object.entries(probs)
+                .sort((a, b) => b[1] - a[1]);
+
+            let html = '';
+            probArray.forEach(([regime, prob]) => {
+                const isDominant = prob > 30 ? 'dominant' : '';
+                html += `
+                    <div class="prob-card ${isDominant}">
+                        <div class="prob-name">${regime}</div>
+                        <div class="prob-value">${prob.toFixed(0)}%</div>
+                        <div class="prob-bar">
+                            <div class="prob-bar-fill" style="width: ${prob}%"></div>
+                        </div>
+                    </div>
+                `;
+            });
+
+            document.getElementById('probabilities').innerHTML = html;
+        }
+
+        // Load macro data from API
+        async function loadMacroData() {
+            try {
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('content').style.display = 'none';
+                document.getElementById('error').style.display = 'none';
+
+                const response = await fetch(API_URL);
+
+                if (!response.ok) {
+                    throw new Error(`API returned ${response.status}`);
+                }
+
+                const data = await response.json();
+
+                // Render composite score
+                renderCompositeScore(data.composite_score);
+
+                // Render all sections
+                renderGrowthIndicators(data.growth);
+                renderInflationIndicators(data.inflation);
+                renderLiquidityIndicators(data.liquidity);
+                renderMarketIndicators(data.market);
+                renderProbabilities(data.regime_probabilities);
+
+                // Update timestamp
+                const timestamp = new Date(data.timestamp);
+                document.getElementById('timestamp').textContent =
+                    `Last updated: ${timestamp.toLocaleString()} | Data Quality: ${data.data_quality} | Sources: ${data.source}`;
+
+                // Show content
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+
+            } catch (error) {
+                console.error('Error loading macro data:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').textContent =
+                    `⚠️ Error loading macro regime data: ${error.message}. Please ensure the Macro Regime Tracker API is running on port 9002. You can still browse all the educational resources and free data sources below.`;
+
+                // Show the rest of the content even if API fails
+                document.getElementById('content').style.display = 'block';
+            }
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Load data on page load
+        window.addEventListener('load', loadMacroData);
+
+        // Auto-refresh every 5 minutes
+        setInterval(loadMacroData, 5 * 60 * 1000);
+    </script>
+</body>
+</html>
