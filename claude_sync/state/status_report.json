@@ -1,6 +1,14 @@
 {
-  "timestamp": "2025-11-13T17:50:02.030962",
+  "timestamp": "2025-11-14T22:20:00.761847",
   "directory_status": {
+    "projects": {
+      "type": "directory",
+      "file_count": 16
+    },
+    "session-env": {
+      "type": "directory",
+      "file_count": 0
+    },
     ".claude": {
       "type": "directory",
       "file_count": 0
@@ -19,7 +27,7 @@
     },
     "shell-snapshots": {
       "type": "directory",
-      "file_count": 2
+      "file_count": 5
     },
     "histories": {
       "type": "directory",
@@ -27,7 +35,15 @@
     },
     "todos": {
       "type": "directory",
-      "file_count": 2
+      "file_count": 7
+    },
+    "history.jsonl": {
+      "type": "file",
+      "size_bytes": 2964
+    },
+    "file-history": {
+      "type": "directory",
+      "file_count": 12
     },
     "downloads": {
       "type": "directory",
@@ -43,18 +59,18 @@
     },
     "debug": {
       "type": "directory",
-      "file_count": 4
+      "file_count": 10
     }
   },
   "sync_status": {
     "status": "active",
-    "last_health_check": "2025-11-13T17:50:01.883219",
+    "last_health_check": "2025-11-14T22:20:00.500002",
     "direction": "bidirectional"
   },
   "health_status": {
     "status": "healthy",
     "issues": [],
-    "free_space_mb": 93900
+    "free_space_mb": 131465
   },
   "optimizations": {
     "status": "not_optimized"

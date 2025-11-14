@@ -1,0 +1,697 @@
+[DEBUG] [LSP MANAGER] initializeLspServerManager() called
+[DEBUG] [LSP MANAGER] Created manager instance, state=pending
+[DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+[DEBUG] [LSP SERVER MANAGER] initialize() called
+[DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+[DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+[DEBUG] Total LSP servers loaded: 0
+[DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+[DEBUG] LSP manager initialized with 0 servers
+[DEBUG] LSP server manager initialized successfully
+[DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+[DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/spartan/.claude/skills, project=/.claude/skills
+[DEBUG] >>>>> getPluginSkills CALLED <<<<<
+[DEBUG] getPluginSkills: Processing 0 enabled plugins
+[DEBUG] Total plugin skills loaded: 0
+[DEBUG] Total plugin commands loaded: 0
+[DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+[DEBUG] getSkillsIfEnabled returning: 0 skill dir commands, 0 plugin skills
+[DEBUG] Acquired lock on running version: /Users/spartan/.local/share/claude/versions/2.0.37
+[DEBUG] Registered 0 hooks from 0 plugins
+[DEBUG] Creating shell snapshot for zsh (/bin/zsh)
+[DEBUG] Looking for shell config file: /Users/spartan/.zshrc
+[DEBUG] Snapshots directory: /Users/spartan/.claude/shell-snapshots
+[DEBUG] Creating snapshot at: /Users/spartan/.claude/shell-snapshots/snapshot-zsh-1763075660649-9sik2f.sh
+[DEBUG] Shell binary exists: true
+[DEBUG] Execution timeout: 10000ms
+[DEBUG] Writing to temp file: /Users/spartan/.claude/todos/d8b8c3b2-11b3-4ac4-a89e-11030404fc32-agent-d8b8c3b2-11b3-4ac4-a89e-11030404fc32.json.tmp.6600.1763075660650
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/spartan/.claude/todos/d8b8c3b2-11b3-4ac4-a89e-11030404fc32-agent-d8b8c3b2-11b3-4ac4-a89e-11030404fc32.json.tmp.6600.1763075660650 to /Users/spartan/.claude/todos/d8b8c3b2-11b3-4ac4-a89e-11030404fc32-agent-d8b8c3b2-11b3-4ac4-a89e-11030404fc32.json
+[DEBUG] File /Users/spartan/.claude/todos/d8b8c3b2-11b3-4ac4-a89e-11030404fc32-agent-d8b8c3b2-11b3-4ac4-a89e-11030404fc32.json written atomically
+[DEBUG] Total plugin agents loaded: 0
+[DEBUG] Shell snapshot created successfully (2653 bytes)
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075660757
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 37311 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075660757 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075660835
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 37311 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075660835 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075660836
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 37311 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075660836 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/spartan/.local/share/claude/versions/2.0.37)
+[DEBUG] rg error (signal=undefined, code=ABORT_ERR, stderr: rg: /dev/fd/3: Bad file descriptor (os error 9)
+rg: /dev/fd/8: Bad file descriptor (os error 9)
+rg: /dev/fd/9: Bad file descriptor (os error 9)
+rg: /dev/fd/10: Bad file descriptor (os error 9)
+rg: /dev/fd/7: Bad file descriptor (os error 9)
+rg: /dev/fd/6: Not a directory (os error 20)
+rg: /private/var/agentx: Permission denied (os error 13)
+rg: /private/var/backups: Permission denied (os error 13)
+rg: /private/var/dirs_cleaner: Permission denied (os error 13)
+rg: /private/var/protected/sfanalytics: Operation not permitted (os error 1)
+rg: /private/var/protected/trustd/private: Operation not permitted (os error 1)
+rg: /private/var/run/mds: Permission denied (os error 13)
+rg: /System/Volumes/iSCPreboot/.TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/.TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.GPU.Sandbox: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.quicklook.ThumbnailsAgent/com.apple.QuickLook.thumbnailcache: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.Networking.Sandbox: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WorkflowKit.BackgroundShortcutRunner/ShortcutsSandboxCache: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.WebContent.Sandbox: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.siriactionsd/ShortcutsSandboxCache: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.icloud.searchpartyuseragent/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.amsengagementd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imdpersistence.IMDPersistenceAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imagent/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/net.whatsapp.WhatsApp.Intents/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.donotdisturbd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.AUHelperService/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.pluginkit/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.quicklook.ThumbnailsAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.email.maild/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.usernotificationsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/homed/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.bird/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.bluetoothuserd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.sharingd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.identityservicesd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.parsecd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.studentd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/duetexpertd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.remindd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.calaccessd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.chrono/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.passd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.mail.SpotlightIndexExtension/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imtranscoding.IMTranscoderAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.fileproviderd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.tipsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.ciphermld/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.parsec-fbf/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imtransferservices.IMTransferAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.appstoreagent/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.desktopservices.ArchiveService/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.replicatord/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.fskit.fskit_agent/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.ap.promotedcontentd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.triald/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.iconservicesagent/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.siriactionsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.transparencyd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.syncdefaultsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.securityuploadd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.corespeechd: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.routined/dv: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.SharedWebCredentials: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.nsurlsessiond: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/dmd: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.LaunchServices.dv: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.exchangesync: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.progressd/ClassKit: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.lockoutagent: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.ScreenTimeAgent/Store: Operation not permitted (os error 1)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000011w00008g/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000011w00008g/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.LaunchServices.dv: Operation not permitted (os error 1)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.Spotlight: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond/com.apple.revisiond.temp: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000yw00007q/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000yw00007q/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000016c00009l/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000016c00009l/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000010h000084/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000010h000084/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000xc00007b/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000xc00007b/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000015m00009d/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000015m00009d/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012400008j/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012400008j/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012r00008p/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012r00008p/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000144000091/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000144000091/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.routined/dv: Operation not permitted (os error 1)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.SharedWebCredentials: Operation not permitted (os error 1)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.nsurlsessiond: Operation not permitted (os error 1)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.notificationcenter: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/dmd: Operation not permitted (os error 1)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.Spotlight: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.exchangesync: Operation not permitted (os error 1)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.progressd/ClassKit: Operation not permitted (os error 1)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.lockoutagent: Operation not permitted (os error 1)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.ScreenTimeAgent: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000014r000096/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000014r000096/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000114000089/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000114000089/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000016h00009m/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000016h00009m/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000108000082/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000108000082/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/0/com.apple.nsurlsessiond: Operation not permitted (os error 1)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000010w000087/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000010w000087/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000tm00006n/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000tm00006n/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000013800008t/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000013800008t/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000011h00008c/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000011h00008c/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012800008k/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012800008k/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000150000098/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000150000098/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/C: Operation not permitted (os error 1)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/0: Operation not permitted (os error 1)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000010r000086/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000010r000086/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/T: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012m00008n/C: Permission denied (os error 13)
+rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012m00008n/T: Permission denied (os error 13)
+rg: /private/var/at/tmp: Permission denied (os error 13)
+rg: /private/var/at/tabs: Permission denied (os error 13)
+rg: /private/var/db/caches/opendirectory: Permission denied (os error 13)
+rg: /private/var/db/fseventsd: Permission denied (os error 13)
+rg: /private/var/db/ConfigurationProfiles/Store: Operation not permitted (os error 1)
+rg: /private/var/db/CoreDuet: Operation not permitted (os error 1)
+rg: /private/var/db/searchparty: Operation not permitted (os error 1)
+rg: /private/var/db/accessoryupdater: Permission denied (os error 13)
+rg: /private/var/db/securityagent: Permission denied (os error 13)
+rg: /private/var/db/audiomxd/Library: Permission denied (os error 13)
+rg: /private/var/db/darwindaemon: Permission denied (os error 13)
+rg: /private/var/db/applepay: Permission denied (os error 13)
+rg: /private/var/db/timed: Permission denied (os error 13)
+rg: /private/var/db/dhcpclient: Permission denied (os error 13)
+rg: /private/var/db/mmaintenanced: Permission denied (os error 13)
+rg: /private/var/db/MobileIdentityService: Operation not permitted (os error 1)
+rg: /private/var/db/com.apple.security.cryptexd: Operation not permitted (os error 1)
+rg: /private/var/db/nearbyd: Permission denied (os error 13)
+rg: /private/var/db/sudo: Permission denied (os error 13)
+rg: /private/var/db/com.apple.findmy.findmybeaconingd: Permission denied (os error 13)
+rg: /private/var/db/dslocal/nodes/Default: Permission denied (os error 13)
+rg: /usr/sbin/authserver: Permission denied (os error 13)
+rg: /private/var/db/com.apple.xpc.roleaccountd.staging: Permission denied (os error 13)
+rg: /private/var/db/assetsubscriptiond/history: Permission denied (os error 13)
+rg: /private/var/db/assetsubscriptiond/StagingLogs: Permission denied (os error 13)
+rg: /private/var/db/DifferentialPrivacy: Operation not permitted (os error 1)
+rg: /private/var/db/cmiodalassistants: Permission denied (os error 13)
+rg: /private/var/db/datadetectors: Permission denied (os error 13)
+rg: /private/var/db/KernelExtensionManagement/Staging: Operation not permitted (os error 1)
+rg: /private/var/db/biome: Operation not permitted (os error 1)
+rg: /private/var/db/lockdown: Operation not permitted (os error 1)
+rg: /private/var/db/ctkd: Permission denied (os error 13)
+rg: /private/var/db/Sandbox: Operation not permitted (os error 1)
+rg: /private/var/db/reportmemoryexception: Permission denied (os error 13)
+rg: /private/var/db/oah: Operation not permitted (os error 1)
+rg: /private/var/db/geod: Permission denied (os error 13)
+rg: /private/var/db/Spotlight-V100: Operation not permitted (os error 1)
+rg: /private/var/db/installcoordinationd: Operation not permitted (os error 1)
+rg: /private/var/db/hidd: Permission denied (os error 13)
+rg: /private/var/db/fpsd: Permission denied (os error 13)
+rg: /private/var/db/softwareupdate/Library/Preferences: Permission denied (os error 13)
+rg: /private/var/db/softwareupdate/Library/WebKit: Permission denied (os error 13)
+rg: /private/var/db/com.apple.backgroundtaskmanagement: Operation not permitted (os error 1)
+rg: /private/var/db/nsurlsessiond: Permission denied (os error 13)
+rg: /private/var/db/coreml: Permission denied (os error 13)
+rg: /private/var/db/knowledgegraphd: Permission denied (os error 13)
+rg: /private/var/db/rmd: Permission denied (os error 13)
+rg: /private/var/db/AppleIntelligencePlatform: Operation not permitted (os error 1)
+rg: /private/var/db/analyticsd: Permission denied (os error 13)
+rg: /private/var/db/DumpPanic: Operation not permitted (os error 1)
+rg: /private/var/db/SoC: Operation not permitted (os error 1)
+rg: /private/var/db/sysdiagnose/com.apple.sysdiagnose: Operation not permitted (os error 1)
+rg: /private/var/db/terminus: Permission denied (os error 13)
+rg: /private/var/db/modelmanagerd: Permission denied (os error 13)
+rg: /private/var/db/locationd: Permission denied (os error 13)
+rg: /private/var/db/Spotlight: Operation not permitted (os error 1)
+rg: /private/var/db/os_eligibility: Operation not permitted (os error 1)
+rg: /private/var/db/ExtensibleSSO/Configuration: Operation not permitted (os error 1)
+rg: /private/var/db/diskimagesiod: Permission denied (os error 13)
+rg: /private/var/db/appinstalld: Operation not permitted (os error 1)
+rg: /private/var/lib/postfix: Permission denied (os error 13)
+rg: /private/var/root: Permission denied (os error 13)
+rg: /private/var/audit: Permission denied (os error 13)
+rg: /private/var/OOPJit: Operation not permitted (os error 1)
+rg: /private/var/jabberd: Permission denied (os error 13)
+rg: /private/var/spool/cups: Permission denied (os error 13)
+rg: /private/var/spool/postfix/bounce: Permission denied (os error 13)
+rg: /private/var/spool/postfix/hold: Permission denied (os error 13)
+rg: /private/var/spool/postfix/maildrop: Permission denied (os error 13)
+rg: /private/var/spool/postfix/active: Permission denied (os error 13)
+rg: /private/var/spool/postfix/incoming: Permission denied (os error 13)
+rg: /private/var/spool/postfix/private: Permission denied (os error 13)
+rg: /private/var/spool/postfix/public: Permission denied (os error 13)
+rg: /private/var/spool/postfix/corrupt: Permission denied (os error 13)
+rg: /private/var/spool/postfix/deferred: Permission denied (os error 13)
+rg: /private/var/spool/postfix/flush: Permission denied (os error 13)
+rg: /private/var/spool/postfix/defer: Permission denied (os error 13)
+rg: /private/var/spool/postfix/trace: Permission denied (os error 13)
+rg: /private/var/spool/postfix/saved: Permission denied (os error 13)
+rg: /private/var/spool/mqueue: Permission denied (os error 13)
+rg: /private/var/ma: Permission denied (os error 13)
+rg: /private/var/install: Permission denied (os error 13)
+rg: /private/var/networkd/db: Operation not permitted (os error 1)
+rg: /private/var/networkd/Library: Permission denied (os error 13)
+rg: /private/etc/cups/certs: Permission denied (os error 13)
+rg: /Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitted (os error 1)
+rg: /Users/spartan/Library/Caches/com.apple.homed: Operation not permitted (os error 1)
+rg: /Users/spartan/Library/Caches/FamilyCircle: Operation not permitted (os error 1)
+rg: /Users/spartan/Library/Caches/com.apple.containermanagerd: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/.Spotlight-V100: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/.DocumentRevisions-V100: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/agentx: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/backups: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/dirs_cleaner: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/protected/sfanalytics: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/protected/trustd/private: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/run/mds: Permission denied (os error 13)
+rg: /Users/spartan/Library/Caches/com.apple.Safari: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.GPU.Sandbox: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.quicklook.ThumbnailsAgent/com.apple.QuickLook.thumbnailcache: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.Networking.Sandbox: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WorkflowKit.BackgroundShortcutRunner/ShortcutsSandboxCache: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.WebContent.Sandbox: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.siriactionsd/ShortcutsSandboxCache: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.icloud.searchpartyuseragent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.amsengagementd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imdpersistence.IMDPersistenceAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imagent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/net.whatsapp.WhatsApp.Intents/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.donotdisturbd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.AUHelperService/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.pluginkit/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.quicklook.ThumbnailsAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.email.maild/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.usernotificationsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/homed/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.bird/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.bluetoothuserd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.sharingd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.identityservicesd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.parsecd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.studentd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/duetexpertd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.remindd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.calaccessd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.chrono/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.passd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.mail.SpotlightIndexExtension/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imtranscoding.IMTranscoderAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.fileproviderd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.tipsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.ciphermld/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.parsec-fbf/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imtransferservices.IMTransferAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.appstoreagent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.desktopservices.ArchiveService/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.replicatord/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.fskit.fskit_agent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.ap.promotedcontentd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.triald/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.iconservicesagent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.siriactionsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.transparencyd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.syncdefaultsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.securityuploadd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.corespeechd: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.routined/dv: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.SharedWebCredentials: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.nsurlsessiond: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/dmd: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.LaunchServices.dv: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.exchangesync: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.progressd/ClassKit: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.lockoutagent: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.ScreenTimeAgent/Store: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000011w00008g/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000011w00008g/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.LaunchServices.dv: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.Spotlight: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond/com.apple.revisiond.temp: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000yw00007q/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000yw00007q/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000016c00009l/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000016c00009l/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010h000084/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010h000084/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000xc00007b/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000xc00007b/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000015m00009d/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000015m00009d/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012400008j/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012400008j/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012r00008p/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012r00008p/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000144000091/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000144000091/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.routined/dv: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.SharedWebCredentials: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.nsurlsessiond: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.notificationcenter: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/dmd: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.Spotlight: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.exchangesync: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.progressd/ClassKit: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.lockoutagent: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.ScreenTimeAgent: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000014r000096/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000014r000096/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000114000089/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000114000089/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000016h00009m/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000016h00009m/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000108000082/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000108000082/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/0/com.apple.nsurlsessiond: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010w000087/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010w000087/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000tm00006n/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000tm00006n/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000013800008t/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000013800008t/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000011h00008c/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000011h00008c/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012800008k/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012800008k/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000150000098/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000150000098/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/C: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/0: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010r000086/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010r000086/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012m00008n/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012m00008n/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/at/tmp: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/at/tabs: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/caches/opendirectory: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/fseventsd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/ConfigurationProfiles/Store: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/CoreDuet: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/searchparty: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/accessoryupdater: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/securityagent: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/audiomxd/Library: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/darwindaemon: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/applepay: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/timed: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/dhcpclient: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/mmaintenanced: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/MobileIdentityService: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/com.apple.security.cryptexd: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/nearbyd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/sudo: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/com.apple.findmy.findmybeaconingd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/dslocal/nodes/Default: Permission denied (os error 13)
+rg: /System/Library/Caches/com.apple.coresymbolicationd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/com.apple.xpc.roleaccountd.staging: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/assetsubscriptiond/history: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/assetsubscriptiond/StagingLogs: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/DifferentialPrivacy: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/cmiodalassistants: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/datadetectors: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/KernelExtensionManagement/Staging: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/biome: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/lockdown: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/ctkd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/Sandbox: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/reportmemoryexception: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/oah: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/geod: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/Spotlight-V100: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/installcoordinationd: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/hidd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/fpsd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/softwareupdate/Library/Preferences: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/softwareupdate/Library/WebKit: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/com.apple.backgroundtaskmanagement: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/nsurlsessiond: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/coreml: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/knowledgegraphd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/rmd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/AppleIntelligencePlatform: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/analyticsd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/DumpPanic: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/SoC: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/sysdiagnose/com.apple.sysdiagnose: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/terminus: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/modelmanagerd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/locationd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/Spotlight: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/os_eligibility: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/ExtensibleSSO/Configuration: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/diskimagesiod: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/appinstalld: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/lib/postfix: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/root: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/audit: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/OOPJit: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/jabberd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/cups: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/bounce: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/hold: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/maildrop: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/active: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/incoming: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/private: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/public: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/corrupt: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/deferred: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/flush: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/defer: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/trace: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/saved: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/mqueue: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/ma: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/install: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/networkd/db: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/networkd/Library: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/etc/cups/certs: Permission denied (os error 13)
+rg: /System/Volumes/Data/.fseventsd: Permission denied (os error 13)
+rg: /System/Volumes/Data/System/Library/Caches/com.apple.coresymbolicationd: Permission denied (os error 13)
+), 174194 results
+[ERROR] AbortError: AbortError: The operation was aborted.
+    at unknown
+    at abortChildProcess (node:child_process:935:42)
+    at onAbortListener2 (node:child_process:35:24)
+    at abort (unknown)
+    at <anonymous> (/$bunfs/root/claude:4045:10611)
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075666851
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 37311 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075666851 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075666854
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 37311 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075666854 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] BigQuery metrics exporter flush complete
+[DEBUG] Telemetry flushed successfully
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075682068
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 37311 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075682068 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075682094
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 37311 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075682094 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075682849
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 37581 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075682849 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075683244
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 37702 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075683244 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075683614
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 37763 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075683614 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Skipping Notification:auth_success hook execution - workspace trust not accepted
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075696431
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 37834 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075696431 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075698976
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 38231 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075698976 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075699000
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 38262 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075699000 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075699003
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 38282 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075699003 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Getting matching hook commands for SessionStart with query: startup
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075699026
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 38387 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075699026 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075699052
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 38282 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075699052 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075699054
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 38318 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075699054 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075699055
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 38318 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075699055 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] AutoUpdaterWrapper: Installation type: native
+[DEBUG] performStartupChecks called
+[DEBUG] Starting background plugin installations
+[DEBUG] performBackgroundPluginInstallations called
+[DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+[DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075699070
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 38318 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075699070 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075699288
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 38494 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075699288 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Checking for native installer update to version 2.0.37
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075700895
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 38538 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075700895 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] AutoUpdaterWrapper: Installation type: native
+[DEBUG] Getting matching hook commands for SessionEnd with query: prompt_input_exit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "prompt_input_exit" (0 before deduplication)
+[DEBUG] Cleaned up session snapshot: /Users/spartan/.claude/shell-snapshots/snapshot-zsh-1763075660649-9sik2f.sh
+[DEBUG] LSP server manager shut down successfully
+[DEBUG] FileHistory: Added snapshot for 34b5ff66-fcdb-4676-b004-e204663a4ba7, tracking 0 files
+[DEBUG] Rendering user message with 1 content blocks
+[DEBUG] Block 0: <command-name>/exit</command-name>
+            <command-message>exit</command-message>
+            <...
+[DEBUG] UserCommandMessage rendering: "exit" (args: "none")
+[DEBUG] isSkillFormat: false, prefix: "/"
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075703078
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 38587 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075703078 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
+[DEBUG] Metrics opt-out API response: enabled=true
+[DEBUG] BigQuery metrics exported successfully
+[DEBUG] API Response: {
+  "accepted_count": 8,
+  "rejected_count": 0
+}
+[DEBUG] BigQuery metrics exporter flush complete
+[DEBUG] BigQuery metrics exporter flush complete
+[DEBUG] BigQuery metrics exporter shutdown complete
+[DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.6600.1763075703768
+[DEBUG] Preserving file permissions: 100600
+[DEBUG] Temp file written successfully, size: 39021 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/spartan/.claude.json.tmp.6600.1763075703768 to /Users/spartan/.claude.json
+[DEBUG] File /Users/spartan/.claude.json written atomically
