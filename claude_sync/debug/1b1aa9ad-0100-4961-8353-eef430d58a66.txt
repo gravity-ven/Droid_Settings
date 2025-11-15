@@ -1184,3 +1184,6 @@
 [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
 [DEBUG] Found 0 hook matchers in settings
 [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+[DEBUG] Checking for native installer update to version 2.0.41
+[DEBUG] Version 2.0.41 already installed, updating symlink
+[DEBUG] Successfully updated to version 2.0.41
