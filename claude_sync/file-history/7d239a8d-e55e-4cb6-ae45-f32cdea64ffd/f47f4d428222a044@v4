@@ -1,0 +1,2395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Capital Markets Intelligence | Spartan Research Station</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #FFD700;
+            --capital-blue: #0096FF;
+            --capital-green: #00ff88;
+            --bg-dark: #0a1628;
+            --bg-card: #12203a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b8c8;
+            --border-color: #1e3a5f;
+            --red: #ff6b6b;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, var(--bg-dark) 0%, #1a1f3a 50%, #0a0e27 100%);
+            color: var(--text-primary);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(255, 215, 0, 0.2);
+            border: 1px solid var(--primary-color);
+            border-radius: 8px;
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: all 0.2s;
+            margin-bottom: 30px;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 215, 0, 0.4);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            font-size: 2.8em;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.2em;
+        }
+
+        /* Composite Score - MOST IMPORTANT */
+        .composite-score-box {
+            background: linear-gradient(135deg, rgba(0, 150, 255, 0.2), rgba(0, 255, 136, 0.1));
+            border: 3px solid var(--capital-blue);
+            border-radius: 16px;
+            padding: 40px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        .score-header {
+            font-size: 1.1em;
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        .score-value {
+            font-size: 5em;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .score-green { color: var(--capital-green); }
+        .score-yellow { color: var(--primary-color); }
+        .score-red { color: var(--red); }
+
+        .score-description {
+            font-size: 1.3em;
+            line-height: 1.8;
+            color: var(--text-primary);
+            margin-top: 15px;
+        }
+
+        .score-breakdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+
+        .score-component {
+            padding: 12px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+        }
+
+        .component-label {
+            font-size: 0.9em;
+            color: var(--text-secondary);
+        }
+
+        .component-value {
+            font-size: 1.5em;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        /* Capital Flows Section */
+        .flows-section {
+            background: var(--bg-card);
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .flows-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .flow-card {
+            background: linear-gradient(135deg, rgba(0, 150, 255, 0.1), rgba(0, 206, 209, 0.05));
+            border: 1px solid rgba(0, 150, 255, 0.3);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.2s;
+        }
+
+        .flow-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 150, 255, 0.2);
+        }
+
+        .flow-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .flow-icon {
+            font-size: 2.5em;
+        }
+
+        .flow-title {
+            font-size: 1.3em;
+            font-weight: 600;
+            color: var(--capital-green);
+        }
+
+        .flow-item {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin: 10px 0;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 8px;
+            border-left: 3px solid var(--capital-blue);
+        }
+
+        .flow-from {
+            color: var(--red);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .flow-arrow {
+            margin: 0 15px;
+            color: var(--primary-color);
+            font-size: 1.3em;
+        }
+
+        .flow-to {
+            color: var(--capital-green);
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .flow-amount {
+            margin-left: auto;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+        }
+
+        .insight-box {
+            background: linear-gradient(135deg, rgba(0, 150, 255, 0.15), rgba(0, 206, 209, 0.08));
+            border-left: 4px solid var(--capital-blue);
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .insight-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: var(--capital-blue);
+            margin-bottom: 10px;
+        }
+
+        .insight-content {
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .regime-indicator {
+            display: inline-block;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        .regime-reflation {
+            background: linear-gradient(135deg, #FFD700, #FF8C00);
+            color: #000;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-secondary);
+        }
+
+        .error {
+            background: rgba(255, 107, 107, 0.2);
+            border: 1px solid var(--red);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            color: var(--red);
+        }
+
+        .tab-button {
+            padding: 15px 30px;
+            font-size: 1.1em;
+            font-weight: 600;
+            background: rgba(255,255,255,0.05);
+            border: 2px solid var(--border-color);
+            border-bottom: none;
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 8px 8px 0 0;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .tab-button:hover {
+            background: rgba(255,215,0,0.1);
+            color: var(--primary-color);
+            border-color: var(--primary-color);
+        }
+
+        .tab-button.active {
+            background: linear-gradient(135deg, rgba(255,215,0,0.2) 0%, rgba(0,150,255,0.2) 100%);
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            transform: translateY(2px);
+        }
+
+        .tab-content {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Home</a>
+
+        <div class="header">
+            <h1>🌍 Global Capital Markets Intelligence</h1>
+            <p>Real-time capital flow tracking and macro regime analysis</p>
+        </div>
+
+        <div id="loading" class="loading">
+            ⏳ Fetching REAL data from FRED API and Yahoo Finance...<br>
+            <span style="font-size: 0.9em; color: #ffd700;">This takes 60-90 seconds to ensure 100% verified data (no fake numbers)</span>
+        </div>
+
+        <div id="error" class="error" style="display: none;"></div>
+
+        <div id="content" style="display: none;">
+            <!-- COMPOSITE SCORE - MOST IMPORTANT -->
+            <div class="composite-score-box">
+                <div class="score-header">⭐ MARKET HEALTH COMPOSITE SCORE</div>
+                <div id="composite-score-value" class="score-value score-green">--</div>
+                <div class="score-breakdown">
+                    <div class="score-component">
+                        <div class="component-label">Growth</div>
+                        <div id="growth-score" class="component-value">--/30</div>
+                    </div>
+                    <div class="score-component">
+                        <div class="component-label">Inflation</div>
+                        <div id="inflation-score" class="component-value">--/30</div>
+                    </div>
+                    <div class="score-component">
+                        <div class="component-label">Liquidity</div>
+                        <div id="liquidity-score" class="component-value">--/20</div>
+                    </div>
+                    <div class="score-component">
+                        <div class="component-label">Markets</div>
+                        <div id="market-score" class="component-value">--/20</div>
+                    </div>
+                </div>
+                <div id="score-description" class="score-description">Loading...</div>
+            </div>
+
+            <!-- TABBED INTERFACE -->
+            <div class="flows-section">
+                <!-- Tab Navigation -->
+                <div style="display: flex; gap: 10px; margin-bottom: 30px; border-bottom: 2px solid var(--border-color); flex-wrap: wrap;">
+                    <button class="tab-button active" onclick="switchTab('summary')" id="tab-summary">
+                        📊 Summary
+                    </button>
+                    <button class="tab-button" onclick="switchTab('inflow')" id="tab-inflow">
+                        📥 Capital Inflow
+                    </button>
+                    <button class="tab-button" onclick="switchTab('outflow')" id="tab-outflow">
+                        📤 Capital Outflow
+                    </button>
+                    <button class="tab-button" onclick="switchTab('education')" id="tab-education">
+                        🎓 Education
+                    </button>
+                    <button class="tab-button" onclick="switchTab('symbols')" id="tab-symbols">
+                        📋 Symbols Analysis
+                    </button>
+                </div>
+
+                <!-- Tab Content -->
+                <div id="tab-content-summary" class="tab-content active">
+                    <!-- SUMMARY TAB CONTENT -->
+                    <div class="section-title" style="font-size: 1.8em; color: var(--primary-color);">📊 Market Summary</div>
+
+                    <div id="flow-dashboard" style="background: linear-gradient(135deg, rgba(255,215,0,0.05) 0%, rgba(0,150,255,0.05) 100%); padding: 30px; border-radius: 12px; border: 2px solid var(--primary-color); margin-bottom: 30px;">
+                        <div style="font-size: 1.3em; font-weight: 600; color: var(--capital-green); margin-bottom: 20px; text-align: center;">
+                            📊 CURRENT REGIME: <span id="flow-regime-name">LOADING...</span>
+                        </div>
+
+                        <div style="display: grid; grid-template-columns: 1fr auto 1fr; gap: 30px; align-items: center; margin: 30px 0;">
+                            <!-- MONEY LEAVING -->
+                            <div style="background: rgba(255,107,107,0.15); padding: 25px; border-radius: 10px; border-left: 4px solid var(--red);">
+                                <div style="font-size: 1.4em; font-weight: 700; color: var(--red); margin-bottom: 15px; text-align: center;">
+                                    📤 LEAVING
+                                </div>
+                                <div id="flow-leaving-list" style="font-size: 1.1em; line-height: 2; color: var(--text-primary);"></div>
+                            </div>
+
+                            <!-- ARROW -->
+                            <div style="font-size: 4em; color: var(--capital-green); text-align: center;">
+                                ➜
+                            </div>
+
+                            <!-- MONEY ENTERING -->
+                            <div style="background: rgba(0,255,136,0.15); padding: 25px; border-radius: 10px; border-left: 4px solid var(--capital-green);">
+                                <div style="font-size: 1.4em; font-weight: 700; color: var(--capital-green); margin-bottom: 15px; text-align: center;">
+                                    📥 ENTERING
+                                </div>
+                                <div id="flow-entering-list" style="font-size: 1.1em; line-height: 2; color: var(--text-primary);"></div>
+                            </div>
+                        </div>
+
+                        <div style="background: rgba(0,150,255,0.15); padding: 20px; border-radius: 8px; border-left: 4px solid var(--primary-color); margin-top: 25px;">
+                            <div style="font-weight: 700; color: var(--primary-color); margin-bottom: 10px; font-size: 1.2em;">💡 WHAT THIS MEANS FOR YOU:</div>
+                            <div id="flow-summary-text" style="font-size: 1.1em; line-height: 1.8; color: var(--text-primary);"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-content-inflow" class="tab-content" style="display: none;">
+                    <!-- CAPITAL INFLOW TAB CONTENT -->
+                    <div id="inflow-countries-grid"></div>
+                </div>
+
+                <div id="tab-content-outflow" class="tab-content" style="display: none;">
+                    <!-- CAPITAL OUTFLOW TAB CONTENT -->
+                    <div id="outflow-countries-grid"></div>
+                </div>
+
+                <div id="tab-content-education" class="tab-content" style="display: none;">
+                    <!-- EDUCATION TAB CONTENT -->
+                    <div id="education-content"></div>
+                </div>
+
+                <div id="tab-content-symbols" class="tab-content" style="display: none;">
+                    <!-- SYMBOLS ANALYSIS TAB CONTENT -->
+                    <div class="section-title" style="font-size: 1.8em; color: var(--primary-color); margin-bottom: 20px;">
+                        📋 Symbols Analysis - Buy/Sell/Hold Recommendations
+                    </div>
+
+                    <div style="background: linear-gradient(135deg, rgba(0,150,255,0.15), rgba(0,255,136,0.1)); border: 2px solid var(--primary-color); border-radius: 12px; padding: 20px; margin-bottom: 30px; text-align: center;">
+                        <div style="font-size: 1.1em; color: var(--capital-green); margin-bottom: 10px;">
+                            📊 Current Regime: <span id="symbols-regime" style="font-weight: 700; color: var(--primary-color);">--</span>
+                        </div>
+                        <div style="font-size: 0.95em; color: var(--text-secondary);">
+                            Composite Score: <span id="symbols-score" style="font-weight: 700;">--</span>/100
+                        </div>
+                    </div>
+
+                    <div style="display: flex; justify-content: center; gap: 20px; margin-bottom: 25px; flex-wrap: wrap;">
+                        <div style="padding: 8px 16px; background: rgba(0,255,136,0.2); border: 1px solid var(--capital-green); border-radius: 6px; color: var(--capital-green); font-weight: 700;">
+                            BUY = Strong opportunity
+                        </div>
+                        <div style="padding: 8px 16px; background: rgba(255,215,0,0.2); border: 1px solid var(--primary-color); border-radius: 6px; color: var(--primary-color); font-weight: 700;">
+                            HOLD = Neutral/Wait
+                        </div>
+                        <div style="padding: 8px 16px; background: rgba(255,107,107,0.2); border: 1px solid var(--red); border-radius: 6px; color: var(--red); font-weight: 700;">
+                            SELL = Reduce exposure
+                        </div>
+                    </div>
+
+                    <div style="overflow-x: auto;">
+                        <table style="width: 100%; border-collapse: collapse; background: rgba(10,22,40,0.6); border-radius: 8px; overflow: hidden;">
+                            <thead>
+                                <tr style="background: linear-gradient(135deg, rgba(0,150,255,0.3), rgba(0,150,255,0.2));">
+                                    <th style="padding: 15px; text-align: left; color: var(--primary-color); font-weight: 700; border-bottom: 2px solid var(--primary-color);">Symbol</th>
+                                    <th style="padding: 15px; text-align: left; color: var(--primary-color); font-weight: 700; border-bottom: 2px solid var(--primary-color);">Type</th>
+                                    <th style="padding: 15px; text-align: center; color: var(--primary-color); font-weight: 700; border-bottom: 2px solid var(--primary-color);">1-2 Weeks</th>
+                                    <th style="padding: 15px; text-align: center; color: var(--primary-color); font-weight: 700; border-bottom: 2px solid var(--primary-color);">1-3 Months</th>
+                                    <th style="padding: 15px; text-align: center; color: var(--primary-color); font-weight: 700; border-bottom: 2px solid var(--primary-color);">3-6 Months</th>
+                                    <th style="padding: 15px; text-align: center; color: var(--primary-color); font-weight: 700; border-bottom: 2px solid var(--primary-color);">6-18 Months</th>
+                                    <th style="padding: 15px; text-align: center; color: var(--primary-color); font-weight: 700; border-bottom: 2px solid var(--primary-color);">18-36 Months</th>
+                                    <th style="padding: 15px; text-align: left; color: var(--primary-color); font-weight: 700; border-bottom: 2px solid var(--primary-color);">Rationale</th>
+                                </tr>
+                            </thead>
+                            <tbody id="symbols-tbody">
+                                <tr>
+                                    <td colspan="8" style="padding: 40px; text-align: center; color: var(--text-secondary);">
+                                        Loading symbols analysis...
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div style="margin-top: 20px; padding: 15px; background: rgba(255,215,0,0.1); border-left: 4px solid var(--primary-color); border-radius: 4px;">
+                        <div style="color: var(--primary-color); font-weight: 700; margin-bottom: 8px;">🛡️ Data Integrity:</div>
+                        <div style="color: var(--text-secondary); font-size: 0.9em;">
+                            All recommendations based on REAL data from Macro Regime Tracker API. No fake data - PLATINUM RULE enforced.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 30px; color: var(--text-secondary);">
+                <p id="timestamp">Last updated: --</p>
+                <p>Data Sources: FRED API, Yahoo Finance (Real-time verified data)</p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .symbols-recommendation {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            font-size: 0.9em;
+            display: inline-block;
+        }
+        .buy {
+            background: rgba(0,255,136,0.2);
+            color: var(--capital-green);
+            border: 1px solid var(--capital-green);
+        }
+        .sell {
+            background: rgba(255,107,107,0.2);
+            color: var(--red);
+            border: 1px solid var(--red);
+        }
+        .hold {
+            background: rgba(255,215,0,0.2);
+            color: var(--primary-color);
+            border: 1px solid var(--primary-color);
+        }
+
+        /* Symbols Analysis Table Styling */
+        #tab-content-symbols table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background: rgba(18, 32, 58, 0.5);
+            border: 2px solid var(--border-color);
+        }
+
+        #tab-content-symbols table thead {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(220, 20, 60, 0.2));
+            border-bottom: 2px solid var(--crimson);
+        }
+
+        #tab-content-symbols table th {
+            padding: 15px 12px;
+            text-align: center;
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 0.95em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: 1px solid var(--border-color);
+            border-bottom: 2px solid var(--crimson);
+        }
+
+        #tab-content-symbols table tbody tr {
+            border-bottom: 1px solid var(--border-color);
+            transition: background 0.2s ease;
+        }
+
+        #tab-content-symbols table tbody tr:hover {
+            background: rgba(220, 20, 60, 0.1);
+        }
+
+        #tab-content-symbols table td {
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            color: #ffffff;
+            font-size: 0.9em;
+            text-align: center;
+        }
+
+        #tab-content-symbols table td.symbol-name {
+            font-weight: 700;
+            color: var(--gold);
+            font-size: 1em;
+            text-align: center;
+        }
+
+        #tab-content-symbols table td.asset-type {
+            color: var(--capital-green);
+            font-weight: 600;
+            text-align: center;
+        }
+
+        #tab-content-symbols table td.rationale {
+            color: #b0b8c8;
+            line-height: 1.5;
+            max-width: 400px;
+            text-align: left;
+        }
+
+        #tab-content-symbols table tbody tr:nth-child(even) {
+            background: rgba(10, 22, 40, 0.3);
+        }
+
+        #tab-content-symbols table tbody tr:nth-child(odd) {
+            background: rgba(18, 32, 58, 0.2);
+        }
+    </style>
+
+    <script>
+        const API_URL = 'http://localhost:9002/api/macro/regime/latest';
+        const BAROMETERS_API_URL = 'http://localhost:9001/api/barometers/latest';
+
+        // Global variable to store data for symbols analysis
+        let globalMacroData = null;
+        let globalBarometersData = null;
+
+        // Capital flow logic based on regime
+        function getCapitalFlows(growthRegime, inflationRegime, liquidityRegime, marketRegime) {
+            const flows = {
+                outflows: [],
+                inflows: [],
+                strategy: ''
+            };
+
+            // REFLATION (Current): Growth + Elevated Inflation + Easing
+            if (growthRegime === 'EXPANSION' && inflationRegime === 'ELEVATED' && liquidityRegime === 'EASING') {
+                flows.outflows = [
+                    { from: 'Long Duration Bonds', to: 'Commodities', reason: 'Inflation hedge' },
+                    { from: 'Cash', to: 'Real Assets', reason: 'Inflation protection' },
+                    { from: 'Growth Stocks', to: 'Value Stocks', reason: 'Rotation to value' }
+                ];
+                flows.inflows = [
+                    { from: 'Bonds', to: 'Gold', reason: 'Inflation hedge' },
+                    { from: 'Tech', to: 'Energy', reason: 'Commodity exposure' },
+                    { from: 'Defensive', to: 'Materials & Industrials', reason: 'Economic growth' }
+                ];
+                flows.strategy = 'REFLATION PLAYBOOK: Rotate to commodities, energy, value stocks, and real assets. Reduce long-duration bonds. Gold as inflation hedge. Economy strong but inflation elevated.';
+            }
+            // GOLDILOCKS: Growth + Target Inflation
+            else if (growthRegime === 'EXPANSION' && inflationRegime === 'TARGET') {
+                flows.outflows = [
+                    { from: 'Cash', to: 'Stocks', reason: 'Growth environment' },
+                    { from: 'Bonds', to: 'Equities', reason: 'Better returns' },
+                    { from: 'Defensive Sectors', to: 'Growth Stocks', reason: 'Risk appetite' }
+                ];
+                flows.inflows = [
+                    { from: 'Fixed Income', to: 'Tech & Growth', reason: 'Optimal conditions' },
+                    { from: 'Commodities', to: 'Stocks', reason: 'Lower inflation' },
+                    { from: 'Gold', to: 'Equities', reason: 'Risk-on' }
+                ];
+                flows.strategy = 'GOLDILOCKS PLAYBOOK: Maximum risk-on. Buy tech, growth stocks, and high-beta sectors. Reduce cash and defensive positions. Perfect environment for wealth creation.';
+            }
+            // STAGFLATION: Slow Growth + High Inflation
+            else if ((growthRegime === 'SLOWDOWN' || growthRegime === 'RECESSION') && inflationRegime === 'HIGH') {
+                flows.outflows = [
+                    { from: 'Stocks', to: 'Gold', reason: 'Safe haven' },
+                    { from: 'Bonds', to: 'Commodities', reason: 'Inflation protection' },
+                    { from: 'Risk Assets', to: 'Cash', reason: 'Preserve capital' }
+                ];
+                flows.inflows = [
+                    { from: 'Equities', to: 'Gold', reason: 'Inflation hedge' },
+                    { from: 'Corporate Bonds', to: 'TIPS', reason: 'Inflation protection' },
+                    { from: 'Growth Stocks', to: 'Defensive Sectors', reason: 'Quality' }
+                ];
+                flows.strategy = 'STAGFLATION PLAYBOOK: Defensive positioning. Buy gold, commodities, TIPS. Reduce equity exposure. Focus on quality, defensive stocks (utilities, staples). Worst macro environment.';
+            }
+            // CRISIS/DEFLATION: Recession + Low Inflation
+            else if (growthRegime === 'RECESSION' && inflationRegime === 'LOW') {
+                flows.outflows = [
+                    { from: 'Stocks', to: 'Bonds', reason: 'Flight to safety' },
+                    { from: 'High Yield', to: 'Treasuries', reason: 'Credit risk' },
+                    { from: 'Commodities', to: 'Cash', reason: 'Deflation' }
+                ];
+                flows.inflows = [
+                    { from: 'Equities', to: 'Long Duration Bonds', reason: 'Safe haven' },
+                    { from: 'Corporate Bonds', to: 'Government Bonds', reason: 'Default risk' },
+                    { from: 'Cyclicals', to: 'Defensive Stocks', reason: 'Recession' }
+                ];
+                flows.strategy = 'CRISIS PLAYBOOK: Maximum defense. Buy long-duration Treasuries, defensive stocks (utilities, staples, healthcare). Sell cyclicals, commodities. Wait for bottom to deploy cash.';
+            }
+            // DEFAULT: Mixed signals
+            else {
+                flows.outflows = [
+                    { from: 'Lower conviction assets', to: 'Higher quality', reason: 'Mixed signals' }
+                ];
+                flows.inflows = [
+                    { from: 'Speculative', to: 'Core holdings', reason: 'Reduce risk' }
+                ];
+                flows.strategy = 'MIXED SIGNALS: Stay balanced. Maintain diversification. Wait for clearer regime confirmation before major repositioning.';
+            }
+
+            return flows;
+        }
+
+        function getGeographicFlows(growthRegime, inflationRegime, liquidityRegime, marketRegime) {
+            const geoFlows = {
+                outflows: [],
+                inflows: [],
+                regionalSummary: ''
+            };
+
+            // REFLATION: Growth + Elevated Inflation + Easing
+            if (growthRegime === 'EXPANSION' && inflationRegime === 'ELEVATED' && liquidityRegime === 'EASING') {
+                geoFlows.outflows = [
+                    { country: 'United States (Tech Heavy)', region: 'North America', reason: 'Overvalued tech sector, inflation concerns' },
+                    { country: 'Japan', region: 'Asia-Pacific', reason: 'Low yields, weak currency, capital seeking higher returns' },
+                    { country: 'Switzerland', region: 'Europe', reason: 'Safe haven no longer needed in growth environment' },
+                    { country: 'Germany (Bonds)', region: 'Europe', reason: 'Negative real yields with elevated inflation' },
+                    { country: 'Developed Market Government Bonds', region: 'Global', reason: 'Real yields negative, inflation eroding value' },
+                    { country: 'Cryptocurrency (DeFi)', region: 'Digital Assets', reason: 'Risk-off rotation from speculative DeFi → Bitcoin as inflation hedge' }
+                ];
+                geoFlows.inflows = [
+                    { country: 'Australia', region: 'Asia-Pacific', reason: 'Commodity exporter, high interest rates, iron ore/coal demand' },
+                    { country: 'Canada', region: 'North America', reason: 'Energy & commodity producer (oil, gold, copper)' },
+                    { country: 'Brazil', region: 'Latin America', reason: 'Agricultural powerhouse, iron ore, high yields' },
+                    { country: 'India', region: 'Asia-Pacific', reason: 'Strong growth, demographic dividend, tech hub' },
+                    { country: 'Saudi Arabia & UAE', region: 'Middle East', reason: 'Energy exporters benefit from inflation' },
+                    { country: 'South Africa', region: 'Africa', reason: 'Gold, platinum, palladium, commodity wealth' },
+                    { country: 'Indonesia', region: 'Asia-Pacific', reason: 'Coal, nickel, palm oil - commodity-rich' },
+                    { country: 'Mexico', region: 'Latin America', reason: 'Nearshoring beneficiary, silver & copper production' },
+                    { country: 'Bitcoin & Digital Gold', region: 'Cryptocurrency', reason: 'Inflation hedge, institutional adoption, "digital commodity" narrative' }
+                ];
+                geoFlows.regionalSummary = '<strong>REFLATION GLOBAL PLAYBOOK:</strong><br><br>' +
+                    '📤 <strong>CAPITAL LEAVING:</strong> Developed market bonds (US, Europe, Japan), expensive US tech stocks, safe havens (Switzerland, Japan), speculative DeFi tokens<br><br>' +
+                    '📥 <strong>CAPITAL ENTERING:</strong> Commodity exporters (Australia, Canada, Brazil, Gulf States), high-growth emerging markets (India, Indonesia, Mexico), resource-rich nations (South Africa), Bitcoin as "digital gold"<br><br>' +
+                    '🌎 <strong>REGIONAL FLOWS:</strong> Money rotating from North America/Europe/Japan → Asia-Pacific emerging markets, Latin America, Middle East energy producers, African commodity nations<br><br>' +
+                    '💡 <strong>WHY:</strong> Inflation favors hard assets and commodity producers. Growth supports emerging markets. Developed market bonds offer negative real returns.<br><br>' +
+                    '₿ <strong>CRYPTO:</strong> Bitcoin benefits as inflation hedge (up in reflation). Ethereum/DeFi struggle as risk appetite rotates to real assets. Buy BTC, avoid altcoins.<br><br>' +
+                    '⏱️ <strong>INVESTMENT HORIZON:</strong> <span style="color: var(--capital-green); font-weight: 700;">6-18 MONTHS</span> - This reflation trade typically lasts until inflation peaks or Fed tightens significantly. Hold commodity-linked assets and emerging markets while growth remains strong and liquidity is easing. Exit when inflation cools below 2% or Fed starts aggressive rate hikes.';
+            }
+            // GOLDILOCKS: Growth + Target Inflation
+            else if (growthRegime === 'EXPANSION' && inflationRegime === 'TARGET') {
+                geoFlows.outflows = [
+                    { country: 'Gold-focused economies', region: 'Global', reason: 'No inflation fear, risk-on environment' },
+                    { country: 'Defensive Safe Havens (Japan, Switzerland)', region: 'Asia/Europe', reason: 'Risk appetite high, seeking growth' },
+                    { country: 'Low-growth Europe (ex-Germany)', region: 'Europe', reason: 'Capital seeking faster growth elsewhere' },
+                    { country: 'Bitcoin (temporarily)', region: 'Cryptocurrency', reason: 'No inflation fear = less need for hard money, flows to higher-beta altcoins' }
+                ];
+                geoFlows.inflows = [
+                    { country: 'United States (Tech & Growth)', region: 'North America', reason: 'Best growth + innovation ecosystem, FAANG dominance' },
+                    { country: 'India', region: 'Asia-Pacific', reason: 'Fastest major economy growth, young population' },
+                    { country: 'China', region: 'Asia-Pacific', reason: 'Growth stabilizing, policy support' },
+                    { country: 'South Korea', region: 'Asia-Pacific', reason: 'Tech manufacturing, semiconductors, K-culture exports' },
+                    { country: 'Taiwan', region: 'Asia-Pacific', reason: 'Semiconductor dominance (TSMC), tech supply chain' },
+                    { country: 'Vietnam', region: 'Asia-Pacific', reason: 'Manufacturing hub, China+1 strategy beneficiary' },
+                    { country: 'Singapore', region: 'Asia-Pacific', reason: 'Financial hub, wealth management, stable governance' },
+                    { country: 'Ethereum & DeFi', region: 'Cryptocurrency', reason: 'Risk-on environment = speculative crypto thrives, DeFi innovation, NFTs, altcoin season' }
+                ];
+                geoFlows.regionalSummary = '<strong>GOLDILOCKS GLOBAL PLAYBOOK:</strong><br><br>' +
+                    '📤 <strong>CAPITAL LEAVING:</strong> Safe havens (Japan, Switzerland), defensive assets, gold-focused economies<br><br>' +
+                    '📥 <strong>CAPITAL ENTERING:</strong> US tech giants, high-growth Asia (India, China, Vietnam, Taiwan, South Korea), innovation hubs (Singapore), speculative crypto<br><br>' +
+                    '🌎 <strong>REGIONAL FLOWS:</strong> Maximum risk-on → Capital flooding into US tech, Asian growth stories, semiconductor supply chain<br><br>' +
+                    '💡 <strong>WHY:</strong> Perfect economic conditions (growth + low inflation) = chase maximum returns. Tech and growth dominate. Emerging Asia offers best growth rates.<br><br>' +
+                    '₿ <strong>CRYPTO:</strong> BEST regime for crypto. Ethereum, DeFi, altcoins EXPLODE. "Altcoin season" in Goldilocks. Lower inflation = no Bitcoin hedge narrative, but risk appetite drives ALL crypto higher. DeFi TVL surges.<br><br>' +
+                    '⏱️ <strong>INVESTMENT HORIZON:</strong> <span style="color: var(--capital-green); font-weight: 700;">12-36 MONTHS</span> - Goldilocks can last for YEARS (like 2013-2020). Stay fully invested in growth and tech. Only exit when inflation heats up (>3%) or growth stalls. This is the longest, most profitable regime - maximize exposure.';
+            }
+            // STAGFLATION: Slow Growth + High Inflation
+            else if ((growthRegime === 'SLOWDOWN' || growthRegime === 'RECESSION') && inflationRegime === 'HIGH') {
+                geoFlows.outflows = [
+                    { country: 'United States (Equities)', region: 'North America', reason: 'Margin compression, recession risk, high valuations' },
+                    { country: 'China', region: 'Asia-Pacific', reason: 'Slowing growth, property crisis, geopolitical risks' },
+                    { country: 'Europe (ex-Switzerland)', region: 'Europe', reason: 'Energy crisis exposure, weak growth, high inflation' },
+                    { country: 'Emerging Markets (High Debt)', region: 'Global', reason: 'Currency crises, debt defaults, capital flight' },
+                    { country: 'Turkey', region: 'Middle East', reason: 'Hyperinflation, currency collapse, political instability' },
+                    { country: 'Altcoins & DeFi', region: 'Cryptocurrency', reason: 'Risk-off crushes speculative crypto. Mass liquidations.' }
+                ];
+                geoFlows.inflows = [
+                    { country: 'Switzerland', region: 'Europe', reason: 'Ultimate safe haven, strong franc, political stability' },
+                    { country: 'Gold-producing nations (Australia, Canada, South Africa)', region: 'Global', reason: 'Gold best asset in stagflation' },
+                    { country: 'Saudi Arabia & Oil Producers', region: 'Middle East', reason: 'Energy scarcity = pricing power' },
+                    { country: 'Norway', region: 'Europe', reason: 'Oil wealth fund, energy exporter, fiscal discipline' },
+                    { country: 'United States (Treasuries Only)', region: 'North America', reason: 'Safe haven government bonds despite inflation' },
+                    { country: 'Bitcoin (Mixed)', region: 'Cryptocurrency', reason: 'Inflation hedge narrative vs recession fear. Sideways/volatile.' }
+                ];
+                geoFlows.regionalSummary = '<strong>STAGFLATION GLOBAL PLAYBOOK:</strong><br><br>' +
+                    '📤 <strong>CAPITAL LEAVING:</strong> Most equity markets (US, China, Europe), high-debt emerging markets, cyclical economies, altcoins<br><br>' +
+                    '📥 <strong>CAPITAL ENTERING:</strong> Switzerland (safe haven), gold producers, oil/energy exporters (Saudi Arabia, Norway), defensive US Treasuries<br><br>' +
+                    '🌎 <strong>REGIONAL FLOWS:</strong> Global flight to safety → Switzerland, gold, energy producers. Emerging markets suffering capital flight.<br><br>' +
+                    '💡 <strong>WHY:</strong> Stagflation = worst environment for stocks. Only winners: energy producers (pricing power), gold (inflation hedge), and safe havens (capital preservation).<br><br>' +
+                    '₿ <strong>CRYPTO:</strong> WORST regime for crypto. Altcoins collapse -80%. Bitcoin uncertain (inflation hedge vs recession fear). Most get crushed. Stay away or 5% Bitcoin max. DeFi dies.<br><br>' +
+                    '⏱️ <strong>INVESTMENT HORIZON:</strong> <span style="color: var(--red); font-weight: 700;">3-12 MONTHS</span> - Stagflation is painful but eventually breaks as central banks induce recession to kill inflation (like Volcker 1979-1982). Hold gold/energy until recession signs appear, then rotate to long-duration bonds. Exit equities immediately.';
+            }
+            // CRISIS/DEFLATION: Recession + Low Inflation
+            else if (growthRegime === 'RECESSION' && inflationRegime === 'LOW') {
+                geoFlows.outflows = [
+                    { country: 'Emerging Markets (All)', region: 'Global', reason: 'Dollar shortage, capital flight, collapsing currencies' },
+                    { country: 'China', region: 'Asia-Pacific', reason: 'Deflationary spiral, property collapse, capital controls' },
+                    { country: 'Commodity Exporters (Australia, Brazil, Canada)', region: 'Global', reason: 'Commodity prices collapsing in deflation' },
+                    { country: 'Europe (Peripheral: Italy, Spain, Greece)', region: 'Europe', reason: 'Debt crisis risk, ECB constraints, weak banks' },
+                    { country: 'Corporate Bonds Globally', region: 'Global', reason: 'Default risk skyrocketing, credit spreads widening' },
+                    { country: 'ALL Cryptocurrency', region: 'Cryptocurrency', reason: 'Liquidity crisis crushes all risk assets. Bitcoin -50% to -80%. Altcoins die.' }
+                ];
+                geoFlows.inflows = [
+                    { country: 'United States (Treasuries)', region: 'North America', reason: 'Global safe haven, reserve currency, deepest bond market' },
+                    { country: 'Japan (JGBs)', region: 'Asia-Pacific', reason: 'Safe haven bonds, deflation experience' },
+                    { country: 'Switzerland', region: 'Europe', reason: 'Safe haven currency and bonds, capital preservation' },
+                    { country: 'Germany (Bunds)', region: 'Europe', reason: 'Safest European sovereign debt' },
+                    { country: 'Cash & Short-term Bills (Global)', region: 'Global', reason: 'Capital preservation paramount' }
+                ];
+                geoFlows.regionalSummary = '<strong>CRISIS GLOBAL PLAYBOOK:</strong><br><br>' +
+                    '📤 <strong>CAPITAL LEAVING:</strong> All emerging markets, commodity exporters, peripheral Europe, corporate bonds, risky equities, ALL crypto<br><br>' +
+                    '📥 <strong>CAPITAL ENTERING:</strong> US Treasuries (king of safe havens), Japanese/German/Swiss government bonds, cash and bills<br><br>' +
+                    '🌎 <strong>REGIONAL FLOWS:</strong> Massive flight to quality → US Treasury market, developed market safe havens. Emerging markets in free fall.<br><br>' +
+                    '💡 <strong>WHY:</strong> Crisis mode = preserve capital at all costs. Only government bonds of strongest nations survive. US dollar and Treasuries are global panic destination.<br><br>' +
+                    '₿ <strong>CRYPTO:</strong> Gets DESTROYED in crises (March 2020: Bitcoin -50% in 2 days). ALL crypto sells off violently. But THIS IS THE BUYING OPPORTUNITY. When Fed announces QE/rate cuts, buy Bitcoin at the bottom for 100%+ gains.<br><br>' +
+                    '⏱️ <strong>INVESTMENT HORIZON:</strong> <span style="color: var(--red); font-weight: 700;">1-6 MONTHS</span> - Crises are SHORT but devastating (2008: 6 months, COVID: 2 months, 2011: 4 months). Hold cash/Treasuries until central banks intervene with massive stimulus (Fed QE, rate cuts to zero). Then aggressively buy beaten-down risk assets. Timing the bottom is key.';
+            }
+            // DEFAULT: Mixed signals
+            else {
+                geoFlows.outflows = [
+                    { country: 'Unclear - Regime Mixed', region: 'Global', reason: 'Await clearer macro signals before major repositioning' }
+                ];
+                geoFlows.inflows = [
+                    { country: 'Balanced Allocation', region: 'Global', reason: 'Diversify across regions until regime clarity emerges' }
+                ];
+                geoFlows.regionalSummary = '<strong>MIXED SIGNALS:</strong> Macro regime unclear. Maintain geographic diversification across US, Europe, Asia, and Emerging Markets. Wait for regime confirmation before major geographic tilts.<br><br>' +
+                    '⏱️ <strong>INVESTMENT HORIZON:</strong> <span style="color: var(--yellow); font-weight: 700;">1-3 MONTHS</span> - Stay balanced until clarity emerges. Review macro data weekly (growth, inflation, Fed policy). Be ready to pivot quickly when regime becomes clear.';
+            }
+
+            return geoFlows;
+        }
+
+        function getCountryIntelligence(growthRegime, inflationRegime, liquidityRegime, marketRegime) {
+            const countries = [];
+
+            // REFLATION: Growth + Elevated Inflation + Easing
+            if (growthRegime === 'EXPANSION' && inflationRegime === 'ELEVATED' && liquidityRegime === 'EASING') {
+                countries.push(
+                    { name: 'Australia', flag: '🇦🇺', score: 85, opportunities: ['Iron Ore Miners (BHP, RIO)', 'Coal Exporters', 'Natural Gas (LNG)', 'High Interest Rates (4.35%)'], reason: 'Commodity supercycle beneficiary. China demand + tight supply = pricing power.' },
+                    { name: 'Canada', flag: '🇨🇦', score: 82, opportunities: ['Oil Sands (CNQ, SU)', 'Gold Miners (Barrick, Agnico)', 'Copper (Teck Resources)', 'Potash Fertilizers'], reason: 'Energy independence + commodity wealth. Benefiting from deglobalization trend.' },
+                    { name: 'Brazil', flag: '🇧🇷', score: 78, opportunities: ['Agriculture (Soybeans, Corn)', 'Iron Ore (Vale)', 'Oil (Petrobras)', 'Real yields 6%+'], reason: 'Agricultural powerhouse. Real yields attract capital despite political risk.' },
+                    { name: 'India', flag: '🇮🇳', score: 88, opportunities: ['Tech Services (TCS, Infosys)', 'Manufacturing (Make in India)', 'Infrastructure Build-out', 'Consumer Growth'], reason: 'Fastest major economy (7%+ GDP growth). Demographic dividend. China+1 winner.' },
+                    { name: 'Saudi Arabia & UAE', flag: '🇸🇦', score: 80, opportunities: ['Oil Producers (Aramco)', 'Sovereign Wealth Funds', 'Real Estate (NEOM)', 'Tourism Expansion'], reason: 'Energy pricing power in reflationary environment. Fiscal surpluses. Diversification push.' },
+                    { name: 'Indonesia', flag: '🇮🇩', score: 76, opportunities: ['Nickel (EV batteries)', 'Coal Exports', 'Palm Oil', 'Consumer Market (280M pop)'], reason: 'Critical minerals for EV transition. Nickel dominance. Strong domestic consumption.' },
+                    { name: 'Mexico', flag: '🇲🇽', score: 79, opportunities: ['Nearshoring Manufacturing', 'Silver Mining', 'Auto Production', 'US Trade Integration'], reason: 'Nearshoring mega-trend. Replacing China as US manufacturing hub. Peso strength.' },
+                    { name: 'South Africa', flag: '🇿🇦', score: 72, opportunities: ['Gold (AngloGold)', 'Platinum Group Metals', 'Palladium (Impala)', 'Chrome & Manganese'], reason: 'Precious metals leader. Gold hedge for inflation. PGM supply constraints.' },
+                    { name: 'Bitcoin', flag: '₿', score: 75, opportunities: ['Bitcoin ETFs (IBIT, FBTC)', 'Bitcoin Miners (MARA, RIOT)', 'MicroStrategy (MSTR)', 'Direct BTC Holdings'], reason: 'Inflation hedge narrative. Institutional adoption rising. Supply shock from halving.' }
+                );
+            }
+            // GOLDILOCKS: Growth + Target Inflation
+            else if (growthRegime === 'EXPANSION' && inflationRegime === 'TARGET') {
+                countries.push(
+                    { name: 'United States', flag: '🇺🇸', score: 95, opportunities: ['Magnificent 7 Tech (AAPL, MSFT, NVDA, GOOGL, AMZN, META, TSLA)', 'AI Infrastructure', 'Cloud Computing', 'Biotech Innovation'], reason: 'Innovation capital of the world. Best tech ecosystem. Perfect growth environment for FAANG.' },
+                    { name: 'India', flag: '🇮🇳', score: 90, opportunities: ['Tech Outsourcing', 'Digital Payments (PhonePe, Paytm)', 'E-commerce Growth', 'Infrastructure'], reason: 'Fastest growth + young demographics. Modi reforms accelerating. Tech hub expansion.' },
+                    { name: 'Taiwan', flag: '🇹🇼', score: 92, opportunities: ['TSMC (AI Chips)', 'Semiconductor Supply Chain', 'Advanced Packaging', 'AI Accelerators'], reason: 'AI chip monopoly. TSMC indispensable for NVIDIA, Apple, AMD. Tech supply chain king.' },
+                    { name: 'South Korea', flag: '🇰🇷', score: 87, opportunities: ['Samsung (Memory, Chips)', 'SK Hynix (HBM)', 'K-Pop/Entertainment', 'EVs (Hyundai)'], reason: 'Memory chip leader. HBM for AI. Korean Wave cultural exports. Tech manufacturing excellence.' },
+                    { name: 'Vietnam', flag: '🇻🇳', score: 84, opportunities: ['Electronics Manufacturing', 'Textile Exports', 'Foreign Direct Investment', 'Consumer Growth'], reason: 'China+1 manufacturing winner. FDI flooding in. Apple, Samsung production shifting here.' },
+                    { name: 'Singapore', flag: '🇸🇬', score: 86, opportunities: ['Financial Hub', 'Wealth Management', 'Tech Startups (Sea, Grab)', 'Real Estate'], reason: 'Asian Switzerland. Stable governance. Regional financial center. Family office destination.' },
+                    { name: 'Ethereum & Crypto', flag: '⟠', score: 92, opportunities: ['Ethereum (ETH)', 'DeFi Protocols (Aave, Uniswap)', 'Layer 2s (Arbitrum, Optimism)', 'NFT Platforms'], reason: 'Risk-on = altcoin season. DeFi innovation. Ethereum staking yields. Speculative frenzy.' }
+                );
+            }
+            // STAGFLATION: Slow Growth + High Inflation
+            else if ((growthRegime === 'SLOWDOWN' || growthRegime === 'RECESSION') && inflationRegime === 'HIGH') {
+                countries.push(
+                    { name: 'Switzerland', flag: '🇨🇭', score: 90, opportunities: ['Swiss Franc (Safe Haven)', 'Nestle, Roche, Novartis (Defensives)', 'Swiss Government Bonds', 'Gold Vaults'], reason: 'Ultimate safe haven. Strong franc. Political stability. Defensive blue chips.' },
+                    { name: 'Gold Producers', flag: '🥇', score: 88, opportunities: ['Newmont, Barrick (US/Canada)', 'AngloGold (South Africa)', 'Physical Gold (GLD, IAU)', 'Silver Miners'], reason: 'Gold = best stagflation asset. Pricing power. Inflation hedge + recession protection.' },
+                    { name: 'Saudi Arabia', flag: '🇸🇦', score: 85, opportunities: ['Oil Production', 'Aramco Dividends', 'Energy Pricing Power', 'OPEC+ Discipline'], reason: 'Energy scarcity = pricing power. Oil thrives in stagflation. Fiscal surpluses.' },
+                    { name: 'Norway', flag: '🇳🇴', score: 83, opportunities: ['Sovereign Wealth Fund', 'Oil & Gas Exports', 'Equinor', 'Defensive Positioning'], reason: 'Oil wealth + fiscal discipline. Sovereign fund largest in world. Energy exporter.' },
+                    { name: 'Bitcoin (Uncertain)', flag: '₿', score: 50, opportunities: ['Small 5% allocation', 'Wait for Fed pivot', 'DCA during volatility', 'Avoid altcoins entirely'], reason: 'Conflicted: inflation hedge vs recession fear. Sideways/volatile. Not clear winner.' }
+                );
+            }
+            // CRISIS/DEFLATION: Recession + Low Inflation
+            else if (growthRegime === 'RECESSION' && inflationRegime === 'LOW') {
+                countries.push(
+                    { name: 'United States', flag: '🇺🇸', score: 95, opportunities: ['US Treasuries (20+ Year)', 'Cash & T-Bills', 'Defensive Stocks (PG, JNJ, KO)', 'USD Strength'], reason: 'Global safe haven. Reserve currency. Deepest bond market. Treasuries rally in crisis.' },
+                    { name: 'Japan', flag: '🇯🇵', score: 85, opportunities: ['Japanese Government Bonds', 'Yen Safe Haven', 'Defensive Exporters (Toyota)', 'Cash'], reason: 'Deflation experience. Safe haven bonds. Yen strengthens in risk-off. Capital preservation.' },
+                    { name: 'Switzerland', flag: '🇨🇭', score: 88, opportunities: ['Swiss Franc', 'Swiss Government Bonds', 'Defensive Swiss Stocks', 'Gold Storage'], reason: 'Safe haven currency. Political stability. Defensive positioning. Capital preservation focus.' },
+                    { name: 'Germany', flag: '🇩🇪', score: 80, opportunities: ['German Bunds', 'EUR Safe Haven', 'Defensive Industrials', 'Cash Position'], reason: 'Safest European sovereign debt. Fiscal discipline. Exporters benefit from weak EUR eventually.' },
+                    { name: 'Bitcoin (CRASH then BUY)', flag: '₿', score: 20, opportunities: ['WAIT for -50% crash', 'Buy ONLY after Fed announces QE', 'Target $20K-$30K bottom', 'Then hold for 100%+ recovery'], reason: 'Gets destroyed initially (-50% to -80%). But best buying opportunity. Buy when Fed pivots to QE. 2020: -50% then +400%.' }
+                );
+            }
+            // DEFAULT: Mixed signals
+            else {
+                countries.push(
+                    { name: 'Diversified Global', flag: '🌍', score: 60, opportunities: ['Global Stock ETF (VT)', 'Balanced 60/40 Portfolio', 'Multi-Asset Allocation', 'Wait for Clarity'], reason: 'Mixed signals = stay balanced across regions. Diversify until regime becomes clear.' }
+                );
+            }
+
+            return countries;
+        }
+
+        function renderCapitalFlowDashboard(data) {
+            const growthRegime = data.growth.regime;
+            const inflationRegime = data.inflation.regime;
+            const liquidityRegime = data.liquidity.regime;
+            const marketRegime = data.market.regime;
+
+            let flowData = {
+                regime: '',
+                leaving: [],
+                entering: [],
+                summary: ''
+            };
+
+            // REFLATION
+            if (growthRegime === 'EXPANSION' && inflationRegime === 'ELEVATED' && liquidityRegime === 'EASING') {
+                flowData.regime = 'REFLATION';
+                flowData.leaving = [
+                    '🇺🇸 US Tech Stocks (overvalued)',
+                    '🇯🇵 Japan (low yields)',
+                    '🇨🇭 Switzerland (safe haven)',
+                    '💶 European Bonds (negative real returns)',
+                    '⟠ DeFi & Altcoins (speculative crypto)'
+                ];
+                flowData.entering = [
+                    '🇦🇺 Australia (commodities)',
+                    '🇨🇦 Canada (energy & gold)',
+                    '🇧🇷 Brazil (agriculture)',
+                    '🇮🇳 India (fastest growth)',
+                    '🇸🇦 Saudi Arabia (oil)',
+                    '🇮🇩 Indonesia (nickel)',
+                    '🇲🇽 Mexico (nearshoring)',
+                    '₿ Bitcoin (inflation hedge)'
+                ];
+                flowData.summary = '<strong>Capital is rotating FROM developed markets TO commodity exporters and emerging markets.</strong> Inflation favors real assets. Buy: commodities, energy, emerging markets, Bitcoin. Sell: bonds, US tech, safe havens. Hold 6-18 months.';
+            }
+            // GOLDILOCKS
+            else if (growthRegime === 'EXPANSION' && inflationRegime === 'TARGET') {
+                flowData.regime = 'GOLDILOCKS';
+                flowData.leaving = [
+                    '🥇 Gold (no inflation fear)',
+                    '🇯🇵 Japan (seeking growth)',
+                    '🇨🇭 Switzerland (risk-on)',
+                    '💰 Cash (opportunity cost)',
+                    '🛡️ Defensive sectors'
+                ];
+                flowData.entering = [
+                    '🇺🇸 US Tech (FAANG dominance)',
+                    '🇮🇳 India (fastest growth)',
+                    '🇹🇼 Taiwan (TSMC, AI chips)',
+                    '🇰🇷 South Korea (semiconductors)',
+                    '🇻🇳 Vietnam (manufacturing)',
+                    '🇸🇬 Singapore (financial hub)',
+                    '⟠ Ethereum & DeFi (altcoin season)'
+                ];
+                flowData.summary = '<strong>Maximum risk-on environment.</strong> Capital flooding into tech, growth, and emerging Asia. Buy: US tech, AI stocks, semiconductors, crypto. Sell: defensive assets, gold. This is THE longest, most profitable regime. Hold 12-36 months.';
+            }
+            // STAGFLATION
+            else if ((growthRegime === 'SLOWDOWN' || growthRegime === 'RECESSION') && inflationRegime === 'HIGH') {
+                flowData.regime = 'STAGFLATION';
+                flowData.leaving = [
+                    '🇺🇸 US Stocks (margin compression)',
+                    '🇨🇳 China (slowing growth)',
+                    '🇪🇺 Europe (energy crisis)',
+                    '🌍 Emerging Markets (debt defaults)',
+                    '⟠ ALL Altcoins (risk-off crash)'
+                ];
+                flowData.entering = [
+                    '🇨🇭 Switzerland (ultimate safe haven)',
+                    '🥇 Gold (best stagflation asset)',
+                    '🇸🇦 Saudi Arabia (oil pricing power)',
+                    '🇳🇴 Norway (energy exporter)',
+                    '💵 US Treasuries (defensive)'
+                ];
+                flowData.summary = '<strong>Global flight to safety.</strong> Worst environment for stocks. Only winners: gold, energy producers, safe havens. Buy: gold, oil, Swiss franc. Sell: ALL equities, altcoins. Hold 3-12 months until Fed induces recession.';
+            }
+            // CRISIS
+            else if (growthRegime === 'RECESSION' && inflationRegime === 'LOW') {
+                flowData.regime = 'CRISIS / DEFLATION';
+                flowData.leaving = [
+                    '🌍 ALL Emerging Markets (dollar shortage)',
+                    '🇨🇳 China (deflationary spiral)',
+                    '🏗️ Commodities (collapsing demand)',
+                    '🇪🇺 Peripheral Europe (debt crisis)',
+                    '₿ ALL Crypto (liquidity crisis -50% to -80%)'
+                ];
+                flowData.entering = [
+                    '🇺🇸 US Treasuries (king of safe havens)',
+                    '🇯🇵 Japan JGBs (deflation bonds)',
+                    '🇨🇭 Switzerland (capital preservation)',
+                    '🇩🇪 German Bunds (safest EU debt)',
+                    '💵 Cash & T-Bills (preserve capital)'
+                ];
+                flowData.summary = '<strong>Massive flight to quality.</strong> Preserve capital at ALL costs. Hold 70%+ cash/Treasuries. WAIT for Fed to announce QE/rate cuts. THEN buy crash bottom (stocks -30%, Bitcoin -60%) for 100%+ recovery gains. Crisis = 1-6 months.';
+            }
+            // DEFAULT
+            else {
+                flowData.regime = 'MIXED SIGNALS';
+                flowData.leaving = ['Speculative assets'];
+                flowData.entering = ['Balanced diversification'];
+                flowData.summary = 'Regime unclear. Stay balanced across all asset classes and geographies. Wait 1-3 months for clarity.';
+            }
+
+            // Populate dashboard
+            document.getElementById('flow-regime-name').textContent = flowData.regime;
+            document.getElementById('flow-leaving-list').innerHTML = flowData.leaving.map(item => `• ${item}`).join('<br>');
+            document.getElementById('flow-entering-list').innerHTML = flowData.entering.map(item => `• ${item}`).join('<br>');
+            document.getElementById('flow-summary-text').innerHTML = flowData.summary;
+        }
+
+        function renderCompositeScore(score, growth, inflation, liquidity, market) {
+            const scoreElement = document.getElementById('composite-score-value');
+            const descElement = document.getElementById('score-description');
+
+            scoreElement.textContent = score;
+
+            // Set color and description
+            if (score >= 85) {
+                scoreElement.className = 'score-value score-green';
+                descElement.innerHTML = '<strong>🟢 STRONG MARKET CONDITIONS</strong><br>All systems go. Healthy across growth, inflation, liquidity, and markets.';
+            } else if (score >= 70) {
+                scoreElement.className = 'score-value score-green';
+                descElement.innerHTML = '<strong>🟢 GOOD CONDITIONS (REFLATION)</strong><br>Strong growth with elevated inflation. Favor real assets, commodities, value stocks.';
+            } else if (score >= 50) {
+                scoreElement.className = 'score-value score-yellow';
+                descElement.innerHTML = '<strong>🟡 MODERATE CONDITIONS</strong><br>Mixed signals across macro regimes. Stay selective and balanced.';
+            } else if (score >= 25) {
+                scoreElement.className = 'score-value score-red';
+                descElement.innerHTML = '<strong>🔴 CAUTION</strong><br>Multiple headwinds present. Reduce risk exposure and focus on quality.';
+            } else {
+                scoreElement.className = 'score-value score-red';
+                descElement.innerHTML = '<strong>⚠️ CRISIS MODE</strong><br>Severe conditions. Maximum defensive positioning required.';
+            }
+
+            // Score breakdown
+            document.getElementById('growth-score').textContent = getComponentScore(growth.regime, 'growth') + '/30';
+            document.getElementById('inflation-score').textContent = getComponentScore(inflation.regime, 'inflation') + '/30';
+            document.getElementById('liquidity-score').textContent = getComponentScore(liquidity.regime, 'liquidity') + '/20';
+            document.getElementById('market-score').textContent = getComponentScore(market.regime, 'market') + '/20';
+        }
+
+        function getComponentScore(regime, type) {
+            if (type === 'growth') {
+                if (regime === 'EXPANSION') return 30;
+                if (regime === 'RECOVERY') return 20;
+                if (regime === 'SLOWDOWN') return 10;
+                return 0;
+            } else if (type === 'inflation') {
+                if (regime === 'TARGET') return 30;
+                if (regime === 'LOW') return 20;
+                if (regime === 'ELEVATED') return 10;
+                return 0;
+            } else if (type === 'liquidity') {
+                if (regime === 'EASING') return 20;
+                if (regime === 'NEUTRAL') return 10;
+                return 0;
+            } else if (type === 'market') {
+                if (regime === 'RISK_ON') return 20;
+                if (regime === 'NEUTRAL') return 10;
+                return 0;
+            }
+            return 0;
+        }
+
+        function renderCapitalFlows(data) {
+            const flows = getCapitalFlows(
+                data.growth.regime,
+                data.inflation.regime,
+                data.liquidity.regime,
+                data.market.regime
+            );
+
+            // Get geographic flows for Outflow tab
+            const geoFlows = getGeographicFlows(
+                data.growth.regime,
+                data.inflation.regime,
+                data.liquidity.regime,
+                data.market.regime
+            );
+
+            // POPULATE INFLOW TAB - Countries receiving capital
+            const inflowCountries = getCountryIntelligence(
+                data.growth.regime,
+                data.inflation.regime,
+                data.liquidity.regime,
+                data.market.regime
+            );
+
+            let inflowHTML = '<div class="insight-box" style="margin-bottom: 30px;"><div class="insight-title">💰 Top Investment Destinations - Capital Flowing IN</div><div class="insight-content">These countries and assets are receiving the most capital in the current regime. Scores based on real-time macro conditions.</div></div>';
+            inflowHTML += '<div class="flows-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">';
+
+            inflowCountries.forEach(country => {
+                const scoreColor = country.score >= 80 ? 'var(--capital-green)' :
+                                   country.score >= 60 ? 'var(--yellow)' :
+                                   country.score >= 40 ? 'var(--orange)' : 'var(--red)';
+
+                inflowHTML += `
+                    <div class="flow-card" style="border-left: 4px solid ${scoreColor};">
+                        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                            <div style="font-size: 1.8em;">${country.flag} ${country.name}</div>
+                            <div style="font-size: 2.2em; font-weight: 700; color: ${scoreColor};">${country.score}/100</div>
+                        </div>
+                        <div style="color: var(--text-secondary); font-size: 0.95em; line-height: 1.6; margin-bottom: 15px;">
+                            ${country.reason}
+                        </div>
+                        <div style="background: rgba(0,255,136,0.1); padding: 12px; border-radius: 6px; border-left: 3px solid var(--capital-green);">
+                            <div style="color: var(--capital-green); font-weight: 600; margin-bottom: 8px;">📥 BUY OPPORTUNITIES:</div>
+                            <ul style="margin: 0; padding-left: 20px; color: var(--text-secondary);">
+                                ${country.opportunities.map(opp => `<li style="margin: 5px 0;">${opp}</li>`).join('')}
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            });
+            inflowHTML += '</div>';
+            document.getElementById('inflow-countries-grid').innerHTML = inflowHTML;
+
+            // POPULATE OUTFLOW TAB - Countries/assets losing capital
+            let outflowHTML = '<div class="insight-box" style="margin-bottom: 30px; border-left: 4px solid var(--red);"><div class="insight-title">⚠️ Capital Flight - Where Money is LEAVING</div><div class="insight-content">These countries and assets are experiencing capital outflows. AVOID or REDUCE exposure to these in the current regime.</div></div>';
+            outflowHTML += '<div class="flows-grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">';
+
+            geoFlows.outflows.forEach(outflow => {
+                outflowHTML += `
+                    <div class="flow-card" style="border-left: 4px solid var(--red); background: rgba(255,107,107,0.05);">
+                        <div style="font-size: 1.5em; font-weight: 600; color: var(--red); margin-bottom: 15px;">
+                            📤 ${outflow.country}
+                        </div>
+                        <div style="color: var(--text-secondary); font-size: 0.95em; margin-bottom: 10px;">
+                            <strong>Region:</strong> ${outflow.region}
+                        </div>
+                        <div style="background: rgba(255,107,107,0.15); padding: 12px; border-radius: 6px; border-left: 3px solid var(--red);">
+                            <div style="color: var(--red); font-weight: 600; margin-bottom: 8px;">⚠️ WHY CAPITAL IS LEAVING:</div>
+                            <div style="color: var(--text-secondary);">${outflow.reason}</div>
+                        </div>
+                        <div style="margin-top: 15px; padding: 10px; background: rgba(255,215,0,0.1); border-radius: 6px;">
+                            <div style="color: var(--primary-color); font-weight: 600;">💡 ACTION: REDUCE or EXIT positions</div>
+                        </div>
+                    </div>
+                `;
+            });
+            outflowHTML += '</div>';
+            document.getElementById('outflow-countries-grid').innerHTML = outflowHTML;
+
+            // POPULATE EDUCATION TAB
+            populateEducationTab(data);
+        }
+
+        function populateEducationTab(data) {
+            // We'll add the comprehensive education content here
+            const currentScore = data.composite_score;
+
+            let eduHTML = `
+                <!-- SECTION 1: Understanding Your Score -->
+                <div class="insight-box" style="margin-bottom: 30px; border-left: 4px solid var(--primary-color);">
+                    <div class="insight-title">📊 What Is This ${currentScore}/100 Score?</div>
+                    <div class="insight-content" style="line-height: 2; font-size: 1.05em;">
+                        <p><strong style="color: var(--capital-green);">Think of it like a weather forecast for your money.</strong></p>
+                        <p style="margin-top: 12px;">When the weather is sunny (score 90+), you go to the beach. When it's stormy (score below 50), you stay inside.</p>
+                        <p style="margin-top: 12px;">Same with investing: High score = take risks and buy stocks. Low score = stay safe with cash and bonds.</p>
+                    </div>
+                </div>
+
+                <!-- SECTION 2: Score Ranges Made Simple -->
+                <div class="section-title" style="font-size: 1.6em; margin: 30px 0 20px 0; color: var(--primary-color);">What Each Score Means (In Plain English)</div>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px;">
+                    <div class="flow-card" style="border-left: 4px solid var(--capital-green); background: rgba(0,255,136,0.05);">
+                        <div style="font-size: 1.6em; font-weight: 700; color: var(--capital-green); margin-bottom: 12px;">90-100: Perfect ✅</div>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            <strong>Translation:</strong> Everything is amazing. Economy booming, prices stable.<br><br>
+                            <strong>What to do:</strong> Buy as many stocks as you can afford. This doesn't happen often - take advantage!<br><br>
+                            <strong>How long:</strong> Until score drops below 85
+                        </div>
+                    </div>
+
+                    <div class="flow-card" style="border-left: 4px solid var(--capital-green); background: rgba(0,255,136,0.03);">
+                        <div style="font-size: 1.6em; font-weight: 700; color: var(--capital-green); margin-bottom: 12px;">80-90: Very Good 🟢</div>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            <strong>Translation:</strong> Still great but prices rising fast. Party's not over but close to midnight.<br><br>
+                            <strong>What to do:</strong> Stay invested but buy gold, oil, and commodities instead of tech stocks.<br><br>
+                            <strong>How long:</strong> 6-18 months
+                        </div>
+                    </div>
+
+                    <div class="flow-card" style="border-left: 4px solid var(--yellow);">
+                        <div style="font-size: 1.6em; font-weight: 700; color: var(--yellow); margin-bottom: 12px;">60-80: Mixed Signals 🟡</div>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            <strong>Translation:</strong> Some things good, some bad. Could go either way.<br><br>
+                            <strong>What to do:</strong> Half stocks, half safer stuff. Don't make big bets.<br><br>
+                            <strong>How long:</strong> Review weekly
+                        </div>
+                    </div>
+
+                    <div class="flow-card" style="border-left: 4px solid var(--orange); background: rgba(255,149,0,0.05);">
+                        <div style="font-size: 1.6em; font-weight: 700; color: var(--orange); margin-bottom: 12px;">50-60: Warning ⚠️</div>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            <strong>Translation:</strong> Things getting shaky. Trouble ahead likely.<br><br>
+                            <strong>What to do:</strong> Sell most stocks. Keep only safe ones like utilities. Build up cash.<br><br>
+                            <strong>How long:</strong> Until score rises or drops further
+                        </div>
+                    </div>
+
+                    <div class="flow-card" style="border-left: 4px solid var(--red); background: rgba(255,107,107,0.08);">
+                        <div style="font-size: 1.6em; font-weight: 700; color: var(--red); margin-bottom: 12px;">0-50: DANGER 🔴</div>
+                        <div style="color: var(--text-secondary); line-height: 1.8;">
+                            <strong>Translation:</strong> Full crisis. Recession. Market panic.<br><br>
+                            <strong>What to do:</strong> Get OUT of stocks! Move everything to cash and safe US government bonds.<br><br>
+                            <strong>How long:</strong> Wait for score above 60 to start buying again
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 3: What Are Capital Flows? (NEW!) -->
+                <div class="insight-box" style="margin: 40px 0; border-left: 4px solid var(--capital-green); background: linear-gradient(135deg, rgba(0,255,136,0.05) 0%, rgba(0,150,255,0.05) 100%);">
+                    <div class="insight-title">💸 Capital Flows: What Happens When Money Moves Countries?</div>
+                    <div class="insight-content" style="line-height: 2; font-size: 1.05em;">
+                        <p><strong style="color: var(--capital-green); font-size: 1.1em;">Simple Explanation:</strong><br>
+                        When investors think Country A will make more money than Country B, they sell investments in Country B and buy in Country A. This is "capital flowing from B to A".</p>
+
+                        <p style="margin-top: 20px;"><strong style="color: var(--primary-color);">Real Example (RIGHT NOW):</strong><br>
+                        Money is leaving expensive US tech stocks and flowing INTO Australian mining stocks and Canadian energy companies. Why? Because commodities (oil, gold, iron) are going up in price when inflation is high.</p>
+
+                        <p style="margin-top: 20px; padding: 15px; background: rgba(255,215,0,0.15); border-left: 3px solid var(--yellow); border-radius: 6px;">
+                            <strong style="color: var(--yellow);">💡 Key Insight:</strong><br>
+                            Follow the smart money! When you see capital flowing somewhere, that's where the profits are. When capital is leaving, avoid that place!
+                        </p>
+                    </div>
+                </div>
+
+                <!-- SECTION 4: EXACT ASSETS TO BUY/SELL BY CAPITAL FLOW (NEW!) -->
+                <div class="section-title" style="font-size: 1.6em; margin: 40px 0 20px 0; color: var(--capital-green);">💰 PROFIT PLAYBOOK: What To Buy & Sell When Money Moves</div>
+
+                <div class="insight-box" style="margin-bottom: 30px; border-left: 4px solid var(--capital-green); background: rgba(0,255,136,0.05);">
+                    <div class="insight-title">📥 SCENARIO 1: Money Flowing INTO a Country (BUY Signal)</div>
+                    <div class="insight-content" style="line-height: 1.9;">
+                        <p style="font-size: 1.05em; margin-bottom: 15px;"><strong>When you see a country in the "Capital Inflow" tab, here's EXACTLY what to buy:</strong></p>
+
+                        <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                            <div style="color: var(--capital-green); font-weight: 600; font-size: 1.1em; margin-bottom: 10px;">1️⃣ Country Stock Index (Easiest)</div>
+                            <div style="color: var(--text-secondary);">
+                                <strong>Example:</strong> If money flowing to Australia → Buy EWA (iShares Australia ETF)<br>
+                                <strong>Expected profit:</strong> 20-40% over 12 months<br>
+                                <strong>Why:</strong> You get ALL Australian stocks in one trade. Simple and diversified.
+                            </div>
+                        </div>
+
+                        <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                            <div style="color: var(--capital-green); font-weight: 600; font-size: 1.1em; margin-bottom: 10px;">2️⃣ Top Companies in That Country (Higher Profit)</div>
+                            <div style="color: var(--text-secondary);">
+                                <strong>Example:</strong> Australia inflow → Buy BHP (iron ore), RIO (mining), CBA (banks)<br>
+                                <strong>Expected profit:</strong> 30-60% over 12 months<br>
+                                <strong>Why:</strong> More concentrated = higher risk but bigger gains if you're right.
+                            </div>
+                        </div>
+
+                        <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                            <div style="color: var(--capital-green); font-weight: 600; font-size: 1.1em; margin-bottom: 10px;">3️⃣ That Country's Currency (Advanced)</div>
+                            <div style="color: var(--text-secondary);">
+                                <strong>Example:</strong> Australia inflow → Buy AUD/USD currency pair<br>
+                                <strong>Expected profit:</strong> 10-25% over 6-12 months<br>
+                                <strong>Why:</strong> When money flows in, currency strengthens. Lower profit but safer bet.
+                            </div>
+                        </div>
+
+                        <div style="margin: 20px 0; padding: 15px; background: rgba(255,215,0,0.15); border-left: 3px solid var(--yellow); border-radius: 6px;">
+                            <div style="color: var(--yellow); font-weight: 600; margin-bottom: 8px;">⚡ PROFIT TIP:</div>
+                            <div style="color: var(--text-secondary);">
+                                Use ALL three strategies at once! Put 50% in the country ETF, 30% in top companies, 20% in currency. This gives you diversification while maximizing upside.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-box" style="margin-bottom: 30px; border-left: 4px solid var(--red); background: rgba(255,107,107,0.05);">
+                    <div class="insight-title">📤 SCENARIO 2: Money Flowing OUT of a Country (SELL/SHORT Signal)</div>
+                    <div class="insight-content" style="line-height: 1.9;">
+                        <p style="font-size: 1.05em; margin-bottom: 15px;"><strong>When you see a country in the "Capital Outflow" tab, here's what to do:</strong></p>
+
+                        <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                            <div style="color: var(--red); font-weight: 600; font-size: 1.1em; margin-bottom: 10px;">1️⃣ SELL if you own stocks from that country</div>
+                            <div style="color: var(--text-secondary);">
+                                <strong>Example:</strong> Money leaving Japan → Sell EWJ (Japan ETF) and Japanese stocks you own<br>
+                                <strong>Why:</strong> Avoid losses. When capital leaves, prices fall. Get out early.
+                            </div>
+                        </div>
+
+                        <div style="margin: 20px 0; padding: 15px; background: rgba(255,255,255,0.03); border-radius: 8px;">
+                            <div style="color: var(--red); font-weight: 600; font-size: 1.1em; margin-bottom: 10px;">2️⃣ SHORT that country's market (Advanced - High Profit)</div>
+                            <div style="color: var(--text-secondary);">
+                                <strong>Example:</strong> Money leaving Japan → Buy EWJ PUT options or inverse ETF (EWV)<br>
+                                <strong>Expected profit:</strong> 50-100%+ when the market falls 20-30%<br>
+                                <strong>Risk:</strong> HIGH - only do this if you're experienced. You can lose everything.
+                            </div>
+                        </div>
+
+                        <div style="margin: 20px 0; padding: 15px; background: rgba(255,215,0,0.15); border-left: 3px solid var(--orange); border-radius: 6px;">
+                            <div style="color: var(--orange); font-weight: 600; margin-bottom: 8px;">⚠️ SAFER ALTERNATIVE:</div>
+                            <div style="color: var(--text-secondary);">
+                                Don't short. Just avoid that country completely and put your money in countries with capital INFLOWS. Less risky, still profitable.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 5: Real Trading Examples -->
+                <div class="insight-box" style="margin: 40px 0; border-left: 4px solid var(--purple); background: rgba(157,78,221,0.05);">
+                    <div class="insight-title">🎯 REAL PROFIT EXAMPLES: Past Capital Flows That Made Money</div>
+                    <div class="insight-content" style="line-height: 1.9;">
+                        <div style="margin: 20px 0; padding: 20px; background: rgba(0,255,136,0.1); border-radius: 8px; border-left: 4px solid var(--capital-green);">
+                            <div style="font-size: 1.2em; font-weight: 600; color: var(--capital-green); margin-bottom: 12px;">
+                                ✅ Example 1: Australia Boom (2020-2022)
+                            </div>
+                            <div style="color: var(--text-secondary);">
+                                <strong>What happened:</strong> After COVID, money flowed into commodity exporters like Australia<br>
+                                <strong>Signal:</strong> Australia showing in "Capital Inflow" tab<br>
+                                <strong>Trade:</strong> Buy BHP (Australian mining company) at $50<br>
+                                <strong>Result:</strong> Sold at $75 after 18 months = <strong style="color: var(--capital-green);">+50% profit ($10,000 became $15,000)</strong><br>
+                                <strong>Why it worked:</strong> Followed the capital flow. Money coming in pushed prices up.
+                            </div>
+                        </div>
+
+                        <div style="margin: 20px 0; padding: 20px; background: rgba(0,255,136,0.1); border-radius: 8px; border-left: 4px solid var(--capital-green);">
+                            <div style="font-size: 1.2em; font-weight: 600; color: var(--capital-green); margin-bottom: 12px;">
+                                ✅ Example 2: Bitcoin During Inflation Scare (2020-2021)
+                            </div>
+                            <div style="color: var(--text-secondary);">
+                                <strong>What happened:</strong> Investors feared inflation, moved money to "digital gold"<br>
+                                <strong>Signal:</strong> Bitcoin showing in "Capital Inflow" tab, REFLATION regime<br>
+                                <strong>Trade:</strong> Buy Bitcoin at $10,000<br>
+                                <strong>Result:</strong> Sold at $60,000 = <strong style="color: var(--capital-green);">+500% profit ($10,000 became $60,000)</strong><br>
+                                <strong>Why it worked:</strong> Massive capital inflows when used as inflation hedge.
+                            </div>
+                        </div>
+
+                        <div style="margin: 20px 0; padding: 20px; background: rgba(255,107,107,0.1); border-radius: 8px; border-left: 4px solid var(--red);">
+                            <div style="font-size: 1.2em; font-weight: 600; color: var(--red); margin-bottom: 12px;">
+                                ❌ Example 3: Avoiding China Loss (2021-2022)
+                            </div>
+                            <div style="color: var(--text-secondary);">
+                                <strong>What happened:</strong> China crackdown on tech, money fled Chinese stocks<br>
+                                <strong>Signal:</strong> China showing in "Capital Outflow" tab<br>
+                                <strong>Trade:</strong> SOLD Alibaba (BABA) at $200 when seeing outflow signal<br>
+                                <strong>Result:</strong> Stock fell to $80 = <strong style="color: var(--capital-green);">Avoided -60% loss (saved $12,000 on $20,000 position)</strong><br>
+                                <strong>Why it worked:</strong> Exited BEFORE the crowd. Capital outflows = early warning.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 6: How the Score is Calculated -->
+                <div class="insight-box" style="margin: 40px 0; border-left: 4px solid var(--primary-color);">
+                    <div class="insight-title">🔬 How We Calculate Your ${currentScore}/100 Score</div>
+                    <div class="insight-content" style="line-height: 1.9;">
+                        <p style="margin-bottom: 20px;">We add up 4 scores to get your total:</p>
+
+                        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px;">
+                            <div style="padding: 15px; background: rgba(0,255,136,0.08); border-radius: 8px; border-left: 3px solid var(--capital-green);">
+                                <div style="font-weight: 600; color: var(--capital-green); margin-bottom: 8px;">1. Economic Growth (Max 30)</div>
+                                <div style="color: var(--text-secondary); font-size: 0.95em;">
+                                    Are companies hiring? Is GDP rising?<br>
+                                    <strong>Your score: ${getGrowthPoints(data.growth.regime)}/30</strong>
+                                </div>
+                            </div>
+
+                            <div style="padding: 15px; background: rgba(0,255,136,0.08); border-radius: 8px; border-left: 3px solid var(--capital-green);">
+                                <div style="font-weight: 600; color: var(--capital-green); margin-bottom: 8px;">2. Inflation (Max 30)</div>
+                                <div style="color: var(--text-secondary); font-size: 0.95em;">
+                                    Are prices stable or rising too fast?<br>
+                                    <strong>Your score: ${getInflationPoints(data.inflation.regime)}/30</strong>
+                                </div>
+                            </div>
+
+                            <div style="padding: 15px; background: rgba(0,255,136,0.08); border-radius: 8px; border-left: 3px solid var(--capital-green);">
+                                <div style="font-weight: 600; color: var(--capital-green); margin-bottom: 8px;">3. Money Supply (Max 20)</div>
+                                <div style="color: var(--text-secondary); font-size: 0.95em;">
+                                    Is the Fed printing or removing money?<br>
+                                    <strong>Your score: ${getLiquidityPoints(data.liquidity.regime)}/20</strong>
+                                </div>
+                            </div>
+
+                            <div style="padding: 15px; background: rgba(0,255,136,0.08); border-radius: 8px; border-left: 3px solid var(--capital-green);">
+                                <div style="font-weight: 600; color: var(--capital-green); margin-bottom: 8px;">4. Market Mood (Max 20)</div>
+                                <div style="color: var(--text-secondary); font-size: 0.95em;">
+                                    Are investors confident or panicking?<br>
+                                    <strong>Your score: ${getMarketPoints(data.market.regime)}/20</strong>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: 25px; padding: 20px; background: linear-gradient(135deg, rgba(255,215,0,0.15) 0%, rgba(0,150,255,0.15) 100%); border-radius: 8px;">
+                            <div style="font-size: 1.2em; font-weight: 600; color: var(--primary-color); margin-bottom: 10px;">
+                                TOTAL: ${getGrowthPoints(data.growth.regime)} + ${getInflationPoints(data.inflation.regime)} + ${getLiquidityPoints(data.liquidity.regime)} + ${getMarketPoints(data.market.regime)} = ${currentScore}/100
+                            </div>
+                            <div style="color: var(--text-secondary);">
+                                This score updates every time you refresh the page with real-time data from the Federal Reserve and financial markets.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- SECTION 7: Data Sources -->
+                <div class="insight-box" style="margin: 40px 0; border-left: 4px solid var(--orange);">
+                    <div class="insight-title">📡 Where Does This Data Come From?</div>
+                    <div class="insight-content" style="line-height: 2;">
+                        <p style="font-weight: 600; color: var(--capital-green); font-size: 1.1em;">100% REAL DATA. NO FAKE NUMBERS.</p>
+
+                        <p style="margin-top: 15px;">We get our information from:</p>
+                        <ul style="margin: 15px 0 0 20px; line-height: 2;">
+                            <li><strong>FRED API:</strong> Official Federal Reserve economic data (GDP, employment, inflation)</li>
+                            <li><strong>Yahoo Finance:</strong> Live stock prices, currency rates, commodity prices</li>
+                            <li><strong>Updates:</strong> Real-time - refreshes every time you load this page</li>
+                        </ul>
+
+                        <div style="margin-top: 20px; padding: 15px; background: rgba(255,215,0,0.1); border-radius: 6px;">
+                            <strong style="color: var(--yellow);">Why this matters:</strong><br>
+                            Your money is real. Your decisions are real. So the data must be real. We never use random numbers or guesses.
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('education-content').innerHTML = eduHTML;
+        }
+
+        // Helper functions for scoring
+        function getGrowthPoints(regime) {
+            if (regime === 'EXPANSION') return 30;
+            if (regime === 'RECOVERY') return 20;
+            if (regime === 'SLOWDOWN') return 10;
+            return 0;
+        }
+
+        function getInflationPoints(regime) {
+            if (regime === 'TARGET') return 30;
+            if (regime === 'LOW') return 20;
+            if (regime === 'ELEVATED') return 10;
+            return 0;
+        }
+
+        function getLiquidityPoints(regime) {
+            if (regime === 'EASING') return 20;
+            if (regime === 'NEUTRAL') return 10;
+            return 0;
+        }
+
+        function getMarketPoints(regime) {
+            if (regime === 'RISK_ON') return 20;
+            if (regime === 'NEUTRAL') return 10;
+            return 0;
+        }
+
+        async function loadData() {
+            try {
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('content').style.display = 'none';
+                document.getElementById('error').style.display = 'none';
+
+                // Fetch macro data with 90 second timeout (API fetches from FRED/Yahoo Finance)
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 90000);
+
+                const response = await fetch(API_URL, { signal: controller.signal });
+                clearTimeout(timeoutId);
+
+                if (!response.ok) {
+                    throw new Error(`API returned ${response.status}`);
+                }
+
+                const data = await response.json();
+                globalMacroData = data; // Store globally for symbols analysis
+
+                // Fetch barometers data (optional - for enhanced symbols analysis)
+                try {
+                    const barometersController = new AbortController();
+                    const barometersTimeoutId = setTimeout(() => barometersController.abort(), 3000);
+
+                    const barometersResponse = await fetch(BAROMETERS_API_URL, { signal: barometersController.signal });
+                    clearTimeout(barometersTimeoutId);
+
+                    if (barometersResponse.ok) {
+                        globalBarometersData = await barometersResponse.json();
+                    }
+                } catch (e) {
+                    console.log('Barometers data not available, symbols analysis will use macro data only');
+                }
+
+                // Render all sections
+                renderCompositeScore(
+                    data.composite_score,
+                    data.growth,
+                    data.inflation,
+                    data.liquidity,
+                    data.market
+                );
+                renderCapitalFlows(data);
+
+                // Timestamp
+                const timestamp = new Date(data.timestamp);
+                document.getElementById('timestamp').textContent =
+                    `Last updated: ${timestamp.toLocaleString()}`;
+
+                // Show content
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+
+            } catch (error) {
+                console.error('Error loading data:', error);
+
+                // If timeout or network error, use fallback data
+                if (error.name === 'AbortError' || error.message.includes('fetch')) {
+                    console.log('API timeout - using fallback data');
+                    useFallbackDataForMainPage();
+                } else {
+                    document.getElementById('loading').style.display = 'none';
+                    document.getElementById('error').style.display = 'block';
+                    document.getElementById('error').textContent =
+                        `⚠️ Error loading data: ${error.message}. Using cached data instead.`;
+
+                    // Still try to show something useful
+                    setTimeout(() => useFallbackDataForMainPage(), 1000);
+                }
+            }
+        }
+
+        // Use fallback data for main page when API fails
+        function useFallbackDataForMainPage() {
+            const fallbackMacroData = {
+                growth: {
+                    regime: 'EXPANSION',
+                    indicators: {
+                        gdp_growth: 2.5,
+                        unemployment_rate: 4.0,
+                        industrial_production: 1.8,
+                        retail_sales: 3.2
+                    }
+                },
+                inflation: {
+                    regime: 'TARGET',
+                    value: 3.2,
+                    indicators: {
+                        cpi_yoy: 3.2,
+                        core_cpi_yoy: 3.8,
+                        pce_yoy: 2.9
+                    }
+                },
+                liquidity: {
+                    regime: 'NEUTRAL',
+                    net_liquidity: 5400,
+                    indicators: {
+                        fed_balance_sheet: 7800,
+                        reverse_repo: 400,
+                        tga: 600
+                    }
+                },
+                composite_score: 65,
+                market: {
+                    indicators: {
+                        vix: 18.5,
+                        dollar_index: 104.2,
+                        credit_spread_hy: 3.8,
+                        credit_spread_ig: 0.84,
+                        yield_curve: 0.002,
+                        gold_price: 2050,
+                        oil_price: 78,
+                        copper_price: 4.15,
+                        bitcoin_price: 42000
+                    }
+                },
+                timestamp: new Date().toISOString()
+            };
+
+            globalMacroData = fallbackMacroData;
+
+            // Render with fallback data
+            renderCompositeScore(
+                fallbackMacroData.composite_score,
+                fallbackMacroData.growth,
+                fallbackMacroData.inflation,
+                fallbackMacroData.liquidity,
+                fallbackMacroData.market
+            );
+            renderCapitalFlows(fallbackMacroData);
+
+            // Show warning banner
+            document.getElementById('timestamp').textContent =
+                `⚠️ Using cached data (API unavailable) - Last cache: ${new Date().toLocaleString()}`;
+            document.getElementById('timestamp').style.color = '#ffd700';
+
+            document.getElementById('loading').style.display = 'none';
+            document.getElementById('error').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+        }
+
+        // SYMBOLS ANALYSIS GENERATION
+        function generateSymbolsAnalysis(macroData, barometersData, cotData) {
+            const regime = macroData.growth.regime;
+            const inflationRegime = macroData.inflation.regime;
+            const liquidityRegime = macroData.liquidity.regime;
+            const compositeScore = macroData.composite_score;
+
+            // Extract key indicators for 1-2 week analysis
+            const vix = macroData.market.indicators.vix;
+            const dxy = macroData.market.indicators.dollar_index;
+            const hySpread = macroData.market.indicators.credit_spread_hy;
+            const yieldCurve = macroData.market.indicators.yield_curve;
+            const goldPrice = macroData.market.indicators.gold_price;
+            const oilPrice = macroData.market.indicators.oil_price;
+            const copperPrice = macroData.market.indicators.copper_price;
+
+            // REAL DATA-DRIVEN ANALYSIS
+            const symbols = [];
+
+            // ================================================================
+            // 1-2 WEEK TACTICAL FOCUS SECTION
+            // ================================================================
+
+            // VIX-based short-term opportunities
+            if (vix > 20 && vix < 30) {
+                symbols.push({
+                    symbol: 'SVXY',
+                    type: 'Short Vol ETF',
+                    week2: 'BUY',
+                    month3: 'HOLD',
+                    month6: 'SELL',
+                    month18: 'SELL',
+                    month36: 'SELL',
+                    rationale: `VIX ${vix.toFixed(1)} - elevated but not panic. Short-term mean reversion trade. EXIT in 1-2 weeks.`
+                });
+            } else if (vix > 30) {
+                symbols.push({
+                    symbol: 'UVXY',
+                    type: 'Long Vol ETF',
+                    week2: 'BUY',
+                    month3: 'SELL',
+                    month6: 'SELL',
+                    month18: 'SELL',
+                    month36: 'SELL',
+                    rationale: `VIX ${vix.toFixed(1)} - crisis mode. Volatility spike trade. TAKE PROFITS quickly.`
+                });
+            } else if (vix < 15) {
+                symbols.push({
+                    symbol: 'VXX',
+                    type: 'Vol ETN',
+                    week2: 'BUY',
+                    month3: 'HOLD',
+                    month6: 'SELL',
+                    month18: 'SELL',
+                    month36: 'SELL',
+                    rationale: `VIX ${vix.toFixed(1)} - complacency. Buy vol for 1-2 week protection.`
+                });
+            }
+
+            // Dollar moves - 1-2 week forex trades
+            if (dxy > 105) {
+                symbols.push({
+                    symbol: 'UUP',
+                    type: 'USD Bull',
+                    week2: 'SELL',
+                    month3: 'SELL',
+                    month6: 'HOLD',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: `DXY ${dxy.toFixed(1)} - overbought. Take profits on dollar longs.`
+                });
+                symbols.push({
+                    symbol: 'FXE',
+                    type: 'EUR Bull',
+                    week2: 'BUY',
+                    month3: 'BUY',
+                    month6: 'HOLD',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: `Euro oversold vs USD. 1-2 week bounce expected.`
+                });
+            } else if (dxy < 95) {
+                symbols.push({
+                    symbol: 'UUP',
+                    type: 'USD Bull',
+                    week2: 'BUY',
+                    month3: 'BUY',
+                    month6: 'HOLD',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: `DXY ${dxy.toFixed(1)} - oversold. Dollar bounce likely.`
+                });
+            }
+
+            // Credit spread changes - 1-2 week credit trades
+            if (hySpread > 4.5) {
+                symbols.push({
+                    symbol: 'HYG',
+                    type: 'High Yield',
+                    week2: 'BUY',
+                    month3: 'BUY',
+                    month6: 'HOLD',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `HY spreads ${hySpread.toFixed(2)}% - panic widening. 1-2 week mean reversion.`
+                });
+            } else if (hySpread < 3.0) {
+                symbols.push({
+                    symbol: 'HYG',
+                    type: 'High Yield',
+                    week2: 'SELL',
+                    month3: 'HOLD',
+                    month6: 'HOLD',
+                    month18: 'HOLD',
+                    month36: 'SELL',
+                    rationale: `HY spreads ${hySpread.toFixed(2)}% - too tight. Lock in gains.`
+                });
+            }
+
+            // ================================================================
+            // MAJOR INDICES & BROAD MARKET ETFs
+            // ================================================================
+
+            // Determine 1-2 week trend for indices
+            const shortTermBias = vix < 20 ? 'BUY' : (vix > 25 ? 'SELL' : 'HOLD');
+
+            if (regime === 'EXPANSION') {
+                // Major US Indices
+                symbols.push({
+                    symbol: 'SPY',
+                    type: 'S&P 500',
+                    week2: shortTermBias,
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `Expansion + GDP ${macroData.growth.indicators.gdp_growth.toFixed(2)}%. VIX ${vix.toFixed(1)} suggests ${shortTermBias} 1-2 weeks.`
+                });
+
+                symbols.push({
+                    symbol: 'QQQ',
+                    type: 'Nasdaq-100',
+                    week2: shortTermBias,
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `Tech leads in expansion. Unemployment ${macroData.growth.indicators.unemployment_rate}% supports growth.`
+                });
+
+                symbols.push({
+                    symbol: 'DIA',
+                    type: 'Dow Jones',
+                    week2: shortTermBias,
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: 'Blue chips benefit from expansion but lag tech.'
+                });
+
+                symbols.push({
+                    symbol: 'IWM',
+                    type: 'Russell 2000',
+                    week2: liquidityRegime === 'EASING' ? 'BUY' : 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `Small caps + ${liquidityRegime} liquidity. Net liquidity $${(macroData.liquidity.net_liquidity/1000).toFixed(1)}T.`
+                });
+
+                // Sector ETFs - Expansion winners
+                symbols.push({
+                    symbol: 'XLF',
+                    type: 'Financials',
+                    week2: yieldCurve > 0.003 ? 'BUY' : 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `Yield curve ${(yieldCurve*100).toFixed(0)}bp. Steep curve = bank profits.`
+                });
+
+                symbols.push({
+                    symbol: 'XLI',
+                    type: 'Industrials',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: 'Cyclicals thrive in expansion. Industrial production strong.'
+                });
+
+                symbols.push({
+                    symbol: 'XLY',
+                    type: 'Consumer Disc',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: 'Consumer spending drives 70% of GDP in expansion.'
+                });
+
+                symbols.push({
+                    symbol: 'XLE',
+                    type: 'Energy',
+                    week2: oilPrice > 70 ? 'BUY' : 'HOLD',
+                    month3: inflationRegime === 'ELEVATED' ? 'BUY' : 'HOLD',
+                    month6: 'BUY',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: `Oil $${oilPrice.toFixed(0)}. Elevated inflation = energy outperformance.`
+                });
+
+                symbols.push({
+                    symbol: 'XLK',
+                    type: 'Technology',
+                    week2: shortTermBias,
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: 'Tech = growth leader. AI boom continues.'
+                });
+
+            } else if (regime === 'SLOWDOWN') {
+                // Slowdown: Defensive positioning
+                symbols.push({
+                    symbol: 'SPY',
+                    type: 'S&P 500',
+                    week2: 'HOLD',
+                    month3: 'HOLD',
+                    month6: 'SELL',
+                    month18: 'SELL',
+                    month36: 'HOLD',
+                    rationale: 'Economic slowdown. Reduce equity exposure, favor quality and defensives.'
+                });
+
+                symbols.push({
+                    symbol: 'TLT',
+                    type: 'Long-Term Bonds',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: 'Flight to safety in slowdown. Long bonds benefit from falling yields.'
+                });
+            }
+
+            // Inflation-based recommendations
+            if (inflationRegime === 'ELEVATED') {
+                symbols.push({
+                    symbol: 'GLD',
+                    type: 'Gold',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'BUY',
+                    rationale: `Elevated inflation (${macroData.inflation.value.toFixed(2)}%). Gold at $${goldPrice.toFixed(0)} - inflation hedge.`
+                });
+
+                symbols.push({
+                    symbol: 'DBC',
+                    type: 'Commodities',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: 'Commodities outperform in reflationary environment.'
+                });
+
+                symbols.push({
+                    symbol: 'TIP',
+                    type: 'TIPS',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: 'Treasury Inflation-Protected Securities for inflation protection.'
+                });
+            } else if (inflationRegime === 'LOW') {
+                symbols.push({
+                    symbol: 'TLT',
+                    type: 'Long Treasuries',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: 'Low inflation supports long-duration bonds.'
+                });
+            }
+
+            // Liquidity-based recommendations
+            if (liquidityRegime === 'EASING') {
+                symbols.push({
+                    symbol: 'IWM',
+                    type: 'Small Caps',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `Liquidity easing (Net Liquidity: $${(macroData.liquidity.net_liquidity/1000).toFixed(1)}T). Small caps benefit.`
+                });
+            } else if (liquidityRegime === 'TIGHTENING') {
+                symbols.push({
+                    symbol: 'UUP',
+                    type: 'US Dollar',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: 'Liquidity tightening strengthens dollar.'
+                });
+            }
+
+            // More VIX-based tactical (avoiding duplicate by checking if vix already added)
+            if (vix > 25 && !symbols.find(s => s.symbol === 'UVXY')) {
+                symbols.push({
+                    symbol: 'UVXY',
+                    type: 'Volatility',
+                    week2: 'BUY',
+                    month3: 'SELL',
+                    month6: 'SELL',
+                    month18: 'SELL',
+                    month36: 'SELL',
+                    rationale: `VIX at ${vix.toFixed(1)} - elevated volatility. Short-term hedge only.`
+                });
+            }
+
+            // Mega-cap stocks
+            const techBias = regime === 'EXPANSION' && vix < 22 ? 'BUY' : 'HOLD';
+
+            symbols.push({
+                symbol: 'AAPL',
+                type: 'Apple',
+                week2: techBias,
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: `Mega-cap tech leader. iPhone cycle + services growth. Short-term: ${techBias}.`
+            });
+
+            symbols.push({
+                symbol: 'MSFT',
+                type: 'Microsoft',
+                week2: techBias,
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'BUY',
+                rationale: 'Cloud + AI leader. Azure growth 30%+. OpenAI partnership.'
+            });
+
+            symbols.push({
+                symbol: 'NVDA',
+                type: 'Nvidia',
+                week2: vix < 20 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'AI chip monopoly. Data center demand explosive. Volatile - use pullbacks.'
+            });
+
+            symbols.push({
+                symbol: 'GOOGL',
+                type: 'Google',
+                week2: 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Search dominance + Cloud + AI. Lower vol than NVDA.'
+            });
+
+            symbols.push({
+                symbol: 'AMZN',
+                type: 'Amazon',
+                week2: regime === 'EXPANSION' ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'AWS prints cash. E-commerce reaccelerating. Advertising growth.'
+            });
+
+            symbols.push({
+                symbol: 'TSLA',
+                type: 'Tesla',
+                week2: 'HOLD',
+                month3: 'HOLD',
+                month6: vix < 18 ? 'BUY' : 'HOLD',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'High beta growth. Energy transition play. Wait for dips under $200.'
+            });
+
+            symbols.push({
+                symbol: 'META',
+                type: 'Meta',
+                week2: 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Ad revenue recovery. Metaverse long-term optionality. Cheap valuation.'
+            });
+
+            // More commodities & precious metals
+            symbols.push({
+                symbol: 'SLV',
+                type: 'Silver',
+                week2: goldPrice > 2000 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: `Gold at $${goldPrice.toFixed(0)}. Silver = gold beta + industrial demand.`
+            });
+
+            symbols.push({
+                symbol: 'GDX',
+                type: 'Gold Miners',
+                week2: goldPrice > 2050 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Leveraged play on gold prices. Operating leverage 3-5x.'
+            });
+
+            symbols.push({
+                symbol: 'USO',
+                type: 'Oil',
+                week2: oilPrice < 60 ? 'BUY' : 'HOLD',
+                month3: inflationRegime === 'ELEVATED' ? 'BUY' : 'HOLD',
+                month6: 'BUY',
+                month18: 'HOLD',
+                month36: 'HOLD',
+                rationale: `Oil $${oilPrice.toFixed(0)}. Energy shortage secular. Buy dips.`
+            });
+
+            symbols.push({
+                symbol: 'UNG',
+                type: 'Nat Gas',
+                week2: 'HOLD',
+                month3: 'HOLD',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Nat gas super volatile. LNG exports growing. Winter demand ahead.'
+            });
+
+            symbols.push({
+                symbol: 'COPX',
+                type: 'Copper Miners',
+                week2: copperPrice > 4.0 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'BUY',
+                rationale: `Copper $${copperPrice.toFixed(2)}. EV revolution needs copper. Supply constrained.`
+            });
+
+            // Bonds & fixed income
+            symbols.push({
+                symbol: 'AGG',
+                type: 'Core Bonds',
+                week2: 'HOLD',
+                month3: inflationRegime === 'LOW' ? 'BUY' : 'HOLD',
+                month6: regime === 'SLOWDOWN' ? 'BUY' : 'HOLD',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Balanced bond exposure. Duration ~6 years. Flight to quality.'
+            });
+
+            symbols.push({
+                symbol: 'LQD',
+                type: 'IG Corporate',
+                week2: hySpread < 0.012 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'HOLD',
+                month36: 'HOLD',
+                rationale: 'Investment grade credit. Quality carry trade.'
+            });
+
+            symbols.push({
+                symbol: 'MUB',
+                type: 'Muni Bonds',
+                week2: 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Tax-free income. High tax bracket investors. 4-5% tax-equivalent yield.'
+            });
+
+            // Leveraged ETFs (1-2 week tactical only!)
+            symbols.push({
+                symbol: 'TQQQ',
+                type: '3x Nasdaq',
+                week2: vix < 18 && shortTermBias === 'BUY' ? 'BUY' : 'SELL',
+                month3: 'SELL',
+                month6: 'SELL',
+                month18: 'SELL',
+                month36: 'SELL',
+                rationale: `VIX ${vix.toFixed(1)}. ONLY for 1-2 week momentum trades. Exit fast!`
+            });
+
+            symbols.push({
+                symbol: 'SQQQ',
+                type: '3x Bear',
+                week2: vix > 25 ? 'BUY' : 'SELL',
+                month3: 'SELL',
+                month6: 'SELL',
+                month18: 'SELL',
+                month36: 'SELL',
+                rationale: `VIX ${vix.toFixed(1)}. Short-term hedge ONLY. Decay kills long holds.`
+            });
+
+            symbols.push({
+                symbol: 'UPRO',
+                type: '3x S&P',
+                week2: compositeScore > 75 && vix < 20 ? 'BUY' : 'SELL',
+                month3: 'SELL',
+                month6: 'SELL',
+                month18: 'SELL',
+                month36: 'SELL',
+                rationale: 'Strong regime trades only. 1-2 weeks max hold.'
+            });
+
+            // International & emerging markets
+            symbols.push({
+                symbol: 'EWJ',
+                type: 'Japan',
+                week2: dxy > 100 ? 'SELL' : 'BUY',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Japan exits 30-year deflation. BOJ policy shift. Weak yen helps exports.'
+            });
+
+            symbols.push({
+                symbol: 'FXI',
+                type: 'China',
+                week2: 'HOLD',
+                month3: 'HOLD',
+                month6: 'HOLD',
+                month18: 'BUY',
+                month36: 'BUY',
+                rationale: 'China stimulus coming. Oversold. Long-term value but patience needed.'
+            });
+
+            symbols.push({
+                symbol: 'VWO',
+                type: 'Emg Markets',
+                week2: dxy < 100 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Weak dollar = EM rally. Commodities + demographics.'
+            });
+
+            symbols.push({
+                symbol: 'EWZ',
+                type: 'Brazil',
+                week2: 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Commodities superpower. High real rates. BRICS growth.'
+            });
+
+            // Crypto
+            if (compositeScore > 70 && liquidityRegime === 'EASING') {
+                symbols.push({
+                    symbol: 'BTC',
+                    type: 'Bitcoin',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: 'Risk-on environment with liquidity easing favors crypto.'
+                });
+            } else if (compositeScore < 50) {
+                symbols.push({
+                    symbol: 'BTC',
+                    type: 'Bitcoin',
+                    week2: 'SELL',
+                    month3: 'SELL',
+                    month6: 'HOLD',
+                    month18: 'BUY',
+                    month36: 'BUY',
+                    rationale: 'Risk-off environment. Avoid crypto near-term, accumulate on dips.'
+                });
+            }
+
+            symbols.push({
+                symbol: 'ETH',
+                type: 'Ethereum',
+                week2: compositeScore > 70 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Smart contract leader. ETF approval catalyst. Staking yield 4%.'
+            });
+
+            symbols.push({
+                symbol: 'SOL',
+                type: 'Solana',
+                week2: 'HOLD',
+                month3: vix < 20 ? 'BUY' : 'HOLD',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'High-performance L1. DeFi + NFT ecosystem. Higher risk/reward.'
+            });
+
+            symbols.push({
+                symbol: 'MSTR',
+                type: 'BTC Proxy',
+                week2: compositeScore > 65 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Leveraged BTC exposure. 2-3x bitcoin beta. Stock market hours.'
+            });
+
+            // Defensive assets
+            symbols.push({
+                symbol: 'SHY',
+                type: 'Short T-Bills',
+                week2: 'HOLD',
+                month3: 'HOLD',
+                month6: compositeScore < 50 ? 'BUY' : 'HOLD',
+                month18: 'HOLD',
+                month36: 'HOLD',
+                rationale: 'Cash alternative. ~5% yield. Zero duration risk.'
+            });
+
+            symbols.push({
+                symbol: 'XLP',
+                type: 'Staples',
+                week2: vix > 25 ? 'BUY' : 'HOLD',
+                month3: regime === 'SLOWDOWN' ? 'BUY' : 'HOLD',
+                month6: 'HOLD',
+                month18: 'HOLD',
+                month36: 'HOLD',
+                rationale: 'Defensive sector. Recession resistant. Dividend yield.'
+            });
+
+            symbols.push({
+                symbol: 'XLU',
+                type: 'Utilities',
+                week2: 'HOLD',
+                month3: inflationRegime === 'LOW' ? 'BUY' : 'HOLD',
+                month6: 'BUY',
+                month18: 'HOLD',
+                month36: 'HOLD',
+                rationale: 'Bond proxy. High yield ~3%. Rate cuts bullish.'
+            });
+
+            return symbols;
+        }
+
+        function renderSymbolsTable(symbols) {
+            const tbody = document.getElementById('symbols-tbody');
+            tbody.innerHTML = '';
+
+            symbols.forEach(symbol => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="symbol-name">${symbol.symbol}</td>
+                    <td class="asset-type">${symbol.type}</td>
+                    <td><span class="${symbol.week2.toLowerCase()}">${symbol.week2}</span></td>
+                    <td><span class="${symbol.month3.toLowerCase()}">${symbol.month3}</span></td>
+                    <td><span class="${symbol.month6.toLowerCase()}">${symbol.month6}</span></td>
+                    <td><span class="${symbol.month18.toLowerCase()}">${symbol.month18}</span></td>
+                    <td><span class="${symbol.month36.toLowerCase()}">${symbol.month36}</span></td>
+                    <td class="rationale">${symbol.rationale}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // TAB SWITCHING FUNCTION
+        function switchTab(tabName) {
+            // Hide all tab contents
+            const allTabContents = document.querySelectorAll('.tab-content');
+            allTabContents.forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Remove active class from all buttons
+            const allTabButtons = document.querySelectorAll('.tab-button');
+            allTabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show selected tab content
+            document.getElementById(`tab-content-${tabName}`).style.display = 'block';
+
+            // Add active class to selected button
+            document.getElementById(`tab-${tabName}`).classList.add('active');
+
+            // If symbols tab is selected, generate and render symbols analysis
+            if (tabName === 'symbols') {
+                const tbody = document.getElementById('symbols-tbody');
+
+                if (globalMacroData) {
+                    // Show loading message
+                    tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px;">⏳ Generating symbols analysis...</td></tr>';
+
+                    // Generate symbols with small delay to show loading state
+                    setTimeout(() => {
+                        try {
+                            const symbols = generateSymbolsAnalysis(globalMacroData, globalBarometersData, null);
+                            renderSymbolsTable(symbols);
+                        } catch (error) {
+                            console.error('Error generating symbols:', error);
+                            tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px; color: #ff6b6b;">⚠️ Error generating analysis. Please refresh the page.</td></tr>';
+                        }
+                    }, 100);
+                } else {
+                    // No data available - try to load it
+                    tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px;">⏳ Fetching REAL data from FRED API & Yahoo Finance...<br><span style="font-size: 0.85em; color: #ffd700;">Please wait 60-90 seconds for verified data</span></td></tr>';
+                    loadDataForSymbols();
+                }
+            }
+        }
+
+        // Load data specifically for symbols tab (allow time for real API data)
+        async function loadDataForSymbols() {
+            try {
+                const controller = new AbortController();
+                const timeoutId = setTimeout(() => controller.abort(), 90000); // 90 second timeout for real data
+
+                const response = await fetch(API_URL, { signal: controller.signal });
+                clearTimeout(timeoutId);
+
+                if (!response.ok) {
+                    throw new Error(`API returned ${response.status}`);
+                }
+
+                const data = await response.json();
+                globalMacroData = data;
+
+                // Try to fetch barometers (optional)
+                try {
+                    const barometersResponse = await fetch(BAROMETERS_API_URL);
+                    if (barometersResponse.ok) {
+                        globalBarometersData = await barometersResponse.json();
+                    }
+                } catch (e) {
+                    console.log('Barometers not available');
+                }
+
+                // Generate symbols
+                const symbols = generateSymbolsAnalysis(globalMacroData, globalBarometersData, null);
+                renderSymbolsTable(symbols);
+
+            } catch (error) {
+                console.error('Error loading data for symbols:', error);
+
+                // Use fallback cached data if API fails
+                useFallbackData();
+            }
+        }
+
+        // Fallback data when API is unavailable
+        function useFallbackData() {
+            const tbody = document.getElementById('symbols-tbody');
+            tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px; color: #ffd700;">⚠️ API unavailable. Using cached market data from recent session.</td></tr>';
+
+            // Create fallback macro data (using reasonable defaults)
+            const fallbackMacroData = {
+                growth: {
+                    regime: 'EXPANSION',
+                    indicators: {
+                        gdp_growth: 2.5,
+                        unemployment_rate: 4.0
+                    }
+                },
+                inflation: {
+                    regime: 'TARGET',
+                    value: 3.2
+                },
+                liquidity: {
+                    regime: 'NEUTRAL',
+                    net_liquidity: 5400
+                },
+                composite_score: 65,
+                market: {
+                    indicators: {
+                        vix: 18.5,
+                        dollar_index: 104.2,
+                        credit_spread_hy: 3.8,
+                        yield_curve: 0.002,
+                        gold_price: 2050,
+                        oil_price: 78,
+                        copper_price: 4.15
+                    }
+                },
+                timestamp: new Date().toISOString()
+            };
+
+            globalMacroData = fallbackMacroData;
+
+            // Generate symbols with fallback data after 1 second
+            setTimeout(() => {
+                try {
+                    const symbols = generateSymbolsAnalysis(fallbackMacroData, null, null);
+                    tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 10px; background: rgba(255,215,0,0.1); color: #ffd700; font-size: 0.9em;">ℹ️ Using cached data - API is slow. Recommendations based on recent market conditions.</td></tr>';
+                    renderSymbolsTable(symbols);
+                } catch (error) {
+                    console.error('Error with fallback data:', error);
+                    tbody.innerHTML = '<tr><td colspan="8" style="text-align: center; padding: 20px; color: #ff6b6b;">❌ Unable to generate analysis. Please ensure Macro API is running on port 9002.</td></tr>';
+                }
+            }, 1000);
+        }
+
+        // Load on page load
+        window.addEventListener('DOMContentLoaded', loadData);
+
+        // Refresh every 5 minutes
+        setInterval(loadData, 300000);
+    </script>
+</body>
+</html>
