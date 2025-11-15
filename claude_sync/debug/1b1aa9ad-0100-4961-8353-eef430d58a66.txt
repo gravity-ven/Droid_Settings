@@ -1190,3 +1190,6 @@
 [DEBUG] Checking for native installer update to version 2.0.42
 [DEBUG] Downloading native installer version 2.0.42
 [DEBUG] Successfully updated to version 2.0.42
+[DEBUG] Checking for native installer update to version 2.0.42
+[DEBUG] Version 2.0.42 already installed, updating symlink
+[DEBUG] Successfully updated to version 2.0.42
