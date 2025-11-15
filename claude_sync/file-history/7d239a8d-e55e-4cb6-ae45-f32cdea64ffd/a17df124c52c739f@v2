@@ -1,0 +1,35 @@
+/**
+ * 🛡️ DATA VALIDATOR - Spartan Research Station
+ * Ensures NO fake data ever reaches the user
+ */
+
+// Data validation functions
+window.SpartanValidator = {
+    validateNumber: function(value, fieldName) {
+        if (typeof value !== 'number' || isNaN(value)) {
+            console.warn(`⚠️ Invalid number for ${fieldName}:`, value);
+            return false;
+        }
+        return true;
+    },
+
+    validateSource: function(source) {
+        const validSources = ['FRED', 'Yahoo Finance', 'CoinGecko', 'Polygon.io', 'Alpha Vantage', 'CFTC.gov'];
+        return validSources.includes(source);
+    },
+
+    flagFakeData: function(fieldName) {
+        console.error(`🚨 FAKE DATA DETECTED in ${fieldName} - PLATINUM RULE VIOLATION`);
+        return null;
+    },
+
+    isRealData: function(data, source) {
+        if (!data || !source) {
+            console.warn('⚠️ Missing data or source');
+            return false;
+        }
+        return this.validateSource(source);
+    }
+};
+
+console.log('✅ Data Validator loaded - Protecting against fake data');

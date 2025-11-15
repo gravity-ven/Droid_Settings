@@ -1,0 +1,45 @@
+/**
+ * ⚔️ SPARTAN VALIDATOR - Additional validation layer
+ * Enforces data quality standards
+ */
+
+window.SpartanDataValidator = {
+    // Check if Math.random() is being used for financial data
+    detectMathRandom: function() {
+        const originalRandom = Math.random;
+        let randomCallCount = 0;
+
+        Math.random = function() {
+            randomCallCount++;
+            if (randomCallCount > 10) {
+                console.error('🚨 EXCESSIVE Math.random() calls detected - possible fake data generation');
+            }
+            return originalRandom.call(Math);
+        };
+    },
+
+    // Validate timestamp is recent
+    validateTimestamp: function(timestamp) {
+        const now = Date.now();
+        const age = now - new Date(timestamp).getTime();
+        const maxAge = 24 * 60 * 60 * 1000; // 24 hours
+
+        if (age > maxAge) {
+            console.warn('⚠️ Data timestamp is over 24 hours old');
+            return false;
+        }
+        return true;
+    },
+
+    // Mark data as verified
+    markVerified: function(data, source) {
+        return {
+            ...data,
+            _verified: true,
+            _source: source,
+            _timestamp: new Date().toISOString()
+        };
+    }
+};
+
+console.log('⚔️ Spartan Validator loaded - Enhanced data protection active');

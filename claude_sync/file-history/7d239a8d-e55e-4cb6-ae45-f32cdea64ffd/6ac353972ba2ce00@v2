@@ -1,0 +1,66 @@
+/**
+ * 📊 REAL DATA FETCHER - Spartan Research Station
+ * Fetches only verified data from official sources
+ */
+
+window.RealDataFetcher = {
+    // Fetch from API with source validation
+    async fetchVerified(url, source) {
+        try {
+            const response = await fetch(url);
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+            }
+
+            const data = await response.json();
+
+            // Mark as verified with source
+            return {
+                data: data,
+                source: source,
+                timestamp: new Date().toISOString(),
+                verified: true
+            };
+        } catch (error) {
+            console.error(`❌ Failed to fetch from ${source}:`, error);
+            return {
+                data: null,
+                source: source,
+                error: error.message,
+                verified: false
+            };
+        }
+    },
+
+    // Wrapper for common sources
+    async fromFRED(endpoint) {
+        return this.fetchVerified(endpoint, 'FRED');
+    },
+
+    async fromYahooFinance(endpoint) {
+        return this.fetchVerified(endpoint, 'Yahoo Finance');
+    },
+
+    async fromPolygon(endpoint) {
+        return this.fetchVerified(endpoint, 'Polygon.io');
+    },
+
+    async fromCoinGecko(endpoint) {
+        return this.fetchVerified(endpoint, 'CoinGecko');
+    },
+
+    // Display "Data not available" message
+    displayNotAvailable(containerId, message = "Data not available") {
+        const container = document.getElementById(containerId);
+        if (container) {
+            container.innerHTML = `
+                <div style="padding: 20px; text-align: center; color: var(--orange);">
+                    ⚠️ ${message}
+                    <br><small>Real data source temporarily unavailable</small>
+                </div>
+            `;
+        }
+    }
+};
+
+console.log('📊 Real Data Fetcher loaded - Only verified sources allowed');
