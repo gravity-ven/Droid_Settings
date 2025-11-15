@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Spartan Research Station - Main Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --spartan-red: #8B0000;
+            --crimson: #DC143C;
+            --blood-red: #B22222;
+            --bg-dark: #0a1628;
+            --bg-darker: #050b14;
+            --bg-card: #12203a;
+            --gold: #FFD700;
+            --green: #00ff88;
+            --bronze: #CD7F32;
+            --primary: #0096FF;
+            --red: #ff6b6b;
+            --orange: #ff9500;
+            --purple: #9d4edd;
+            --border-color: #1e3a5f;
+            --spartan-glow: rgba(220, 20, 60, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 50%, #1a1f3a 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(220, 20, 60, 0.2));
+            border: 3px solid var(--crimson);
+            border-radius: 16px;
+            padding: 50px 40px;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 40px rgba(220, 20, 60, 0.3);
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--spartan-red), var(--crimson), var(--gold), var(--crimson), var(--spartan-red));
+            animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% { opacity: 0.7; }
+            50% { opacity: 1; }
+            100% { opacity: 0.7; }
+        }
+
+        .spartan-emblem {
+            font-size: 4em;
+            margin-bottom: 20px;
+            display: block;
+            filter: drop-shadow(0 0 20px var(--spartan-glow));
+        }
+
+        h1 {
+            color: var(--gold);
+            font-size: 3.5em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.6), 0 0 60px rgba(220, 20, 60, 0.4);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .subtitle {
+            color: var(--crimson);
+            font-size: 1.4em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px rgba(220, 20, 60, 0.5);
+        }
+
+        .section {
+            margin-bottom: 50px;
+        }
+
+        .section-title {
+            color: var(--crimson);
+            font-size: 1.9em;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            padding-left: 15px;
+            border-left: 5px solid var(--spartan-red);
+            border-bottom: 2px solid var(--border-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(220, 20, 60, 0.3);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, rgba(10, 22, 40, 0.9) 0%, rgba(18, 32, 58, 0.7) 100%);
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--spartan-red), var(--crimson), var(--gold));
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: var(--crimson);
+            box-shadow: 0 10px 40px rgba(220, 20, 60, 0.4), 0 0 20px rgba(255, 215, 0, 0.2);
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.15) 0%, rgba(18, 32, 58, 0.8) 100%);
+        }
+
+        .card:hover::before {
+            opacity: 1;
+            width: 6px;
+        }
+
+        .card-icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+        }
+
+        .card-title {
+            color: var(--gold);
+            font-size: 1.4em;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .card-description {
+            color: #b0b8c8;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .card-tag {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(0, 255, 136, 0.1);
+            border: 1px solid var(--green);
+            border-radius: 20px;
+            color: var(--green);
+            font-size: 0.75em;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .card-tag.analysis { border-color: var(--primary); color: var(--primary); background: rgba(0, 150, 255, 0.1); }
+        .card-tag.pattern { border-color: var(--purple); color: var(--purple); background: rgba(157, 78, 221, 0.1); }
+        .card-tag.report { border-color: var(--orange); color: var(--orange); background: rgba(255, 149, 0, 0.1); }
+        .card-tag.tool { border-color: var(--green); color: var(--green); background: rgba(0, 255, 136, 0.1); }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .status-bar {
+            background: linear-gradient(90deg, rgba(139, 0, 0, 0.2), rgba(0, 255, 136, 0.15), rgba(139, 0, 0, 0.2));
+            border: 2px solid var(--green);
+            border-radius: 10px;
+            padding: 18px 30px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+        }
+
+        .status-bar span {
+            color: var(--green);
+            font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; }
+            .subtitle { font-size: 1.1em; }
+            .card-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <span class="spartan-emblem">🛡️⚔️🛡️</span>
+            <h1>SPARTAN RESEARCH STATION</h1>
+            <p class="subtitle">⚔️ Intermarket Analysis • Pattern Discovery • Market Intelligence ⚔️</p>
+        </header>
+
+        <div class="status-bar">
+            <span>🛡️ All Systems Operational</span> • <span id="serverTime">Loading...</span>
+        </div>
+
+        <!-- Core Analysis Tools -->
+        <div class="section">
+            <h2 class="section-title">Core Analysis Tools</h2>
+            <div class="card-grid">
+                <a href="barometers.html">
+                    <div class="card">
+                        <div class="card-icon">📊</div>
+                        <div class="card-title">Intermarket Barometers</div>
+                        <div class="card-description">10 leading indicators predicting market direction 6-18 months in advance. Real-time composite risk score.</div>
+                        <span class="card-tag analysis">Leading Indicators</span>
+                    </div>
+                </a>
+
+                <a href="breakthrough_insights.html">
+                    <div class="card">
+                        <div class="card-icon">🔍</div>
+                        <div class="card-title">Breakthrough Insights</div>
+                        <div class="card-description">4 AI agents discovering institutional patterns, hidden correlations, and timing windows.</div>
+                        <span class="card-tag pattern">AI Discovery</span>
+                    </div>
+                </a>
+
+                <a href="complete_cftc_cot_terminal.html">
+                    <div class="card">
+                        <div class="card-icon">📈</div>
+                        <div class="card-title">CFTC COT Terminal</div>
+                        <div class="card-description">Commitment of Traders positioning data. Screen futures markets for smart money signals.</div>
+                        <span class="card-tag analysis">COT Data</span>
+                    </div>
+                </a>
+
+                <a href="boom_or_bust.html">
+                    <div class="card">
+                        <div class="card-icon">🎯</div>
+                        <div class="card-title">Boom or Bust</div>
+                        <div class="card-description">Market regime identification. Determine if we're in expansion, contraction, or transition.</div>
+                        <span class="card-tag analysis">Regime</span>
+                    </div>
+                </a>
+
+                <a href="global_capital_markets.html">
+                    <div class="card">
+                        <div class="card-icon">🌍</div>
+                        <div class="card-title">Global Capital Markets</div>
+                        <div class="card-description">Comprehensive view of worldwide equity, bond, commodity, and currency markets.</div>
+                        <span class="card-tag analysis">Global</span>
+                    </div>
+                </a>
+
+                <a href="macro_regime_tracker.html">
+                    <div class="card">
+                        <div class="card-icon">📉</div>
+                        <div class="card-title">Macro Regime Tracker</div>
+                        <div class="card-description">Track macroeconomic regimes: growth/inflation dynamics and portfolio positioning.</div>
+                        <span class="card-tag analysis">Macro</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Intelligence Reports -->
+        <div class="section">
+            <h2 class="section-title">Intelligence Reports</h2>
+            <div class="card-grid">
+                <a href="bitcoin_intelligence_report.html">
+                    <div class="card">
+                        <div class="card-icon">₿</div>
+                        <div class="card-title">Bitcoin Intelligence</div>
+                        <div class="card-description">Deep analysis of Bitcoin market structure, on-chain metrics, and cycle positioning.</div>
+                        <span class="card-tag report">Crypto</span>
+                    </div>
+                </a>
+
+                <a href="bond_intelligence_report.html">
+                    <div class="card">
+                        <div class="card-icon">📜</div>
+                        <div class="card-title">Bond Intelligence</div>
+                        <div class="card-description">Treasury analysis, yield curve dynamics, and fixed income opportunities.</div>
+                        <span class="card-tag report">Bonds</span>
+                    </div>
+                </a>
+
+                <a href="copper_intelligence_report.html">
+                    <div class="card">
+                        <div class="card-icon">🔶</div>
+                        <div class="card-title">Copper Intelligence</div>
+                        <div class="card-description">Dr. Copper analysis as economic health indicator and commodity trends.</div>
+                        <span class="card-tag report">Commodities</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Pattern Discovery -->
+        <div class="section">
+            <h2 class="section-title">Pattern Discovery</h2>
+            <div class="card-grid">
+                <a href="asian_session_patterns.html">
+                    <div class="card">
+                        <div class="card-icon">🌏</div>
+                        <div class="card-title">Asian Session Patterns</div>
+                        <div class="card-description">Analyze Asian market hours for edge in overnight positioning and global flow.</div>
+                        <span class="card-tag pattern">Sessions</span>
+                    </div>
+                </a>
+
+                <a href="a2a_analysis.html">
+                    <div class="card">
+                        <div class="card-icon">🔗</div>
+                        <div class="card-title">A2A Analysis</div>
+                        <div class="card-description">Asset-to-Asset correlation and intermarket relationship analysis.</div>
+                        <span class="card-tag pattern">Correlations</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- Tools & Utilities -->
+        <div class="section">
+            <h2 class="section-title">Tools & Utilities</h2>
+            <div class="card-grid">
+                <a href="COMPREHENSIVE_TRADING_JOURNAL.html">
+                    <div class="card">
+                        <div class="card-icon">📝</div>
+                        <div class="card-title">Trading Journal</div>
+                        <div class="card-description">Comprehensive trade logging with analytics, performance tracking, and edge identification.</div>
+                        <span class="card-tag tool">Journal</span>
+                    </div>
+                </a>
+
+                <a href="admin.html">
+                    <div class="card">
+                        <div class="card-icon">⚙️</div>
+                        <div class="card-title">System Admin</div>
+                        <div class="card-description">System administration, server status, and configuration management.</div>
+                        <span class="card-tag tool">Admin</span>
+                    </div>
+                </a>
+
+                <a href="barometers_table.html">
+                    <div class="card">
+                        <div class="card-icon">📋</div>
+                        <div class="card-title">Barometers Table View</div>
+                        <div class="card-description">Tabular view of all intermarket indicators with historical data.</div>
+                        <span class="card-tag tool">Data</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Update server time
+        function updateTime() {
+            const now = new Date();
+            document.getElementById('serverTime').textContent = now.toLocaleString('en-US', {
+                dateStyle: 'medium',
+                timeStyle: 'medium'
+            });
+        }
+        updateTime();
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>
