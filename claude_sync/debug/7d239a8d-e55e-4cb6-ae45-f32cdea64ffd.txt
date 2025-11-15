@@ -4331,3 +4331,26 @@
 2025-11-15T07:03:35.115Z [DEBUG] Slash commands included in SlashCommand tool:
 2025-11-15T07:03:35.602Z [DEBUG] Stream started - received first chunk
 2025-11-15T07:03:37.469Z [DEBUG] Stream started - received first chunk
+2025-11-15T07:03:51.753Z [ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: 
+    at GX (/$bunfs/root/claude:1011:4471)
+    at <anonymous> (/$bunfs/root/claude:1011:5476)
+    at map (native:1:11)
+    at GX (/$bunfs/root/claude:1011:5448)
+    at <anonymous> (/$bunfs/root/claude:1011:5363)
+    at map (native:1:11)
+    at GX (/$bunfs/root/claude:1011:5353)
+    at <anonymous> (/$bunfs/root/claude:1011:4193)
+    at map (native:1:11)
+    at YI (/$bunfs/root/claude:1011:4185)
+2025-11-15T07:03:51.794Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-15T07:03:51.794Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T07:03:51.794Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-15T07:04:51.815Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-15T07:04:51.816Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T07:04:51.816Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-15T07:10:06.281Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-15T07:10:13.295Z [ERROR] Error: Error: Lock file is already being held
+    at <anonymous> (/$bunfs/root/claude:87:11857)
+    at X (/$bunfs/root/claude:86:5167)
+    at <anonymous> (node:fs:243:13)
+    at processTicksAndRejections (native:7:39)
