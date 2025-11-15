@@ -4354,3 +4354,23 @@
     at X (/$bunfs/root/claude:86:5167)
     at <anonymous> (node:fs:243:13)
     at processTicksAndRejections (native:7:39)
+2025-11-15T07:40:05.761Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-15T07:40:12.777Z [ERROR] Error: Error: Lock file is already being held
+    at <anonymous> (/$bunfs/root/claude:87:11857)
+    at X (/$bunfs/root/claude:86:5167)
+    at <anonymous> (node:fs:243:13)
+    at processTicksAndRejections (native:7:39)
+2025-11-15T07:47:53.333Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-15T07:47:53.333Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-15T07:47:53.342Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-15T07:47:53.342Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-15T07:47:53.342Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-15T07:47:53.342Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-15T07:47:53.369Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-15T07:47:53.370Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T07:47:53.370Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-15T07:47:53.370Z [DEBUG] FileHistory: Making snapshot for message e17ce0db-2d42-4dec-bf0f-fa27a5d26cc5
+2025-11-15T07:47:53.371Z [DEBUG] FileHistory: Added snapshot for e17ce0db-2d42-4dec-bf0f-fa27a5d26cc5, tracking 12 files
+2025-11-15T07:47:53.406Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-15T07:47:53.406Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-15T07:47:54.322Z [DEBUG] Stream started - received first chunk
