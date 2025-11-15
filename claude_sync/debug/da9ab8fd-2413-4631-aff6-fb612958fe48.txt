@@ -3238,3 +3238,6 @@
 [DEBUG] Checking for native installer update to version 2.0.41
 [DEBUG] Version 2.0.41 already installed, updating symlink
 [DEBUG] Successfully updated to version 2.0.41
+[DEBUG] Checking for native installer update to version 2.0.42
+[DEBUG] Version 2.0.42 already installed, updating symlink
+[DEBUG] Successfully updated to version 2.0.42
