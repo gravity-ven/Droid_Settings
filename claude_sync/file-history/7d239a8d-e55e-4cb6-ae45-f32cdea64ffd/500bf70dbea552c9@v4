@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Symbols Analysis - Buy/Sell/Hold | Spartan Research Station</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --spartan-red: #8B0000;
+            --crimson: #DC143C;
+            --bg-dark: #0a1628;
+            --bg-darker: #050b14;
+            --gold: #FFD700;
+            --green: #00ff88;
+            --primary: #0096FF;
+            --red: #ff6b6b;
+            --orange: #ff9500;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: linear-gradient(135deg, rgba(139, 0, 0, 0.3), rgba(220, 20, 60, 0.2));
+            border: 3px solid var(--crimson);
+            border-radius: 16px;
+            padding: 40px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 0 40px rgba(220, 20, 60, 0.3);
+        }
+
+        h1 {
+            color: var(--gold);
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
+        }
+
+        .subtitle {
+            color: var(--crimson);
+            font-size: 1.2em;
+            font-weight: 600;
+        }
+
+        .back-button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: rgba(220, 20, 60, 0.2);
+            border: 2px solid var(--crimson);
+            border-radius: 8px;
+            color: var(--gold);
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background: rgba(220, 20, 60, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .regime-box {
+            background: linear-gradient(135deg, rgba(0, 150, 255, 0.2), rgba(0, 255, 136, 0.1));
+            border: 3px solid var(--primary);
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .regime-title {
+            font-size: 1.3em;
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .regime-value {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: var(--green);
+            margin-bottom: 10px;
+        }
+
+        .symbols-table {
+            background: rgba(10, 22, 40, 0.8);
+            border: 2px solid var(--primary);
+            border-radius: 12px;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: linear-gradient(135deg, var(--spartan-red), rgba(220, 20, 60, 0.8));
+            color: var(--gold);
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            border-bottom: 2px solid var(--crimson);
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        tr:hover {
+            background: rgba(220, 20, 60, 0.1);
+        }
+
+        .symbol-name {
+            color: var(--gold);
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+
+        .asset-type {
+            color: var(--primary);
+            font-size: 0.9em;
+        }
+
+        .buy {
+            background: rgba(0, 255, 136, 0.2);
+            color: var(--green);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            border: 1px solid var(--green);
+        }
+
+        .sell {
+            background: rgba(255, 107, 107, 0.2);
+            color: var(--red);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            border: 1px solid var(--red);
+        }
+
+        .hold {
+            background: rgba(255, 215, 0, 0.2);
+            color: var(--gold);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-weight: 700;
+            border: 1px solid var(--gold);
+        }
+
+        .loading {
+            text-align: center;
+            padding: 60px;
+            font-size: 1.5em;
+            color: var(--primary);
+        }
+
+        .error {
+            background: rgba(255, 107, 107, 0.2);
+            border: 2px solid var(--red);
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            color: var(--red);
+            font-size: 1.2em;
+        }
+
+        .rationale {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9em;
+            font-style: italic;
+        }
+
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="index.html" class="back-button">← Back to Dashboard</a>
+
+        <header>
+            <h1>⚔️ SYMBOLS ANALYSIS</h1>
+            <p class="subtitle">Buy/Sell/Hold Recommendations Across Time Horizons</p>
+            <p style="color: var(--green); margin-top: 10px; font-size: 0.9em;">
+                🛡️ Based on REAL data from Macro Regime Tracker & Intermarket Barometers
+            </p>
+        </header>
+
+        <div id="loading" class="loading">
+            ⏳ Loading real market data from APIs...
+        </div>
+
+        <div id="error" style="display: none;" class="error"></div>
+
+        <div id="content" style="display: none;">
+            <div class="regime-box">
+                <div class="regime-title">Current Market Regime</div>
+                <div class="regime-value" id="current-regime">LOADING...</div>
+                <div style="color: var(--primary); margin-top: 10px;">
+                    Composite Score: <span id="composite-score" style="font-weight: 700;">--</span>/100
+                </div>
+            </div>
+
+            <div class="legend">
+                <div class="legend-item">
+                    <span class="buy">BUY</span>
+                    <span>Strong opportunity</span>
+                </div>
+                <div class="legend-item">
+                    <span class="hold">HOLD</span>
+                    <span>Neutral/Wait</span>
+                </div>
+                <div class="legend-item">
+                    <span class="sell">SELL</span>
+                    <span>Reduce exposure</span>
+                </div>
+            </div>
+
+            <div class="symbols-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Symbol</th>
+                            <th>Asset Type</th>
+                            <th>1-2 Weeks</th>
+                            <th>1-3 Months</th>
+                            <th>3-6 Months</th>
+                            <th>6-18 Months</th>
+                            <th>18-36 Months</th>
+                            <th>Rationale</th>
+                        </tr>
+                    </thead>
+                    <tbody id="symbols-tbody">
+                        <tr>
+                            <td colspan="8" style="text-align: center; padding: 30px;">
+                                Loading symbols analysis...
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="color: rgba(255, 255, 255, 0.5); text-align: center; font-size: 0.9em; margin-top: 20px;">
+                ⏰ Last updated: <span id="timestamp">--</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const MACRO_API = 'http://localhost:9002/api/macro/regime/latest';
+        const BAROMETERS_API = 'http://localhost:9001/api/barometers/latest';
+        const CFTC_API = 'http://localhost:5001/api/cot/screener';
+
+        async function loadData() {
+            try {
+                document.getElementById('loading').style.display = 'block';
+                document.getElementById('content').style.display = 'none';
+                document.getElementById('error').style.display = 'none';
+
+                // Fetch real data from APIs
+                const macroResponse = await fetch(MACRO_API);
+
+                if (!macroResponse.ok) {
+                    throw new Error('Macro API not responding');
+                }
+
+                const macroData = await macroResponse.json();
+
+                // Try to fetch barometers data but continue if it fails
+                let barometersData = null;
+                try {
+                    const barometersResponse = await fetch(BAROMETERS_API);
+                    if (barometersResponse.ok) {
+                        barometersData = await barometersResponse.json();
+                    }
+                } catch (e) {
+                    console.warn('Barometers API unavailable, using macro data only');
+                }
+
+                // Try to fetch CFTC COT data
+                let cotData = null;
+                try {
+                    const cotResponse = await fetch(CFTC_API);
+                    if (cotResponse.ok) {
+                        cotData = await cotResponse.json();
+                    }
+                } catch (e) {
+                    console.warn('CFTC API unavailable, proceeding without COT data');
+                }
+
+                // Display regime
+                const regime = determineRegime(macroData);
+                document.getElementById('current-regime').textContent = regime;
+                document.getElementById('composite-score').textContent = macroData.composite_score;
+
+                // Generate symbols analysis based on real data
+                const symbols = generateSymbolsAnalysis(macroData, barometersData, cotData);
+                renderSymbolsTable(symbols);
+
+                // Timestamp
+                document.getElementById('timestamp').textContent = new Date().toLocaleString();
+
+                // Show content
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('error').style.display = 'block';
+                document.getElementById('error').textContent =
+                    `⚠️ Error loading data: ${error.message}. Ensure Macro Regime Tracker (9002) and Barometers API (9001) are running.`;
+            }
+        }
+
+        function determineRegime(macroData) {
+            const growth = macroData.growth.regime;
+            const inflation = macroData.inflation.regime;
+            const liquidity = macroData.liquidity.regime;
+
+            if (growth === 'EXPANSION' && inflation === 'TARGET') return 'GOLDILOCKS';
+            if (growth === 'EXPANSION' && inflation === 'ELEVATED') return 'REFLATION';
+            if (growth === 'SLOWDOWN' && inflation === 'LOW') return 'DEFLATION';
+            if (growth === 'SLOWDOWN' && inflation === 'ELEVATED') return 'STAGFLATION';
+
+            return `${growth} / ${inflation} / ${liquidity}`;
+        }
+
+        function generateSymbolsAnalysis(macroData, barometersData, cotData) {
+            const regime = macroData.growth.regime;
+            const inflationRegime = macroData.inflation.regime;
+            const liquidityRegime = macroData.liquidity.regime;
+            const compositeScore = macroData.composite_score;
+
+            // Extract key indicators for 1-2 week analysis
+            const vix = macroData.market.indicators.vix;
+            const dxy = macroData.market.indicators.dollar_index;
+            const hySpread = macroData.market.indicators.credit_spread_hy;
+            const yieldCurve = macroData.market.indicators.yield_curve;
+            const goldPrice = macroData.market.indicators.gold_price;
+            const oilPrice = macroData.market.indicators.oil_price;
+            const copperPrice = macroData.market.indicators.copper_price;
+
+            // REAL DATA-DRIVEN ANALYSIS
+            const symbols = [];
+
+            // ================================================================
+            // 1-2 WEEK TACTICAL FOCUS SECTION
+            // ================================================================
+
+            // VIX-based short-term opportunities
+            if (vix > 20 && vix < 30) {
+                symbols.push({
+                    symbol: 'SVXY',
+                    type: 'Short Vol ETF',
+                    week2: 'BUY',
+                    month3: 'HOLD',
+                    month6: 'SELL',
+                    month18: 'SELL',
+                    month36: 'SELL',
+                    rationale: `VIX ${vix.toFixed(1)} - elevated but not panic. Short-term mean reversion trade. EXIT in 1-2 weeks.`
+                });
+            } else if (vix > 30) {
+                symbols.push({
+                    symbol: 'UVXY',
+                    type: 'Long Vol ETF',
+                    week2: 'BUY',
+                    month3: 'SELL',
+                    month6: 'SELL',
+                    month18: 'SELL',
+                    month36: 'SELL',
+                    rationale: `VIX ${vix.toFixed(1)} - crisis mode. Volatility spike trade. TAKE PROFITS quickly.`
+                });
+            } else if (vix < 15) {
+                symbols.push({
+                    symbol: 'VXX',
+                    type: 'Vol ETN',
+                    week2: 'BUY',
+                    month3: 'HOLD',
+                    month6: 'SELL',
+                    month18: 'SELL',
+                    month36: 'SELL',
+                    rationale: `VIX ${vix.toFixed(1)} - complacency. Buy vol for 1-2 week protection.`
+                });
+            }
+
+            // Dollar moves - 1-2 week forex trades
+            if (dxy > 105) {
+                symbols.push({
+                    symbol: 'UUP',
+                    type: 'USD Bull',
+                    week2: 'SELL',
+                    month3: 'SELL',
+                    month6: 'HOLD',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: `DXY ${dxy.toFixed(1)} - overbought. Take profits on dollar longs.`
+                });
+                symbols.push({
+                    symbol: 'FXE',
+                    type: 'EUR Bull',
+                    week2: 'BUY',
+                    month3: 'BUY',
+                    month6: 'HOLD',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: `Euro oversold vs USD. 1-2 week bounce expected.`
+                });
+            } else if (dxy < 95) {
+                symbols.push({
+                    symbol: 'UUP',
+                    type: 'USD Bull',
+                    week2: 'BUY',
+                    month3: 'BUY',
+                    month6: 'HOLD',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: `DXY ${dxy.toFixed(1)} - oversold. Dollar bounce likely.`
+                });
+            }
+
+            // Credit spread changes - 1-2 week credit trades
+            if (hySpread > 4.5) {
+                symbols.push({
+                    symbol: 'HYG',
+                    type: 'High Yield',
+                    week2: 'BUY',
+                    month3: 'BUY',
+                    month6: 'HOLD',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `HY spreads ${hySpread}% - panic widening. 1-2 week mean reversion.`
+                });
+            } else if (hySpread < 3.0) {
+                symbols.push({
+                    symbol: 'HYG',
+                    type: 'High Yield',
+                    week2: 'SELL',
+                    month3: 'HOLD',
+                    month6: 'HOLD',
+                    month18: 'HOLD',
+                    month36: 'SELL',
+                    rationale: `HY spreads ${hySpread}% - too tight. Lock in gains.`
+                });
+            }
+
+            // ================================================================
+            // MAJOR INDICES & BROAD MARKET ETFs
+            // ================================================================
+
+            // Determine 1-2 week trend for indices
+            const shortTermBias = vix < 20 ? 'BUY' : (vix > 25 ? 'SELL' : 'HOLD');
+
+            if (regime === 'EXPANSION') {
+                // Major US Indices
+                symbols.push({
+                    symbol: 'SPY',
+                    type: 'S&P 500',
+                    week2: shortTermBias,
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `Expansion + GDP ${macroData.growth.indicators.gdp_growth.toFixed(2)}%. VIX ${vix.toFixed(1)} suggests ${shortTermBias} 1-2 weeks.`
+                });
+
+                symbols.push({
+                    symbol: 'QQQ',
+                    type: 'Nasdaq-100',
+                    week2: shortTermBias,
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `Tech leads in expansion. Unemployment ${macroData.growth.indicators.unemployment_rate}% supports growth.`
+                });
+
+                symbols.push({
+                    symbol: 'DIA',
+                    type: 'Dow Jones',
+                    week2: shortTermBias,
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: 'Blue chips benefit from expansion but lag tech.'
+                });
+
+                symbols.push({
+                    symbol: 'IWM',
+                    type: 'Russell 2000',
+                    week2: liquidityRegime === 'EASING' ? 'BUY' : 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `Small caps + ${liquidityRegime} liquidity. Net liquidity $${(macroData.liquidity.net_liquidity/1000).toFixed(1)}T.`
+                });
+
+                // Sector ETFs - Expansion winners
+                symbols.push({
+                    symbol: 'XLF',
+                    type: 'Financials',
+                    week2: yieldCurve > 0.3 ? 'BUY' : 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `Yield curve ${(yieldCurve*100).toFixed(0)}bp. Steep curve = bank profits.`
+                });
+
+                symbols.push({
+                    symbol: 'XLI',
+                    type: 'Industrials',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: 'Cyclicals thrive in expansion. Industrial production strong.'
+                });
+
+                symbols.push({
+                    symbol: 'XLY',
+                    type: 'Consumer Disc',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: 'Consumer spending drives 70% of GDP in expansion.'
+                });
+
+                symbols.push({
+                    symbol: 'XLE',
+                    type: 'Energy',
+                    week2: oilPrice > 70 ? 'BUY' : 'HOLD',
+                    month3: inflationRegime === 'ELEVATED' ? 'BUY' : 'HOLD',
+                    month6: 'BUY',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: `Oil $${oilPrice.toFixed(0)}. Elevated inflation = energy outperformance.`
+                });
+
+                symbols.push({
+                    symbol: 'XLK',
+                    type: 'Technology',
+                    week2: shortTermBias,
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: 'Tech = growth leader. AI boom continues.'
+                });
+
+            } else if (regime === 'SLOWDOWN') {
+                // Slowdown: Defensive positioning
+                symbols.push({
+                    symbol: 'SPY',
+                    type: 'Equity ETF',
+                    week2: 'HOLD',
+                    month3: 'HOLD',
+                    month6: 'SELL',
+                    month18: 'SELL',
+                    month36: 'HOLD',
+                    rationale: 'Economic slowdown. Reduce equity exposure, favor quality and defensives.'
+                });
+
+                symbols.push({
+                    symbol: 'TLT',
+                    type: 'Long-Term Bonds',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: 'Flight to safety in slowdown. Long bonds benefit from falling yields.'
+                });
+            }
+
+            // Inflation-based recommendations
+            if (inflationRegime === 'ELEVATED') {
+                symbols.push({
+                    symbol: 'GLD',
+                    type: 'Gold',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'BUY',
+                    rationale: `Elevated inflation (${macroData.inflation.value.toFixed(2)}%). Gold at $${macroData.market.indicators.gold_price.toFixed(0)} - inflation hedge.`
+                });
+
+                symbols.push({
+                    symbol: 'DBC',
+                    type: 'Commodities ETF',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: 'Commodities outperform in reflationary environment.'
+                });
+
+                symbols.push({
+                    symbol: 'TIP',
+                    type: 'TIPS',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: 'Treasury Inflation-Protected Securities for inflation protection.'
+                });
+            } else if (inflationRegime === 'LOW') {
+                symbols.push({
+                    symbol: 'TLT',
+                    type: 'Long-Term Bonds',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: 'Low inflation supports long-duration bonds.'
+                });
+            }
+
+            // Liquidity-based recommendations
+            if (liquidityRegime === 'EASING') {
+                symbols.push({
+                    symbol: 'IWM',
+                    type: 'Small Cap ETF',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `Liquidity easing (Net Liquidity: $${(macroData.liquidity.net_liquidity/1000).toFixed(1)}T). Small caps benefit.`
+                });
+            } else if (liquidityRegime === 'TIGHTENING') {
+                symbols.push({
+                    symbol: 'UUP',
+                    type: 'US Dollar',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'HOLD',
+                    month36: 'HOLD',
+                    rationale: 'Liquidity tightening strengthens dollar.'
+                });
+            }
+
+            // VIX-based tactical
+            const vix = macroData.market.indicators.vix;
+            if (vix > 25) {
+                symbols.push({
+                    symbol: 'UVXY',
+                    type: 'Volatility ETF',
+                    week2: 'BUY',
+                    month3: 'SELL',
+                    month6: 'SELL',
+                    month18: 'SELL',
+                    month36: 'SELL',
+                    rationale: `VIX at ${vix.toFixed(1)} - elevated volatility. Short-term hedge only.`
+                });
+            }
+
+            // Credit spreads analysis
+            const hySpread = macroData.market.indicators.credit_spread_hy;
+            if (hySpread > 4.0) {
+                symbols.push({
+                    symbol: 'HYG',
+                    type: 'High Yield Bonds',
+                    week2: 'SELL',
+                    month3: 'SELL',
+                    month6: 'HOLD',
+                    month18: 'BUY',
+                    month36: 'BUY',
+                    rationale: `HY spreads widening (${hySpread}%). Avoid near-term, buy dips long-term.`
+                });
+            } else if (hySpread < 3.5) {
+                symbols.push({
+                    symbol: 'HYG',
+                    type: 'High Yield Bonds',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'HOLD',
+                    month36: 'SELL',
+                    rationale: `HY spreads tight (${hySpread}%). Carry trade attractive near-term.`
+                });
+            }
+
+            // Dollar strength
+            const dxy = macroData.market.indicators.dollar_index;
+            if (dxy > 105) {
+                symbols.push({
+                    symbol: 'EEM',
+                    type: 'Emerging Markets',
+                    week2: 'SELL',
+                    month3: 'SELL',
+                    month6: 'HOLD',
+                    month18: 'BUY',
+                    month36: 'BUY',
+                    rationale: `Strong dollar (DXY ${dxy.toFixed(1)}) pressures EM. Wait for weakness.`
+                });
+            } else if (dxy < 95) {
+                symbols.push({
+                    symbol: 'EEM',
+                    type: 'Emerging Markets',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: `Weak dollar (DXY ${dxy.toFixed(1)}) benefits EM assets.`
+                });
+            }
+
+            // Crypto based on risk environment
+            if (compositeScore > 70 && liquidityRegime === 'EASING') {
+                symbols.push({
+                    symbol: 'BTC',
+                    type: 'Bitcoin',
+                    week2: 'HOLD',
+                    month3: 'BUY',
+                    month6: 'BUY',
+                    month18: 'BUY',
+                    month36: 'HOLD',
+                    rationale: 'Risk-on environment with liquidity easing favors crypto.'
+                });
+            } else if (compositeScore < 50) {
+                symbols.push({
+                    symbol: 'BTC',
+                    type: 'Bitcoin',
+                    week2: 'SELL',
+                    month3: 'SELL',
+                    month6: 'HOLD',
+                    month18: 'BUY',
+                    month36: 'BUY',
+                    rationale: 'Risk-off environment. Avoid crypto near-term, accumulate on dips.'
+                });
+            }
+
+            // ================================================================
+            // INDIVIDUAL MEGA-CAP STOCKS (1-2 week focus)
+            // ================================================================
+
+            // FAANG+ stocks
+            const techBias = regime === 'EXPANSION' && vix < 22 ? 'BUY' : 'HOLD';
+
+            symbols.push({
+                symbol: 'AAPL',
+                type: 'Apple Inc',
+                week2: techBias,
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: `Mega-cap tech leader. iPhone cycle + services growth. Short-term: ${techBias}.`
+            });
+
+            symbols.push({
+                symbol: 'MSFT',
+                type: 'Microsoft',
+                week2: techBias,
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'BUY',
+                rationale: 'Cloud + AI leader. Azure growth 30%+. OpenAI partnership.'
+            });
+
+            symbols.push({
+                symbol: 'NVDA',
+                type: 'Nvidia',
+                week2: vix < 20 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'AI chip monopoly. Data center demand explosive. Volatile - use pullbacks.'
+            });
+
+            symbols.push({
+                symbol: 'GOOGL',
+                type: 'Google',
+                week2: 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Search dominance + Cloud + AI. Lower vol than NVDA.'
+            });
+
+            symbols.push({
+                symbol: 'AMZN',
+                type: 'Amazon',
+                week2: regime === 'EXPANSION' ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'AWS prints cash. E-commerce reaccelerating. Advertising growth.'
+            });
+
+            symbols.push({
+                symbol: 'TSLA',
+                type: 'Tesla',
+                week2: 'HOLD',
+                month3: 'HOLD',
+                month6: vix < 18 ? 'BUY' : 'HOLD',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'High beta growth. Energy transition play. Wait for dips under $200.'
+            });
+
+            symbols.push({
+                symbol: 'META',
+                type: 'Meta Platforms',
+                week2: 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Ad revenue recovery. Metaverse long-term optionality. Cheap valuation.'
+            });
+
+            // ================================================================
+            // MORE COMMODITIES & PRECIOUS METALS
+            // ================================================================
+
+            symbols.push({
+                symbol: 'SLV',
+                type: 'Silver ETF',
+                week2: goldPrice > 2000 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: `Gold at $${goldPrice.toFixed(0)}. Silver = gold beta + industrial demand.`
+            });
+
+            symbols.push({
+                symbol: 'GDX',
+                type: 'Gold Miners',
+                week2: goldPrice > 2050 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Leveraged play on gold prices. Operating leverage 3-5x.'
+            });
+
+            symbols.push({
+                symbol: 'USO',
+                type: 'Oil ETF',
+                week2: oilPrice < 60 ? 'BUY' : 'HOLD',
+                month3: inflationRegime === 'ELEVATED' ? 'BUY' : 'HOLD',
+                month6: 'BUY',
+                month18: 'HOLD',
+                month36: 'HOLD',
+                rationale: `Oil $${oilPrice.toFixed(0)}. Energy shortage secular. Buy dips.`
+            });
+
+            symbols.push({
+                symbol: 'UNG',
+                type: 'Natural Gas',
+                week2: 'HOLD',
+                month3: 'HOLD',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Nat gas super volatile. LNG exports growing. Winter demand ahead.'
+            });
+
+            symbols.push({
+                symbol: 'COPX',
+                type: 'Copper Miners',
+                week2: copperPrice > 4.0 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'BUY',
+                rationale: `Copper $${copperPrice.toFixed(2)}. EV revolution needs copper. Supply constrained.`
+            });
+
+            // ================================================================
+            // MORE BONDS & FIXED INCOME
+            // ================================================================
+
+            symbols.push({
+                symbol: 'AGG',
+                type: 'Core Bonds',
+                week2: 'HOLD',
+                month3: inflationRegime === 'LOW' ? 'BUY' : 'HOLD',
+                month6: regime === 'SLOWDOWN' ? 'BUY' : 'HOLD',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Balanced bond exposure. Duration ~6 years. Flight to quality.'
+            });
+
+            symbols.push({
+                symbol: 'LQD',
+                type: 'IG Corporate',
+                week2: hySpread < 1.2 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'HOLD',
+                month36: 'HOLD',
+                rationale: 'Investment grade credit. Spread ~0.84%. Quality carry trade.'
+            });
+
+            symbols.push({
+                symbol: 'MUB',
+                type: 'Muni Bonds',
+                week2: 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Tax-free income. High tax bracket investors. 4-5% tax-equivalent yield.'
+            });
+
+            symbols.push({
+                symbol: 'VCIT',
+                type: 'Inter-Term Corp',
+                week2: 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'HOLD',
+                month36: 'HOLD',
+                rationale: 'Sweet spot duration. Less rate risk than TLT. Quality spreads.'
+            });
+
+            // ================================================================
+            // LEVERAGED ETFs (1-2 WEEK TACTICAL ONLY!)
+            // ================================================================
+
+            symbols.push({
+                symbol: 'TQQQ',
+                type: '3x Nasdaq Bull',
+                week2: vix < 18 && shortTermBias === 'BUY' ? 'BUY' : 'SELL',
+                month3: 'SELL',
+                month6: 'SELL',
+                month18: 'SELL',
+                month36: 'SELL',
+                rationale: `VIX ${vix.toFixed(1)}. ONLY for 1-2 week momentum trades. Exit fast!`
+            });
+
+            symbols.push({
+                symbol: 'SQQQ',
+                type: '3x Nasdaq Bear',
+                week2: vix > 25 ? 'BUY' : 'SELL',
+                month3: 'SELL',
+                month6: 'SELL',
+                month18: 'SELL',
+                month36: 'SELL',
+                rationale: `VIX ${vix.toFixed(1)}. Short-term hedge ONLY. Decay kills long holds.`
+            });
+
+            symbols.push({
+                symbol: 'UPRO',
+                type: '3x S&P Bull',
+                week2: compositeScore > 75 && vix < 20 ? 'BUY' : 'SELL',
+                month3: 'SELL',
+                month6: 'SELL',
+                month18: 'SELL',
+                month36: 'SELL',
+                rationale: 'Strong regime trades only. 1-2 weeks max hold.'
+            });
+
+            // ================================================================
+            // INTERNATIONAL & EMERGING MARKETS
+            // ================================================================
+
+            symbols.push({
+                symbol: 'EWJ',
+                type: 'Japan',
+                week2: dxy > 100 ? 'SELL' : 'BUY',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Japan exits 30-year deflation. BOJ policy shift. Weak yen helps exports.'
+            });
+
+            symbols.push({
+                symbol: 'EWG',
+                type: 'Germany',
+                week2: 'HOLD',
+                month3: 'HOLD',
+                month6: regime === 'EXPANSION' ? 'BUY' : 'HOLD',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Europe largest economy. Manufacturing export engine.'
+            });
+
+            symbols.push({
+                symbol: 'FXI',
+                type: 'China Large-Cap',
+                week2: 'HOLD',
+                month3: 'HOLD',
+                month6: 'HOLD',
+                month18: 'BUY',
+                month36: 'BUY',
+                rationale: 'China stimulus coming. Oversold. Long-term value but patience needed.'
+            });
+
+            symbols.push({
+                symbol: 'VWO',
+                type: 'EM Broad',
+                week2: dxy < 100 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Weak dollar = EM rally. Commodities + demographics.'
+            });
+
+            symbols.push({
+                symbol: 'EWZ',
+                type: 'Brazil',
+                week2: 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Commodities superpower. High real rates. BRICS growth.'
+            });
+
+            // ================================================================
+            // MORE CRYPTO
+            // ================================================================
+
+            symbols.push({
+                symbol: 'ETH',
+                type: 'Ethereum',
+                week2: compositeScore > 70 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Smart contract leader. ETF approval catalyst. Staking yield 4%.'
+            });
+
+            symbols.push({
+                symbol: 'SOL',
+                type: 'Solana',
+                week2: 'HOLD',
+                month3: vix < 20 ? 'BUY' : 'HOLD',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'High-performance L1. DeFi + NFT ecosystem. Higher risk/reward.'
+            });
+
+            symbols.push({
+                symbol: 'MSTR',
+                type: 'Bitcoin Proxy',
+                week2: compositeScore > 65 ? 'BUY' : 'HOLD',
+                month3: 'BUY',
+                month6: 'BUY',
+                month18: 'BUY',
+                month36: 'HOLD',
+                rationale: 'Leveraged BTC exposure. 2-3x bitcoin beta. Stock market hours.'
+            });
+
+            // ================================================================
+            // DEFENSIVE ASSETS
+            // ================================================================
+
+            symbols.push({
+                symbol: 'SHY',
+                type: 'Short Treasuries',
+                week2: 'HOLD',
+                month3: 'HOLD',
+                month6: compositeScore < 50 ? 'BUY' : 'HOLD',
+                month18: 'HOLD',
+                month36: 'HOLD',
+                rationale: 'Cash alternative. ~5% yield. Zero duration risk.'
+            });
+
+            symbols.push({
+                symbol: 'XLP',
+                type: 'Consumer Staples',
+                week2: vix > 25 ? 'BUY' : 'HOLD',
+                month3: regime === 'SLOWDOWN' ? 'BUY' : 'HOLD',
+                month6: 'HOLD',
+                month18: 'HOLD',
+                month36: 'HOLD',
+                rationale: 'Defensive sector. Recession resistant. Dividend yield.'
+            });
+
+            symbols.push({
+                symbol: 'XLU',
+                type: 'Utilities',
+                week2: 'HOLD',
+                month3: inflationRegime === 'LOW' ? 'BUY' : 'HOLD',
+                month6: 'BUY',
+                month18: 'HOLD',
+                month36: 'HOLD',
+                rationale: 'Bond proxy. High yield ~3%. Rate cuts bullish.'
+            });
+
+            return symbols;
+        }
+
+        function renderSymbolsTable(symbols) {
+            const tbody = document.getElementById('symbols-tbody');
+            tbody.innerHTML = '';
+
+            symbols.forEach(symbol => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td class="symbol-name">${symbol.symbol}</td>
+                    <td class="asset-type">${symbol.type}</td>
+                    <td><span class="${symbol.week2.toLowerCase()}">${symbol.week2}</span></td>
+                    <td><span class="${symbol.month3.toLowerCase()}">${symbol.month3}</span></td>
+                    <td><span class="${symbol.month6.toLowerCase()}">${symbol.month6}</span></td>
+                    <td><span class="${symbol.month18.toLowerCase()}">${symbol.month18}</span></td>
+                    <td><span class="${symbol.month36.toLowerCase()}">${symbol.month36}</span></td>
+                    <td class="rationale">${symbol.rationale}</td>
+                `;
+                tbody.appendChild(row);
+            });
+        }
+
+        // Load data on page load
+        loadData();
+
+        // Auto-refresh every 5 minutes
+        setInterval(loadData, 5 * 60 * 1000);
+    </script>
+</body>
+</html>

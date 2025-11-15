@@ -2101,3 +2101,232 @@
 2025-11-15T04:55:22.907Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
 2025-11-15T04:55:22.907Z [DEBUG] Found 0 hook matchers in settings
 2025-11-15T04:55:22.908Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-15T04:57:45.245Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-15T04:57:45.245Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-15T04:57:45.252Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-15T04:57:45.252Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-15T04:57:45.252Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-15T04:57:45.252Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-15T04:57:45.276Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-15T04:57:45.276Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:57:45.276Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-15T04:57:45.276Z [DEBUG] FileHistory: Making snapshot for message 4a4bd744-cb86-45cc-849c-aca9ab4b8901
+2025-11-15T04:57:45.277Z [DEBUG] FileHistory: Added snapshot for 4a4bd744-cb86-45cc-849c-aca9ab4b8901, tracking 11 files
+2025-11-15T04:57:45.307Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-15T04:57:45.307Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-15T04:57:46.053Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:57:48.831Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:57:54.862Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:57:54.869Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:57:54.869Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:57:54.869Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:57:55.611Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:57:55.856Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:57:55.856Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:57:55.856Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:57:55.885Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:57:55.892Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:57:55.892Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:57:55.892Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:57:56.479Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:57:56.671Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:57:56.674Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:14.097Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:58:14.098Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:14.098Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:14.130Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:58:14.138Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:58:14.138Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:14.138Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:14.809Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:14.862Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:14.886Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:15.234Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:15.522Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:58:15.522Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:15.522Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:15.558Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-15T04:58:15.558Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-15T04:58:15.564Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-15T04:58:15.564Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-15T04:58:15.564Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-15T04:58:15.564Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-15T04:58:15.588Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-15T04:58:15.588Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-15T04:58:16.231Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:18.056Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:23.681Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:58:23.688Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:58:23.688Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:23.688Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:24.394Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:24.460Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:24.688Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:58:24.688Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:24.688Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:24.717Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:58:24.724Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:58:24.724Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:24.724Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:24.800Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:58:24.800Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:24.800Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:24.835Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-15T04:58:24.835Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-15T04:58:24.841Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-15T04:58:24.841Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-15T04:58:24.841Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-15T04:58:24.841Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-15T04:58:24.856Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-15T04:58:24.856Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-15T04:58:25.250Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:25.453Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:27.950Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:33.978Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:58:33.985Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:58:33.985Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:33.985Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:39.139Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:58:39.139Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:39.139Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:39.170Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:58:39.176Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:58:39.176Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:39.177Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:39.277Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:58:39.277Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:39.277Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:39.313Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-15T04:58:39.313Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-15T04:58:39.319Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-15T04:58:39.319Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-15T04:58:39.319Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-15T04:58:39.319Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-15T04:58:39.344Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-15T04:58:39.344Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-15T04:58:39.861Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:40.127Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:42.516Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:47.397Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:58:47.404Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:58:47.404Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:47.404Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:47.550Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:58:47.550Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:47.550Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:47.581Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:58:47.589Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:58:47.589Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:47.589Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:47.741Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:58:47.741Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:47.741Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:47.773Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:58:47.781Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:58:47.781Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:47.781Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:48.213Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:48.498Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:52.907Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:58:52.908Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:58:52.908Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:58:52.949Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-15T04:58:52.949Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-15T04:58:52.955Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-15T04:58:52.955Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-15T04:58:52.955Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-15T04:58:52.955Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-15T04:58:52.981Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-15T04:58:52.981Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-15T04:58:53.619Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:58:56.319Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:00.050Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:59:00.057Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:59:00.057Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:59:00.057Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:59:00.787Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:00.868Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:02.028Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:02.110Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:17.401Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:59:17.413Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:59:17.413Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:59:17.413Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:59:17.575Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:59:17.575Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:59:17.575Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:59:17.619Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-15T04:59:17.619Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-15T04:59:17.625Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-15T04:59:17.625Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-15T04:59:17.625Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-15T04:59:17.625Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-15T04:59:17.641Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-15T04:59:17.641Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-15T04:59:18.372Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:20.820Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:23.853Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:59:23.861Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:59:23.861Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:59:23.861Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:59:24.783Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:24.900Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:30.069Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:59:30.069Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:59:30.069Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:59:30.103Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:59:30.110Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:59:30.110Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:59:30.110Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:59:30.619Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:30.784Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:30.806Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:30.986Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:59:30.986Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:59:30.986Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:59:31.025Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-15T04:59:31.025Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-15T04:59:31.031Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-15T04:59:31.031Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-15T04:59:31.031Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-15T04:59:31.032Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-15T04:59:31.057Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-15T04:59:31.057Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-15T04:59:31.724Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:33.595Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:48.712Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-15T04:59:48.719Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-15T04:59:48.720Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:59:48.720Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-15T04:59:48.743Z [DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/website/symbols_analysis.html.tmp.1216.1763182788743
+2025-11-15T04:59:48.743Z [DEBUG] Preserving file permissions: 100600
+2025-11-15T04:59:48.743Z [DEBUG] Temp file written successfully, size: 45816 bytes
+2025-11-15T04:59:48.743Z [DEBUG] Applied original permissions to temp file
+2025-11-15T04:59:48.743Z [DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/website/symbols_analysis.html.tmp.1216.1763182788743 to /Users/spartan/Downloads/spartan_labs/website/symbols_analysis.html
+2025-11-15T04:59:48.744Z [DEBUG] File /Users/spartan/Downloads/spartan_labs/website/symbols_analysis.html written atomically
+2025-11-15T04:59:48.759Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-15T04:59:48.759Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:59:48.759Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-15T04:59:48.832Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-15T04:59:48.849Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-15T04:59:48.849Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:59:48.849Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:59:49.087Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-15T04:59:49.087Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:59:49.087Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-15T04:59:49.141Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-15T04:59:49.141Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-15T04:59:49.148Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-15T04:59:49.148Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-15T04:59:49.148Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-15T04:59:49.148Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-15T04:59:49.174Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-15T04:59:49.174Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-15T04:59:49.779Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:52.329Z [DEBUG] Stream started - received first chunk
+2025-11-15T04:59:58.304Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-15T04:59:58.304Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T04:59:58.304Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-15T05:00:58.326Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-15T05:00:58.327Z [DEBUG] Found 0 hook matchers in settings
+2025-11-15T05:00:58.327Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
