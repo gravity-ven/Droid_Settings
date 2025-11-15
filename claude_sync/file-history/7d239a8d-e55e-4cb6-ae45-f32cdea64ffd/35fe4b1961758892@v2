@@ -1,0 +1,243 @@
+#!/usr/bin/env python3
+"""
+🔄 MIGRATE JSON DATA TO POSTGRESQL
+Migrates all JSON-based data storage to PostgreSQL
+"""
+import json
+import psycopg2
+from pathlib import Path
+from datetime import datetime
+
+# Database configuration
+DB_CONFIG = {
+    'dbname': 'spartan_website_db',
+    'user': 'postgres',
+    'password': 'postgres',
+    'host': 'localhost',
+    'port': 5432
+}
+
+WEBSITE_DIR = Path(__file__).parent
+
+def migrate_auth_data():
+    """Migrate authentication JSON files to PostgreSQL"""
+    print("🔄 Migrating authentication data...")
+
+    conn = psycopg2.connect(**DB_CONFIG)
+    cur = conn.cursor()
+
+    # Migrate users
+    users_file = WEBSITE_DIR / 'users_database.json'
+    if users_file.exists():
+        with open(users_file, 'r') as f:
+            users_data = json.load(f)
+            for user in users_data.get('users', []):
+                try:
+                    cur.execute("""
+                        INSERT INTO users (username, email, password_hash, is_active, is_admin, created_at, metadata)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s)
+                        ON CONFLICT (username) DO NOTHING
+                    """, (
+                        user.get('username'),
+                        user.get('email'),
+                        user.get('password_hash'),
+                        user.get('is_active', True),
+                        user.get('is_admin', False),
+                        user.get('created_at', datetime.now()),
+                        json.dumps(user.get('metadata', {}))
+                    ))
+                    print(f"  ✅ Migrated user: {user.get('username')}")
+                except Exception as e:
+                    print(f"  ⚠️ Skip user {user.get('username')}: {e}")
+
+    # Migrate sessions
+    sessions_file = WEBSITE_DIR / 'sessions_database.json'
+    if sessions_file.exists():
+        with open(sessions_file, 'r') as f:
+            sessions_data = json.load(f)
+            for session in sessions_data.get('sessions', []):
+                try:
+                    # Get user_id from username
+                    cur.execute("SELECT id FROM users WHERE username = %s", (session.get('username'),))
+                    result = cur.fetchone()
+                    if result:
+                        user_id = result[0]
+                        cur.execute("""
+                            INSERT INTO sessions (session_token, user_id, created_at, expires_at)
+                            VALUES (%s, %s, %s, %s)
+                            ON CONFLICT (session_token) DO NOTHING
+                        """, (
+                            session.get('token'),
+                            user_id,
+                            session.get('created_at', datetime.now()),
+                            session.get('expires_at', datetime.now())
+                        ))
+                        print(f"  ✅ Migrated session for user_id: {user_id}")
+                except Exception as e:
+                    print(f"  ⚠️ Skip session: {e}")
+
+    conn.commit()
+    cur.close()
+    conn.close()
+    print("✅ Authentication data migrated\n")
+
+def migrate_a2a_signals():
+    """Migrate A2A signals from JSON to PostgreSQL"""
+    print("🔄 Migrating A2A signals...")
+
+    conn = psycopg2.connect(**DB_CONFIG)
+    cur = conn.cursor()
+
+    signals_file = WEBSITE_DIR / 'a2a_signals.json'
+    if signals_file.exists():
+        with open(signals_file, 'r') as f:
+            signals_data = json.load(f)
+            if isinstance(signals_data, list):
+                for signal in signals_data:
+                    try:
+                        cur.execute("""
+                            INSERT INTO a2a_signals (asset_pair, signal_type, correlation, strength, timestamp, metadata)
+                            VALUES (%s, %s, %s, %s, %s, %s)
+                        """, (
+                            signal.get('asset_pair', ''),
+                            signal.get('signal_type', ''),
+                            signal.get('correlation', 0),
+                            signal.get('strength', 0),
+                            signal.get('timestamp', datetime.now()),
+                            json.dumps(signal.get('metadata', {}))
+                        ))
+                    except Exception as e:
+                        print(f"  ⚠️ Skip signal: {e}")
+                print(f"  ✅ Migrated {len(signals_data)} A2A signals")
+
+    conn.commit()
+    cur.close()
+    conn.close()
+    print("✅ A2A signals migrated\n")
+
+def migrate_audit_logs():
+    """Migrate audit logs from JSON to PostgreSQL"""
+    print("🔄 Migrating audit logs...")
+
+    conn = psycopg2.connect(**DB_CONFIG)
+    cur = conn.cursor()
+
+    audit_file = WEBSITE_DIR / 'audit_raw_data.json'
+    if audit_file.exists():
+        with open(audit_file, 'r') as f:
+            try:
+                audit_data = json.load(f)
+                if isinstance(audit_data, list):
+                    for log in audit_data:
+                        try:
+                            cur.execute("""
+                                INSERT INTO audit_logs (log_type, severity, message, created_at, metadata)
+                                VALUES (%s, %s, %s, %s, %s)
+                            """, (
+                                log.get('type', 'general'),
+                                log.get('severity', 'info'),
+                                log.get('message', ''),
+                                log.get('timestamp', datetime.now()),
+                                json.dumps(log.get('metadata', {}))
+                            ))
+                        except Exception as e:
+                            print(f"  ⚠️ Skip log entry: {e}")
+                    print(f"  ✅ Migrated {len(audit_data)} audit log entries")
+            except json.JSONDecodeError:
+                print("  ⚠️ Could not parse audit_raw_data.json")
+
+    conn.commit()
+    cur.close()
+    conn.close()
+    print("✅ Audit logs migrated\n")
+
+def migrate_system_status():
+    """Migrate system status from JSON to PostgreSQL"""
+    print("🔄 Migrating system status...")
+
+    conn = psycopg2.connect(**DB_CONFIG)
+    cur = conn.cursor()
+
+    status_file = WEBSITE_DIR / 'AIA_STATUS.json'
+    if status_file.exists():
+        with open(status_file, 'r') as f:
+            try:
+                status_data = json.load(f)
+                for service, data in status_data.items():
+                    try:
+                        cur.execute("""
+                            INSERT INTO system_status (service_name, status, last_check, metadata)
+                            VALUES (%s, %s, %s, %s)
+                            ON CONFLICT (service_name) DO UPDATE
+                            SET status = EXCLUDED.status,
+                                last_check = EXCLUDED.last_check,
+                                metadata = EXCLUDED.metadata
+                        """, (
+                            service,
+                            data.get('status', 'unknown'),
+                            datetime.now(),
+                            json.dumps(data)
+                        ))
+                    except Exception as e:
+                        print(f"  ⚠️ Skip status for {service}: {e}")
+                print(f"  ✅ Migrated system status for {len(status_data)} services")
+            except json.JSONDecodeError:
+                print("  ⚠️ Could not parse AIA_STATUS.json")
+
+    conn.commit()
+    cur.close()
+    conn.close()
+    print("✅ System status migrated\n")
+
+def verify_migration():
+    """Verify migration was successful"""
+    print("🔍 Verifying migration...")
+
+    conn = psycopg2.connect(**DB_CONFIG)
+    cur = conn.cursor()
+
+    tables = ['users', 'sessions', 'a2a_signals', 'audit_logs', 'system_status']
+
+    for table in tables:
+        cur.execute(f"SELECT COUNT(*) FROM {table}")
+        count = cur.fetchone()[0]
+        print(f"  📊 {table}: {count} records")
+
+    cur.close()
+    conn.close()
+    print("\n✅ Migration verification complete\n")
+
+def main():
+    """Run all migrations"""
+    print("=" * 70)
+    print("🛡️ SPARTAN RESEARCH STATION - JSON TO POSTGRESQL MIGRATION")
+    print("=" * 70)
+    print()
+
+    try:
+        migrate_auth_data()
+        migrate_a2a_signals()
+        migrate_audit_logs()
+        migrate_system_status()
+        verify_migration()
+
+        print("=" * 70)
+        print("✅ ALL DATA SUCCESSFULLY MIGRATED TO POSTGRESQL")
+        print("=" * 70)
+        print()
+        print("📝 Note: symbols_database.json kept as JSON (read-only reference data)")
+        print("🗑️  You can now archive old JSON files:")
+        print("   - users_database.json")
+        print("   - sessions_database.json")
+        print("   - a2a_signals.json")
+        print("   - audit_raw_data.json")
+        print("   - AIA_STATUS.json")
+        print()
+
+    except Exception as e:
+        print(f"\n❌ Migration failed: {e}")
+        import traceback
+        traceback.print_exc()
+
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,52 @@
+"""
+🛡️ SPARTAN RESEARCH STATION - DATABASE CONFIGURATION
+====================================================
+CENTRALIZED PostgreSQL configuration
+ALL services MUST use this configuration
+NO SQLite, NO JSON databases allowed
+"""
+
+# PostgreSQL Configuration - THE ONLY DATABASE
+DB_CONFIG = {
+    'dbname': 'spartan_website_db',
+    'user': 'postgres',
+    'password': 'postgres',
+    'host': 'localhost',
+    'port': 5432
+}
+
+# Connection pool settings
+POOL_MIN_CONNECTIONS = 1
+POOL_MAX_CONNECTIONS = 10
+
+# Database info
+DATABASE_TYPE = "PostgreSQL"
+DATABASE_VERSION = "16.10"
+
+# Validation function
+def validate_db_config():
+    """Ensure only PostgreSQL is configured"""
+    import psycopg2
+    try:
+        conn = psycopg2.connect(**DB_CONFIG)
+        cur = conn.cursor()
+        cur.execute("SELECT version();")
+        version = cur.fetchone()[0]
+        cur.close()
+        conn.close()
+        print(f"✅ PostgreSQL connection validated: {version}")
+        return True
+    except Exception as e:
+        print(f"❌ PostgreSQL connection failed: {e}")
+        return False
+
+
+if __name__ == '__main__':
+    print("🛡️ Spartan Research Station - Database Configuration")
+    print("=" * 60)
+    print(f"Database Type: {DATABASE_TYPE}")
+    print(f"Database Name: {DB_CONFIG['dbname']}")
+    print(f"Host: {DB_CONFIG['host']}:{DB_CONFIG['port']}")
+    print(f"User: {DB_CONFIG['user']}")
+    print("=" * 60)
+    validate_db_config()

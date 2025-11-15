@@ -1,0 +1,189 @@
+-- ============================================================
+-- SPARTAN RESEARCH STATION - COMPLETE POSTGRESQL SCHEMA
+-- ============================================================
+-- ALL data storage migrated to PostgreSQL
+-- NO SQLite, NO JSON databases allowed
+-- ============================================================
+
+-- Drop existing tables if they exist
+DROP TABLE IF EXISTS login_attempts CASCADE;
+DROP TABLE IF EXISTS sessions CASCADE;
+DROP TABLE IF EXISTS users CASCADE;
+DROP TABLE IF EXISTS a2a_signals CASCADE;
+DROP TABLE IF EXISTS audit_logs CASCADE;
+DROP TABLE IF EXISTS system_status CASCADE;
+DROP TABLE IF EXISTS breakthrough_insights CASCADE;
+DROP TABLE IF EXISTS cftc_data CASCADE;
+
+-- ============================================================
+-- AUTHENTICATION SYSTEM TABLES
+-- ============================================================
+
+-- Users table
+CREATE TABLE users (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(100) UNIQUE NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    is_active BOOLEAN DEFAULT true,
+    is_admin BOOLEAN DEFAULT false,
+    email_verified BOOLEAN DEFAULT false,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_login TIMESTAMP,
+    failed_login_attempts INTEGER DEFAULT 0,
+    locked_until TIMESTAMP,
+    metadata JSONB DEFAULT '{}'::jsonb
+);
+
+CREATE INDEX idx_users_username ON users(username);
+CREATE INDEX idx_users_email ON users(email);
+CREATE INDEX idx_users_active ON users(is_active);
+
+-- Sessions table
+CREATE TABLE sessions (
+    id SERIAL PRIMARY KEY,
+    session_token VARCHAR(255) UNIQUE NOT NULL,
+    user_id INTEGER REFERENCES users(id) ON DELETE CASCADE,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    expires_at TIMESTAMP NOT NULL,
+    ip_address VARCHAR(45),
+    user_agent TEXT,
+    is_active BOOLEAN DEFAULT true
+);
+
+CREATE INDEX idx_sessions_token ON sessions(session_token);
+CREATE INDEX idx_sessions_user ON sessions(user_id);
+CREATE INDEX idx_sessions_expires ON sessions(expires_at);
+
+-- Login attempts table (for rate limiting and security)
+CREATE TABLE login_attempts (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(100),
+    ip_address VARCHAR(45),
+    attempted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    success BOOLEAN DEFAULT false,
+    failure_reason TEXT
+);
+
+CREATE INDEX idx_login_attempts_username ON login_attempts(username, attempted_at);
+CREATE INDEX idx_login_attempts_ip ON login_attempts(ip_address, attempted_at);
+
+-- ============================================================
+-- MARKET DATA TABLES
+-- ============================================================
+
+-- A2A (Asset-to-Asset) signals table
+CREATE TABLE a2a_signals (
+    id SERIAL PRIMARY KEY,
+    asset_pair VARCHAR(50) NOT NULL,
+    signal_type VARCHAR(50),
+    correlation DECIMAL(10, 4),
+    strength DECIMAL(10, 4),
+    timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    timeframe VARCHAR(20),
+    metadata JSONB DEFAULT '{}'::jsonb
+);
+
+CREATE INDEX idx_a2a_asset_pair ON a2a_signals(asset_pair);
+CREATE INDEX idx_a2a_timestamp ON a2a_signals(timestamp);
+
+-- CFTC (Commitment of Traders) data table
+CREATE TABLE cftc_data (
+    id SERIAL PRIMARY KEY,
+    symbol VARCHAR(20) NOT NULL,
+    report_date DATE NOT NULL,
+    commercial_long BIGINT,
+    commercial_short BIGINT,
+    noncommercial_long BIGINT,
+    noncommercial_short BIGINT,
+    total_oi BIGINT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    UNIQUE(symbol, report_date)
+);
+
+CREATE INDEX idx_cftc_symbol ON cftc_data(symbol);
+CREATE INDEX idx_cftc_date ON cftc_data(report_date);
+
+-- Breakthrough insights table
+CREATE TABLE breakthrough_insights (
+    id SERIAL PRIMARY KEY,
+    agent_type VARCHAR(50) NOT NULL,  -- BreakthroughAgent, DiscoveryAgent, etc.
+    insight_title TEXT NOT NULL,
+    insight_body TEXT NOT NULL,
+    confidence_score DECIMAL(5, 2),
+    symbols TEXT[],
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    expires_at TIMESTAMP,
+    is_active BOOLEAN DEFAULT true,
+    metadata JSONB DEFAULT '{}'::jsonb
+);
+
+CREATE INDEX idx_insights_agent ON breakthrough_insights(agent_type);
+CREATE INDEX idx_insights_created ON breakthrough_insights(created_at);
+CREATE INDEX idx_insights_active ON breakthrough_insights(is_active);
+
+-- ============================================================
+-- SYSTEM TABLES
+-- ============================================================
+
+-- Audit logs table
+CREATE TABLE audit_logs (
+    id SERIAL PRIMARY KEY,
+    log_type VARCHAR(50),
+    severity VARCHAR(20),
+    message TEXT,
+    user_id INTEGER REFERENCES users(id),
+    ip_address VARCHAR(45),
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    metadata JSONB DEFAULT '{}'::jsonb
+);
+
+CREATE INDEX idx_audit_type ON audit_logs(log_type);
+CREATE INDEX idx_audit_severity ON audit_logs(severity);
+CREATE INDEX idx_audit_created ON audit_logs(created_at);
+
+-- System status table
+CREATE TABLE system_status (
+    id SERIAL PRIMARY KEY,
+    service_name VARCHAR(100) UNIQUE NOT NULL,
+    status VARCHAR(50) NOT NULL,  -- operational, degraded, down
+    last_check TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    last_error TEXT,
+    uptime_seconds BIGINT,
+    metadata JSONB DEFAULT '{}'::jsonb
+);
+
+CREATE INDEX idx_status_service ON system_status(service_name);
+
+-- ============================================================
+-- COMMENTS
+-- ============================================================
+
+COMMENT ON TABLE users IS 'User accounts for authentication system';
+COMMENT ON TABLE sessions IS 'Active user sessions with tokens';
+COMMENT ON TABLE login_attempts IS 'Login attempt tracking for security';
+COMMENT ON TABLE a2a_signals IS 'Asset-to-asset correlation signals';
+COMMENT ON TABLE cftc_data IS 'CFTC Commitment of Traders data';
+COMMENT ON TABLE breakthrough_insights IS 'AI-generated market insights';
+COMMENT ON TABLE audit_logs IS 'System audit trail';
+COMMENT ON TABLE system_status IS 'Service health monitoring';
+
+-- ============================================================
+-- INITIAL DATA
+-- ============================================================
+
+-- Insert default system status entries
+INSERT INTO system_status (service_name, status, metadata) VALUES
+('main_server', 'operational', '{"port": 8888}'::jsonb),
+('barometers_api', 'operational', '{"port": 9001}'::jsonb),
+('cftc_api', 'operational', '{"port": 5001}'::jsonb),
+('breakthrough_insights_api', 'operational', '{"port": 5003}'::jsonb),
+('macro_regime_api', 'operational', '{"port": 9002}'::jsonb),
+('database', 'operational', '{"type": "PostgreSQL"}'::jsonb);
+
+-- Grant permissions
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO postgres;
+GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO postgres;
+
+-- Success message
+SELECT 'PostgreSQL schema created successfully - All data storage migrated to PostgreSQL' as status;

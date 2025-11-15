@@ -1,0 +1,332 @@
+#!/usr/bin/env python3
+"""
+🛡️ SPARTAN SECURE AUTHENTICATION SYSTEM - POSTGRESQL VERSION
+=============================================================
+Production-grade authentication using PostgreSQL (NO JSON files)
+- Bcrypt password hashing
+- Rate limiting
+- Account lockout protection
+- Secure session tokens
+- All data in PostgreSQL
+"""
+
+import secrets
+import psycopg2
+from datetime import datetime, timedelta
+from typing import Optional, Dict
+import logging
+
+# Try to import bcrypt
+try:
+    import bcrypt
+    BCRYPT_AVAILABLE = True
+except ImportError:
+    import hashlib
+    BCRYPT_AVAILABLE = False
+    logging.warning("bcrypt not available, using SHA-256 (less secure)")
+
+# Setup logging
+logger = logging.getLogger('spartan_auth_postgresql')
+logger.setLevel(logging.INFO)
+
+# Database configuration
+DB_CONFIG = {
+    'dbname': 'spartan_website_db',
+    'user': 'postgres',
+    'password': 'postgres',
+    'host': 'localhost',
+    'port': 5432
+}
+
+# Security settings
+MAX_LOGIN_ATTEMPTS = 5
+LOCKOUT_DURATION_MINUTES = 15
+SESSION_TOKEN_LENGTH = 64
+SESSION_DURATION_HOURS = 24
+
+
+class PostgreSQLAuthSystem:
+    """PostgreSQL-based authentication system - NO JSON files"""
+
+    def __init__(self):
+        self.db_config = DB_CONFIG
+        self._ensure_connection()
+
+    def _get_connection(self):
+        """Get database connection"""
+        return psycopg2.connect(**self.db_config)
+
+    def _ensure_connection(self):
+        """Verify database connection works"""
+        try:
+            conn = self._get_connection()
+            conn.close()
+            logger.info("✅ PostgreSQL connection verified")
+        except Exception as e:
+            logger.error(f"❌ PostgreSQL connection failed: {e}")
+            raise
+
+    def _hash_password(self, password: str) -> str:
+        """Hash password using bcrypt or SHA-256"""
+        if BCRYPT_AVAILABLE:
+            return bcrypt.hashpw(password.encode(), bcrypt.gensalt()).decode()
+        else:
+            import hashlib
+            return hashlib.sha256(password.encode()).hexdigest()
+
+    def _verify_password(self, password: str, password_hash: str) -> bool:
+        """Verify password against hash"""
+        if BCRYPT_AVAILABLE:
+            return bcrypt.checkpw(password.encode(), password_hash.encode())
+        else:
+            import hashlib
+            return hashlib.sha256(password.encode()).hexdigest() == password_hash
+
+    def create_user(self, username: str, email: str, password: str, is_admin: bool = False) -> Dict:
+        """Create new user in PostgreSQL"""
+        conn = self._get_connection()
+        cur = conn.cursor()
+
+        try:
+            password_hash = self._hash_password(password)
+
+            cur.execute("""
+                INSERT INTO users (username, email, password_hash, is_admin, created_at)
+                VALUES (%s, %s, %s, %s, %s)
+                RETURNING id
+            """, (username, email, password_hash, is_admin, datetime.now()))
+
+            user_id = cur.fetchone()[0]
+            conn.commit()
+
+            logger.info(f"✅ Created user: {username} (ID: {user_id})")
+
+            return {
+                'success': True,
+                'user_id': user_id,
+                'username': username
+            }
+
+        except psycopg2.IntegrityError as e:
+            conn.rollback()
+            logger.warning(f"⚠️ User creation failed: {e}")
+            return {
+                'success': False,
+                'error': 'Username or email already exists'
+            }
+        finally:
+            cur.close()
+            conn.close()
+
+    def login(self, username: str, password: str, ip_address: str = None) -> Dict:
+        """Authenticate user and create session"""
+        conn = self._get_connection()
+        cur = conn.cursor()
+
+        try:
+            # Get user
+            cur.execute("""
+                SELECT id, username, password_hash, is_active, locked_until
+                FROM users
+                WHERE username = %s
+            """, (username,))
+
+            result = cur.fetchone()
+
+            if not result:
+                self._log_login_attempt(username, ip_address, False, "User not found")
+                return {'success': False, 'error': 'Invalid credentials'}
+
+            user_id, username, password_hash, is_active, locked_until = result
+
+            # Check if account is locked
+            if locked_until and locked_until > datetime.now():
+                return {
+                    'success': False,
+                    'error': f'Account locked until {locked_until}'
+                }
+
+            # Check if active
+            if not is_active:
+                return {'success': False, 'error': 'Account disabled'}
+
+            # Verify password
+            if not self._verify_password(password, password_hash):
+                self._increment_failed_attempts(user_id)
+                self._log_login_attempt(username, ip_address, False, "Invalid password")
+                return {'success': False, 'error': 'Invalid credentials'}
+
+            # Reset failed attempts
+            cur.execute("""
+                UPDATE users
+                SET failed_login_attempts = 0, last_login = %s
+                WHERE id = %s
+            """, (datetime.now(), user_id))
+
+            # Create session
+            session_token = secrets.token_urlsafe(SESSION_TOKEN_LENGTH)
+            expires_at = datetime.now() + timedelta(hours=SESSION_DURATION_HOURS)
+
+            cur.execute("""
+                INSERT INTO sessions (session_token, user_id, expires_at, ip_address)
+                VALUES (%s, %s, %s, %s)
+            """, (session_token, user_id, expires_at, ip_address))
+
+            conn.commit()
+
+            self._log_login_attempt(username, ip_address, True, "Success")
+
+            logger.info(f"✅ User logged in: {username}")
+
+            return {
+                'success': True,
+                'session_token': session_token,
+                'username': username,
+                'user_id': user_id
+            }
+
+        finally:
+            cur.close()
+            conn.close()
+
+    def _increment_failed_attempts(self, user_id: int):
+        """Increment failed login attempts and lock if needed"""
+        conn = self._get_connection()
+        cur = conn.cursor()
+
+        try:
+            cur.execute("""
+                UPDATE users
+                SET failed_login_attempts = failed_login_attempts + 1
+                WHERE id = %s
+                RETURNING failed_login_attempts
+            """, (user_id,))
+
+            attempts = cur.fetchone()[0]
+
+            # Lock account if max attempts reached
+            if attempts >= MAX_LOGIN_ATTEMPTS:
+                locked_until = datetime.now() + timedelta(minutes=LOCKOUT_DURATION_MINUTES)
+                cur.execute("""
+                    UPDATE users
+                    SET locked_until = %s
+                    WHERE id = %s
+                """, (locked_until, user_id))
+                logger.warning(f"🔒 Account locked (ID: {user_id}) until {locked_until}")
+
+            conn.commit()
+
+        finally:
+            cur.close()
+            conn.close()
+
+    def _log_login_attempt(self, username: str, ip_address: str, success: bool, reason: str):
+        """Log login attempt to database"""
+        conn = self._get_connection()
+        cur = conn.cursor()
+
+        try:
+            cur.execute("""
+                INSERT INTO login_attempts (username, ip_address, success, failure_reason)
+                VALUES (%s, %s, %s, %s)
+            """, (username, ip_address, success, reason if not success else None))
+
+            conn.commit()
+
+        finally:
+            cur.close()
+            conn.close()
+
+    def verify_session(self, session_token: str) -> Optional[Dict]:
+        """Verify session token is valid"""
+        conn = self._get_connection()
+        cur = conn.cursor()
+
+        try:
+            cur.execute("""
+                SELECT s.user_id, u.username, s.expires_at
+                FROM sessions s
+                JOIN users u ON s.user_id = u.id
+                WHERE s.session_token = %s AND s.is_active = true
+            """, (session_token,))
+
+            result = cur.fetchone()
+
+            if not result:
+                return None
+
+            user_id, username, expires_at = result
+
+            # Check if expired
+            if expires_at < datetime.now():
+                self.logout(session_token)
+                return None
+
+            return {
+                'user_id': user_id,
+                'username': username
+            }
+
+        finally:
+            cur.close()
+            conn.close()
+
+    def logout(self, session_token: str):
+        """Invalidate session"""
+        conn = self._get_connection()
+        cur = conn.cursor()
+
+        try:
+            cur.execute("""
+                UPDATE sessions
+                SET is_active = false
+                WHERE session_token = %s
+            """, (session_token,))
+
+            conn.commit()
+            logger.info(f"✅ Session invalidated")
+
+        finally:
+            cur.close()
+            conn.close()
+
+    def cleanup_expired_sessions(self):
+        """Remove expired sessions"""
+        conn = self._get_connection()
+        cur = conn.cursor()
+
+        try:
+            cur.execute("""
+                DELETE FROM sessions
+                WHERE expires_at < %s
+            """, (datetime.now(),))
+
+            deleted = cur.rowcount
+            conn.commit()
+
+            logger.info(f"🗑️ Cleaned up {deleted} expired sessions")
+
+        finally:
+            cur.close()
+            conn.close()
+
+
+# Create singleton instance
+auth_system = PostgreSQLAuthSystem()
+
+
+if __name__ == '__main__':
+    print("🛡️ Spartan PostgreSQL Authentication System")
+    print("=" * 60)
+
+    # Test connection
+    try:
+        test_auth = PostgreSQLAuthSystem()
+        print("✅ PostgreSQL connection successful")
+
+        # Cleanup old sessions
+        test_auth.cleanup_expired_sessions()
+        print("✅ Expired sessions cleaned up")
+
+    except Exception as e:
+        print(f"❌ Error: {e}")
