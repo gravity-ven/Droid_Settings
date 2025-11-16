@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-16T12:40:00.361967",
+  "timestamp": "2025-11-16T12:50:00.487051",
   "directory_status": {
     "droid": {
       "type": "file",
@@ -67,11 +67,11 @@
     },
     "history.jsonl": {
       "type": "file",
-      "size_bytes": 51795
+      "size_bytes": 52508
     },
     "file-history": {
       "type": "directory",
-      "file_count": 84
+      "file_count": 85
     },
     "downloads": {
       "type": "directory",
@@ -92,13 +92,13 @@
   },
   "sync_status": {
     "status": "active",
-    "last_health_check": "2025-11-16T12:40:00.000076",
+    "last_health_check": "2025-11-16T12:50:00.385231",
     "direction": "bidirectional"
   },
   "health_status": {
     "status": "healthy",
     "issues": [],
-    "free_space_mb": 130803
+    "free_space_mb": 130710
   },
   "optimizations": {
     "status": "not_optimized"
