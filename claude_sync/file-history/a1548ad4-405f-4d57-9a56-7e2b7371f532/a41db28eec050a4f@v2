@@ -1,0 +1,88 @@
+#!/usr/bin/env python3
+"""
+Fix database schema numeric overflow issue
+Changes NUMERIC(5,2) to NUMERIC(10,2) for affected columns
+"""
+
+import psycopg2
+
+DB_CONFIG = {
+    'dbname': 'spartan_website_db',
+    'user': 'postgres',
+    'password': 'postgres',
+    'host': 'localhost',
+    'port': 5432
+}
+
+def fix_schema():
+    try:
+        # Connect to database
+        print("🔌 Connecting to database...")
+        conn = psycopg2.connect(**DB_CONFIG)
+        cur = conn.cursor()
+
+        # Drop views first
+        print("📉 Dropping dependent views...")
+        views = ['latest_barometers', 'barometers_24h', 'barometers_weekly']
+        for view in views:
+            cur.execute(f"DROP VIEW IF EXISTS {view} CASCADE;")
+
+        # Alter columns
+        columns_to_fix = [
+            'market_breadth_pct',
+            'ism_manufacturing',
+            'ism_services'
+        ]
+
+        for column in columns_to_fix:
+            print(f"🔧 Updating {column} to NUMERIC(10, 2)...")
+            cur.execute(f"ALTER TABLE intermarket_barometers ALTER COLUMN {column} TYPE NUMERIC(10, 2);")
+
+        # Recreate views
+        print("📈 Recreating views...")
+
+        # latest_barometers view
+        cur.execute("""
+            CREATE OR REPLACE VIEW latest_barometers AS
+            SELECT * FROM intermarket_barometers
+            WHERE update_success = TRUE
+            ORDER BY timestamp DESC
+            LIMIT 1;
+        """)
+
+        # barometers_24h view
+        cur.execute("""
+            CREATE OR REPLACE VIEW barometers_24h AS
+            SELECT * FROM intermarket_barometers
+            WHERE timestamp >= NOW() - INTERVAL '24 hours'
+            AND update_success = TRUE
+            ORDER BY timestamp DESC;
+        """)
+
+        # barometers_weekly view
+        cur.execute("""
+            CREATE OR REPLACE VIEW barometers_weekly AS
+            SELECT * FROM intermarket_barometers
+            WHERE timestamp >= NOW() - INTERVAL '7 days'
+            AND update_success = TRUE
+            ORDER BY timestamp DESC;
+        """)
+
+        # Commit changes
+        conn.commit()
+        print("✅ Schema updated successfully!")
+
+        # Close connection
+        cur.close()
+        conn.close()
+
+        print("✅ Database schema fix complete!")
+
+    except Exception as e:
+        print(f"❌ Error: {e}")
+        return False
+
+    return True
+
+if __name__ == '__main__':
+    fix_schema()

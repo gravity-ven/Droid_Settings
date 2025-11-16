@@ -1,0 +1,102 @@
+-- Spartan Research Station - Intermarket Barometers Database Schema
+-- PostgreSQL 13+ Required (NO SQLITE - See CLAUDE.md Diamond Rule #1)
+
+-- Drop existing table if recreating
+DROP TABLE IF EXISTS intermarket_barometers CASCADE;
+
+-- Main barometers data table
+CREATE TABLE intermarket_barometers (
+    id SERIAL PRIMARY KEY,
+    timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP,
+
+    -- Tier 1: Ultra-Early Warning (6-18 Months Lead Time)
+    hy_spread NUMERIC(10, 2),                    -- High Yield spread (bps)
+    ig_spread NUMERIC(10, 2),                    -- Investment Grade spread (bps)
+    hy_ig_differential NUMERIC(10, 2),           -- HY-IG difference
+    china_credit_impulse NUMERIC(10, 4),         -- China credit as % GDP
+    yield_curve_10y2y NUMERIC(10, 4),            -- 10Y-2Y Treasury spread
+
+    -- Tier 2: Early Warning (3-6 Months Lead Time)
+    copper_price NUMERIC(10, 4),                 -- Copper price per lb
+    gold_price NUMERIC(10, 4),                   -- Gold price per oz
+    copper_gold_ratio NUMERIC(10, 8),            -- Copper/Gold ratio
+    baltic_dry_index INTEGER,                    -- BDI
+    market_breadth_pct NUMERIC(10, 2),           -- % stocks above 50-day MA
+
+    -- Tier 3: Short-Term Signals (1-3 Months Lead Time)
+    aud_jpy NUMERIC(10, 4),                      -- AUD/JPY exchange rate
+    vix NUMERIC(10, 2),                          -- VIX index
+    move_index NUMERIC(10, 2),                   -- MOVE Treasury volatility
+    put_call_equity NUMERIC(10, 4),              -- CBOE Equity Put/Call
+    put_call_spx NUMERIC(10, 4),                 -- SPX Put/Call
+    eem_price NUMERIC(10, 2),                    -- Emerging Markets ETF
+
+    -- Economic Data
+    ism_manufacturing NUMERIC(10, 2),            -- ISM Manufacturing PMI
+    ism_services NUMERIC(10, 2),                 -- ISM Services PMI
+    treasury_10y NUMERIC(10, 4),                 -- 10-Year Treasury yield
+    treasury_2y NUMERIC(10, 4),                  -- 2-Year Treasury yield
+
+    -- Market Indices
+    sp500 NUMERIC(10, 2),                        -- S&P 500 price
+    russell2000 NUMERIC(10, 2),                  -- Russell 2000 price
+
+    -- Composite Risk Score (0-100)
+    composite_score INTEGER,
+    risk_status VARCHAR(20),                     -- 'GREEN', 'YELLOW', 'RED'
+
+    -- Individual Indicator Signals
+    credit_signal VARCHAR(10),                   -- Signal status for each
+    china_signal VARCHAR(10),
+    curve_signal VARCHAR(10),
+    copper_gold_signal VARCHAR(10),
+    audjpy_signal VARCHAR(10),
+    vix_signal VARCHAR(10),
+    breadth_signal VARCHAR(10),
+    em_signal VARCHAR(10),
+    pmi_signal VARCHAR(10),
+    putcall_signal VARCHAR(10),
+
+    -- Metadata
+    data_quality VARCHAR(20) DEFAULT 'VERIFIED', -- Data quality flag
+    api_sources JSONB,                            -- Track which APIs provided data
+    update_success BOOLEAN DEFAULT TRUE,
+    error_log TEXT
+);
+
+-- Index for fast time-series queries
+CREATE INDEX idx_barometers_timestamp ON intermarket_barometers(timestamp DESC);
+
+-- Index for latest data retrieval
+CREATE INDEX idx_barometers_latest ON intermarket_barometers(timestamp DESC, update_success);
+
+-- Create view for latest barometer reading
+CREATE OR REPLACE VIEW latest_barometers AS
+SELECT * FROM intermarket_barometers
+WHERE update_success = TRUE
+ORDER BY timestamp DESC
+LIMIT 1;
+
+-- Create view for historical trend (last 24 hours)
+CREATE OR REPLACE VIEW barometers_24h AS
+SELECT * FROM intermarket_barometers
+WHERE timestamp >= NOW() - INTERVAL '24 hours'
+AND update_success = TRUE
+ORDER BY timestamp DESC;
+
+-- Create view for weekly trend
+CREATE OR REPLACE VIEW barometers_weekly AS
+SELECT * FROM intermarket_barometers
+WHERE timestamp >= NOW() - INTERVAL '7 days'
+AND update_success = TRUE
+ORDER BY timestamp DESC;
+
+-- Comments for documentation
+COMMENT ON TABLE intermarket_barometers IS 'Real-time intermarket barometer data - NO FAKE DATA (see CLAUDE.md)';
+COMMENT ON COLUMN intermarket_barometers.hy_spread IS 'High Yield corporate bond spread in basis points - SOURCE: FRED BAMLH0A0HYM2';
+COMMENT ON COLUMN intermarket_barometers.ig_spread IS 'Investment Grade corporate bond spread in basis points - SOURCE: FRED BAMLC0A4CBBB';
+COMMENT ON COLUMN intermarket_barometers.yield_curve_10y2y IS '10Y-2Y Treasury spread - SOURCE: FRED T10Y2Y';
+COMMENT ON COLUMN intermarket_barometers.copper_gold_ratio IS 'Copper/Gold ratio - Critical economic indicator - SOURCE: Yahoo Finance GC=F, HG=F';
+COMMENT ON COLUMN intermarket_barometers.vix IS 'CBOE Volatility Index - SOURCE: FRED VIXCLS or Yahoo ^VIX';
+COMMENT ON COLUMN intermarket_barometers.composite_score IS 'Composite risk score 0-100 (0=max risk, 100=all clear)';
+COMMENT ON COLUMN intermarket_barometers.data_quality IS 'Data quality verification - MUST be VERIFIED (no fake data allowed)';

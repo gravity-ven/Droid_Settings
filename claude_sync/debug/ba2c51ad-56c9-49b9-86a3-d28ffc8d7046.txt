@@ -346,3 +346,9 @@
 2025-11-16T06:19:06.110Z [DEBUG] Checking for native installer update to version 2.0.42
 2025-11-16T06:19:06.113Z [DEBUG] Version 2.0.42 already installed, updating symlink
 2025-11-16T06:19:06.114Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-16T07:03:53.228Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-16T07:03:53.231Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-16T07:03:53.231Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-16T07:37:11.480Z [ERROR] Error: Error: Failed to fetch version from stable: AxiosError: timeout of 30000ms exceeded
+    at c3_ (/$bunfs/root/claude:2136:1628)
+    at processTicksAndRejections (native:7:39)
