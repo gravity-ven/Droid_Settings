@@ -598,3 +598,9 @@ rg: Resource temporarily unavailable (os error 35)
 2025-11-16T01:07:24.134Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
 2025-11-16T01:07:24.135Z [DEBUG] Found 0 hook matchers in settings
 2025-11-16T01:07:24.135Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-16T01:33:01.193Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-16T01:33:08.192Z [ERROR] Error: Error: Lock file is already being held
+    at <anonymous> (/$bunfs/root/claude:87:11857)
+    at X (/$bunfs/root/claude:86:5167)
+    at <anonymous> (node:fs:243:13)
+    at processTicksAndRejections (native:7:39)

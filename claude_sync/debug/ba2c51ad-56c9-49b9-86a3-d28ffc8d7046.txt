@@ -109,3 +109,75 @@
 2025-11-16T01:03:34.980Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
 2025-11-16T01:03:34.980Z [DEBUG] Found 0 hook matchers in settings
 2025-11-16T01:03:34.981Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-16T01:08:42.956Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-11-16T01:08:42.968Z [DEBUG] Getting matching hook commands for PostToolUse with query: AskUserQuestion
+2025-11-16T01:08:42.968Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:08:42.968Z [DEBUG] Matched 0 unique hooks for query "AskUserQuestion" (0 before deduplication)
+2025-11-16T01:08:42.983Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-16T01:08:42.983Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-16T01:08:42.985Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-16T01:08:42.985Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-16T01:08:42.985Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-16T01:08:42.985Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-16T01:08:42.992Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-16T01:08:42.992Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-16T01:08:43.671Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-16T01:08:45.272Z [DEBUG] Stream started - received first chunk
+2025-11-16T01:08:50.573Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-16T01:08:50.576Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-16T01:08:50.576Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:08:50.576Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-16T01:08:50.592Z [DEBUG] No hook environment files found
+2025-11-16T01:08:50.636Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-16T01:08:50.636Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:08:50.636Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-16T01:08:50.647Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-16T01:08:50.647Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-16T01:08:50.648Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-16T01:08:50.648Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-16T01:08:50.648Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-16T01:08:50.648Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-16T01:08:50.654Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-16T01:08:50.654Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-16T01:08:50.683Z [ERROR] Error: Error: Lock file is already being held
+    at <anonymous> (/$bunfs/root/claude:87:11857)
+    at X (/$bunfs/root/claude:86:5167)
+    at <anonymous> (node:fs:243:13)
+    at processTicksAndRejections (native:7:39)
+2025-11-16T01:08:51.405Z [DEBUG] Stream started - received first chunk
+2025-11-16T01:08:52.581Z [DEBUG] Stream started - received first chunk
+2025-11-16T01:08:56.387Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-16T01:08:56.390Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-16T01:08:56.390Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:08:56.390Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-16T01:08:56.443Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-16T01:08:56.443Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:08:56.443Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-16T01:08:56.453Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-16T01:08:56.453Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-16T01:08:56.454Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-16T01:08:56.454Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-16T01:08:56.454Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-16T01:08:56.454Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-16T01:08:56.460Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-16T01:08:56.460Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-16T01:08:57.344Z [DEBUG] Stream started - received first chunk
+2025-11-16T01:08:58.469Z [DEBUG] Stream started - received first chunk
+2025-11-16T01:09:05.739Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-16T01:09:05.739Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:09:05.739Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-16T01:09:05.745Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.20897.1763255345745
+2025-11-16T01:09:05.745Z [DEBUG] Preserving file permissions: 100600
+2025-11-16T01:09:05.745Z [DEBUG] Temp file written successfully, size: 41471 bytes
+2025-11-16T01:09:05.746Z [DEBUG] Applied original permissions to temp file
+2025-11-16T01:09:05.746Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.20897.1763255345745 to /Users/spartan/.claude.json
+2025-11-16T01:09:05.746Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-16T01:09:05.748Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.20897.1763255345748
+2025-11-16T01:09:05.748Z [DEBUG] Preserving file permissions: 100600
+2025-11-16T01:09:05.748Z [DEBUG] Temp file written successfully, size: 41471 bytes
+2025-11-16T01:09:05.748Z [DEBUG] Applied original permissions to temp file
+2025-11-16T01:09:05.748Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.20897.1763255345748 to /Users/spartan/.claude.json
+2025-11-16T01:09:05.748Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-16T01:10:05.747Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-16T01:10:05.747Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:10:05.747Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
