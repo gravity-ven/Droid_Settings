@@ -424,3 +424,6 @@
 2025-11-16T21:19:28.816Z [DEBUG] Checking for native installer update to version 2.0.42
 2025-11-16T21:19:28.819Z [DEBUG] Version 2.0.42 already installed, updating symlink
 2025-11-16T21:19:28.826Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-16T21:49:29.363Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-16T21:49:29.366Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-16T21:49:29.367Z [DEBUG] Successfully updated to version 2.0.42
