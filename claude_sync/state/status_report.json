@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-16T09:50:01.027706",
+  "timestamp": "2025-11-16T11:50:01.122557",
   "directory_status": {
     "droid": {
       "type": "file",
@@ -15,7 +15,7 @@
     },
     "projects": {
       "type": "directory",
-      "file_count": 26
+      "file_count": 27
     },
     "session-env": {
       "type": "directory",
@@ -51,7 +51,7 @@
     },
     "statsig": {
       "type": "directory",
-      "file_count": 5
+      "file_count": 4
     },
     "shell-snapshots": {
       "type": "directory",
@@ -63,7 +63,7 @@
     },
     "todos": {
       "type": "directory",
-      "file_count": 10
+      "file_count": 11
     },
     "history.jsonl": {
       "type": "file",
@@ -71,7 +71,7 @@
     },
     "file-history": {
       "type": "directory",
-      "file_count": 81
+      "file_count": 82
     },
     "downloads": {
       "type": "directory",
@@ -87,18 +87,18 @@
     },
     "debug": {
       "type": "directory",
-      "file_count": 13
+      "file_count": 14
     }
   },
   "sync_status": {
     "status": "active",
-    "last_health_check": "2025-11-16T09:50:00.275232",
+    "last_health_check": "2025-11-16T11:50:00.681607",
     "direction": "bidirectional"
   },
   "health_status": {
     "status": "healthy",
     "issues": [],
-    "free_space_mb": 130906
+    "free_space_mb": 130901
   },
   "optimizations": {
     "status": "not_optimized"
