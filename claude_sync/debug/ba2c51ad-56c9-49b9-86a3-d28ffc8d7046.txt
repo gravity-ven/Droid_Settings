@@ -352,3 +352,6 @@
 2025-11-16T07:37:11.480Z [ERROR] Error: Error: Failed to fetch version from stable: AxiosError: timeout of 30000ms exceeded
     at c3_ (/$bunfs/root/claude:2136:1628)
     at processTicksAndRejections (native:7:39)
+2025-11-16T08:07:33.097Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-16T08:07:33.099Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-16T08:07:33.100Z [DEBUG] Successfully updated to version 2.0.42
