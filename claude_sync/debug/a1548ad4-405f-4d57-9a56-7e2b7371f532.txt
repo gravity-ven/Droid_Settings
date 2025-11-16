@@ -1191,3 +1191,6 @@ rg: Resource temporarily unavailable (os error 35)
 2025-11-16T05:49:01.790Z [DEBUG] Checking for native installer update to version 2.0.42
 2025-11-16T05:49:01.797Z [DEBUG] Version 2.0.42 already installed, updating symlink
 2025-11-16T05:49:01.798Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-16T06:19:02.096Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-16T06:19:02.099Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-16T06:19:02.100Z [DEBUG] Successfully updated to version 2.0.42
