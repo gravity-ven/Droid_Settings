@@ -1,0 +1,1053 @@
+# Global Capital Markets Intelligence
+
+**Version 3.0 - Comprehensive Guide**
+*Last Updated: November 16, 2025*
+
+---
+
+## Table of Contents
+
+1. [Introduction](#introduction)
+2. [Market Health Composite Score](#market-health-composite-score)
+3. [The Four Macro Regimes](#the-four-macro-regimes)
+4. [Understanding Capital Flows](#understanding-capital-flows)
+5. [Geographic Capital Flows](#geographic-capital-flows)
+6. [Investment Strategies by Market Regime](#investment-strategies-by-market-regime)
+7. [Practical Buy/Sell Playbook](#practical-buysell-playbook)
+8. [Score Interpretation Guide](#score-interpretation-guide)
+9. [Advanced Concepts](#advanced-concepts)
+10. [Risk Management](#risk-management)
+
+---
+
+## Introduction
+
+Global capital markets represent the interconnected network of financial markets where capital (money) flows between countries, asset classes, and investors seeking the highest returns for their risk tolerance.
+
+**Why Capital Markets Matter:**
+- **$100+ Trillion Market**: Global stock, bond, commodity, and currency markets combined
+- **Predictive Power**: Capital flows predict economic trends 6-18 months in advance
+- **Profit Opportunities**: Understanding where money is flowing = knowing where to invest
+- **Risk Management**: Knowing where capital is leaving = avoiding losses
+
+**Core Principle**: Smart money moves BEFORE the news. By tracking institutional capital flows, you can position yourself ahead of major market moves.
+
+---
+
+## Market Health Composite Score
+
+### What Is It?
+
+The Composite Score (0-100) is a comprehensive measure of global market health, combining four critical dimensions:
+
+```
+Composite Score = Growth Score (30) + Inflation Score (30) +
+                  Liquidity Score (20) + Market Score (20)
+```
+
+### Score Components
+
+#### 1. Growth Score (0-30 points)
+Measures economic expansion or contraction.
+
+**Indicators Used:**
+- GDP growth rate
+- Employment data (unemployment rate, job creation)
+- Manufacturing PMI (Purchasing Managers' Index)
+- Retail sales growth
+- Industrial production
+
+**Regime Classifications:**
+- **EXPANSION** (30 points): GDP >3%, unemployment <4%, PMI >55
+- **RECOVERY** (20 points): GDP 1-3%, improving employment, PMI 50-55
+- **SLOWDOWN** (10 points): GDP 0-1%, rising unemployment, PMI 45-50
+- **RECESSION** (0 points): GDP negative, unemployment >6%, PMI <45
+
+#### 2. Inflation Score (0-30 points)
+Measures price stability and inflation dynamics.
+
+**Indicators Used:**
+- CPI (Consumer Price Index)
+- Core CPI (excluding food/energy)
+- PCE (Personal Consumption Expenditures)
+- Producer Price Index (PPI)
+- Commodity prices (oil, metals)
+
+**Regime Classifications:**
+- **TARGET** (30 points): Inflation 1.5-2.5% (Goldilocks)
+- **LOW** (20 points): Inflation 0-1.5% (deflation risk)
+- **ELEVATED** (10 points): Inflation 2.5-4% (heating up)
+- **HIGH** (0 points): Inflation >4% (problematic)
+
+#### 3. Liquidity Score (0-20 points)
+Measures central bank policy and money supply.
+
+**Indicators Used:**
+- Federal Reserve policy (rate decisions, QE/QT)
+- ECB, BoJ, BoE policy stances
+- M2 money supply growth
+- Bank lending standards
+- Credit spreads (HY, IG)
+
+**Regime Classifications:**
+- **EASING** (20 points): Rate cuts, QE, expanding money supply
+- **NEUTRAL** (10 points): On hold, no changes
+- **TIGHTENING** (0 points): Rate hikes, QT, contracting money supply
+
+#### 4. Market Score (0-20 points)
+Measures investor sentiment and market behavior.
+
+**Indicators Used:**
+- VIX (volatility index)
+- Put/Call ratios
+- Market breadth (advance/decline)
+- High-yield spreads
+- Risk-on/risk-off indicators (AUD/JPY, copper/gold)
+
+**Regime Classifications:**
+- **RISK_ON** (20 points): VIX <15, strong breadth, tight spreads
+- **NEUTRAL** (10 points): VIX 15-20, mixed signals
+- **RISK_OFF** (0 points): VIX >20, poor breadth, widening spreads
+
+### Score Ranges Explained
+
+| Score Range | Interpretation | Market Conditions | Recommended Action |
+|-------------|----------------|-------------------|-------------------|
+| **90-100** | Perfect Conditions | Strong growth, low inflation, easy policy | Aggressively buy stocks |
+| **80-90** | Very Good (Reflation) | Strong growth, elevated inflation | Buy commodities, value stocks |
+| **60-80** | Mixed Signals | Some positives, some negatives | Balanced portfolio, selective |
+| **50-60** | Caution | Multiple headwinds emerging | Reduce risk, quality focus |
+| **25-50** | Warning | Deteriorating conditions | Defensive positioning |
+| **0-25** | Crisis Mode | Recession, panic, crisis | Maximum cash, safe havens |
+
+---
+
+## The Four Macro Regimes
+
+Understanding which macro regime we're in determines optimal asset allocation.
+
+### 1. Growth Regimes
+
+#### Expansion (Goldilocks)
+**Characteristics:**
+- GDP growing 3%+
+- Low unemployment (<4%)
+- Inflation near target (2%)
+- Corporate profits rising
+
+**Best Assets:**
+- Technology stocks (highest beta to growth)
+- Consumer discretionary
+- Small-cap stocks
+- Emerging markets
+- High-yield bonds
+
+**Example Periods:** 2017-2018, 2021
+
+#### Recovery (Early Cycle)
+**Characteristics:**
+- GDP turning positive after recession
+- Unemployment falling but still elevated
+- Inflation still low
+- Central banks still easing
+
+**Best Assets:**
+- Cyclical stocks (banks, industrials)
+- Small-caps (higher leverage to recovery)
+- Credit (high yield improving)
+- Commodities (industrial metals)
+
+**Example Periods:** 2009-2010, 2020-2021
+
+#### Slowdown (Late Cycle)
+**Characteristics:**
+- GDP growth decelerating
+- Unemployment stable/rising
+- Inflation elevated
+- Central banks tightening
+
+**Best Assets:**
+- Defensive stocks (utilities, consumer staples)
+- Quality/large-caps
+- Cash
+- Short-duration bonds
+
+**Example Periods:** 2007-2008, 2018-2019
+
+#### Recession (Contraction)
+**Characteristics:**
+- GDP negative for 2+ quarters
+- Unemployment rising sharply
+- Falling corporate profits
+- Credit stress
+
+**Best Assets:**
+- Government bonds (Treasuries)
+- Cash/money market
+- Gold
+- Defensive stocks (utilities, healthcare)
+
+**Example Periods:** 2008-2009, 2020 (brief)
+
+### 2. Inflation Regimes
+
+#### Target (Goldilocks)
+**Characteristics:** 1.5-2.5% inflation
+**Best Assets:** Stocks, credit, balanced portfolio
+
+#### Low/Deflation
+**Characteristics:** <1.5% inflation, deflation risk
+**Best Assets:** Long-duration bonds, growth stocks, cash
+
+#### Elevated/Rising
+**Characteristics:** 2.5-4% inflation
+**Best Assets:** Commodities, TIPS, real assets, value stocks
+
+#### High/Hyperinflation
+**Characteristics:** >4% inflation
+**Best Assets:** Commodities, gold, real estate, foreign currencies
+
+### 3. Liquidity Regimes
+
+#### Easing
+- Central banks cutting rates or doing QE
+- **Best Assets:** Risk assets, stocks, credit, emerging markets
+
+#### Neutral
+- Central banks on hold
+- **Best Assets:** Balanced approach
+
+#### Tightening
+- Central banks raising rates or doing QT
+- **Best Assets:** Cash, short-duration bonds, defensive stocks
+
+### 4. Market Sentiment Regimes
+
+#### Risk-On
+- VIX <15, tight spreads
+- **Best Assets:** High beta, small-caps, EM, commodities
+
+#### Neutral
+- VIX 15-20
+- **Best Assets:** Balanced
+
+#### Risk-Off
+- VIX >20, widening spreads
+- **Best Assets:** Bonds, gold, cash, defensive stocks
+
+---
+
+## Understanding Capital Flows
+
+### What Are Capital Flows?
+
+**Simple Definition:** Capital flows are the movement of money between countries, asset classes, and sectors as investors seek higher returns or flee risk.
+
+**Weather Analogy:**
+Think of capital flows like water flowing downhill:
+- Water (money) always flows to the lowest point (highest returns)
+- When one area floods (overvalued), water flows elsewhere
+- Droughts (capital leaving) signal problems ahead
+
+### Why Capital Flows Matter
+
+1. **Early Warning System**: Capital leaves 3-12 months BEFORE a crisis
+2. **Profit Opportunities**: Follow the money = find the profits
+3. **Risk Avoidance**: Exit before the crowd (when capital is leaving)
+4. **Macro Confirmation**: Validates or contradicts your investment thesis
+
+### Types of Capital Flows
+
+#### 1. Geographic Flows (Country to Country)
+
+**Example (Current):**
+```
+USA (expensive) → Australia (commodity exporters)
+Europe (recession) → India (growth)
+Japan (deflation) → Brazil (real assets)
+```
+
+**How to Track:**
+- Currency movements (strengthening = inflows)
+- Country ETF performance
+- Bond yield differentials
+- Portfolio investment data
+
+#### 2. Asset Class Flows (Stocks to Bonds, etc.)
+
+**Example Flows by Regime:**
+```
+Expansion:     Bonds → Stocks
+Late Cycle:    Stocks → Commodities
+Recession:     Stocks → Bonds + Gold
+Recovery:      Cash → Stocks
+```
+
+**How to Track:**
+- ETF flow data
+- Sector rotation
+- Relative performance
+
+#### 3. Sector Flows (Tech to Energy, etc.)
+
+**Example (Reflation Regime):**
+```
+Growth (Tech, Consumer) → Value (Energy, Materials, Financials)
+```
+
+**How to Track:**
+- Sector ETF flows
+- Relative strength
+- Fund manager positioning
+
+---
+
+## Geographic Capital Flows
+
+### Countries Receiving Capital Inflows (BUY Opportunities)
+
+Capital flows INTO countries with:
+- **Strong growth** relative to global average
+- **Favorable policy** (business-friendly, low taxes)
+- **Currency strength** (appreciating)
+- **Commodity advantages** (producers during inflation)
+- **Structural improvements** (reforms, infrastructure)
+
+#### Example: Australia During Reflation (Score 85+)
+
+**Why Money Flows In:**
+- Top commodity exporter (iron ore, coal, LNG)
+- Inflation benefits resource exporters
+- Strong banking system
+- Stable democracy, rule of law
+- AUD strengthens vs. USD
+
+**How to Profit:**
+1. **Country ETF**: Buy EWA (iShares Australia)
+   - Expected Return: 20-40% over 12 months
+   - Risk: Moderate (diversified across all sectors)
+
+2. **Top Companies**: Buy BHP, RIO, FMG (mining), CBA, WBC (banks)
+   - Expected Return: 30-60% over 12 months
+   - Risk: Higher (concentrated bets)
+
+3. **Currency**: Buy AUD/USD
+   - Expected Return: 10-25% over 6-12 months
+   - Risk: Lower (less volatile than stocks)
+
+**Recommended Allocation:** 50% EWA + 30% individual stocks + 20% AUD/USD
+
+### Countries Experiencing Capital Outflows (SELL Signals)
+
+Capital flows OUT of countries with:
+- **Weak growth** or recession
+- **Policy uncertainty** (political instability, poor governance)
+- **Currency weakness** (depreciating)
+- **Structural problems** (high debt, demographics, corruption)
+
+#### Example: Japan During Recession (Score <50)
+
+**Why Money Leaves:**
+- Aging population, shrinking workforce
+- Deflation/low growth for decades
+- Negative real interest rates
+- Yen depreciation
+
+**What to Do:**
+1. **SELL if you own**: Exit EWJ (Japan ETF), Japanese stocks
+2. **SHORT (Advanced)**: Buy EWJ put options or EWV (inverse Japan ETF)
+   - Profit Potential: 50-100%+ if market falls 20-30%
+   - Risk: HIGH - can lose 100% of premium
+
+3. **Safer Alternative**: Simply avoid Japan, invest elsewhere
+
+---
+
+## Investment Strategies by Market Regime
+
+### Strategy Matrix: Composite Score → Portfolio Allocation
+
+#### Score 90-100 (Perfect Conditions - Rare!)
+
+**Macro Setup:**
+- Strong growth (3%+ GDP)
+- Target inflation (1.5-2.5%)
+- Easy liquidity (Fed easing or neutral)
+- Risk-on sentiment
+
+**Portfolio Allocation:**
+```
+80% Stocks (maximize growth exposure)
+  - 40% US Large-Cap (SPY, QQQ)
+  - 20% Small-Cap (IWM, VB)
+  - 10% Emerging Markets (EEM, VWO)
+  - 10% International Developed (EFA, VEA)
+15% Alternatives
+  - 10% Commodities (broad exposure)
+  - 5% Real Estate (REITs)
+5% Cash (for opportunistic buying)
+```
+
+**Hold Until:** Score drops below 85
+
+---
+
+#### Score 80-90 (Reflation - Commodities Shine)
+
+**Macro Setup:**
+- Strong growth (2.5-3%)
+- Elevated inflation (2.5-4%)
+- Tightening liquidity (Fed hiking)
+- Risk-on but late cycle
+
+**Portfolio Allocation:**
+```
+60% Stocks (shift to value/real assets)
+  - 20% Energy (XLE)
+  - 15% Materials (XLB)
+  - 15% Financials (XLF)
+  - 10% International Value
+30% Commodities
+  - 15% Oil/Energy
+  - 10% Gold/Precious Metals
+  - 5% Industrial Metals (copper)
+10% Cash (building dry powder)
+```
+
+**Key Trades:**
+- BUY: XLE (energy), GDX (gold miners), DBC (commodities)
+- SELL: QQQ (tech), XLK (technology), growth stocks
+
+**Hold Until:** Score drops below 75 OR inflation peaks
+
+---
+
+#### Score 60-80 (Mixed Signals - Balanced)
+
+**Macro Setup:**
+- Moderate growth (1-2%)
+- Mixed inflation signals
+- Neutral to slightly tight liquidity
+- Mixed sentiment
+
+**Portfolio Allocation:**
+```
+50% Stocks (quality focus)
+  - 30% Large-Cap Quality (QUAL, VIG)
+  - 10% Dividend Aristocrats (NOBL)
+  - 10% International Developed (EFA)
+30% Bonds (short-to-intermediate duration)
+  - 20% Intermediate Treasuries (IEF)
+  - 10% Investment-Grade Corporate (LQD)
+10% Commodities/Gold (hedge)
+10% Cash (flexibility)
+```
+
+**Approach:** Stay invested but don't take big bets. Review weekly.
+
+---
+
+#### Score 50-60 (Caution - Reduce Risk)
+
+**Macro Setup:**
+- Slowing growth (<1%)
+- Inflation uncertain
+- Tight liquidity (Fed still hiking)
+- Deteriorating sentiment
+
+**Portfolio Allocation:**
+```
+30% Stocks (defensive only)
+  - 15% Utilities (XLU)
+  - 10% Consumer Staples (XLP)
+  - 5% Healthcare (XLV)
+40% Bonds (flight to quality)
+  - 25% Treasuries (TLT, IEF)
+  - 15% TIPS (TIP)
+10% Gold (GLD, IAU)
+20% Cash (safe haven)
+```
+
+**Key Actions:**
+- EXIT cyclicals, high-beta, speculative stocks
+- BUILD cash reserves
+- HEDGE with put options if experienced
+
+---
+
+#### Score 25-50 (Crisis Unfolding - Defensive)
+
+**Macro Setup:**
+- Negative or near-zero growth
+- Deflation or stagflation
+- Crisis liquidity (Fed panicking)
+- Risk-off panic
+
+**Portfolio Allocation:**
+```
+10% Stocks (only essential services)
+  - 5% Utilities
+  - 5% Consumer Staples
+60% Government Bonds
+  - 40% Long Treasuries (TLT)
+  - 20% Short Treasuries (SHY)
+15% Gold
+15% Cash
+```
+
+**Crisis Playbook:**
+1. **SELL all stocks** except utilities, staples
+2. **BUY long Treasuries** (TLT rallies in crisis)
+3. **BUY gold** (safe haven)
+4. **HOLD cash** (for opportunities at the bottom)
+
+---
+
+#### Score 0-25 (Full Crisis - Maximum Defense)
+
+**Macro Setup:**
+- Deep recession (GDP -3% or worse)
+- Severe deflation or hyperinflation
+- Emergency Fed actions (rate cuts to 0)
+- Market panic (VIX >40)
+
+**Portfolio Allocation:**
+```
+70% Government Bonds (flight to safety)
+  - 50% Long Treasuries
+  - 20% Short Treasuries
+20% Gold/Precious Metals
+10% Cash (USD strengthens in crisis)
+0% Stocks (except for buying at the bottom)
+```
+
+**Wait Until:** Score rises above 60 before re-entering stocks
+
+**Opportunity:** Start dollar-cost averaging into stocks when score hits 40-50 (recovery beginning)
+
+---
+
+## Practical Buy/Sell Playbook
+
+### SCENARIO 1: Money Flowing INTO a Country (BUY Signal)
+
+When the intelligence tracker shows capital inflows into a specific country, follow this 3-step playbook:
+
+#### Step 1: Buy the Country ETF (Easiest, Lowest Risk)
+
+**Why:** Instant diversification across all sectors in that country
+
+**Examples:**
+- **Australia**: EWA (iShares MSCI Australia)
+- **Canada**: EWC (iShares MSCI Canada)
+- **India**: INDA (iShares MSCI India)
+- **Brazil**: EWZ (iShares MSCI Brazil)
+- **Germany**: EWG (iShares MSCI Germany)
+
+**Expected Return:** 20-40% over 12 months during strong inflow periods
+
+**Risk Level:** Moderate (diversified across 50-200 companies)
+
+**Allocation:** Recommended 3-5% of portfolio per country
+
+---
+
+#### Step 2: Buy Top Companies (Higher Risk, Higher Reward)
+
+**Why:** Concentrated exposure to best performers in that country
+
+**Example - Australia Inflow:**
+```
+BHP Group (BHP)     - Iron ore, copper mining
+Rio Tinto (RIO)     - Diversified mining
+Fortescue (FSUGY)   - Iron ore
+CBA (Commonwealth Bank) - Banking
+Woodside Energy (WDS) - LNG/natural gas
+```
+
+**Expected Return:** 30-60% over 12 months
+
+**Risk Level:** High (individual stock risk, sector concentration)
+
+**Allocation:** No more than 2% per stock (diversify across 5-7 companies)
+
+---
+
+#### Step 3: Buy the Country's Currency (Advanced, Lower Risk)
+
+**Why:** Capital inflows strengthen currency, lower volatility than stocks
+
+**Examples:**
+- Australia inflow → Buy AUD/USD
+- Canada inflow → Buy CAD/USD
+- India inflow → Buy INR/USD
+
+**Expected Return:** 10-25% over 6-12 months
+
+**Risk Level:** Low-Moderate (currencies less volatile than stocks)
+
+**How to Trade:**
+- Forex account (leverage available but risky)
+- Currency ETF (FXA for AUD, FXC for CAD)
+- Futures (CME currency contracts)
+
+---
+
+### Combined Strategy (Recommended)
+
+**Portfolio Split for Country Inflow:**
+```
+50% Country ETF       (Core position, lower risk)
+30% Top 5-7 Companies (Alpha generation)
+20% Currency          (Hedge + additional upside)
+```
+
+**Example - $10,000 allocation to Australia:**
+```
+$5,000 in EWA
+$3,000 split across BHP, RIO, CBA, FMG, WDS ($600 each)
+$2,000 in FXA (AUD currency ETF)
+```
+
+**Expected Blended Return:** 25-45% over 12 months
+**Risk:** Moderate (diversified across three strategies)
+
+---
+
+### SCENARIO 2: Money Flowing OUT of a Country (SELL/SHORT Signal)
+
+When capital is leaving a country, you have two approaches:
+
+#### Conservative Approach (Recommended for Most Investors)
+
+**1. SELL if you currently own:**
+- Exit country ETF immediately
+- Sell individual stocks from that country
+- Close currency positions
+
+**2. AVOID new investments:**
+- Don't buy stocks from that country
+- Don't buy its currency
+- Stay away until capital flow reverses
+
+**Expected Result:** Avoid 20-40% losses over 12 months
+
+---
+
+#### Aggressive Approach (Advanced Traders Only)
+
+**1. SHORT the country's market:**
+
+**Method A - Put Options:**
+```
+Example: Japan outflow (EWJ)
+Buy EWJ put options:
+- Strike: Current price - 10%
+- Expiration: 6-12 months
+- Cost: 3-5% of notional
+
+Profit if EWJ falls 15%+: 100-300% return on option premium
+Risk: Lose 100% of premium if EWJ rises
+```
+
+**Method B - Inverse ETFs:**
+```
+Examples:
+EWV = -1x Japan (falls when Japan falls)
+EEV = -1x Emerging Markets
+EFZ = -1x MSCI EAFE
+
+Buy inverse ETF, profit as country market declines
+```
+
+**Expected Return:** 50-100%+ if market falls 20-30%
+
+**Risk:** VERY HIGH - can lose 50-100% of investment if wrong
+
+**Allocation:** No more than 5% of portfolio in shorts/inverse
+
+---
+
+### Capital Flow Trading Rules
+
+**Entry Rules:**
+1. ✅ Wait for capital flow score >70/100 before buying
+2. ✅ Confirm with multiple indicators (ETF flows, currency, sentiment)
+3. ✅ Start with small position (2-3%), scale in if thesis confirmed
+
+**Exit Rules:**
+1. ❌ Exit when capital flow score drops below 50
+2. ❌ Exit if score hasn't improved after 3 months
+3. ❌ Exit immediately if regime changes (e.g., recession)
+
+**Position Sizing:**
+- Total international exposure: 20-30% of portfolio
+- Per country: 3-7% max
+- Per individual stock: 1-2% max
+
+---
+
+## Score Interpretation Guide
+
+### For Beginners: The Weather Forecast Analogy
+
+**90-100 (Perfect - Sunny Day):**
+- **What it means**: Everything is great. Economy booming, prices stable.
+- **What to do**: Buy as many stocks as you can afford. This is rare - take advantage!
+- **How long**: Until score drops below 85.
+
+**80-90 (Very Good - Warm but Humid):**
+- **What it means**: Still great but prices rising fast. Party's not over but it's close to midnight.
+- **What to do**: Stay invested but shift from tech to oil, gold, commodities.
+- **How long**: 6-18 months typically.
+
+**60-80 (Mixed - Partly Cloudy):**
+- **What it means**: Some good, some bad. Could go either way.
+- **What to do**: Half stocks, half bonds/cash. Don't make big bets.
+- **How long**: Review weekly.
+
+**50-60 (Warning - Storm Clouds Gathering):**
+- **What it means**: Things getting shaky. Trouble likely ahead.
+- **What to do**: Sell most stocks. Keep only safe ones (utilities). Build cash.
+- **How long**: Until score rises above 65 or drops below 50.
+
+**25-50 (Danger - Thunderstorm):**
+- **What it means**: Full crisis mode. Recession. Market falling.
+- **What to do**: GET OUT of stocks! Move to cash and government bonds.
+- **How long**: Until score rises above 60 (recovery starting).
+
+**0-25 (Crisis - Hurricane):**
+- **What it means**: Catastrophic conditions. Financial crisis. Panic.
+- **What to do**: 70% government bonds, 20% gold, 10% cash. Hunker down.
+- **How long**: Typically 6-18 months (2008 crisis lasted 18 months).
+
+---
+
+### Advanced: Regime Transitions
+
+The most profitable (and risky) times are during regime transitions.
+
+#### Key Transitions to Watch:
+
+**1. Crisis → Recovery (Score: 30 → 50 → 70)**
+- **Best Opportunity**: Early recovery
+- **What to buy**: Beaten-down cyclicals, high-yield bonds, small-caps
+- **Expected return**: 50-100%+ over 12-18 months
+- **Risk**: Very high (could be false recovery)
+- **Examples**: March 2009, April 2020
+
+**2. Expansion → Late Cycle (Score: 95 → 85 → 75)**
+- **Action**: Rotate from growth to value, tech to commodities
+- **What to buy**: Energy, materials, gold
+- **What to sell**: High-multiple tech, speculative growth
+- **Expected return**: 20-40% from rotation
+- **Risk**: Moderate (timing is hard)
+- **Examples**: 2017-2018, 2021-2022
+
+**3. Late Cycle → Recession (Score: 70 → 50 → 30)**
+- **Action**: GO DEFENSIVE immediately
+- **What to sell**: ALL cyclicals, growth stocks
+- **What to buy**: Treasuries, gold, cash
+- **Expected savings**: Avoid 30-50% losses
+- **Risk**: Low (better safe than sorry)
+- **Examples**: 2007-2008, 2022 (avoided)
+
+---
+
+## Advanced Concepts
+
+### Intermarket Analysis
+
+Understanding how different markets interact:
+
+#### Copper/Gold Ratio
+- **Rising**: Growth accelerating (bullish for stocks)
+- **Falling**: Growth slowing (bearish for stocks)
+- **Lead time**: 3-6 months
+
+#### AUD/JPY (Ultimate Risk Indicator)
+- **AUD strengthening**: Risk-on, growth improving
+- **JPY strengthening**: Risk-off, flight to safety
+- **Lead time**: 1-3 months
+
+#### Credit Spreads (HY-IG)
+- **Tightening**: Credit healthy, stocks bullish
+- **Widening**: Credit stress, stocks at risk
+- **Lead time**: 6-12 months (early warning)
+
+#### Yield Curve (10Y-2Y)
+- **Steepening**: Expansion ahead
+- **Flattening**: Late cycle
+- **Inverted**: Recession in 12-18 months
+- **Lead time**: 12-18 months (most reliable)
+
+### Central Bank Policy Framework
+
+#### The Fed Put
+Central banks intervene when markets fall >20%, creating a floor
+
+**Implications:**
+- Downside limited (Fed will ease)
+- Upside unlimited (growth can accelerate)
+- **Asymmetric returns** favor long-term stock ownership
+
+#### Policy Lag Effect
+Monetary policy takes 12-18 months to impact the economy
+
+**Example:**
+```
+Fed hikes in 2022 → Recession risk peaks in 2023-2024
+Fed cuts in 2024 → Recovery begins in 2025-2026
+```
+
+**Trading Strategy:**
+- Position for future, not present
+- When Fed starts hiking, start reducing risk (even if stocks still rising)
+- When Fed starts cutting, start buying (even if recession not over)
+
+### Sentiment Indicators
+
+#### VIX (Fear Gauge)
+- **<12**: Extreme complacency (contrarian bearish)
+- **12-20**: Normal range
+- **20-30**: Elevated fear (caution)
+- **>30**: Panic (contrarian bullish - buy signal)
+
+#### Put/Call Ratio
+- **<0.7**: Extreme bullishness (contrarian sell signal)
+- **0.7-1.0**: Normal
+- **>1.0**: Fear (contrarian buy signal)
+
+---
+
+## Risk Management
+
+### Position Sizing Framework
+
+**Conservative Portfolio (Retirees, Low Risk Tolerance):**
+```
+Score 90-100:  60% stocks, 30% bonds, 10% cash
+Score 60-80:   40% stocks, 40% bonds, 20% cash
+Score 30-50:   10% stocks, 60% bonds, 30% cash
+```
+
+**Moderate Portfolio (Working Adults, Balanced):**
+```
+Score 90-100:  80% stocks, 15% bonds, 5% cash
+Score 60-80:   50% stocks, 30% bonds, 20% cash
+Score 30-50:   20% stocks, 50% bonds, 30% cash
+```
+
+**Aggressive Portfolio (Young Investors, High Risk Tolerance):**
+```
+Score 90-100:  95% stocks, 0% bonds, 5% cash
+Score 60-80:   70% stocks, 20% bonds, 10% cash
+Score 30-50:   30% stocks, 40% bonds, 30% cash
+```
+
+### Stop-Loss Rules
+
+**Individual Stocks:**
+- Initial stop: 15-20% below entry
+- Trailing stop: Raise to 10% below peak as stock rises
+- NEVER widen stops (only tighten or exit)
+
+**Country ETFs:**
+- Initial stop: 12-15% below entry
+- Exit if capital flow score drops below 50
+
+**Commodities:**
+- Initial stop: 20-25% (more volatile)
+- Exit if inflation regime changes
+
+### Diversification Guidelines
+
+**By Geography:**
+- US: 40-60%
+- International Developed: 20-30%
+- Emerging Markets: 10-20%
+- Frontier Markets: 0-5%
+
+**By Asset Class:**
+- Stocks: 30-90% (based on score)
+- Bonds: 10-50%
+- Commodities: 0-20%
+- Cash: 5-30%
+- Alternatives (REITs, crypto): 0-10%
+
+**By Sector (during expansion):**
+- No single sector >25%
+- No sector <5% (unless zero-weight decision)
+- Rotate based on regime (growth vs. value, cyclical vs. defensive)
+
+### Maximum Drawdown Limits
+
+**Set portfolio-level drawdown limits:**
+- Conservative: 10% max drawdown → Exit all risk assets
+- Moderate: 20% max drawdown → Cut stocks by 50%
+- Aggressive: 30% max drawdown → Cut stocks by 30%
+
+**When to override:** Only if score is improving and you have high conviction
+
+---
+
+## Key Takeaways
+
+### The 10 Commandments of Capital Markets
+
+1. **Follow the smart money**: Capital flows predict markets 6-18 months ahead
+2. **Know your regime**: Different environments require different strategies
+3. **Think globally**: Opportunities exist worldwide, not just US markets
+4. **Respect the score**: Don't fight the composite indicators
+5. **Position size matters**: Even great ideas fail with improper sizing
+6. **Cut losers quickly**: 15-20% stop-loss, no exceptions
+7. **Let winners run**: Trail your stops, don't take profits too early
+8. **Diversify across regimes**: Don't bet everything on one outcome
+9. **Respect central banks**: Fed policy determines 70% of returns
+10. **Be contrarian at extremes**: Buy panic (score <30), sell euphoria (score >95)
+
+### Common Mistakes to Avoid
+
+**❌ Mistake #1**: Staying fully invested during low scores (50-60)
+- **Fix**: Reduce risk as score declines
+
+**❌ Mistake #2**: Buying countries with capital outflows
+- **Fix**: Only buy inflow countries (score >70)
+
+**❌ Mistake #3**: Fighting the regime (buying tech during reflation)
+- **Fix**: Align with regime (commodities in reflation, tech in expansion)
+
+**❌ Mistake #4**: No stop-losses
+- **Fix**: Always use 15-20% stops on individual positions
+
+**❌ Mistake #5**: Over-diversification (100+ positions)
+- **Fix**: Focus on 15-25 best ideas
+
+**❌ Mistake #6**: Under-diversification (1-5 positions)
+- **Fix**: Minimum 15 positions across countries/sectors
+
+**❌ Mistake #7**: Ignoring valuations
+- **Fix**: Don't chase expensive markets (P/E >25) even with good flows
+
+**❌ Mistake #8**: Panic selling at the bottom
+- **Fix**: Trust the score - buy when score <30 (crisis = opportunity)
+
+**❌ Mistake #9**: FOMO buying at the top
+- **Fix**: Don't chase when score >95 (sell into strength)
+
+**❌ Mistake #10**: Not rebalancing
+- **Fix**: Rebalance quarterly or when regime changes
+
+---
+
+## Data Sources & Verification
+
+All data in the Global Capital Markets Intelligence system comes from verified, official sources. **ZERO fake data policy enforced.**
+
+### Official Data Sources
+
+**Economic Data:**
+- FRED (Federal Reserve Economic Data) - GDP, CPI, unemployment, yields
+- BLS (Bureau of Labor Statistics) - Employment, inflation
+- Census Bureau - Retail sales, trade data
+
+**Market Data:**
+- Yahoo Finance (via yfinance) - Stock prices, forex, commodities
+- Polygon.io - Real-time stock data
+- CoinGecko - Cryptocurrency market data
+
+**Institutional Data:**
+- CFTC - Commitment of Traders (futures positioning)
+- IMF - International capital flows
+- BIS (Bank for International Settlements) - Cross-border flows
+
+### Update Frequency
+
+- **Real-time**: Stock prices, forex, commodities (15-min delay free data)
+- **Daily**: Market sentiment, flows, positioning
+- **Weekly**: CFTC data, breadth indicators
+- **Monthly**: Economic data (CPI, employment, GDP)
+- **Quarterly**: Corporate earnings, GDP revisions
+
+---
+
+## Glossary
+
+**AUD/JPY**: Australian Dollar vs. Japanese Yen - ultimate risk-on/risk-off indicator
+
+**Baltic Dry Index**: Shipping cost index, leading indicator of global trade
+
+**Capital Flows**: Movement of money between countries, asset classes, sectors
+
+**COT**: Commitment of Traders - CFTC report showing futures positioning
+
+**Credit Spreads**: Yield difference between corporate bonds and Treasuries
+
+**Composite Score**: 0-100 rating of market health (growth, inflation, liquidity, sentiment)
+
+**Copper/Gold Ratio**: Leading indicator of economic growth
+
+**EAFE**: Europe, Australasia, Far East (developed international markets)
+
+**EM**: Emerging Markets (developing countries)
+
+**ETF**: Exchange-Traded Fund (basket of stocks/bonds traded like a stock)
+
+**HY**: High Yield (junk bonds, <BBB rating)
+
+**IG**: Investment Grade (safe bonds, BBB+ or higher)
+
+**PMI**: Purchasing Managers' Index (survey of business activity)
+
+**Put/Call Ratio**: Options sentiment indicator (fear vs. greed)
+
+**QE**: Quantitative Easing (central bank buying bonds, printing money)
+
+**QT**: Quantitative Tightening (central bank selling bonds, reducing money supply)
+
+**TIPS**: Treasury Inflation-Protected Securities
+
+**VIX**: Volatility Index (fear gauge, S&P 500 implied volatility)
+
+**Yield Curve**: Difference between long-term and short-term interest rates (10Y-2Y)
+
+---
+
+## Additional Resources
+
+**Further Reading:**
+- "The New Macro Trading" by Max Dama
+- "Intermarket Analysis" by John Murphy
+- "Macro Trading and Investment Strategies" by Gabriel Burstein
+- "Central Banking 101" by Joseph Wang
+
+**Data & Tools:**
+- Spartan Research Station (this platform)
+- FRED Economic Data (fred.stlouisfed.org)
+- TradingView (charting & analysis)
+- Finviz (stock screener)
+
+**Market Commentary:**
+- Federal Reserve speeches & minutes
+- IMF World Economic Outlook
+- BIS Quarterly Review
+- Credit Suisse Global Investment Returns Yearbook
+
+---
+
+**Document Version**: 3.0
+**Last Updated**: November 16, 2025
+**Maintained by**: Spartan Research Station
+**Contact**: naga.kvv@gmail.com
+
+---
+
+## Legal Disclaimer
+
+This document is for educational and informational purposes only. It does not constitute investment advice, financial advice, trading advice, or any other type of advice. You should not treat any of the document's content as such.
+
+The author and Spartan Research Station do not recommend that any cryptocurrency, stock, bond, commodity, or other asset should be bought, sold, or held by you. Conduct your own due diligence and consult your financial advisor before making any investment decisions.
+
+Past performance is not indicative of future results. All investments carry risk of loss. The composite score, capital flow analysis, and regime frameworks are tools for analysis, not guarantees of future performance.
+
+**Trade at your own risk.**

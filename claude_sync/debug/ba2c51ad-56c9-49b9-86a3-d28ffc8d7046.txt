@@ -181,3 +181,76 @@
 2025-11-16T01:10:05.747Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
 2025-11-16T01:10:05.747Z [DEBUG] Found 0 hook matchers in settings
 2025-11-16T01:10:05.747Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-16T01:35:51.246Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-16T01:35:51.247Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-16T01:35:51.249Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-16T01:35:51.249Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-16T01:35:51.250Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-16T01:35:51.250Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-16T01:35:51.263Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-16T01:35:51.263Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:35:51.263Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-16T01:35:51.265Z [DEBUG] FileHistory: Making snapshot for message 8d997cb8-b758-4d46-b494-91054bf15e93
+2025-11-16T01:35:51.266Z [DEBUG] FileHistory: Added snapshot for 8d997cb8-b758-4d46-b494-91054bf15e93, tracking 0 files
+2025-11-16T01:35:51.282Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-16T01:35:51.282Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-16T01:35:52.320Z [DEBUG] Stream started - received first chunk
+2025-11-16T01:35:54.359Z [DEBUG] Stream started - received first chunk
+2025-11-16T01:36:03.146Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-16T01:36:03.148Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-16T01:36:03.150Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-16T01:36:03.152Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-16T01:36:03.154Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-16T01:36:03.156Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-16T01:36:03.157Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-16T01:36:03.157Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:36:03.157Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-16T01:36:03.157Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-16T01:36:03.157Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:36:03.158Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-16T01:36:03.158Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-16T01:36:03.158Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:36:03.158Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-16T01:36:03.158Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-16T01:36:03.158Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:36:03.158Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-16T01:36:03.158Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-16T01:36:03.158Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:36:03.158Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-16T01:36:03.158Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-16T01:36:03.158Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:36:03.158Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-16T01:36:03.204Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-16T01:36:03.204Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:36:03.204Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-16T01:36:03.204Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-16T01:36:03.204Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:36:03.204Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-16T01:36:03.204Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-16T01:36:03.204Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:36:03.204Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-16T01:36:03.204Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-16T01:36:03.204Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:36:03.204Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-16T01:36:03.599Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-16T01:36:03.599Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:36:03.599Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-16T01:36:03.626Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-16T01:36:03.626Z [DEBUG] Found 0 hook matchers in settings
+2025-11-16T01:36:03.626Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-16T01:36:03.639Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-16T01:36:03.639Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-16T01:36:03.640Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-16T01:36:03.640Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-16T01:36:03.640Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-16T01:36:03.640Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-16T01:36:03.650Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-16T01:36:03.650Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-16T01:36:07.181Z [DEBUG] Stream started - received first chunk
+2025-11-16T01:38:43.690Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-16T01:38:50.696Z [ERROR] Error: Error: Lock file is already being held
+    at <anonymous> (/$bunfs/root/claude:87:11857)
+    at X (/$bunfs/root/claude:86:5167)
+    at <anonymous> (node:fs:243:13)
+    at processTicksAndRejections (native:7:39)
+2025-11-16T01:42:47.260Z [ERROR] Error streaming, falling back to non-streaming mode: The operation timed out.
