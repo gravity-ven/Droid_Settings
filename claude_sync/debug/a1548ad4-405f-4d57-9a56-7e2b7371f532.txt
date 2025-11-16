@@ -1164,3 +1164,9 @@ rg: Resource temporarily unavailable (os error 35)
     at X (/$bunfs/root/claude:86:5167)
     at <anonymous> (node:fs:243:13)
     at processTicksAndRejections (native:7:39)
+2025-11-16T03:09:57.325Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-16T03:10:04.342Z [ERROR] Error: Error: Lock file is already being held
+    at <anonymous> (/$bunfs/root/claude:87:11857)
+    at X (/$bunfs/root/claude:86:5167)
+    at <anonymous> (node:fs:243:13)
+    at processTicksAndRejections (native:7:39)

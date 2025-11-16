@@ -316,3 +316,9 @@
     at X (/$bunfs/root/claude:86:5167)
     at <anonymous> (node:fs:243:13)
     at processTicksAndRejections (native:7:39)
+2025-11-16T03:09:58.826Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-16T03:10:05.841Z [ERROR] Error: Error: Lock file is already being held
+    at <anonymous> (/$bunfs/root/claude:87:11857)
+    at X (/$bunfs/root/claude:86:5167)
+    at <anonymous> (node:fs:243:13)
+    at processTicksAndRejections (native:7:39)
