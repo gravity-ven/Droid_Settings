@@ -817,3 +817,30 @@ rg: /Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitt
 2025-11-17T12:52:31.521Z [DEBUG] Checking for native installer update to version 2.0.42
 2025-11-17T12:52:31.525Z [DEBUG] Version 2.0.42 already installed, updating symlink
 2025-11-17T12:52:31.525Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-17T13:31:39.935Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T13:31:39.938Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T13:31:39.939Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-17T14:24:47.318Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T14:24:47.320Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T14:24:47.321Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-17T14:58:39.159Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T14:58:39.160Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T14:58:39.161Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-17T15:30:31.592Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T15:30:31.593Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T15:30:31.593Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-17T16:04:35.638Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T16:04:35.641Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T16:04:35.642Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-17T16:57:28.194Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T16:57:28.197Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T16:57:28.198Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-17T17:31:18.221Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T17:31:18.222Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T17:31:18.224Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-17T18:04:51.437Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T18:04:51.438Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T18:04:51.439Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-17T18:38:52.677Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T18:38:52.678Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T18:38:52.679Z [DEBUG] Successfully updated to version 2.0.42
