@@ -1,0 +1,224 @@
+# `/innovate` Slash Command - Quick Start
+
+## What You Now Have
+
+✅ A working `/innovate` slash command
+✅ Activates all 8 innovation frameworks instantly
+✅ Works in any Claude Code session
+
+## Immediate Usage (Right Now)
+
+Since you're already in Claude Code, the `/innovate` command is available in this workspace:
+
+```
+/innovate
+```
+
+**Then ask your question**. I'll apply all frameworks automatically.
+
+## Test It Right Now
+
+Try this:
+
+```
+/innovate
+
+I want to build a trading system using machine learning to predict price movements.
+```
+
+I'll respond with:
+- Socratic challenges to your assumptions
+- 5 different expert perspectives
+- Failure modes to avoid
+- Cross-domain insights
+- Deep analysis
+- Novel approaches
+
+---
+
+## Setup for Your Projects
+
+### Option 1: Add to Specific Project (30 seconds)
+
+```bash
+# Navigate to your project
+cd ~/your-trading-project
+
+# Create commands directory
+mkdir -p .claude/commands
+
+# Copy the command
+cp /tmp/innovation-workspace/.claude/commands/innovate.md .claude/commands/
+
+# Done! Now /innovate works in that project
+```
+
+### Option 2: Add to All Future Projects (2 minutes)
+
+```bash
+cd /tmp/innovation-workspace
+./install-innovate-globally.sh
+```
+
+This adds `/innovate` to your git template, so every new repository gets it automatically.
+
+### Option 3: Add to All Existing Projects (One-liner)
+
+Run this from any project root:
+
+```bash
+mkdir -p .claude/commands && cp /tmp/innovation-workspace/.claude/commands/innovate.md .claude/commands/
+```
+
+---
+
+## How It Works
+
+When you type `/innovate`, the content of `.claude/commands/innovate.md` is inserted into the conversation as a system prompt.
+
+This tells me to:
+1. Challenge all assumptions (Socratic Method)
+2. Show multiple perspectives
+3. Identify failure modes (Inversion)
+4. Import ideas from other fields
+5. Dig deeper than surface level
+6. Apply constraints for creativity
+7. Ask "stupid questions"
+8. Work backward from goals
+
+---
+
+## Usage Patterns
+
+### Pattern 1: Strategy Analysis
+
+```
+/innovate
+
+Analyze this trading strategy: [your strategy]
+```
+
+### Pattern 2: Research Direction
+
+```
+/innovate
+
+I want to research [topic]. What should I explore?
+```
+
+### Pattern 3: Problem Solving
+
+```
+/innovate
+
+I'm stuck on [problem]. Help me think through it.
+```
+
+### Pattern 4: Code Review
+
+```
+/innovate
+
+Review this code: [paste code]
+Look for assumptions, failure modes, and novel improvements.
+```
+
+---
+
+## Pro Tips
+
+1. **Use Early**: Type `/innovate` at the start of complex questions
+2. **Combine**: Use with other commands like `/innovate` then describe your coding task
+3. **Iterate**: After my response, ask "dig deeper" to apply frameworks recursively
+4. **Customize**: Edit `.claude/commands/innovate.md` to add your own frameworks
+
+---
+
+## Comparison: Before vs After
+
+### Without `/innovate`:
+```
+User: Should I use RSI for trading signals?
+Claude: Yes, RSI is a popular indicator that measures overbought/oversold conditions...
+```
+
+### With `/innovate`:
+```
+User: /innovate
+
+Should I use RSI for trading signals?
+
+Claude: Let me challenge this from multiple angles:
+
+SOCRATIC CHALLENGE:
+- What assumption makes you think RSI would work?
+- What if RSI is popular precisely because it doesn't work (survivorship bias)?
+- Have you actually tested it, or is this based on what you've read?
+
+PERSPECTIVE MULTIPLICATION:
+- Skeptical Quant: "Show me the p-value. Every backtest I've seen shows RSI fails out-of-sample"
+- Experienced Trader: "RSI works, but only when combined with price action and volume"
+- Psychologist: "Are you looking for RSI to give you permission to trade?"
+- Risk Manager: "RSI will fail catastrophically during regime changes"
+- Novice: "If RSI worked, why isn't everyone rich?"
+
+INVERSION (Failure Modes):
+1. RSI divergences that never resolve
+2. Overbought markets that stay overbought for months
+3. Whipsaws in ranging markets
+4. Parameter sensitivity (why 14 periods?)
+
+CROSS-DOMAIN:
+- Physics: Oscillators have natural frequency and damping - markets don't
+- Biology: Homeostasis ≠ mean reversion in prices
+- Information Theory: RSI compresses price data, losing information
+
+[... continues with 4 more frameworks ...]
+
+SYNTHESIS:
+Instead of asking "should I use RSI?", ask:
+- What specific market condition am I trying to detect?
+- What would be a direct measure of that condition?
+- How can I test if RSI actually detects it?
+
+Novel approach: Test RSI inverted - sell oversold, buy overbought (trend-following)
+```
+
+---
+
+## The Difference
+
+**Without frameworks**: Surface-level, conventional thinking
+**With frameworks**: Deep, novel, multi-perspective insights
+
+---
+
+## Next Steps
+
+1. **Test it now** in this workspace
+2. **Install globally** using the script
+3. **Use daily** for all complex decisions
+4. **Customize** by editing the command file
+5. **Internalize** - after a month, you'll think this way naturally
+
+---
+
+## File Locations
+
+- **This workspace**: `/tmp/innovation-workspace/`
+- **Command file**: `.claude/commands/innovate.md`
+- **Install script**: `./install-innovate-globally.sh`
+
+---
+
+## Ready to Test?
+
+Try it right now. Type:
+
+```
+/innovate
+
+[Your question or problem]
+```
+
+And watch the innovation frameworks come alive.

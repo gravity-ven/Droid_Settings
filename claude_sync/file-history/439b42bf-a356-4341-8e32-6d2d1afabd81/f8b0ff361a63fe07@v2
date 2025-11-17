@@ -1,0 +1,152 @@
+# 🧪 Test `/innovate` Right Now
+
+## The Command Is Live
+
+You can test it **immediately** in this Claude Code session.
+
+---
+
+## Simple Test (30 seconds)
+
+**Step 1**: Type exactly this:
+
+```
+/innovate
+```
+
+**Step 2**: Then type a question, for example:
+
+```
+I want to build a trading bot that uses sentiment analysis from social media.
+```
+
+**Step 3**: Watch me apply all 8 frameworks:
+- Challenge your assumptions
+- Show 5 expert perspectives
+- Identify failure modes
+- Import ideas from other fields
+- Dig deeper
+- Apply constraints
+- Ask "stupid" questions
+- Work backward from success
+
+---
+
+## More Test Questions
+
+### Trading Strategy
+
+```
+/innovate
+
+Is it worth using order flow data for swing trading?
+```
+
+### Research Direction
+
+```
+/innovate
+
+I have COT data, price history, and sentiment scores.
+What research should I prioritize?
+```
+
+### System Design
+
+```
+/innovate
+
+Should I build my backtesting system from scratch or use an existing framework?
+```
+
+### Risk Management
+
+```
+/innovate
+
+How should I size positions for a portfolio of 5 uncorrelated strategies?
+```
+
+---
+
+## What You'll See
+
+When you type `/innovate`, you'll see a message like:
+
+```
+<command-message>/innovate is running…</command-message>
+```
+
+This means the innovation frameworks are loading.
+
+Then I'll respond with:
+- Multi-perspective analysis
+- Deep questioning
+- Novel approaches
+- Actionable insights
+
+All automatically applied to your question.
+
+---
+
+## Compare Side-by-Side
+
+### Without `/innovate`:
+
+```
+User: Should I use neural networks for trading?
+
+Claude: Neural networks can be useful for trading...
+[standard response]
+```
+
+### With `/innovate`:
+
+```
+User: /innovate
+
+Should I use neural networks for trading?
+
+Claude:
+🔍 SOCRATIC CHALLENGE:
+[Challenges assumptions]
+
+👥 PERSPECTIVES:
+[5 expert views]
+
+🔄 INVERSION:
+[Failure modes]
+
+🌐 CROSS-DOMAIN:
+[Ideas from other fields]
+
+[... and 4 more frameworks]
+
+💡 SYNTHESIS:
+[Novel insights and alternatives]
+```
+
+---
+
+## Try It Now
+
+**This is the moment.**
+
+Type `/innovate` below, then ask your most challenging trading question.
+
+See the frameworks come alive.
+
+---
+
+## After Testing
+
+Once you've seen it work:
+
+1. **Install globally**: Run `./install-innovate-globally.sh`
+2. **Add to your projects**: See `QUICK-START.md`
+3. **Use daily**: Make it your default mode
+4. **Customize**: Edit `.claude/commands/innovate.md` to add your frameworks
+
+---
+
+Ready? Type `/innovate` now. 🚀

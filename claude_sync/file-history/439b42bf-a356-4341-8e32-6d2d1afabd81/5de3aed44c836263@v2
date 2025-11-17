@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# Install /innovate command globally for all projects
+# This script adds the innovate command to git template so all new repos get it
+
+echo "🧬 Installing /innovate command globally..."
+
+# Create git template directory if it doesn't exist
+mkdir -p ~/.git-templates/.claude/commands
+
+# Copy the innovate command
+cp .claude/commands/innovate.md ~/.git-templates/.claude/commands/
+
+# Configure git to use the template
+git config --global init.templatedir '~/.git-templates'
+
+echo "✅ /innovate command installed!"
+echo ""
+echo "Now every new git repository will have /innovate available."
+echo ""
+echo "To add to existing projects:"
+echo "  cd your-project"
+echo "  mkdir -p .claude/commands"
+echo "  cp ~/.git-templates/.claude/commands/innovate.md .claude/commands/"
+echo ""
+echo "Or run this one-liner in any project:"
+echo "  mkdir -p .claude/commands && cp ~/.git-templates/.claude/commands/innovate.md .claude/commands/"

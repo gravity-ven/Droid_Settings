@@ -1,0 +1,48 @@
+# Innovation Workspace
+
+This workspace has the `/innovate` slash command activated.
+
+## Usage
+
+### In Claude Code:
+
+```
+/innovate
+```
+
+This will activate all 8 innovation frameworks:
+1. Socratic Challenge
+2. Perspective Multiplication
+3. Inversion Principle
+4. Cross-Domain Pollination
+5. Iterative Deepening
+6. Constraint-Based Innovation
+7. Stupid Questions Protocol
+8. Future Backward Thinking
+
+## Setup for Any Project
+
+To add `/innovate` to any of your projects:
+
+```bash
+# In your project directory
+mkdir -p .claude/commands
+cp /tmp/innovation-workspace/.claude/commands/innovate.md .claude/commands/
+```
+
+## Quick Test
+
+Try it now:
+1. Ask me any question
+2. Type `/innovate` first
+3. I'll apply all frameworks to your question
+
+## Examples
+
+```
+/innovate
+
+I believe momentum trading works well in crypto markets.
+```
+
+I'll then challenge assumptions, show multiple perspectives, identify failure modes, and dig deeper.

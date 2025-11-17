@@ -599,3 +599,215 @@ rg: Resource temporarily unavailable (os error 35)
 2025-11-17T11:50:30.161Z [DEBUG] Getting matching hook commands for Stop with query: undefined
 2025-11-17T11:50:30.162Z [DEBUG] Found 0 hook matchers in settings
 2025-11-17T11:50:30.162Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:50:48.404Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:50:48.404Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:50:48.410Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:50:48.410Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:50:48.410Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:50:48.410Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:50:48.434Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-17T11:50:48.434Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:50:48.434Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:50:48.435Z [DEBUG] FileHistory: Making snapshot for message d1b414bc-1d09-49d8-b974-2e0b47a25023
+2025-11-17T11:50:48.435Z [DEBUG] FileHistory: Added snapshot for d1b414bc-1d09-49d8-b974-2e0b47a25023, tracking 0 files
+2025-11-17T11:50:48.450Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:50:48.450Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:50:49.774Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:50:51.070Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:51:02.896Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-17T11:51:02.896Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:51:02.896Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:51:52.088Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:51:52.088Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:51:52.153Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:51:52.153Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:51:52.153Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:51:52.153Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:51:52.475Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-17T11:51:52.475Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:51:52.476Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:51:52.478Z [DEBUG] FileHistory: Making snapshot for message 44db779d-8f46-46fc-966e-c92eecbde5c3
+2025-11-17T11:51:52.478Z [DEBUG] FileHistory: Added snapshot for 44db779d-8f46-46fc-966e-c92eecbde5c3, tracking 0 files
+2025-11-17T11:51:52.560Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:51:52.561Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:51:53.443Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:51:54.554Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:01.398Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-17T11:52:01.401Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-17T11:52:01.401Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:01.401Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:01.413Z [DEBUG] No hook environment files found
+2025-11-17T11:52:01.462Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-17T11:52:01.462Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:01.462Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:01.473Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:52:01.475Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:52:01.476Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:52:01.476Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:52:01.476Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:52:01.476Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:52:01.482Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:52:01.482Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:52:02.391Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:03.294Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:04.324Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-17T11:52:04.326Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-17T11:52:04.326Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:04.326Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:04.382Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:52:04.382Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:52:04.384Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:52:04.384Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:52:04.384Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:52:04.384Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:52:04.389Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:52:04.389Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:52:06.870Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:10.491Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-17T11:52:10.494Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-17T11:52:10.494Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:10.494Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:11.307Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:11.468Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-17T11:52:11.468Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:11.468Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:11.479Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:52:11.479Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:52:11.481Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:52:11.481Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:52:11.481Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:52:11.481Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:52:11.487Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:52:11.487Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:52:12.549Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:13.764Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:15.727Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-17T11:52:15.730Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-17T11:52:15.730Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:15.730Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:15.790Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-17T11:52:15.790Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:15.790Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:15.801Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:52:15.801Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:52:15.802Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:52:15.802Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:52:15.802Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:52:15.802Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:52:15.811Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:52:15.811Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:52:16.600Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:17.160Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:25.943Z [DEBUG] Streaming aborted by user: Request was aborted.
+2025-11-17T11:52:25.943Z [ERROR] Error in non-streaming fallback: Request was aborted.
+2025-11-17T11:52:25.943Z [ERROR] Error: Error: Request was aborted.
+    at _createMessage (/$bunfs/root/claude:393:4515)
+    at processTicksAndRejections (native:7:39)
+2025-11-17T11:52:30.836Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-11-17T11:52:31.250Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T11:52:31.252Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T11:52:31.252Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-17T11:53:06.991Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:53:06.991Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:53:07.054Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:53:07.054Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:53:07.054Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:53:07.054Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:53:07.384Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-17T11:53:07.384Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:53:07.384Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:53:07.387Z [DEBUG] FileHistory: Making snapshot for message 2fb60dea-64ef-4fb5-9b79-877197db1f7e
+2025-11-17T11:53:07.387Z [DEBUG] FileHistory: Added snapshot for 2fb60dea-64ef-4fb5-9b79-877197db1f7e, tracking 0 files
+2025-11-17T11:53:07.473Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:53:07.473Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:53:08.562Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:53:09.560Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:53:18.049Z [DEBUG] executePreToolHooks called for tool: Write
+2025-11-17T11:53:18.051Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-11-17T11:53:18.052Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:53:18.052Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-17T11:53:18.061Z [DEBUG] FileHistory: Tracked file modification for /Users/spartan/.claude/commands/innovate.md
+2025-11-17T11:53:19.063Z [DEBUG] rg error (signal=undefined, code=ABORT_ERR, stderr: rg: /dev/fd/3: Bad file descriptor (os error 9)
+rg: /dev/fd/7: Bad file descriptor (os error 9)
+rg: /dev/fd/13: Bad file descriptor (os error 9)
+rg: /dev/fd/11: Not a directory (os error 20)
+rg: /dev/fd/10: Bad file descriptor (os error 9)
+rg: /dev/fd/9: Not a directory (os error 20)
+rg: /dev/fd/6: Not a directory (os error 20)
+rg: /Library/Caches/com.apple.aned: Operation not permitted (os error 1)
+rg: /Library/Caches/com.apple.iconservices.store: Permission denied (os error 13)
+rg: /Library/Caches/ColorSync/com.apple.colorsync.devices: Permission denied (os error 13)
+rg: /Library/Caches/com.apple.aneuserd: Operation not permitted (os error 1)
+rg: /System/Library/Caches/com.apple.coresymbolicationd: Permission denied (os error 13)
+rg: /Library/Caches/com.apple.amsengagementd.classicdatavault: Operation not permitted (os error 1)
+rg: /Library/Preferences/OpenDirectory/opendirectoryd.plist: Permission denied (os error 13)
+rg: /Library/Preferences/OpenDirectory/Configurations/Contacts.plist: Permission denied (os error 13)
+rg: /Library/Preferences/OpenDirectory/Configurations/Search.plist: Permission denied (os error 13)
+rg: /Library/Preferences/com.apple.TimeMachine.plist: Operation not permitted (os error 1)
+rg: /Library/Trial: Operation not permitted (os error 1)
+rg: /Library/Keychains/system-keychain-2.db: Permission denied (os error 13)
+rg: /Library/Keychains/system-keychain-2.db-wal: Permission denied (os error 13)
+rg: /Library/Keychains/system-keychain-2.db-shm: Permission denied (os error 13)
+rg: /Library/Preferences/com.apple.wifi.known-networks.plist: Operation not permitted (os error 1)
+rg: /Library/Preferences/com.apple.apsd.plist: Permission denied (os error 13)
+rg: /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist: Operation not permitted (os error 1)
+rg: /Library/Preferences/SystemConfiguration/com.apple.airport.preferences.plist.backup: Operation not permitted (os error 1)
+rg: /Library/Bluetooth: Operation not permitted (os error 1)
+rg: /Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitted (os error 1)
+), 5992 results
+2025-11-17T11:53:19.063Z [ERROR] AbortError: AbortError: The operation was aborted.
+    at unknown
+    at abortChildProcess (node:child_process:935:42)
+    at onAbortListener2 (node:child_process:35:24)
+    at abort (unknown)
+    at <anonymous> (/$bunfs/root/claude:3872:2216)
+2025-11-17T11:53:19.064Z [DEBUG] Writing to temp file: /Users/spartan/.claude/commands/innovate.md.tmp.63343.1763380399064
+2025-11-17T11:53:19.064Z [DEBUG] Temp file written successfully, size: 1987 bytes
+2025-11-17T11:53:19.065Z [DEBUG] Renaming /Users/spartan/.claude/commands/innovate.md.tmp.63343.1763380399064 to /Users/spartan/.claude/commands/innovate.md
+2025-11-17T11:53:19.065Z [DEBUG] File /Users/spartan/.claude/commands/innovate.md written atomically
+2025-11-17T11:53:19.070Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-11-17T11:53:19.070Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:53:19.070Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-17T11:53:19.086Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:53:19.086Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:53:19.087Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:53:19.087Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:53:19.087Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:53:19.087Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:53:19.093Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:53:19.093Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:53:20.854Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:53:22.715Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-17T11:53:22.719Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-17T11:53:22.719Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:53:22.719Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:53:22.779Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-17T11:53:22.779Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:53:22.779Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:53:22.789Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:53:22.789Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:53:22.790Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:53:22.790Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:53:22.790Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:53:22.790Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:53:22.798Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:53:22.798Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:53:23.767Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:53:24.885Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:53:32.047Z [ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: 
+    at GX (/$bunfs/root/claude:1011:4471)
+    at <anonymous> (/$bunfs/root/claude:1011:4193)
+    at map (native:1:11)
+    at YI (/$bunfs/root/claude:1011:4185)
+    at ZqB (/$bunfs/root/claude:1629:3014)
+    at D7 (/$bunfs/root/claude:102:19663)
+    at I2 (/$bunfs/root/claude:104:42806)
+    at $w (/$bunfs/root/claude:104:38344)
+    at m1 (/$bunfs/root/claude:104:38272)
+    at UJ (/$bunfs/root/claude:104:38126)
+2025-11-17T11:53:32.069Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-17T11:53:32.069Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:53:32.069Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:54:32.086Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-17T11:54:32.086Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:54:32.086Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)

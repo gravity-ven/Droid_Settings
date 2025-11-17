@@ -1,124 +1,82 @@
-2025-11-17T11:45:27.310Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
-2025-11-17T11:45:27.311Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
-2025-11-17T11:45:27.311Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
-2025-11-17T11:45:27.311Z [DEBUG] [LSP SERVER MANAGER] initialize() called
-2025-11-17T11:45:27.311Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
-2025-11-17T11:45:27.320Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
-2025-11-17T11:45:27.322Z [DEBUG] Total LSP servers loaded: 0
-2025-11-17T11:45:27.323Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
-2025-11-17T11:45:27.323Z [DEBUG] LSP manager initialized with 0 servers
-2025-11-17T11:45:27.324Z [DEBUG] LSP server manager initialized successfully
-2025-11-17T11:45:27.324Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
-2025-11-17T11:45:27.328Z [DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/spartan/.claude/skills, project=/.claude/skills
-2025-11-17T11:45:27.328Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
-2025-11-17T11:45:27.331Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
-2025-11-17T11:45:27.331Z [DEBUG] Total plugin skills loaded: 0
-2025-11-17T11:45:27.331Z [DEBUG] Total plugin commands loaded: 0
-2025-11-17T11:45:27.332Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
-2025-11-17T11:45:27.332Z [DEBUG] getSkillsIfEnabled returning: 0 skill dir commands, 0 plugin skills
-2025-11-17T11:45:27.335Z [DEBUG] Acquired lock on running version: /Users/spartan/.local/share/claude/versions/2.0.42
-2025-11-17T11:45:27.425Z [DEBUG] Registered 0 hooks from 0 plugins
-2025-11-17T11:45:27.435Z [DEBUG] Creating shell snapshot for zsh (/bin/zsh)
-2025-11-17T11:45:27.435Z [DEBUG] Looking for shell config file: /Users/spartan/.zshrc
-2025-11-17T11:45:27.435Z [DEBUG] Snapshots directory: /Users/spartan/.claude/shell-snapshots
-2025-11-17T11:45:27.436Z [DEBUG] Creating snapshot at: /Users/spartan/.claude/shell-snapshots/snapshot-zsh-1763379927435-rxnh2c.sh
-2025-11-17T11:45:27.436Z [DEBUG] Shell binary exists: true
-2025-11-17T11:45:27.436Z [DEBUG] Execution timeout: 10000ms
-2025-11-17T11:45:27.436Z [DEBUG] Writing to temp file: /Users/spartan/.claude/todos/439b42bf-a356-4341-8e32-6d2d1afabd81-agent-439b42bf-a356-4341-8e32-6d2d1afabd81.json.tmp.62937.1763379927436
-2025-11-17T11:45:27.436Z [DEBUG] Temp file written successfully, size: 2 bytes
-2025-11-17T11:45:27.436Z [DEBUG] Renaming /Users/spartan/.claude/todos/439b42bf-a356-4341-8e32-6d2d1afabd81-agent-439b42bf-a356-4341-8e32-6d2d1afabd81.json.tmp.62937.1763379927436 to /Users/spartan/.claude/todos/439b42bf-a356-4341-8e32-6d2d1afabd81-agent-439b42bf-a356-4341-8e32-6d2d1afabd81.json
-2025-11-17T11:45:27.436Z [DEBUG] File /Users/spartan/.claude/todos/439b42bf-a356-4341-8e32-6d2d1afabd81-agent-439b42bf-a356-4341-8e32-6d2d1afabd81.json written atomically
-2025-11-17T11:45:27.439Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.62937.1763379927439
-2025-11-17T11:45:27.439Z [DEBUG] Preserving file permissions: 100600
-2025-11-17T11:45:27.439Z [DEBUG] Temp file written successfully, size: 41498 bytes
-2025-11-17T11:45:27.439Z [DEBUG] Applied original permissions to temp file
-2025-11-17T11:45:27.440Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.62937.1763379927439 to /Users/spartan/.claude.json
-2025-11-17T11:45:27.440Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-17T11:45:27.456Z [DEBUG] Total plugin agents loaded: 0
-2025-11-17T11:45:27.521Z [DEBUG] Shell snapshot created successfully (2709 bytes)
-2025-11-17T11:45:27.673Z [ERROR] AxiosError: Error
-    at bw (/$bunfs/root/claude:59:1142)
-    at <anonymous> (/$bunfs/root/claude:64:10074)
-    at emit (node:events:92:22)
-    at endReadableNT (internal:streams/readable:861:50)
-    at processTicksAndRejections (native:7:39)
-    at request (/$bunfs/root/claude:66:2146)
-    at processTicksAndRejections (native:7:39)
-2025-11-17T11:45:27.675Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.62937.1763379927675
-2025-11-17T11:45:27.675Z [DEBUG] Preserving file permissions: 100600
-2025-11-17T11:45:27.675Z [DEBUG] Temp file written successfully, size: 41498 bytes
-2025-11-17T11:45:27.675Z [DEBUG] Applied original permissions to temp file
-2025-11-17T11:45:27.675Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.62937.1763379927675 to /Users/spartan/.claude.json
-2025-11-17T11:45:27.675Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-17T11:45:27.676Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.62937.1763379927676
-2025-11-17T11:45:27.676Z [DEBUG] Preserving file permissions: 100600
-2025-11-17T11:45:27.676Z [DEBUG] Temp file written successfully, size: 41498 bytes
-2025-11-17T11:45:27.676Z [DEBUG] Applied original permissions to temp file
-2025-11-17T11:45:27.676Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.62937.1763379927676 to /Users/spartan/.claude.json
-2025-11-17T11:45:27.676Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-17T11:45:27.775Z [DEBUG] Failed to check metrics opt-out status: Request failed with status code 401
-2025-11-17T11:45:27.775Z [ERROR] AxiosError: Error
-    at bw (/$bunfs/root/claude:59:1142)
-    at <anonymous> (/$bunfs/root/claude:64:10074)
-    at emit (node:events:92:22)
-    at endReadableNT (internal:streams/readable:861:50)
-    at processTicksAndRejections (native:7:39)
-    at request (/$bunfs/root/claude:66:2146)
-    at processTicksAndRejections (native:7:39)
-2025-11-17T11:45:27.790Z [DEBUG] Failed to fetch Grove notice config: AxiosError: Request failed with status code 401
-2025-11-17T11:45:27.822Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.62937.1763379927822
-2025-11-17T11:45:27.823Z [DEBUG] Preserving file permissions: 100600
-2025-11-17T11:45:27.823Z [DEBUG] Temp file written successfully, size: 41498 bytes
-2025-11-17T11:45:27.823Z [DEBUG] Applied original permissions to temp file
-2025-11-17T11:45:27.823Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.62937.1763379927822 to /Users/spartan/.claude.json
-2025-11-17T11:45:27.823Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-17T11:45:27.825Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
-2025-11-17T11:45:27.825Z [DEBUG] Found 0 hook matchers in settings
-2025-11-17T11:45:27.825Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
-2025-11-17T11:45:27.835Z [DEBUG] Summarizing all 143 messages (~53717 tokens)
-2025-11-17T11:45:28.065Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.62937.1763379928065
-2025-11-17T11:45:28.065Z [DEBUG] Preserving file permissions: 100600
-2025-11-17T11:45:28.066Z [DEBUG] Temp file written successfully, size: 41603 bytes
-2025-11-17T11:45:28.066Z [DEBUG] Applied original permissions to temp file
-2025-11-17T11:45:28.066Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.62937.1763379928065 to /Users/spartan/.claude.json
-2025-11-17T11:45:28.066Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-17T11:45:28.087Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.62937.1763379928087
-2025-11-17T11:45:28.087Z [DEBUG] Preserving file permissions: 100600
-2025-11-17T11:45:28.087Z [DEBUG] Temp file written successfully, size: 41498 bytes
-2025-11-17T11:45:28.088Z [DEBUG] Applied original permissions to temp file
-2025-11-17T11:45:28.088Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.62937.1763379928087 to /Users/spartan/.claude.json
-2025-11-17T11:45:28.088Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-17T11:45:28.091Z [DEBUG] performStartupChecks called
-2025-11-17T11:45:28.091Z [DEBUG] Starting background plugin installations
-2025-11-17T11:45:28.091Z [DEBUG] performBackgroundPluginInstallations called
-2025-11-17T11:45:28.096Z [DEBUG] AutoUpdaterWrapper: Installation type: native
-2025-11-17T11:45:28.100Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
-2025-11-17T11:45:28.101Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
-2025-11-17T11:45:28.115Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.62937.1763379928115
-2025-11-17T11:45:28.115Z [DEBUG] Preserving file permissions: 100600
-2025-11-17T11:45:28.115Z [DEBUG] Temp file written successfully, size: 41498 bytes
-2025-11-17T11:45:28.115Z [DEBUG] Applied original permissions to temp file
-2025-11-17T11:45:28.115Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.62937.1763379928115 to /Users/spartan/.claude.json
-2025-11-17T11:45:28.116Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-17T11:45:28.201Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/spartan/.local/share/claude/versions/2.0.42)
-2025-11-17T11:45:28.895Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.62937.1763379928895
-2025-11-17T11:45:28.895Z [DEBUG] Preserving file permissions: 100600
-2025-11-17T11:45:28.895Z [DEBUG] Temp file written successfully, size: 41498 bytes
-2025-11-17T11:45:28.895Z [DEBUG] Applied original permissions to temp file
-2025-11-17T11:45:28.895Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.62937.1763379928895 to /Users/spartan/.claude.json
-2025-11-17T11:45:28.895Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-17T11:45:29.020Z [DEBUG] rg error (signal=undefined, code=ERR_CHILD_PROCESS_STDIO_MAXBUFFER, stderr: rg: /dev/fd/3: Bad file descriptor (os error 9)
+2025-11-17T11:49:59.967Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2025-11-17T11:49:59.968Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2025-11-17T11:49:59.968Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2025-11-17T11:49:59.968Z [DEBUG] [LSP SERVER MANAGER] initialize() called
+2025-11-17T11:49:59.968Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+2025-11-17T11:49:59.975Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2025-11-17T11:49:59.977Z [DEBUG] Total LSP servers loaded: 0
+2025-11-17T11:49:59.982Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2025-11-17T11:49:59.982Z [DEBUG] LSP manager initialized with 0 servers
+2025-11-17T11:49:59.982Z [DEBUG] LSP server manager initialized successfully
+2025-11-17T11:49:59.982Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2025-11-17T11:49:59.985Z [DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/spartan/.claude/skills, project=/.claude/skills
+2025-11-17T11:49:59.985Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
+2025-11-17T11:49:59.988Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2025-11-17T11:49:59.988Z [DEBUG] Total plugin skills loaded: 0
+2025-11-17T11:49:59.988Z [DEBUG] Total plugin commands loaded: 0
+2025-11-17T11:49:59.989Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+2025-11-17T11:49:59.989Z [DEBUG] getSkillsIfEnabled returning: 0 skill dir commands, 0 plugin skills
+2025-11-17T11:49:59.995Z [DEBUG] Could not acquire lock on current version: Error: Lock file is already being held
+2025-11-17T11:50:00.049Z [DEBUG] Registered 0 hooks from 0 plugins
+2025-11-17T11:50:00.058Z [DEBUG] Creating shell snapshot for zsh (/bin/zsh)
+2025-11-17T11:50:00.058Z [DEBUG] Looking for shell config file: /Users/spartan/.zshrc
+2025-11-17T11:50:00.058Z [DEBUG] Snapshots directory: /Users/spartan/.claude/shell-snapshots
+2025-11-17T11:50:00.058Z [DEBUG] Creating snapshot at: /Users/spartan/.claude/shell-snapshots/snapshot-zsh-1763380200058-1c72z1.sh
+2025-11-17T11:50:00.058Z [DEBUG] Shell binary exists: true
+2025-11-17T11:50:00.058Z [DEBUG] Execution timeout: 10000ms
+2025-11-17T11:50:00.058Z [DEBUG] Writing to temp file: /Users/spartan/.claude/todos/7caf8f93-cb90-49f5-bd1d-bbf738b660d8-agent-7caf8f93-cb90-49f5-bd1d-bbf738b660d8.json.tmp.63343.1763380200058
+2025-11-17T11:50:00.059Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-17T11:50:00.059Z [DEBUG] Renaming /Users/spartan/.claude/todos/7caf8f93-cb90-49f5-bd1d-bbf738b660d8-agent-7caf8f93-cb90-49f5-bd1d-bbf738b660d8.json.tmp.63343.1763380200058 to /Users/spartan/.claude/todos/7caf8f93-cb90-49f5-bd1d-bbf738b660d8-agent-7caf8f93-cb90-49f5-bd1d-bbf738b660d8.json
+2025-11-17T11:50:00.059Z [DEBUG] File /Users/spartan/.claude/todos/7caf8f93-cb90-49f5-bd1d-bbf738b660d8-agent-7caf8f93-cb90-49f5-bd1d-bbf738b660d8.json written atomically
+2025-11-17T11:50:00.061Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.63343.1763380200061
+2025-11-17T11:50:00.061Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T11:50:00.062Z [DEBUG] Temp file written successfully, size: 41926 bytes
+2025-11-17T11:50:00.062Z [DEBUG] Applied original permissions to temp file
+2025-11-17T11:50:00.062Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.63343.1763380200061 to /Users/spartan/.claude.json
+2025-11-17T11:50:00.062Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-17T11:50:00.079Z [DEBUG] Total plugin agents loaded: 0
+2025-11-17T11:50:00.186Z [DEBUG] Shell snapshot created successfully (2709 bytes)
+2025-11-17T11:50:00.226Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.63343.1763380200226
+2025-11-17T11:50:00.226Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T11:50:00.226Z [DEBUG] Temp file written successfully, size: 41926 bytes
+2025-11-17T11:50:00.226Z [DEBUG] Applied original permissions to temp file
+2025-11-17T11:50:00.226Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.63343.1763380200226 to /Users/spartan/.claude.json
+2025-11-17T11:50:00.227Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-17T11:50:00.228Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.63343.1763380200228
+2025-11-17T11:50:00.228Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T11:50:00.228Z [DEBUG] Temp file written successfully, size: 41926 bytes
+2025-11-17T11:50:00.228Z [DEBUG] Applied original permissions to temp file
+2025-11-17T11:50:00.228Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.63343.1763380200228 to /Users/spartan/.claude.json
+2025-11-17T11:50:00.228Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-17T11:50:00.657Z [DEBUG] Metrics opt-out API response: enabled=true, vcsLinking=false
+2025-11-17T11:50:00.869Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/spartan/.local/share/claude/versions/2.0.42)
+2025-11-17T11:50:01.032Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.63343.1763380201032
+2025-11-17T11:50:01.032Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T11:50:01.033Z [DEBUG] Temp file written successfully, size: 41926 bytes
+2025-11-17T11:50:01.033Z [DEBUG] Applied original permissions to temp file
+2025-11-17T11:50:01.033Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.63343.1763380201032 to /Users/spartan/.claude.json
+2025-11-17T11:50:01.033Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-17T11:50:01.036Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2025-11-17T11:50:01.036Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:50:01.036Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2025-11-17T11:50:01.054Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.63343.1763380201054
+2025-11-17T11:50:01.054Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T11:50:01.055Z [DEBUG] Temp file written successfully, size: 42031 bytes
+2025-11-17T11:50:01.055Z [DEBUG] Applied original permissions to temp file
+2025-11-17T11:50:01.055Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.63343.1763380201054 to /Users/spartan/.claude.json
+2025-11-17T11:50:01.055Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-17T11:50:01.067Z [DEBUG] rg error (signal=null, code=2, stderr: rg: /dev/fd/3: Bad file descriptor (os error 9)
 rg: /dev/fd/7: Bad file descriptor (os error 9)
 rg: /dev/fd/6: Not a directory (os error 20)
 rg: /private/var/agentx: Permission denied (os error 13)
 rg: /private/var/backups: Permission denied (os error 13)
 rg: /private/var/dirs_cleaner: Permission denied (os error 13)
 rg: /private/var/OOPJit: Operation not permitted (os error 1)
-rg: /private/var/at/tmp: Permission denied (os error 13)
-rg: /private/var/at/tabs: Permission denied (os error 13)
-rg: /private/var/db/caches/opendirectory: Permission denied (os error 13)
+rg: /private/var/protected/sfanalytics: Operation not permitted (os error 1)
+rg: /private/var/protected/trustd/private: Operation not permitted (os error 1)
 rg: /private/var/jabberd: Permission denied (os error 13)
 rg: /private/var/spool/cups: Permission denied (os error 13)
+rg: /usr/sbin/authserver: Permission denied (os error 13)
 rg: /private/var/spool/postfix/bounce: Permission denied (os error 13)
 rg: /private/var/spool/postfix/hold: Permission denied (os error 13)
 rg: /private/var/spool/postfix/maildrop: Permission denied (os error 13)
@@ -133,90 +91,26 @@ rg: /private/var/spool/postfix/defer: Permission denied (os error 13)
 rg: /private/var/spool/postfix/trace: Permission denied (os error 13)
 rg: /private/var/spool/postfix/saved: Permission denied (os error 13)
 rg: /private/var/spool/mqueue: Permission denied (os error 13)
-rg: /private/var/db/fseventsd: Permission denied (os error 13)
-rg: /private/var/db/ConfigurationProfiles/Store: Operation not permitted (os error 1)
 rg: /private/var/ma: Permission denied (os error 13)
 rg: /private/var/install: Permission denied (os error 13)
 rg: /private/var/networkd/db: Operation not permitted (os error 1)
 rg: /private/var/networkd/Library: Permission denied (os error 13)
 rg: /private/etc/cups/certs: Permission denied (os error 13)
-rg: /private/var/protected/sfanalytics: Operation not permitted (os error 1)
-rg: /private/var/protected/trustd/private: Operation not permitted (os error 1)
+rg: /private/var/run/mds: Permission denied (os error 13)
 rg: /System/Volumes/iSCPreboot/.TemporaryItems: Operation not permitted (os error 1)
 rg: /System/Volumes/Data/.TemporaryItems: Operation not permitted (os error 1)
-rg: /private/var/run/mds: Permission denied (os error 13)
-rg: /private/var/db/CoreDuet: Operation not permitted (os error 1)
-rg: /private/var/db/searchparty: Operation not permitted (os error 1)
-rg: /private/var/db/accessoryupdater: Permission denied (os error 13)
-rg: /private/var/db/securityagent: Permission denied (os error 13)
-rg: /private/var/db/audiomxd/Library: Permission denied (os error 13)
-rg: /private/var/db/darwindaemon: Permission denied (os error 13)
-rg: /private/var/db/applepay: Permission denied (os error 13)
-rg: /private/var/db/timed: Permission denied (os error 13)
-rg: /private/var/db/dhcpclient: Permission denied (os error 13)
-rg: /private/var/db/mmaintenanced: Permission denied (os error 13)
-rg: /private/var/db/MobileIdentityService: Operation not permitted (os error 1)
-rg: /private/var/db/com.apple.security.cryptexd: Operation not permitted (os error 1)
-rg: /private/var/db/nearbyd: Permission denied (os error 13)
-rg: /private/var/db/sudo: Permission denied (os error 13)
-rg: /private/var/db/com.apple.findmy.findmybeaconingd: Permission denied (os error 13)
-rg: /private/var/db/dslocal/nodes/Default: Permission denied (os error 13)
-rg: /private/var/db/Spotlight: Operation not permitted (os error 1)
-rg: /private/var/db/os_eligibility: Operation not permitted (os error 1)
-rg: /private/var/db/ExtensibleSSO/Configuration: Operation not permitted (os error 1)
-rg: /private/var/db/diskimagesiod: Permission denied (os error 13)
-rg: /private/var/db/appinstalld: Operation not permitted (os error 1)
-rg: /private/var/lib/postfix: Permission denied (os error 13)
-rg: /private/var/root: Permission denied (os error 13)
-rg: /private/var/audit: Permission denied (os error 13)
-rg: /private/var/db/nsurlsessiond: Permission denied (os error 13)
-rg: /private/var/db/coreml: Permission denied (os error 13)
-rg: /private/var/db/knowledgegraphd: Permission denied (os error 13)
-rg: /private/var/db/rmd: Permission denied (os error 13)
-rg: /private/var/db/AppleIntelligencePlatform: Operation not permitted (os error 1)
-rg: /private/var/db/analyticsd: Permission denied (os error 13)
-rg: /private/var/db/DumpPanic: Operation not permitted (os error 1)
-rg: /private/var/db/SoC: Operation not permitted (os error 1)
-rg: /private/var/db/sysdiagnose/com.apple.sysdiagnose: Operation not permitted (os error 1)
-rg: /private/var/db/terminus: Permission denied (os error 13)
-rg: /private/var/db/modelmanagerd: Permission denied (os error 13)
-rg: /private/var/db/locationd: Permission denied (os error 13)
-rg: /private/var/db/cmiodalassistants: Permission denied (os error 13)
-rg: /private/var/db/datadetectors: Permission denied (os error 13)
-rg: /private/var/db/KernelExtensionManagement/Staging: Operation not permitted (os error 1)
-rg: /private/var/db/biome: Operation not permitted (os error 1)
-rg: /private/var/db/lockdown: Operation not permitted (os error 1)
-rg: /private/var/db/ctkd: Permission denied (os error 13)
-rg: /private/var/db/Sandbox: Operation not permitted (os error 1)
-rg: /private/var/db/reportmemoryexception: Permission denied (os error 13)
-rg: /private/var/db/oah: Operation not permitted (os error 1)
-rg: /private/var/db/com.apple.xpc.roleaccountd.staging: Permission denied (os error 13)
-rg: /private/var/db/assetsubscriptiond/history: Permission denied (os error 13)
-rg: /private/var/db/assetsubscriptiond/StagingLogs: Permission denied (os error 13)
-rg: /private/var/db/DifferentialPrivacy: Operation not permitted (os error 1)
-rg: /private/var/db/geod: Permission denied (os error 13)
-rg: /private/var/db/Spotlight-V100: Operation not permitted (os error 1)
-rg: /private/var/db/installcoordinationd: Operation not permitted (os error 1)
-rg: /private/var/db/hidd: Permission denied (os error 13)
-rg: /private/var/db/fpsd: Permission denied (os error 13)
-rg: /private/var/db/softwareupdate/Library/Preferences: Permission denied (os error 13)
-rg: /private/var/db/softwareupdate/Library/WebKit: Permission denied (os error 13)
-rg: /private/var/db/com.apple.backgroundtaskmanagement: Operation not permitted (os error 1)
-rg: /System/Volumes/Preboot/com.apple.security.cryptexd: Operation not permitted (os error 1)
-rg: /System/Volumes/Preboot/.TemporaryItems: Operation not permitted (os error 1)
-rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.GPU.Sandbox: Operation not permitted (os error 1)
-rg: /usr/sbin/authserver: Permission denied (os error 13)
-rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.quicklook.ThumbnailsAgent/com.apple.QuickLook.thumbnailcache: Operation not permitted (os error 1)
-rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.Networking.Sandbox: Operation not permitted (os error 1)
-rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WorkflowKit.BackgroundShortcutRunner/ShortcutsSandboxCache: Operation not permitted (os error 1)
-rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.WebContent.Sandbox: Operation not permitted (os error 1)
-rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.siriactionsd/ShortcutsSandboxCache: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.icloud.searchpartyuseragent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/.DocumentRevisions-V100: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/agentx: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/backups: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/dirs_cleaner: Permission denied (os error 13)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.amsengagementd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/protected/sfanalytics: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imdpersistence.IMDPersistenceAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/protected/trustd/private: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imagent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/run/mds: Permission denied (os error 13)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/net.whatsapp.WhatsApp.Intents/TemporaryItems: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/itunescloudd/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.donotdisturbd/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.pluginkit/TemporaryItems: Operation not permitted (os error 1)
@@ -229,9 +123,9 @@ rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.appstorec
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.bird/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.bluetoothuserd/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.sharingd/TemporaryItems: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Caches/com.apple.homed: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Caches/FamilyCircle: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.identityservicesd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.GPU.Sandbox: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.GPU.Sandbox: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.parsecd/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.studentd/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/duetexpertd/TemporaryItems: Operation not permitted (os error 1)
@@ -239,15 +133,25 @@ rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.remindd/T
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.calaccessd/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.chrono/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.passd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/install: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/networkd/db: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/networkd/Library: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/etc/cups/certs: Permission denied (os error 13)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.mail.SpotlightIndexExtension/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.quicklook.ThumbnailsAgent/com.apple.QuickLook.thumbnailcache: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.news.widgetintents/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.quicklook.ThumbnailsAgent/com.apple.QuickLook.thumbnailcache: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imtranscoding.IMTranscoderAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/.fseventsd: Permission denied (os error 13)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.fileproviderd/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.tipsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/System/Library/Caches/com.apple.coresymbolicationd: Permission denied (os error 13)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.parsec-fbf/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imtransferservices.IMTransferAgent/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.appstoreagent/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.Networking.Sandbox: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.Networking.Sandbox: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.ap.promotedcontentd/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.triald/TemporaryItems: Operation not permitted (os error 1)
 rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.iconservicesagent/TemporaryItems: Operation not permitted (os error 1)
@@ -288,6 +192,8 @@ rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012400008j/C: Permission denied 
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012400008j/T: Permission denied (os error 13)
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012r00008p/C: Permission denied (os error 13)
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012r00008p/T: Permission denied (os error 13)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WorkflowKit.BackgroundShortcutRunner/ShortcutsSandboxCache: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WorkflowKit.BackgroundShortcutRunner/ShortcutsSandboxCache: Operation not permitted (os error 1)
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/C: Permission denied (os error 13)
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/T: Permission denied (os error 13)
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n0000144000091/C: Permission denied (os error 13)
@@ -297,6 +203,8 @@ rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/T: Permission denied 
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/C: Permission denied (os error 13)
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/T: Permission denied (os error 13)
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.routined/dv: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/System/Library/AssetsV2/com_apple_MobileAsset_UAF_FM_Overrides: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/System/Library/AssetsV2/com_apple_MobileAsset_UAF_IF_Planner: Operation not permitted (os error 1)
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.SharedWebCredentials: Operation not permitted (os error 1)
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.nsurlsessiond: Operation not permitted (os error 1)
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.notificationcenter: Permission denied (os error 13)
@@ -346,46 +254,456 @@ rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/C: Permission denied 
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/T: Permission denied (os error 13)
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012m00008n/C: Permission denied (os error 13)
 rg: /private/var/folders/zz/zyxvpxvq6csfxvn_n000012m00008n/T: Permission denied (os error 13)
-rg: /Users/spartan/Library/Daemon Containers: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Assistant/SiriVocabulary: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Application Support/CallHistoryDB: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Application Support/com.apple.avfoundation/Frecents: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Application Support/DifferentialPrivacy: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Application Support/FaceTime: Operation not permitted (os error 1)
-rg: /System/Library/Caches/com.apple.coresymbolicationd: Permission denied (os error 13)
-rg: /Users/spartan/Library/Application Support/FileProvider: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Application Support/com.apple.TCC: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Application Support/Knowledge: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Application Support/com.apple.sharedfilelist: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Application Support/CloudDocs: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Application Support/CallHistoryTransactions: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Caches/com.apple.containermanagerd: Operation not permitted (os error 1)
-rg: /Users/spartan/Library/Caches/com.apple.Safari: Operation not permitted (os error 1)
-rg: /System/Volumes/Update/.TemporaryItems: Operation not permitted (os error 1)
-rg: /System/Volumes/Update/Controller: Permission denied (os error 13)
-rg: /System/Volumes/Update/msutargetcontroller-mount-sttBLg: Permission denied (os error 13)
-rg: /System/Volumes/Update/Hardware: Permission denied (os error 13)
-), 165925 results
-2025-11-17T11:45:29.020Z [ERROR] RangeError: Error
-    at <anonymous> (unknown)
-    at onData (node:child_process:153:110)
-    at emit (node:events:95:22)
-    at addChunk (internal:streams/readable:264:47)
-    at readableAddChunkPushByteMode (internal:streams/readable:242:18)
-    at handleNumberResult (internal:streams/native-readable:69:18)
-    at <anonymous> (internal:streams/native-readable:43:68)
-    at processTicksAndRejections (unknown:7:39)
-    at spawnSync (unknown)
-    at spawnSync (node:child_process:226:22)
-2025-11-17T11:45:29.022Z [DEBUG] Skills and commands included in Skill tool:
-2025-11-17T11:45:29.022Z [DEBUG] Slash commands included in SlashCommand tool:
-2025-11-17T11:45:29.209Z [DEBUG] Checking for native installer update to version 2.0.42
-2025-11-17T11:45:30.403Z [DEBUG] Stream started - received first chunk
-2025-11-17T11:45:30.733Z [DEBUG] Stream started - received first chunk
-2025-11-17T11:45:30.735Z [DEBUG] Stream started - received first chunk
-2025-11-17T11:45:32.000Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
-2025-11-17T11:45:32.000Z [DEBUG] Found 0 hook matchers in settings
-2025-11-17T11:45:32.000Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
-2025-11-17T11:45:33.172Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
-2025-11-17T11:45:33.172Z [DEBUG] Found 0 hook matchers in settings
-2025-11-17T11:45:33.172Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+rg: /private/var/at/tmp: Permission denied (os error 13)
+rg: /private/var/at/tabs: Permission denied (os error 13)
+rg: /private/var/db/caches/opendirectory: Permission denied (os error 13)
+rg: /private/var/db/fseventsd: Permission denied (os error 13)
+rg: /private/var/db/ConfigurationProfiles/Store: Operation not permitted (os error 1)
+rg: /private/var/db/CoreDuet: Operation not permitted (os error 1)
+rg: /private/var/db/searchparty: Operation not permitted (os error 1)
+rg: /private/var/db/accessoryupdater: Permission denied (os error 13)
+rg: /private/var/db/securityagent: Permission denied (os error 13)
+rg: /private/var/db/audiomxd/Library: Permission denied (os error 13)
+rg: /private/var/db/darwindaemon: Permission denied (os error 13)
+rg: /private/var/db/applepay: Permission denied (os error 13)
+rg: /private/var/db/timed: Permission denied (os error 13)
+rg: /private/var/db/dhcpclient: Permission denied (os error 13)
+rg: /private/var/db/mmaintenanced: Permission denied (os error 13)
+rg: /private/var/db/MobileIdentityService: Operation not permitted (os error 1)
+rg: /private/var/db/com.apple.security.cryptexd: Operation not permitted (os error 1)
+rg: /private/var/db/nearbyd: Permission denied (os error 13)
+rg: /private/var/db/sudo: Permission denied (os error 13)
+rg: /private/var/db/com.apple.findmy.findmybeaconingd: Permission denied (os error 13)
+rg: /private/var/db/dslocal/nodes/Default: Permission denied (os error 13)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.WebContent.Sandbox: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.WebKit.WebContent.Sandbox: Operation not permitted (os error 1)
+rg: /private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.siriactionsd/ShortcutsSandboxCache: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/C/com.apple.siriactionsd/ShortcutsSandboxCache: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.icloud.searchpartyuseragent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.amsengagementd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imdpersistence.IMDPersistenceAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imagent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/net.whatsapp.WhatsApp.Intents/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/itunescloudd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.donotdisturbd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.pluginkit/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/net.whatsapp.WhatsApp.ServiceExtension/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.quicklook.ThumbnailsAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.email.maild/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.usernotificationsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/homed/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/db/com.apple.xpc.roleaccountd.staging: Permission denied (os error 13)
+rg: /private/var/db/assetsubscriptiond/history: Permission denied (os error 13)
+rg: /private/var/db/assetsubscriptiond/StagingLogs: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.appstorecomponentsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/db/DifferentialPrivacy: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.bird/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.bluetoothuserd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.sharingd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/db/cmiodalassistants: Permission denied (os error 13)
+rg: /private/var/db/datadetectors: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.identityservicesd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/db/KernelExtensionManagement/Staging: Operation not permitted (os error 1)
+rg: /private/var/db/biome: Operation not permitted (os error 1)
+rg: /private/var/db/lockdown: Operation not permitted (os error 1)
+rg: /private/var/db/ctkd: Permission denied (os error 13)
+rg: /private/var/db/Sandbox: Operation not permitted (os error 1)
+rg: /private/var/db/reportmemoryexception: Permission denied (os error 13)
+rg: /private/var/db/oah: Operation not permitted (os error 1)
+rg: /private/var/db/geod: Permission denied (os error 13)
+rg: /private/var/db/Spotlight-V100: Operation not permitted (os error 1)
+rg: /private/var/db/installcoordinationd: Operation not permitted (os error 1)
+rg: /private/var/db/hidd: Permission denied (os error 13)
+rg: /private/var/db/fpsd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.parsecd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.studentd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/duetexpertd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.remindd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.calaccessd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.chrono/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/db/softwareupdate/Library/Preferences: Permission denied (os error 13)
+rg: /private/var/db/softwareupdate/Library/WebKit: Permission denied (os error 13)
+rg: /private/var/db/com.apple.backgroundtaskmanagement: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.passd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.mail.SpotlightIndexExtension/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.news.widgetintents/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imtranscoding.IMTranscoderAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/System/Library/AssetsV2/com_apple_MobileAsset_UAF_FM_GenerativeModels: Operation not permitted (os error 1)
+rg: /private/var/db/nsurlsessiond: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.fileproviderd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.tipsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/db/coreml: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.parsec-fbf/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/db/knowledgegraphd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.imtransferservices.IMTransferAgent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.appstoreagent/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/db/rmd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.ap.promotedcontentd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.triald/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.iconservicesagent/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.siriactionsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/db/AppleIntelligencePlatform: Operation not permitted (os error 1)
+rg: /private/var/db/analyticsd: Permission denied (os error 13)
+rg: /private/var/db/DumpPanic: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.transparencyd/TemporaryItems: Operation not permitted (os error 1)
+rg: /private/var/db/SoC: Operation not permitted (os error 1)
+rg: /private/var/db/sysdiagnose/com.apple.sysdiagnose: Operation not permitted (os error 1)
+rg: /private/var/db/terminus: Permission denied (os error 13)
+rg: /private/var/db/modelmanagerd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.syncdefaultsd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/T/com.apple.securityuploadd/TemporaryItems: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.corespeechd: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.routined/dv: Operation not permitted (os error 1)
+rg: /private/var/db/locationd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.SharedWebCredentials: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.nsurlsessiond: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/dmd: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.LaunchServices.dv: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.exchangesync: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.progressd/ClassKit: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.lockoutagent: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/bs/4qnn7b1n4xv9n282btdm4chr0000gn/0/com.apple.ScreenTimeAgent/Store: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000011w00008g/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000011w00008g/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.LaunchServices.dv: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.Spotlight: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000000000000/0/com.apple.revisiond/com.apple.revisiond.temp: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000bh00002w/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000yw00007q/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000yw00007q/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000016c00009l/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000016c00009l/T: Permission denied (os error 13)
+rg: /private/var/db/Spotlight: Operation not permitted (os error 1)
+rg: /private/var/db/os_eligibility: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010h000084/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010h000084/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000xc00007b/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000xc00007b/T: Permission denied (os error 13)
+rg: /private/var/db/ExtensibleSSO/Configuration: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000015m00009d/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000015m00009d/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012400008j/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012400008j/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012r00008p/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012r00008p/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s0000068/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000144000091/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000144000091/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000006w00001q/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/T: Permission denied (os error 13)
+rg: /private/var/db/diskimagesiod: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.routined/dv: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.SharedWebCredentials: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.nsurlsessiond: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.notificationcenter: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/dmd: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.Spotlight: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.exchangesync: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.progressd/ClassKit: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.lockoutagent: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000z000007r/0/com.apple.ScreenTimeAgent: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000014r000096/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000014r000096/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000114000089/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000114000089/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000016h00009m/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000016h00009m/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000108000082/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000108000082/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000y800007k/0/com.apple.nsurlsessiond: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010w000087/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010w000087/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000tm00006n/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000tm00006n/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000013800008t/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000013800008t/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000084000021/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000s800006_/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000003000000r/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000011h00008c/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000011h00008c/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012800008k/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012800008k/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000150000098/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n0000150000098/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b400002s/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/C: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000sm00006d/0: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010r000086/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000010r000086/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n00000b000002r/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012m00008n/C: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/folders/zz/zyxvpxvq6csfxvn_n000012m00008n/T: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/at/tmp: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/at/tabs: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/caches/opendirectory: Permission denied (os error 13)
+rg: /private/var/db/appinstalld: Operation not permitted (os error 1)
+rg: /private/var/lib/postfix: Permission denied (os error 13)
+rg: /private/var/root: Permission denied (os error 13)
+rg: /private/var/audit: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/fseventsd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/ConfigurationProfiles/Store: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/CoreDuet: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/searchparty: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/accessoryupdater: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/securityagent: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/audiomxd/Library: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/darwindaemon: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/applepay: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/timed: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/dhcpclient: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/mmaintenanced: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/MobileIdentityService: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/com.apple.security.cryptexd: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/nearbyd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/sudo: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/com.apple.findmy.findmybeaconingd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/dslocal/nodes/Default: Permission denied (os error 13)
+rg: /Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitted (os error 1)
+rg: /Users/spartan/Library/Caches/com.apple.homed: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/com.apple.xpc.roleaccountd.staging: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/assetsubscriptiond/history: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/assetsubscriptiond/StagingLogs: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/DifferentialPrivacy: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/cmiodalassistants: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/datadetectors: Permission denied (os error 13)
+rg: /Users/spartan/Library/Caches/FamilyCircle: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/KernelExtensionManagement/Staging: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/biome: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/lockdown: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/ctkd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/Sandbox: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/reportmemoryexception: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/oah: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/geod: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/Spotlight-V100: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/installcoordinationd: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/hidd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/fpsd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/softwareupdate/Library/Preferences: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/softwareupdate/Library/WebKit: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/com.apple.backgroundtaskmanagement: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/nsurlsessiond: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/coreml: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/knowledgegraphd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/rmd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/AppleIntelligencePlatform: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/analyticsd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/DumpPanic: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/SoC: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/sysdiagnose/com.apple.sysdiagnose: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/terminus: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/modelmanagerd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/locationd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/Spotlight: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/os_eligibility: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/ExtensibleSSO/Configuration: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/db/diskimagesiod: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/db/appinstalld: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/lib/postfix: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/root: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/audit: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/OOPJit: Operation not permitted (os error 1)
+rg: /System/Volumes/Data/private/var/jabberd: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/cups: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/bounce: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/hold: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/maildrop: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/active: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/incoming: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/private: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/public: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/corrupt: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/deferred: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/flush: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/defer: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/trace: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/postfix/saved: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/spool/mqueue: Permission denied (os error 13)
+rg: /System/Volumes/Data/private/var/ma: Permission denied (os error 13)
+rg: /System/Volumes/Data/Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitted (os error 1)
+rg: Resource temporarily unavailable (os error 35)
+), 82257 results
+2025-11-17T11:50:01.069Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:50:01.069Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:50:01.090Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.63343.1763380201090
+2025-11-17T11:50:01.091Z [DEBUG] Preserving file permissions: 100600
+2025-11-17T11:50:01.091Z [DEBUG] Temp file written successfully, size: 41926 bytes
+2025-11-17T11:50:01.091Z [DEBUG] Applied original permissions to temp file
+2025-11-17T11:50:01.091Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.63343.1763380201090 to /Users/spartan/.claude.json
+2025-11-17T11:50:01.091Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-17T11:50:01.093Z [DEBUG] performStartupChecks called
+2025-11-17T11:50:01.093Z [DEBUG] Starting background plugin installations
+2025-11-17T11:50:01.093Z [DEBUG] performBackgroundPluginInstallations called
+2025-11-17T11:50:01.096Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-11-17T11:50:01.100Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2025-11-17T11:50:01.101Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2025-11-17T11:50:01.735Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T11:50:01.936Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:50:02.317Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:50:03.142Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-17T11:50:03.143Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:50:03.143Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:50:04.752Z [DEBUG] FileHistory: Added snapshot for 9607ac7b-d6ba-46c3-a10a-93746175edd0, tracking 0 files
+2025-11-17T11:50:05.173Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-17T11:50:05.173Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:50:05.173Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:50:05.570Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:50:08.790Z [ERROR] Error: Error: Lock file is already being held
+    at <anonymous> (/$bunfs/root/claude:87:11857)
+    at X (/$bunfs/root/claude:86:5167)
+    at <anonymous> (node:fs:243:13)
+    at processTicksAndRejections (native:7:39)
+2025-11-17T11:50:22.036Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:50:22.036Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:50:22.039Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:50:22.039Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:50:22.039Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:50:22.039Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:50:22.060Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-17T11:50:22.061Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:50:22.061Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:50:22.061Z [DEBUG] FileHistory: Making snapshot for message 7ad2d32e-2412-455e-a7db-dfbd2c92afda
+2025-11-17T11:50:22.062Z [DEBUG] FileHistory: Added snapshot for 7ad2d32e-2412-455e-a7db-dfbd2c92afda, tracking 0 files
+2025-11-17T11:50:22.074Z [DEBUG] Total plugin output styles loaded: 0
+2025-11-17T11:50:22.081Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:50:22.081Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:50:22.938Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:50:24.398Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:50:30.143Z [ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: 
+    at GX (/$bunfs/root/claude:1011:4471)
+    at <anonymous> (/$bunfs/root/claude:1011:4193)
+    at map (native:1:11)
+    at YI (/$bunfs/root/claude:1011:4185)
+    at ZqB (/$bunfs/root/claude:1629:3014)
+    at D7 (/$bunfs/root/claude:102:19663)
+    at I2 (/$bunfs/root/claude:104:42806)
+    at $w (/$bunfs/root/claude:104:38344)
+    at m1 (/$bunfs/root/claude:104:38272)
+    at UJ (/$bunfs/root/claude:104:38126)
+2025-11-17T11:50:30.161Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-17T11:50:30.162Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:50:30.162Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:50:48.404Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:50:48.404Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:50:48.410Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:50:48.410Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:50:48.410Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:50:48.410Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:50:48.434Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-17T11:50:48.434Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:50:48.434Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:50:48.435Z [DEBUG] FileHistory: Making snapshot for message d1b414bc-1d09-49d8-b974-2e0b47a25023
+2025-11-17T11:50:48.435Z [DEBUG] FileHistory: Added snapshot for d1b414bc-1d09-49d8-b974-2e0b47a25023, tracking 0 files
+2025-11-17T11:50:48.450Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:50:48.450Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:50:49.774Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:50:51.070Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:51:02.896Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-17T11:51:02.896Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:51:02.896Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:51:52.088Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:51:52.088Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:51:52.153Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:51:52.153Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:51:52.153Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:51:52.153Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:51:52.475Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-17T11:51:52.475Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:51:52.476Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-17T11:51:52.478Z [DEBUG] FileHistory: Making snapshot for message 44db779d-8f46-46fc-966e-c92eecbde5c3
+2025-11-17T11:51:52.478Z [DEBUG] FileHistory: Added snapshot for 44db779d-8f46-46fc-966e-c92eecbde5c3, tracking 0 files
+2025-11-17T11:51:52.560Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:51:52.561Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:51:53.443Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:51:54.554Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:01.398Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-17T11:52:01.401Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-17T11:52:01.401Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:01.401Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:01.413Z [DEBUG] No hook environment files found
+2025-11-17T11:52:01.462Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-17T11:52:01.462Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:01.462Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:01.473Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:52:01.475Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:52:01.476Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:52:01.476Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:52:01.476Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:52:01.476Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:52:01.482Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:52:01.482Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:52:02.391Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:03.294Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:04.324Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-17T11:52:04.326Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-17T11:52:04.326Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:04.326Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:04.382Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:52:04.382Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:52:04.384Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:52:04.384Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:52:04.384Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:52:04.384Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:52:04.389Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:52:04.389Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:52:06.870Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:10.491Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-17T11:52:10.494Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-17T11:52:10.494Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:10.494Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:11.307Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:11.468Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-17T11:52:11.468Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:11.468Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:11.479Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:52:11.479Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:52:11.481Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:52:11.481Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:52:11.481Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:52:11.481Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:52:11.487Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:52:11.487Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:52:12.549Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:13.764Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:15.727Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-17T11:52:15.730Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-17T11:52:15.730Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:15.730Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:15.790Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-17T11:52:15.790Z [DEBUG] Found 0 hook matchers in settings
+2025-11-17T11:52:15.790Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-17T11:52:15.801Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-17T11:52:15.801Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-17T11:52:15.802Z [DEBUG] Hooks: getAsyncHookResponseAttachments called
+2025-11-17T11:52:15.802Z [DEBUG] Hooks: checkForNewResponses called
+2025-11-17T11:52:15.802Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-17T11:52:15.802Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-17T11:52:15.811Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-17T11:52:15.811Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-17T11:52:16.600Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:17.160Z [DEBUG] Stream started - received first chunk
+2025-11-17T11:52:25.943Z [DEBUG] Streaming aborted by user: Request was aborted.
+2025-11-17T11:52:25.943Z [ERROR] Error in non-streaming fallback: Request was aborted.
+2025-11-17T11:52:25.943Z [ERROR] Error: Error: Request was aborted.
+    at _createMessage (/$bunfs/root/claude:393:4515)
+    at processTicksAndRejections (native:7:39)
+2025-11-17T11:52:30.836Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-11-17T11:52:31.250Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T11:52:31.252Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T11:52:31.252Z [DEBUG] Successfully updated to version 2.0.42
