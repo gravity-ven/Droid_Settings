@@ -811,3 +811,6 @@ rg: /Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitt
 2025-11-17T11:54:32.086Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
 2025-11-17T11:54:32.086Z [DEBUG] Found 0 hook matchers in settings
 2025-11-17T11:54:32.086Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-17T12:22:31.766Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T12:22:31.775Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T12:22:31.776Z [DEBUG] Successfully updated to version 2.0.42
