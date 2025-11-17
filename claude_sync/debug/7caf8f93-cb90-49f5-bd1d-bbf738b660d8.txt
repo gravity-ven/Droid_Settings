@@ -814,3 +814,6 @@ rg: /Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitt
 2025-11-17T12:22:31.766Z [DEBUG] Checking for native installer update to version 2.0.42
 2025-11-17T12:22:31.775Z [DEBUG] Version 2.0.42 already installed, updating symlink
 2025-11-17T12:22:31.776Z [DEBUG] Successfully updated to version 2.0.42
+2025-11-17T12:52:31.521Z [DEBUG] Checking for native installer update to version 2.0.42
+2025-11-17T12:52:31.525Z [DEBUG] Version 2.0.42 already installed, updating symlink
+2025-11-17T12:52:31.525Z [DEBUG] Successfully updated to version 2.0.42
