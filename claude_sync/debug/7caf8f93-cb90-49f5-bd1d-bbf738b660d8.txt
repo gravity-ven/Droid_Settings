@@ -984,3 +984,21 @@ rg: /Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitt
 2025-11-18T05:00:33.648Z [DEBUG] Checking for native installer update to version 2.0.44
 2025-11-18T05:00:33.650Z [DEBUG] Downloading native installer version 2.0.44
 2025-11-18T05:00:51.641Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T05:44:08.657Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T05:44:08.668Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T05:44:08.669Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T06:22:52.653Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T06:22:52.662Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T06:22:52.662Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T07:02:36.257Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T07:02:36.259Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T07:02:36.260Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T07:44:26.634Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T07:44:26.655Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T07:44:26.657Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T08:15:52.147Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T08:15:52.148Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T08:15:52.149Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T08:46:33.593Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T08:46:33.595Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T08:46:33.595Z [DEBUG] Successfully updated to version 2.0.44
