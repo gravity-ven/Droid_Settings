@@ -198,3 +198,24 @@
 2025-11-18T12:39:33.259Z [ERROR] Error: Error: Failed to fetch version from stable: AxiosError: timeout of 30000ms exceeded
     at lI_ (/$bunfs/root/claude:2252:1628)
     at processTicksAndRejections (native:7:39)
+2025-11-18T12:58:01.803Z [ERROR] Error: Error: Failed to fetch version from stable: Error: ECONNREFUSED
+    at lI_ (/$bunfs/root/claude:2252:1628)
+    at processTicksAndRejections (native:7:39)
+2025-11-18T13:32:33.561Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T13:48:39.195Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T13:48:39.246Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T14:04:14.651Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T14:04:14.653Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T14:04:14.653Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T14:41:13.454Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T14:41:13.458Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T14:41:13.460Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T15:12:46.817Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T15:12:46.818Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T15:12:46.819Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T15:45:05.433Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T15:45:05.435Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T15:45:05.435Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T16:15:04.742Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T16:15:04.745Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T16:15:04.746Z [DEBUG] Successfully updated to version 2.0.44

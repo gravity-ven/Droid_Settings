@@ -1029,3 +1029,24 @@ rg: /Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitt
     at X (/$bunfs/root/claude:86:5167)
     at <anonymous> (node:fs:243:13)
     at processTicksAndRejections (native:7:39)
+2025-11-18T13:15:00.259Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T13:15:07.283Z [ERROR] Error: Error: Lock file is already being held
+    at <anonymous> (/$bunfs/root/claude:87:11857)
+    at X (/$bunfs/root/claude:86:5167)
+    at <anonymous> (node:fs:243:13)
+    at processTicksAndRejections (native:7:39)
+2025-11-18T13:48:40.748Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T13:48:40.751Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T13:48:40.762Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T14:21:13.489Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T14:21:13.490Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T14:21:13.491Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T14:56:41.909Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T14:56:41.912Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T14:56:41.912Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T15:28:05.503Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T15:28:05.504Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T15:28:05.505Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T16:02:14.461Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T16:02:14.471Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T16:02:14.472Z [DEBUG] Successfully updated to version 2.0.44
