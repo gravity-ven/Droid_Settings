@@ -219,3 +219,30 @@
 2025-11-18T16:15:04.742Z [DEBUG] Checking for native installer update to version 2.0.44
 2025-11-18T16:15:04.745Z [DEBUG] Version 2.0.44 already installed, updating symlink
 2025-11-18T16:15:04.746Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T16:48:32.192Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T16:48:32.194Z [DEBUG] Version 2.0.44 already installed, updating symlink
+2025-11-18T16:48:32.195Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T17:26:14.505Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T17:26:14.509Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T17:26:14.513Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T17:59:18.051Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T17:59:18.052Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T17:59:18.052Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T18:33:18.513Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T18:33:18.514Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T18:33:18.515Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T19:13:22.961Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T19:13:22.963Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T19:13:22.963Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T19:56:59.602Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T19:56:59.604Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T19:56:59.605Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T20:28:23.406Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T20:28:23.408Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T20:28:23.408Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T20:58:22.770Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T20:58:22.774Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T20:58:22.774Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T21:28:22.698Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T21:28:22.702Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T21:28:22.705Z [DEBUG] Successfully updated to version 2.0.45

@@ -1053,3 +1053,30 @@ rg: /Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitt
 2025-11-18T16:32:14.396Z [DEBUG] Checking for native installer update to version 2.0.44
 2025-11-18T16:32:14.400Z [DEBUG] Version 2.0.44 already installed, updating symlink
 2025-11-18T16:32:14.401Z [DEBUG] Successfully updated to version 2.0.44
+2025-11-18T17:06:31.022Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T17:06:31.033Z [DEBUG] Downloading native installer version 2.0.45
+2025-11-18T17:06:39.278Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T17:43:46.454Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T17:43:46.458Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T17:43:46.459Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T18:15:32.642Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T18:15:32.644Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T18:15:32.645Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T18:57:29.693Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T18:57:29.695Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T18:57:29.696Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T19:28:39.923Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T19:28:39.925Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T19:28:39.926Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T20:13:59.593Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T20:13:59.595Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T20:13:59.595Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T20:43:59.526Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T20:43:59.528Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T20:43:59.528Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T21:13:58.830Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T21:13:58.832Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T21:13:58.833Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-18T21:43:58.880Z [DEBUG] Checking for native installer update to version 2.0.45
+2025-11-18T21:43:58.884Z [DEBUG] Version 2.0.45 already installed, updating symlink
+2025-11-18T21:43:58.885Z [DEBUG] Successfully updated to version 2.0.45
