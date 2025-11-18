@@ -1023,3 +1023,9 @@ rg: /Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitt
     at X (/$bunfs/root/claude:86:5167)
     at <anonymous> (node:fs:243:13)
     at processTicksAndRejections (native:7:39)
+2025-11-18T12:39:42.562Z [DEBUG] Checking for native installer update to version 2.0.44
+2025-11-18T12:39:49.581Z [ERROR] Error: Error: Lock file is already being held
+    at <anonymous> (/$bunfs/root/claude:87:11857)
+    at X (/$bunfs/root/claude:86:5167)
+    at <anonymous> (node:fs:243:13)
+    at processTicksAndRejections (native:7:39)

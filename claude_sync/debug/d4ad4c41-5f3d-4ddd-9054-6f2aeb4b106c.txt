@@ -195,3 +195,6 @@
 2025-11-18T11:53:31.091Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
 2025-11-18T11:53:31.092Z [DEBUG] Found 0 hook matchers in settings
 2025-11-18T11:53:31.092Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-18T12:39:33.259Z [ERROR] Error: Error: Failed to fetch version from stable: AxiosError: timeout of 30000ms exceeded
+    at lI_ (/$bunfs/root/claude:2252:1628)
+    at processTicksAndRejections (native:7:39)
