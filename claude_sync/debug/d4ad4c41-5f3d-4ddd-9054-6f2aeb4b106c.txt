@@ -144,3 +144,51 @@
     at generate (/$bunfs/root/claude:389:18162)
     at makeRequest (/$bunfs/root/claude:669:5356)
     at processTicksAndRejections (native:7:39)
+2025-11-18T11:51:41.880Z [ERROR] Error in non-streaming fallback: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJjaxY9d9a9F9g7zaec"}
+2025-11-18T11:51:41.880Z [ERROR] Error: Error: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJjaxY9d9a9F9g7zaec"}
+    at generate (/$bunfs/root/claude:389:18162)
+    at makeRequest (/$bunfs/root/claude:669:5356)
+    at processTicksAndRejections (native:7:39)
+2025-11-18T11:51:41.886Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-18T11:51:41.887Z [DEBUG] Found 0 hook matchers in settings
+2025-11-18T11:51:41.887Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-18T11:51:45.507Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /Users/spartan/.local/share/claude/versions/2.0.44 (expected in multi-process scenarios)
+    at epB (/$bunfs/root/claude:2254:1514)
+    at JtR (/$bunfs/root/claude:2252:12596)
+    at async B5_ (/$bunfs/root/claude:2252:13802)
+    at async iS (/$bunfs/root/claude:2254:235)
+    at async <anonymous> (/$bunfs/root/claude:2254:12373)
+    at processTicksAndRejections (native:7:39)
+2025-11-18T11:52:30.176Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-18T11:52:30.176Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-18T11:52:30.178Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-18T11:52:30.179Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-18T11:52:30.201Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-18T11:52:30.201Z [DEBUG] Found 0 hook matchers in settings
+2025-11-18T11:52:30.201Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-18T11:52:30.202Z [DEBUG] FileHistory: Added snapshot for 2036cc55-a3be-4d52-be05-52f4c440cf00, tracking 0 files
+2025-11-18T11:52:30.226Z [DEBUG] Total plugin output styles loaded: 0
+2025-11-18T11:52:30.232Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-18T11:52:30.232Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-18T11:52:30.652Z [ERROR] Error streaming, falling back to non-streaming mode: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJoBUX9oSxoLmx5attY"}
+2025-11-18T11:52:30.693Z [ERROR] Error streaming, falling back to non-streaming mode: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJoBEt4gWn2RicHbfUD"}
+2025-11-18T11:52:31.030Z [ERROR] Error in non-streaming fallback: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJoDCi3b1sCnKwCt7EL"}
+2025-11-18T11:52:31.031Z [ERROR] Error: Error: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJoDCi3b1sCnKwCt7EL"}
+    at generate (/$bunfs/root/claude:389:18162)
+    at makeRequest (/$bunfs/root/claude:669:5356)
+    at processTicksAndRejections (native:7:39)
+2025-11-18T11:52:31.034Z [ERROR] SyntaxError: SyntaxError: JSON Parse error: Expected '}'
+    at <parse> (:0)
+    at parse (unknown)
+    at <anonymous> (/$bunfs/root/claude:86:741)
+    at A (/$bunfs/root/claude:11:6661)
+    at zTB (/$bunfs/root/claude:835:10330)
+    at processTicksAndRejections (native:7:39)
+2025-11-18T11:52:31.064Z [ERROR] Error in non-streaming fallback: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJoDBxkUP1ksAnR6wR4"}
+2025-11-18T11:52:31.064Z [ERROR] Error: Error: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJoDBxkUP1ksAnR6wR4"}
+    at generate (/$bunfs/root/claude:389:18162)
+    at makeRequest (/$bunfs/root/claude:669:5356)
+    at processTicksAndRejections (native:7:39)
+2025-11-18T11:52:31.080Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-18T11:52:31.080Z [DEBUG] Found 0 hook matchers in settings
+2025-11-18T11:52:31.080Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
