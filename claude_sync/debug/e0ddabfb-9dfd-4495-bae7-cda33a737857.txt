@@ -1027,3 +1027,11 @@
     at async Ux (/$bunfs/root/claude:2532:236)
     at async <anonymous> (/$bunfs/root/claude:2532:12383)
     at processTicksAndRejections (native:7:39)
+2025-11-19T07:37:22.579Z [DEBUG] Checking for native installer update to version 2.0.46
+2025-11-19T07:37:29.589Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /Users/spartan/.local/share/claude/versions/2.0.46 (expected in multi-process scenarios)
+    at aq0 (/$bunfs/root/claude:2532:1516)
+    at N4A (/$bunfs/root/claude:2530:12601)
+    at async tp8 (/$bunfs/root/claude:2530:13807)
+    at async Ux (/$bunfs/root/claude:2532:236)
+    at async <anonymous> (/$bunfs/root/claude:2532:12383)
+    at processTicksAndRejections (native:7:39)
