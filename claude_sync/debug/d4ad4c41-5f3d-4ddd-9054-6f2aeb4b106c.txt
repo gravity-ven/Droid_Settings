@@ -279,3 +279,12 @@
 2025-11-19T03:48:49.148Z [ERROR] Error: Error: Failed to fetch version from stable: Error: ECONNREFUSED
     at lI_ (/$bunfs/root/claude:2252:1628)
     at processTicksAndRejections (native:7:39)
+2025-11-19T04:22:54.297Z [ERROR] Error: Error: Failed to fetch version from stable: Error: ECONNREFUSED
+    at lI_ (/$bunfs/root/claude:2252:1628)
+    at processTicksAndRejections (native:7:39)
+2025-11-19T04:57:33.128Z [DEBUG] Checking for native installer update to version 2.0.46
+2025-11-19T04:57:33.136Z [DEBUG] Downloading native installer version 2.0.46
+2025-11-19T04:59:43.395Z [DEBUG] Successfully updated to version 2.0.46
+2025-11-19T05:27:32.397Z [DEBUG] Checking for native installer update to version 2.0.46
+2025-11-19T05:27:32.403Z [DEBUG] Version 2.0.46 already installed, updating symlink
+2025-11-19T05:27:32.404Z [DEBUG] Successfully updated to version 2.0.46

@@ -1113,3 +1113,9 @@ rg: /Users/spartan/Library/Caches/com.apple.ap.adprivacyd: Operation not permitt
 2025-11-19T04:06:40.630Z [DEBUG] Checking for native installer update to version 2.0.45
 2025-11-19T04:06:40.640Z [DEBUG] Version 2.0.45 already installed, updating symlink
 2025-11-19T04:06:40.641Z [DEBUG] Successfully updated to version 2.0.45
+2025-11-19T04:39:58.196Z [ERROR] Error: Error: Failed to fetch version from stable: Error: ECONNREFUSED
+    at c3_ (/$bunfs/root/claude:2136:1628)
+    at processTicksAndRejections (native:7:39)
+2025-11-19T05:11:12.928Z [DEBUG] Checking for native installer update to version 2.0.46
+2025-11-19T05:11:12.931Z [DEBUG] Version 2.0.46 already installed, updating symlink
+2025-11-19T05:11:12.931Z [DEBUG] Successfully updated to version 2.0.46
