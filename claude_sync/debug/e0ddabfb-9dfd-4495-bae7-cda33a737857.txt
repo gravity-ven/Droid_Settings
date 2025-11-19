@@ -1,0 +1,518 @@
+2025-11-19T06:37:17.251Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2025-11-19T06:37:17.252Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2025-11-19T06:37:17.252Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2025-11-19T06:37:17.252Z [DEBUG] [LSP SERVER MANAGER] initialize() called
+2025-11-19T06:37:17.252Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+2025-11-19T06:37:17.262Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2025-11-19T06:37:17.265Z [DEBUG] Total LSP servers loaded: 0
+2025-11-19T06:37:17.273Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2025-11-19T06:37:17.273Z [DEBUG] LSP manager initialized with 0 servers
+2025-11-19T06:37:17.273Z [DEBUG] LSP server manager initialized successfully
+2025-11-19T06:37:17.273Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2025-11-19T06:37:17.276Z [DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/spartan/.claude/skills, project=/Users/spartan/Downloads/spartan_labs/website/.claude/skills
+2025-11-19T06:37:17.276Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
+2025-11-19T06:37:17.276Z [DEBUG] Passes: No cache, fetching eligibility
+2025-11-19T06:37:17.466Z [DEBUG] Creating shell snapshot for zsh (/bin/zsh)
+2025-11-19T06:37:17.466Z [DEBUG] Looking for shell config file: /Users/spartan/.zshrc
+2025-11-19T06:37:17.466Z [DEBUG] Snapshots directory: /Users/spartan/.claude/shell-snapshots
+2025-11-19T06:37:17.466Z [DEBUG] Creating snapshot at: /Users/spartan/.claude/shell-snapshots/snapshot-zsh-1763534237466-lysylq.sh
+2025-11-19T06:37:17.466Z [DEBUG] Shell binary exists: true
+2025-11-19T06:37:17.466Z [DEBUG] Execution timeout: 10000ms
+2025-11-19T06:37:17.467Z [DEBUG] Writing to temp file: /Users/spartan/.claude/todos/e0ddabfb-9dfd-4495-bae7-cda33a737857-agent-e0ddabfb-9dfd-4495-bae7-cda33a737857.json.tmp.86927.1763534237467
+2025-11-19T06:37:17.467Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-19T06:37:17.467Z [DEBUG] Renaming /Users/spartan/.claude/todos/e0ddabfb-9dfd-4495-bae7-cda33a737857-agent-e0ddabfb-9dfd-4495-bae7-cda33a737857.json.tmp.86927.1763534237467 to /Users/spartan/.claude/todos/e0ddabfb-9dfd-4495-bae7-cda33a737857-agent-e0ddabfb-9dfd-4495-bae7-cda33a737857.json
+2025-11-19T06:37:17.467Z [DEBUG] File /Users/spartan/.claude/todos/e0ddabfb-9dfd-4495-bae7-cda33a737857-agent-e0ddabfb-9dfd-4495-bae7-cda33a737857.json written atomically
+2025-11-19T06:37:17.470Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2025-11-19T06:37:17.470Z [DEBUG] Total plugin skills loaded: 0
+2025-11-19T06:37:17.470Z [DEBUG] Total plugin commands loaded: 0
+2025-11-19T06:37:17.470Z [DEBUG] Registered 0 hooks from 0 plugins
+2025-11-19T06:37:17.472Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+2025-11-19T06:37:17.473Z [DEBUG] getSkillsIfEnabled returning: 0 skill dir commands, 0 plugin skills
+2025-11-19T06:37:17.494Z [DEBUG] Total plugin agents loaded: 0
+2025-11-19T06:37:17.521Z [DEBUG] Acquired lock on running version: /Users/spartan/.local/share/claude/versions/2.0.46
+2025-11-19T06:37:17.642Z [DEBUG] Shell snapshot created successfully (2709 bytes)
+2025-11-19T06:37:17.647Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534237647
+2025-11-19T06:37:17.647Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:17.648Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:17.648Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:17.648Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534237647 to /Users/spartan/.claude.json
+2025-11-19T06:37:17.648Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:17.651Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534237651
+2025-11-19T06:37:17.652Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:17.652Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:17.652Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:17.652Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534237651 to /Users/spartan/.claude.json
+2025-11-19T06:37:17.652Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:17.653Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534237653
+2025-11-19T06:37:17.653Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:17.654Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:17.654Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:17.654Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534237653 to /Users/spartan/.claude.json
+2025-11-19T06:37:17.654Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:17.700Z [ERROR] AxiosError: Error
+    at lU (/$bunfs/root/claude:59:1143)
+    at <anonymous> (/$bunfs/root/claude:64:10054)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
+    at processTicksAndRejections (native:7:39)
+    at request (/$bunfs/root/claude:66:2147)
+    at processTicksAndRejections (native:7:39)
+2025-11-19T06:37:17.843Z [DEBUG] Failed to check metrics opt-out status: Request failed with status code 401
+2025-11-19T06:37:17.844Z [ERROR] AxiosError: Error
+    at lU (/$bunfs/root/claude:59:1143)
+    at <anonymous> (/$bunfs/root/claude:64:10054)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
+    at processTicksAndRejections (native:7:39)
+    at request (/$bunfs/root/claude:66:2147)
+    at processTicksAndRejections (native:7:39)
+2025-11-19T06:37:17.859Z [DEBUG] Failed to fetch and cache passes eligibility
+2025-11-19T06:37:17.860Z [ERROR] AxiosError: Error
+    at lU (/$bunfs/root/claude:59:1143)
+    at <anonymous> (/$bunfs/root/claude:64:10054)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
+    at processTicksAndRejections (native:7:39)
+    at request (/$bunfs/root/claude:66:2147)
+    at processTicksAndRejections (native:7:39)
+2025-11-19T06:37:18.029Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/spartan/.local/share/claude/versions/2.0.46)
+2025-11-19T06:37:18.149Z [DEBUG] Failed to fetch Grove notice config: AxiosError: Request failed with status code 401
+2025-11-19T06:37:18.169Z [DEBUG] Passes: No cache, fetching eligibility
+2025-11-19T06:37:18.172Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238172
+2025-11-19T06:37:18.172Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.172Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:18.172Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.172Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238172 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.172Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.175Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2025-11-19T06:37:18.176Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:18.176Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2025-11-19T06:37:18.179Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:37:18.180Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:37:18.229Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238229
+2025-11-19T06:37:18.229Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.229Z [DEBUG] Temp file written successfully, size: 42870 bytes
+2025-11-19T06:37:18.229Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.229Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238229 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.229Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.230Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238230
+2025-11-19T06:37:18.230Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.230Z [DEBUG] Temp file written successfully, size: 42870 bytes
+2025-11-19T06:37:18.230Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.230Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238230 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.231Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.233Z [DEBUG] performStartupChecks called
+2025-11-19T06:37:18.233Z [DEBUG] Starting background plugin installations
+2025-11-19T06:37:18.233Z [DEBUG] performBackgroundPluginInstallations called
+2025-11-19T06:37:18.237Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-11-19T06:37:18.240Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238240
+2025-11-19T06:37:18.240Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.240Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:18.240Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.240Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238240 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.240Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.243Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2025-11-19T06:37:18.246Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2025-11-19T06:37:18.249Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2025-11-19T06:37:18.249Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:18.249Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2025-11-19T06:37:18.270Z [DEBUG] Getting matching hook commands for SubagentStart with query: Plan
+2025-11-19T06:37:18.270Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:18.271Z [DEBUG] Matched 0 unique hooks for query "Plan" (0 before deduplication)
+2025-11-19T06:37:18.300Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238300
+2025-11-19T06:37:18.301Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.301Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:18.301Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.301Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238300 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.301Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.476Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238476
+2025-11-19T06:37:18.476Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.476Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:18.476Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.477Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238476 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.477Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.517Z [DEBUG] Failed to fetch and cache passes eligibility
+2025-11-19T06:37:18.517Z [ERROR] AxiosError: Error
+    at lU (/$bunfs/root/claude:59:1143)
+    at <anonymous> (/$bunfs/root/claude:64:10054)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
+    at processTicksAndRejections (native:7:39)
+    at request (/$bunfs/root/claude:66:2147)
+    at processTicksAndRejections (native:7:39)
+2025-11-19T06:37:18.874Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238874
+2025-11-19T06:37:18.874Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.874Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:18.875Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.875Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238874 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.875Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.973Z [DEBUG] Checking for native installer update to version 2.0.46
+2025-11-19T06:37:19.310Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534239310
+2025-11-19T06:37:19.311Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:19.311Z [DEBUG] Temp file written successfully, size: 43004 bytes
+2025-11-19T06:37:19.311Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:19.311Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534239310 to /Users/spartan/.claude.json
+2025-11-19T06:37:19.312Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:19.760Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:20.764Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534240764
+2025-11-19T06:37:20.764Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:20.765Z [DEBUG] Temp file written successfully, size: 44002 bytes
+2025-11-19T06:37:20.765Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:20.765Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534240764 to /Users/spartan/.claude.json
+2025-11-19T06:37:20.766Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:21.160Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534241160
+2025-11-19T06:37:21.160Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:21.160Z [DEBUG] Temp file written successfully, size: 44047 bytes
+2025-11-19T06:37:21.160Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:21.160Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534241160 to /Users/spartan/.claude.json
+2025-11-19T06:37:21.161Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:21.161Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-11-19T06:37:21.162Z [DEBUG] Metadata string for init:
+2025-11-19T06:37:21.162Z [DEBUG] <command-message>init is analyzing your codebase…</command-message>
+<command-name>/init</command-name>
+2025-11-19T06:37:21.162Z [DEBUG] command-message tags in metadata: 1
+2025-11-19T06:37:21.173Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:37:21.173Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:37:21.176Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:37:21.176Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:37:21.185Z [DEBUG] processPromptSlashCommand creating 3 messages for init
+2025-11-19T06:37:21.185Z [DEBUG] Message 1: <command-message>init is analyzing your codebase…</command-message>
+<command-name>/init</command-name>
+2025-11-19T06:37:21.185Z [DEBUG] Message 2 [META]: [{"type":"text","text":"Please analyze this codebase and create a CLAUDE.md file, which will be given to future instances of Claude Code to operate in this repository.\n\nWhat to add:\n1. Commands tha
+2025-11-19T06:37:21.185Z [DEBUG] Message 3: [ATTACHMENT]
+2025-11-19T06:37:21.188Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-19T06:37:21.188Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:21.188Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T06:37:21.189Z [DEBUG] FileHistory: Added snapshot for 0c25cdeb-0fa6-4e64-8976-ce38778ca958, tracking 0 files
+2025-11-19T06:37:21.192Z [DEBUG] Rendering user message with 1 content blocks
+2025-11-19T06:37:21.192Z [DEBUG] Block 0: <command-message>init is analyzing your codebase…</command-message>
+<command-name>/init</command-nam...
+2025-11-19T06:37:21.192Z [DEBUG] UserCommandMessage rendering: "init is analyzing your codebase…" (args: "none")
+2025-11-19T06:37:21.192Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-11-19T06:37:21.202Z [DEBUG] Total plugin output styles loaded: 0
+2025-11-19T06:37:21.204Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:21.209Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:37:21.209Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:37:21.329Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:23.029Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:25.712Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-19T06:37:25.715Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-19T06:37:25.717Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-19T06:37:25.720Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-19T06:37:25.722Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-19T06:37:25.724Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-19T06:37:25.724Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.724Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.724Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-19T06:37:25.724Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.725Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.725Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-19T06:37:25.725Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.725Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.725Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-19T06:37:25.725Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.725Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.725Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-19T06:37:25.725Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.725Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-19T06:37:25.776Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534245776
+2025-11-19T06:37:25.776Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:25.776Z [DEBUG] Temp file written successfully, size: 44047 bytes
+2025-11-19T06:37:25.776Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:25.776Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534245776 to /Users/spartan/.claude.json
+2025-11-19T06:37:25.776Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:25.778Z [DEBUG] No hook environment files found
+2025-11-19T06:37:25.781Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-19T06:37:25.781Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.781Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T06:37:25.793Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-19T06:37:25.794Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.794Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.806Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-19T06:37:25.806Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.806Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.825Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-19T06:37:25.825Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.825Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.840Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-19T06:37:25.840Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.840Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.867Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-19T06:37:25.867Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.867Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-19T06:37:25.884Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:37:25.884Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:37:25.886Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:37:25.886Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:37:25.895Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:37:25.895Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:37:25.978Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /Users/spartan/.local/share/claude/versions/2.0.46 (expected in multi-process scenarios)
+    at aq0 (/$bunfs/root/claude:2532:1516)
+    at N4A (/$bunfs/root/claude:2530:12601)
+    at async tp8 (/$bunfs/root/claude:2530:13807)
+    at async Ux (/$bunfs/root/claude:2532:236)
+    at async <anonymous> (/$bunfs/root/claude:2532:12383)
+    at processTicksAndRejections (native:7:39)
+2025-11-19T06:37:26.709Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-19T06:37:26.709Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:26.709Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T06:37:26.804Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:28.171Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:32.100Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-19T06:37:32.105Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T06:37:32.109Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-19T06:37:32.109Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:32.109Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-19T06:37:32.109Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T06:37:32.111Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T06:37:32.113Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T06:37:32.113Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:32.113Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:32.113Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T06:37:32.113Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:32.113Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:32.113Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T06:37:32.113Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:32.113Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:32.155Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T06:37:32.155Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:32.155Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:32.155Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T06:37:32.155Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:32.155Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:32.155Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T06:37:32.155Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:32.155Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:32.198Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-19T06:37:32.198Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:32.198Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-19T06:37:32.211Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:37:32.217Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:37:32.219Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:37:32.219Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:37:32.236Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:37:32.236Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:37:32.928Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:35.977Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:38.808Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-19T06:37:38.809Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T06:37:38.812Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T06:37:38.813Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-19T06:37:38.813Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:38.813Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:38.813Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T06:37:38.813Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:38.813Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:38.814Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T06:37:38.814Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:38.814Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:38.838Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T06:37:38.838Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:38.838Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:38.838Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T06:37:38.838Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:38.838Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:38.862Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-19T06:37:38.862Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:38.862Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:38.872Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:37:38.872Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:37:38.874Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:37:38.874Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:37:38.886Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:37:38.886Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:37:41.504Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:43.295Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T06:37:43.297Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T06:37:43.299Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T06:37:43.299Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:43.299Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:43.299Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T06:37:43.299Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:43.299Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:43.318Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T06:37:43.318Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:43.318Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:43.318Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T06:37:43.318Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:43.318Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:37:43.333Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:37:43.333Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:37:43.335Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:37:43.335Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:37:43.347Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:37:43.347Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:37:46.411Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:55.169Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T06:37:55.172Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T06:37:55.172Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:55.172Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:37:55.179Z [DEBUG] FileHistory: Tracked file modification for /Users/spartan/Downloads/spartan_labs/CLAUDE.md
+2025-11-19T06:37:55.182Z [DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534275182
+2025-11-19T06:37:55.182Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T06:37:55.183Z [DEBUG] Temp file written successfully, size: 13926 bytes
+2025-11-19T06:37:55.183Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:55.183Z [DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534275182 to /Users/spartan/Downloads/spartan_labs/CLAUDE.md
+2025-11-19T06:37:55.183Z [DEBUG] File /Users/spartan/Downloads/spartan_labs/CLAUDE.md written atomically
+2025-11-19T06:37:55.188Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T06:37:55.188Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:55.188Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:37:55.206Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:37:55.206Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:37:55.209Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:37:55.209Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:37:55.218Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:37:55.218Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:37:57.789Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:38:07.786Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T06:38:07.789Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T06:38:07.789Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:38:07.789Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:38:07.801Z [DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534287801
+2025-11-19T06:38:07.801Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T06:38:07.802Z [DEBUG] Temp file written successfully, size: 14178 bytes
+2025-11-19T06:38:07.802Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:38:07.802Z [DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534287801 to /Users/spartan/Downloads/spartan_labs/CLAUDE.md
+2025-11-19T06:38:07.802Z [DEBUG] File /Users/spartan/Downloads/spartan_labs/CLAUDE.md written atomically
+2025-11-19T06:38:07.808Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T06:38:07.808Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:38:07.808Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:38:07.845Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:38:07.845Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:38:07.848Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:38:07.848Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:38:07.861Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:38:07.861Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:38:11.239Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:38:27.547Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T06:38:27.550Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T06:38:27.550Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:38:27.550Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:38:27.563Z [DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534307563
+2025-11-19T06:38:27.563Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T06:38:27.563Z [DEBUG] Temp file written successfully, size: 14142 bytes
+2025-11-19T06:38:27.563Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:38:27.563Z [DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534307563 to /Users/spartan/Downloads/spartan_labs/CLAUDE.md
+2025-11-19T06:38:27.563Z [DEBUG] File /Users/spartan/Downloads/spartan_labs/CLAUDE.md written atomically
+2025-11-19T06:38:27.568Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T06:38:27.568Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:38:27.568Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:38:27.615Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:38:27.615Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:38:27.618Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:38:27.618Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:38:27.628Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:38:27.628Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:38:30.676Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:38:42.095Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T06:38:42.097Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T06:38:42.097Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:38:42.097Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:38:42.106Z [DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534322106
+2025-11-19T06:38:42.106Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T06:38:42.107Z [DEBUG] Temp file written successfully, size: 14962 bytes
+2025-11-19T06:38:42.107Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:38:42.107Z [DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534322106 to /Users/spartan/Downloads/spartan_labs/CLAUDE.md
+2025-11-19T06:38:42.107Z [DEBUG] File /Users/spartan/Downloads/spartan_labs/CLAUDE.md written atomically
+2025-11-19T06:38:42.112Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T06:38:42.112Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:38:42.112Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:38:42.144Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:38:42.144Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:38:42.146Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:38:42.146Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:38:42.156Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:38:42.156Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:38:44.795Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:38:52.020Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T06:38:52.023Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T06:38:52.023Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:38:52.023Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:38:52.035Z [DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534332035
+2025-11-19T06:38:52.035Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T06:38:52.035Z [DEBUG] Temp file written successfully, size: 15254 bytes
+2025-11-19T06:38:52.035Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:38:52.035Z [DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534332035 to /Users/spartan/Downloads/spartan_labs/CLAUDE.md
+2025-11-19T06:38:52.036Z [DEBUG] File /Users/spartan/Downloads/spartan_labs/CLAUDE.md written atomically
+2025-11-19T06:38:52.041Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T06:38:52.041Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:38:52.041Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:38:52.067Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:38:52.067Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:38:52.070Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:38:52.070Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:38:52.085Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:38:52.085Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:38:54.161Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:39:11.960Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T06:39:11.963Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T06:39:11.963Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:39:11.963Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:39:11.972Z [DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534351972
+2025-11-19T06:39:11.972Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T06:39:11.973Z [DEBUG] Temp file written successfully, size: 16579 bytes
+2025-11-19T06:39:11.973Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:39:11.973Z [DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534351972 to /Users/spartan/Downloads/spartan_labs/CLAUDE.md
+2025-11-19T06:39:11.973Z [DEBUG] File /Users/spartan/Downloads/spartan_labs/CLAUDE.md written atomically
+2025-11-19T06:39:11.978Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T06:39:11.978Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:39:11.978Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:39:12.025Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:39:12.025Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:39:12.028Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:39:12.028Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:39:12.039Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:39:12.039Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:39:14.357Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:39:25.568Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T06:39:25.570Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T06:39:25.570Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:39:25.570Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:39:25.579Z [DEBUG] Writing to temp file: /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534365579
+2025-11-19T06:39:25.579Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T06:39:25.579Z [DEBUG] Temp file written successfully, size: 17128 bytes
+2025-11-19T06:39:25.579Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:39:25.579Z [DEBUG] Renaming /Users/spartan/Downloads/spartan_labs/CLAUDE.md.tmp.86927.1763534365579 to /Users/spartan/Downloads/spartan_labs/CLAUDE.md
+2025-11-19T06:39:25.579Z [DEBUG] File /Users/spartan/Downloads/spartan_labs/CLAUDE.md written atomically
+2025-11-19T06:39:25.585Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T06:39:25.585Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:39:25.585Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T06:39:25.620Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:39:25.620Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:39:25.623Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:39:25.623Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:39:25.636Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:39:25.636Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:39:27.897Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:39:29.961Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T06:39:29.963Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T06:39:29.963Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:39:29.963Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:39:29.971Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T06:39:29.971Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:39:29.971Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T06:39:29.983Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:39:29.983Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:39:29.985Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:39:29.986Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:39:29.994Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:39:29.995Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:39:32.925Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:39:47.369Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-19T06:39:47.369Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:39:47.369Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T06:39:47.384Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534387384
+2025-11-19T06:39:47.384Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:39:47.384Z [DEBUG] Temp file written successfully, size: 44471 bytes
+2025-11-19T06:39:47.384Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:39:47.384Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534387384 to /Users/spartan/.claude.json
+2025-11-19T06:39:47.384Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:39:47.386Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534387386
+2025-11-19T06:39:47.386Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:39:47.387Z [DEBUG] Temp file written successfully, size: 44471 bytes
+2025-11-19T06:39:47.387Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:39:47.387Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534387386 to /Users/spartan/.claude.json
+2025-11-19T06:39:47.387Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:40:47.389Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-19T06:40:47.389Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:40:47.390Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)

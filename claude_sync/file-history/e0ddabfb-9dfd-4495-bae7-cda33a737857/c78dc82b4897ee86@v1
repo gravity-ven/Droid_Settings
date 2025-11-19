@@ -1,0 +1,401 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Repository Overview
+
+**Spartan Research Station** - A comprehensive financial market research platform with real-time analysis tools. Currently macOS-focused with Windows legacy scripts.
+
+**Platform**: macOS (Darwin 25.1.0)
+**Working Directory**: `/Users/spartan/Downloads/spartan_labs`
+**Main Content**: `website/` directory contains all application code
+
+## Critical Architecture Rules
+
+### 🚨 PLATINUM RULE #1: ABSOLUTELY ZERO FAKE DATA
+
+**This is the HIGHEST PRIORITY rule across the entire codebase.**
+
+Users make real financial decisions with real money. Fake data = securities fraud = illegal.
+
+**Absolutely Forbidden:**
+- ❌ `Math.random()` for ANY financial, economic, or market data
+- ❌ Made-up statistics, percentages, or correlations
+- ❌ Sample/mock/placeholder data for prices, returns, or metrics
+- ❌ Hallucinated facts presented as verified data
+
+**Required:**
+- ✅ Use ONLY verified data from official sources (FRED, Yahoo Finance, CoinGecko, Alpha Vantage, BLS, Census, Fed)
+- ✅ State "Data not available" if real data doesn't exist
+- ✅ Mark placeholders CLEARLY with console and UI warnings
+- ✅ Cite sources for all specific numbers and statistics
+
+### 💎 DIAMOND RULE: Fix Before User Knows
+
+Users should NEVER see errors, bugs, or broken functionality.
+
+**Autonomous Self-Healing:**
+- Detect issues autonomously before deployment
+- Fix silently without user intervention
+- Validate all pages load correctly
+- Clear cache automatically
+- Only open/deploy when 100% ready
+
+### 🏛️ ARCHITECTURE MANTRA: Single Entry Point
+
+**From ARCHITECTURE_MANTRA.md**: "ALL SCRIPTS CONVERGE TO START_SPARTAN.bat"
+
+While the codebase has Windows heritage (`.bat` files), on macOS:
+- Never create standalone startup scripts
+- Integrate all new services into a unified launcher
+- Maintain orchestrated startup sequence
+- Ensure clean shutdown of all services
+
+**Current reality**: Repository is transitioning from Windows to macOS. Legacy `.bat` files exist but should be adapted for macOS as needed.
+
+## Technology Stack
+
+**Backend:**
+- Python 3 (API servers, data processing)
+- PostgreSQL (production database - NO SQLite allowed)
+- Flask + Flask-CORS (API endpoints)
+
+**Frontend:**
+- Vanilla HTML/CSS/JavaScript
+- No frameworks - direct DOM manipulation
+- Real-time data updates via fetch API
+
+**Data Sources:**
+- FRED API (Treasury yields, economic data, VIX)
+- Yahoo Finance (stocks, forex, commodities via yfinance)
+- Alpha Vantage (backup forex/commodities)
+- CoinGecko (cryptocurrency data)
+
+**Key APIs (Complete Port Mapping):**
+- `database_backend.py` - Port 5002: PostgreSQL integration layer
+- `barometers_api.py` - Port 9001: Intermarket leading indicators (10 barometers)
+- `cftc_data_api.py` - Port 5001: COT (Commitment of Traders) data
+- `breakthrough_insights_api.py` - Port 5003: Pattern discovery (4 AI agents)
+- `macro_regime_tracker_api.py` - Port 9002: Macro regime tracking
+- `market_gauges_api.py` - Port 5004: 24 market gauges
+- `simple_symbol_api.py` - Port 8082: Real-time symbol quotes
+- Main web server - Port 9000 or 8081: Serves all HTML pages
+
+## Common Development Commands
+
+### Starting Services
+
+**Main startup (bulletproof):**
+```bash
+python3 website/BULLETPROOF_STARTUP.py
+```
+
+This guarantees:
+- Multiple API servers start in correct order
+- Health checks confirm all servers responding
+- Browser only opens when everything is ready
+- Zero "connection refused" errors
+
+**Individual API servers (for development/debugging):**
+```bash
+# Navigate to website directory first
+cd website
+
+# Barometers API (port 9001) - 10 intermarket indicators
+python3 barometers_api.py
+
+# CFTC Data API (port 5001) - Commitment of Traders
+python3 cftc_data_api.py
+
+# Breakthrough Insights API (port 5003) - 4 parallel AI agents
+python3 breakthrough_insights_api.py
+
+# Macro Regime Tracker (port 9002)
+python3 macro_regime_tracker_api.py
+```
+
+### Checking Running Services
+
+```bash
+# Check specific ports
+lsof -i :9000  # Main web server
+lsof -i :9001  # Barometers API
+lsof -i :5001  # CFTC API
+lsof -i :5003  # Breakthrough Insights
+lsof -i :9002  # Macro Regime Tracker
+lsof -i :5002  # Database backend
+lsof -i :5004  # Market Gauges
+lsof -i :8082  # Symbol Data API
+
+# Check all critical ports at once
+lsof -i :9000 -i :9001 -i :5001 -i :5003 -i :5002 -i :5004 -i :8082 -i :9002
+
+# Kill stuck process on a port
+kill -9 $(lsof -ti :9001)
+```
+
+### Database Setup
+
+**PostgreSQL Configuration:**
+```python
+DB_CONFIG = {
+    'dbname': 'spartan_website_db',
+    'user': 'postgres',
+    'password': 'postgres',
+    'host': 'localhost',
+    'port': 5432
+}
+```
+
+**Database Commands:**
+```bash
+# Check PostgreSQL status
+brew services list | grep postgresql
+
+# Start PostgreSQL
+brew services start postgresql
+
+# Connect to database
+psql -U postgres -d spartan_website_db
+
+# Run schema file (if needed)
+cd website
+psql -U postgres -d spartan_website_db -f barometers_schema.sql
+```
+
+**Note**: NO SQLite allowed. PostgreSQL only for production-grade reliability.
+
+### API Keys Configuration
+
+Store API keys in `website/.env.barometers`:
+```
+FRED_API_KEY=your_key_here
+ALPHA_VANTAGE_KEY=your_key_here
+```
+
+**Note**: API keys may already be configured in existing files. Check `CONFIG_CENTRAL.md` in website directory before asking user.
+
+Get free keys:
+- FRED: https://fred.stlouisfed.org/docs/api/api_key.html
+- Alpha Vantage: https://www.alphavantage.co/
+
+## High-Level Architecture
+
+### Multi-Service Architecture
+
+```
+BULLETPROOF_STARTUP.py (orchestrator)
+    │
+    ├─> database_backend.py (Port 5002)
+    │   └─> PostgreSQL integration layer
+    │       └─> 17 normalized tables
+    │
+    ├─> barometers_api.py (Port 9001)
+    │   └─> 10 Intermarket Leading Indicators
+    │       ├─> Tier 1 (6-18 month): Credit spreads, yield curve, China credit
+    │       ├─> Tier 2 (3-6 month): Copper/Gold, Baltic Dry, breadth
+    │       └─> Tier 3 (1-3 month): AUD/JPY, VIX, Put/Call
+    │       └─> Composite Risk Score (0-100): GREEN/YELLOW/RED status
+    │
+    ├─> cftc_data_api.py (Port 5001)
+    │   └─> Commitment of Traders data
+    │       └─> COT screener for futures positioning
+    │
+    ├─> breakthrough_insights_api.py (Port 5003)
+    │   └─> Pattern Discovery Engine
+    │       ├─> BreakthroughAgent: Institutional patterns, sector rotation
+    │       ├─> DiscoveryAgent: Hidden correlations, options flow
+    │       ├─> PatternAgent: Fibonacci clusters, Elliott Wave
+    │       └─> TimingAgent: COT positioning, seasonal windows
+    │       └─> Results stored in PostgreSQL + localStorage accumulation
+    │
+    ├─> macro_regime_tracker_api.py (Port 9002)
+    │   └─> Macro regime analysis
+    │
+    ├─> market_gauges_api.py (Port 5004)
+    │   └─> 24 market indicators
+    │
+    ├─> simple_symbol_api.py (Port 8082)
+    │   └─> Real-time quotes for symbol research
+    │
+    └─> Main web server (Port 9000 or 8081)
+        └─> Serves all HTML pages
+```
+
+### Data Flow & Persistence
+
+**Data Sources** (all verified, no fake data):
+1. **FRED API**: Credit spreads, yield curve, VIX, economic indicators
+2. **Yahoo Finance** (yfinance): Forex (AUD/JPY), commodities (Copper/Gold), ETFs, indices
+3. **Polygon.io**: Real-time stock prices and volume
+4. **CoinGecko**: Top 250+ cryptocurrencies by market cap
+5. **CFTC.gov**: Official Commitment of Traders reports
+
+**Persistence Layers**:
+1. **PostgreSQL** (`spartan_website_db`): All historical data, barometer readings, insights
+2. **localStorage** (frontend): Breakthrough insights accumulation (never deleted), user preferences
+3. **File System**: `symbols_database.json` (13,000+ instruments, auto-updated every 24h)
+
+### Symbol Database System
+
+**CRITICAL**: Single global symbol database at `website/symbols_database.json`
+
+Contains 13,000+ instruments:
+- 12,200+ stocks (all US + 480 international from 26 exchanges)
+- 43 futures (index, energy, metals, agriculture, bonds)
+- 41 forex pairs (majors, crosses, exotics)
+- 250+ cryptocurrencies
+- 100+ ETFs
+- 18 global indices
+
+**Never:**
+- Create separate symbol databases for individual pages
+- Hardcode symbol lists in HTML/JavaScript
+- Duplicate symbols across multiple files
+
+**Always:**
+- Load from `symbols_database.json` via fetch
+- Reference `SYMBOLS_DATABASE_RULE.md` for details
+
+### Autonomous Systems
+
+**1. Bulletproof Startup** (`BULLETPROOF_STARTUP.py`):
+- Guarantees zero errors on launch
+- Sequential service validation with health checks
+- Auto-cleanup of stuck processes
+- Browser opens only when all services ready
+
+**2. Symbol Database Updater** (`autonomous_symbol_downloader.py`):
+- Runs every 24 hours
+- Updates 13,000+ instruments from official sources
+- Maintains `symbols_database.json`
+
+**3. Math.random() Fixer** (`AUTONOMOUS_MATH_RANDOM_FIXER.py`):
+- Scans all files for prohibited Math.random() in financial contexts
+- Enforces PLATINUM RULE #1 automatically
+
+### Intermarket Barometers System
+
+**Purpose**: Predict market direction 6-18 months in advance
+
+**Tier 1 (6-18 month lead):**
+- Credit spreads (HY & IG via FRED)
+- Yield curve (10Y-2Y via FRED)
+- China credit impulse
+
+**Tier 2 (3-6 month lead):**
+- Copper/Gold ratio (Yahoo Finance)
+- Baltic Dry Index
+- Market breadth metrics
+
+**Tier 3 (1-3 month lead):**
+- AUD/JPY (ultimate risk-on/off pair)
+- VIX (volatility index)
+- Put/Call ratios
+- Emerging markets (Yahoo Finance)
+
+**Composite Risk Score**: 0-100 scale
+- 75-100 (GREEN): Markets healthy
+- 50-74 (YELLOW): Moderate caution
+- 25-49 (YELLOW): Multiple stress signals
+- 0-24 (RED): Crisis conditions
+
+## Key Pages & Features
+
+**Main Analysis Pages:**
+- `barometers.html` - Intermarket barometers dashboard
+- `breakthrough_insights.html` - Pattern discovery
+- `asian_session_patterns.html` - Asia session analysis
+- `boom_or_bust.html` - Market regime identification
+- `complete_cftc_cot_terminal.html` - COT screener
+- `bitcoin_intelligence_report.html` - Bitcoin analysis
+- `bond_intelligence_report.html` - Bond market analysis
+- `copper_intelligence_report.html` - Copper market analysis
+
+**Infrastructure:**
+- `admin.html` - System administration
+- `barometers_table.html` - Tabular barometer view
+- `COMPREHENSIVE_TRADING_JOURNAL.html` - Trade journaling
+
+## Design System
+
+**Spartan Aesthetic** - Dark theme with strategic accents:
+
+```css
+:root {
+    --bg-dark: #0a1628;         /* Primary background */
+    --bg-darker: #050b14;       /* Darker sections */
+    --gold: #FFD700;            /* Titles, important accents */
+    --green: #00ff88;           /* Success, data display */
+    --primary: #0096FF;         /* Links, primary actions */
+    --red: #ff6b6b;             /* Alerts, sell signals */
+    --orange: #ff9500;          /* VIX theme */
+    --yellow: #ffd700;          /* Warning states */
+    --purple: #9d4edd;          /* Insights theme */
+}
+```
+
+**Cache Prevention**: All pages must include:
+```html
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+```
+
+## Platform Considerations
+
+**Current Platform**: macOS (Darwin)
+**Legacy**: Windows batch scripts (`.bat`) and PowerShell (`.ps1`)
+
+When adapting Windows scripts for macOS:
+- Convert `.bat` to `.sh` shell scripts
+- Use `python3` instead of `python`
+- Replace Windows paths (`C:\Users\...`) with Unix paths
+- Use `open` instead of `start` for opening URLs/files
+- Replace `taskkill` with `pkill` or `kill` commands
+- Use proper Unix process management
+
+## Development Best Practices
+
+1. **Always test data sources** - Verify API responses before displaying
+2. **Use environment variables** - Never commit API keys
+3. **PostgreSQL only** - No SQLite for production features
+4. **Cache prevention** - Implement on all HTML pages
+5. **Health checks** - Verify services before launching dependent features
+6. **Unified startup** - Integrate new services into orchestrator
+7. **Spartan theme** - Maintain color scheme consistency
+8. **No standalone scripts** - Follow architecture mantra
+
+## Important Documentation
+
+Located in `website/`:
+- `CLAUDE.md` - Comprehensive developer guide (pre-existing, more detailed)
+- `ARCHITECTURE_MANTRA.md` - Single entry point philosophy
+- `BAROMETERS_README.md` - Intermarket barometers setup
+- `BREAKTHROUGH_INSIGHTS_README.md` - Pattern discovery setup
+- `AUTHENTICATION_README.md` - Auth system documentation
+- `CFTC_API_FIX_README.md` - COT data API setup
+
+## Testing & Validation
+
+**Before deployment:**
+1. Run all API servers independently
+2. Verify database connections
+3. Check all pages load without errors
+4. Validate data sources are returning real data
+5. Test full startup sequence via BULLETPROOF_STARTUP.py
+6. Confirm browser opens only when all health checks pass
+
+**Common issues:**
+- Port conflicts (5001, 5002, 5003, 5004, 8082, 8081, 9000, 9001, 9002) - Check with `lsof -i :PORT`
+- Missing API keys - Check `.env.barometers` file and `CONFIG_CENTRAL.md`
+- PostgreSQL not running - Start with `brew services start postgresql` (macOS)
+- Stale cache - Implement cache-busting headers on all HTML pages
+- BULLETPROOF_STARTUP.py handles most port conflicts automatically
+
+## Security Notes
+
+- API keys in environment variables only (`.env.barometers`)
+- No API keys in source code or commits
+- Authentication system exists (`auth_system.py`, `auth_system_secure.py`)
+- Database credentials should be configured per environment

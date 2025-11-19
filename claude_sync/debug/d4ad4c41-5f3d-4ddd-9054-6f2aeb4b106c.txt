@@ -291,3 +291,23 @@
 2025-11-19T06:08:53.238Z [ERROR] Error: Error: Failed to fetch version from stable: Error: ECONNREFUSED
     at lI_ (/$bunfs/root/claude:2252:1628)
     at processTicksAndRejections (native:7:39)
+2025-11-19T06:38:40.940Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-11-19T06:38:40.950Z [DEBUG] Getting matching hook commands for SessionEnd with query: prompt_input_exit
+2025-11-19T06:38:40.950Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:38:40.950Z [DEBUG] Matched 0 unique hooks for query "prompt_input_exit" (0 before deduplication)
+2025-11-19T06:38:40.958Z [DEBUG] Cleaned up session snapshot: /Users/spartan/.claude/shell-snapshots/snapshot-zsh-1763466697403-g2j4tt.sh
+2025-11-19T06:38:40.959Z [DEBUG] LSP server manager shut down successfully
+2025-11-19T06:38:40.962Z [DEBUG] FileHistory: Making snapshot for message cf8fba67-1f27-4cb3-87ec-a2025c6872ae
+2025-11-19T06:38:40.971Z [DEBUG] FileHistory: Added snapshot for cf8fba67-1f27-4cb3-87ec-a2025c6872ae, tracking 0 files
+2025-11-19T06:38:40.976Z [DEBUG] Rendering user message with 1 content blocks
+2025-11-19T06:38:40.976Z [DEBUG] Block 0: <command-name>/exit</command-name>
+            <command-message>exit</command-message>
+            <...
+2025-11-19T06:38:40.979Z [DEBUG] UserCommandMessage rendering: "exit" (args: "none")
+2025-11-19T06:38:40.979Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-11-19T06:38:41.103Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.76521.1763534321103
+2025-11-19T06:38:41.105Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:38:41.106Z [DEBUG] Temp file written successfully, size: 44431 bytes
+2025-11-19T06:38:41.106Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:38:41.106Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.76521.1763534321103 to /Users/spartan/.claude.json
+2025-11-19T06:38:41.106Z [DEBUG] File /Users/spartan/.claude.json written atomically

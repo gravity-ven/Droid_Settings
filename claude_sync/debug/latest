@@ -1,146 +1,260 @@
-2025-11-18T11:51:37.225Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
-2025-11-18T11:51:37.226Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
-2025-11-18T11:51:37.226Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
-2025-11-18T11:51:37.226Z [DEBUG] [LSP SERVER MANAGER] initialize() called
-2025-11-18T11:51:37.226Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
-2025-11-18T11:51:37.233Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
-2025-11-18T11:51:37.235Z [DEBUG] Total LSP servers loaded: 0
-2025-11-18T11:51:37.236Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
-2025-11-18T11:51:37.236Z [DEBUG] LSP manager initialized with 0 servers
-2025-11-18T11:51:37.237Z [DEBUG] LSP server manager initialized successfully
-2025-11-18T11:51:37.237Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
-2025-11-18T11:51:37.240Z [DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/spartan/.claude/skills, project=/Users/spartan/Downloads/spartan_labs/website/.claude/skills
-2025-11-18T11:51:37.240Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
-2025-11-18T11:51:37.403Z [DEBUG] Creating shell snapshot for zsh (/bin/zsh)
-2025-11-18T11:51:37.403Z [DEBUG] Looking for shell config file: /Users/spartan/.zshrc
-2025-11-18T11:51:37.403Z [DEBUG] Snapshots directory: /Users/spartan/.claude/shell-snapshots
-2025-11-18T11:51:37.403Z [DEBUG] Creating snapshot at: /Users/spartan/.claude/shell-snapshots/snapshot-zsh-1763466697403-g2j4tt.sh
-2025-11-18T11:51:37.404Z [DEBUG] Shell binary exists: true
-2025-11-18T11:51:37.404Z [DEBUG] Execution timeout: 10000ms
-2025-11-18T11:51:37.404Z [DEBUG] Writing to temp file: /Users/spartan/.claude/todos/d4ad4c41-5f3d-4ddd-9054-6f2aeb4b106c-agent-d4ad4c41-5f3d-4ddd-9054-6f2aeb4b106c.json.tmp.76521.1763466697404
-2025-11-18T11:51:37.404Z [DEBUG] Temp file written successfully, size: 2 bytes
-2025-11-18T11:51:37.404Z [DEBUG] Renaming /Users/spartan/.claude/todos/d4ad4c41-5f3d-4ddd-9054-6f2aeb4b106c-agent-d4ad4c41-5f3d-4ddd-9054-6f2aeb4b106c.json.tmp.76521.1763466697404 to /Users/spartan/.claude/todos/d4ad4c41-5f3d-4ddd-9054-6f2aeb4b106c-agent-d4ad4c41-5f3d-4ddd-9054-6f2aeb4b106c.json
-2025-11-18T11:51:37.404Z [DEBUG] File /Users/spartan/.claude/todos/d4ad4c41-5f3d-4ddd-9054-6f2aeb4b106c-agent-d4ad4c41-5f3d-4ddd-9054-6f2aeb4b106c.json written atomically
-2025-11-18T11:51:37.408Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.76521.1763466697408
-2025-11-18T11:51:37.408Z [DEBUG] Preserving file permissions: 100600
-2025-11-18T11:51:37.408Z [DEBUG] Temp file written successfully, size: 41498 bytes
-2025-11-18T11:51:37.408Z [DEBUG] Applied original permissions to temp file
-2025-11-18T11:51:37.408Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.76521.1763466697408 to /Users/spartan/.claude.json
-2025-11-18T11:51:37.409Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-18T11:51:37.409Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
-2025-11-18T11:51:37.409Z [DEBUG] Total plugin skills loaded: 0
-2025-11-18T11:51:37.409Z [DEBUG] Total plugin commands loaded: 0
-2025-11-18T11:51:37.409Z [DEBUG] Registered 0 hooks from 0 plugins
-2025-11-18T11:51:37.410Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
-2025-11-18T11:51:37.411Z [DEBUG] getSkillsIfEnabled returning: 0 skill dir commands, 0 plugin skills
-2025-11-18T11:51:37.430Z [DEBUG] Total plugin agents loaded: 0
-2025-11-18T11:51:37.432Z [DEBUG] Acquired lock on running version: /Users/spartan/.local/share/claude/versions/2.0.44
-2025-11-18T11:51:37.526Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.76521.1763466697526
-2025-11-18T11:51:37.526Z [DEBUG] Preserving file permissions: 100600
-2025-11-18T11:51:37.527Z [DEBUG] Temp file written successfully, size: 41498 bytes
-2025-11-18T11:51:37.527Z [DEBUG] Applied original permissions to temp file
-2025-11-18T11:51:37.527Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.76521.1763466697526 to /Users/spartan/.claude.json
-2025-11-18T11:51:37.527Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-18T11:51:37.528Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.76521.1763466697528
-2025-11-18T11:51:37.528Z [DEBUG] Preserving file permissions: 100600
-2025-11-18T11:51:37.528Z [DEBUG] Temp file written successfully, size: 41498 bytes
-2025-11-18T11:51:37.528Z [DEBUG] Applied original permissions to temp file
-2025-11-18T11:51:37.528Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.76521.1763466697528 to /Users/spartan/.claude.json
-2025-11-18T11:51:37.529Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-18T11:51:37.572Z [DEBUG] Shell snapshot created successfully (2667 bytes)
-2025-11-18T11:51:37.626Z [ERROR] AxiosError: Error
-    at Rf (/$bunfs/root/claude:59:1142)
-    at <anonymous> (/$bunfs/root/claude:64:10074)
+2025-11-19T06:37:17.251Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2025-11-19T06:37:17.252Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2025-11-19T06:37:17.252Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2025-11-19T06:37:17.252Z [DEBUG] [LSP SERVER MANAGER] initialize() called
+2025-11-19T06:37:17.252Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+2025-11-19T06:37:17.262Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2025-11-19T06:37:17.265Z [DEBUG] Total LSP servers loaded: 0
+2025-11-19T06:37:17.273Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2025-11-19T06:37:17.273Z [DEBUG] LSP manager initialized with 0 servers
+2025-11-19T06:37:17.273Z [DEBUG] LSP server manager initialized successfully
+2025-11-19T06:37:17.273Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2025-11-19T06:37:17.276Z [DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/spartan/.claude/skills, project=/Users/spartan/Downloads/spartan_labs/website/.claude/skills
+2025-11-19T06:37:17.276Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
+2025-11-19T06:37:17.276Z [DEBUG] Passes: No cache, fetching eligibility
+2025-11-19T06:37:17.466Z [DEBUG] Creating shell snapshot for zsh (/bin/zsh)
+2025-11-19T06:37:17.466Z [DEBUG] Looking for shell config file: /Users/spartan/.zshrc
+2025-11-19T06:37:17.466Z [DEBUG] Snapshots directory: /Users/spartan/.claude/shell-snapshots
+2025-11-19T06:37:17.466Z [DEBUG] Creating snapshot at: /Users/spartan/.claude/shell-snapshots/snapshot-zsh-1763534237466-lysylq.sh
+2025-11-19T06:37:17.466Z [DEBUG] Shell binary exists: true
+2025-11-19T06:37:17.466Z [DEBUG] Execution timeout: 10000ms
+2025-11-19T06:37:17.467Z [DEBUG] Writing to temp file: /Users/spartan/.claude/todos/e0ddabfb-9dfd-4495-bae7-cda33a737857-agent-e0ddabfb-9dfd-4495-bae7-cda33a737857.json.tmp.86927.1763534237467
+2025-11-19T06:37:17.467Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-19T06:37:17.467Z [DEBUG] Renaming /Users/spartan/.claude/todos/e0ddabfb-9dfd-4495-bae7-cda33a737857-agent-e0ddabfb-9dfd-4495-bae7-cda33a737857.json.tmp.86927.1763534237467 to /Users/spartan/.claude/todos/e0ddabfb-9dfd-4495-bae7-cda33a737857-agent-e0ddabfb-9dfd-4495-bae7-cda33a737857.json
+2025-11-19T06:37:17.467Z [DEBUG] File /Users/spartan/.claude/todos/e0ddabfb-9dfd-4495-bae7-cda33a737857-agent-e0ddabfb-9dfd-4495-bae7-cda33a737857.json written atomically
+2025-11-19T06:37:17.470Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2025-11-19T06:37:17.470Z [DEBUG] Total plugin skills loaded: 0
+2025-11-19T06:37:17.470Z [DEBUG] Total plugin commands loaded: 0
+2025-11-19T06:37:17.470Z [DEBUG] Registered 0 hooks from 0 plugins
+2025-11-19T06:37:17.472Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+2025-11-19T06:37:17.473Z [DEBUG] getSkillsIfEnabled returning: 0 skill dir commands, 0 plugin skills
+2025-11-19T06:37:17.494Z [DEBUG] Total plugin agents loaded: 0
+2025-11-19T06:37:17.521Z [DEBUG] Acquired lock on running version: /Users/spartan/.local/share/claude/versions/2.0.46
+2025-11-19T06:37:17.642Z [DEBUG] Shell snapshot created successfully (2709 bytes)
+2025-11-19T06:37:17.647Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534237647
+2025-11-19T06:37:17.647Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:17.648Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:17.648Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:17.648Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534237647 to /Users/spartan/.claude.json
+2025-11-19T06:37:17.648Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:17.651Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534237651
+2025-11-19T06:37:17.652Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:17.652Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:17.652Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:17.652Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534237651 to /Users/spartan/.claude.json
+2025-11-19T06:37:17.652Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:17.653Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534237653
+2025-11-19T06:37:17.653Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:17.654Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:17.654Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:17.654Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534237653 to /Users/spartan/.claude.json
+2025-11-19T06:37:17.654Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:17.700Z [ERROR] AxiosError: Error
+    at lU (/$bunfs/root/claude:59:1143)
+    at <anonymous> (/$bunfs/root/claude:64:10054)
     at emit (node:events:92:22)
     at endReadableNT (internal:streams/readable:861:50)
     at processTicksAndRejections (native:7:39)
-    at request (/$bunfs/root/claude:66:2146)
+    at request (/$bunfs/root/claude:66:2147)
     at processTicksAndRejections (native:7:39)
-2025-11-18T11:51:37.715Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.76521.1763466697715
-2025-11-18T11:51:37.715Z [DEBUG] Preserving file permissions: 100600
-2025-11-18T11:51:37.716Z [DEBUG] Temp file written successfully, size: 42034 bytes
-2025-11-18T11:51:37.716Z [DEBUG] Applied original permissions to temp file
-2025-11-18T11:51:37.716Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.76521.1763466697715 to /Users/spartan/.claude.json
-2025-11-18T11:51:37.716Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-18T11:51:37.728Z [DEBUG] Failed to check metrics opt-out status: Request failed with status code 401
-2025-11-18T11:51:37.728Z [ERROR] AxiosError: Error
-    at Rf (/$bunfs/root/claude:59:1142)
-    at <anonymous> (/$bunfs/root/claude:64:10074)
+2025-11-19T06:37:17.843Z [DEBUG] Failed to check metrics opt-out status: Request failed with status code 401
+2025-11-19T06:37:17.844Z [ERROR] AxiosError: Error
+    at lU (/$bunfs/root/claude:59:1143)
+    at <anonymous> (/$bunfs/root/claude:64:10054)
     at emit (node:events:92:22)
     at endReadableNT (internal:streams/readable:861:50)
     at processTicksAndRejections (native:7:39)
-    at request (/$bunfs/root/claude:66:2146)
+    at request (/$bunfs/root/claude:66:2147)
     at processTicksAndRejections (native:7:39)
-2025-11-18T11:51:37.804Z [DEBUG] Failed to fetch Grove notice config: AxiosError: Request failed with status code 401
-2025-11-18T11:51:37.827Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.76521.1763466697827
-2025-11-18T11:51:37.827Z [DEBUG] Preserving file permissions: 100600
-2025-11-18T11:51:37.827Z [DEBUG] Temp file written successfully, size: 42034 bytes
-2025-11-18T11:51:37.827Z [DEBUG] Applied original permissions to temp file
-2025-11-18T11:51:37.827Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.76521.1763466697827 to /Users/spartan/.claude.json
-2025-11-18T11:51:37.827Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-18T11:51:37.829Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
-2025-11-18T11:51:37.829Z [DEBUG] Found 0 hook matchers in settings
-2025-11-18T11:51:37.830Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
-2025-11-18T11:51:37.835Z [DEBUG] Summarizing all 33 messages (~62350 tokens)
-2025-11-18T11:51:37.887Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.76521.1763466697887
-2025-11-18T11:51:37.887Z [DEBUG] Preserving file permissions: 100600
-2025-11-18T11:51:37.887Z [DEBUG] Temp file written successfully, size: 42034 bytes
-2025-11-18T11:51:37.887Z [DEBUG] Applied original permissions to temp file
-2025-11-18T11:51:37.888Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.76521.1763466697887 to /Users/spartan/.claude.json
-2025-11-18T11:51:37.888Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-18T11:51:37.890Z [DEBUG] performStartupChecks called
-2025-11-18T11:51:37.890Z [DEBUG] Starting background plugin installations
-2025-11-18T11:51:37.890Z [DEBUG] performBackgroundPluginInstallations called
-2025-11-18T11:51:37.895Z [DEBUG] AutoUpdaterWrapper: Installation type: native
-2025-11-18T11:51:37.898Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.76521.1763466697898
-2025-11-18T11:51:37.898Z [DEBUG] Preserving file permissions: 100600
-2025-11-18T11:51:37.898Z [DEBUG] Temp file written successfully, size: 42139 bytes
-2025-11-18T11:51:37.898Z [DEBUG] Applied original permissions to temp file
-2025-11-18T11:51:37.898Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.76521.1763466697898 to /Users/spartan/.claude.json
-2025-11-18T11:51:37.899Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-18T11:51:37.902Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
-2025-11-18T11:51:37.905Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
-2025-11-18T11:51:37.937Z [DEBUG] Getting matching hook commands for SubagentStart with query: Plan
-2025-11-18T11:51:37.937Z [DEBUG] Found 0 hook matchers in settings
-2025-11-18T11:51:37.937Z [DEBUG] Matched 0 unique hooks for query "Plan" (0 before deduplication)
-2025-11-18T11:51:37.972Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
-2025-11-18T11:51:37.972Z [DEBUG] Found 0 hook matchers in settings
-2025-11-18T11:51:37.972Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
-2025-11-18T11:51:37.995Z [DEBUG] Skills and commands included in Skill tool:
-2025-11-18T11:51:37.995Z [DEBUG] Slash commands included in SlashCommand tool:
-2025-11-18T11:51:38.020Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.76521.1763466698020
-2025-11-18T11:51:38.020Z [DEBUG] Preserving file permissions: 100600
-2025-11-18T11:51:38.020Z [DEBUG] Temp file written successfully, size: 42139 bytes
-2025-11-18T11:51:38.021Z [DEBUG] Applied original permissions to temp file
-2025-11-18T11:51:38.021Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.76521.1763466698020 to /Users/spartan/.claude.json
-2025-11-18T11:51:38.021Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-18T11:51:38.105Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/spartan/.local/share/claude/versions/2.0.44)
-2025-11-18T11:51:38.111Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.76521.1763466698111
-2025-11-18T11:51:38.111Z [DEBUG] Preserving file permissions: 100600
-2025-11-18T11:51:38.111Z [DEBUG] Temp file written successfully, size: 42139 bytes
-2025-11-18T11:51:38.111Z [DEBUG] Applied original permissions to temp file
-2025-11-18T11:51:38.111Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.76521.1763466698111 to /Users/spartan/.claude.json
-2025-11-18T11:51:38.112Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-18T11:51:38.461Z [DEBUG] Checking for native installer update to version 2.0.44
-2025-11-18T11:51:39.405Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.76521.1763466699405
-2025-11-18T11:51:39.405Z [DEBUG] Preserving file permissions: 100600
-2025-11-18T11:51:39.405Z [DEBUG] Temp file written successfully, size: 42139 bytes
-2025-11-18T11:51:39.405Z [DEBUG] Applied original permissions to temp file
-2025-11-18T11:51:39.405Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.76521.1763466699405 to /Users/spartan/.claude.json
-2025-11-18T11:51:39.406Z [DEBUG] File /Users/spartan/.claude.json written atomically
-2025-11-18T11:51:40.789Z [ERROR] Error streaming, falling back to non-streaming mode: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJjW1dkfKgUUwaLsDRM"}
-2025-11-18T11:51:41.153Z [ERROR] Error streaming, falling back to non-streaming mode: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJjWzAvuF3F1Aj5vL7z"}
-2025-11-18T11:51:41.165Z [ERROR] Error in non-streaming fallback: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJjXyTNsK72LoUY6wW3"}
-2025-11-18T11:51:41.167Z [ERROR] Error: Error: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJjXyTNsK72LoUY6wW3"}
-    at generate (/$bunfs/root/claude:389:18162)
-    at makeRequest (/$bunfs/root/claude:669:5356)
+2025-11-19T06:37:17.859Z [DEBUG] Failed to fetch and cache passes eligibility
+2025-11-19T06:37:17.860Z [ERROR] AxiosError: Error
+    at lU (/$bunfs/root/claude:59:1143)
+    at <anonymous> (/$bunfs/root/claude:64:10054)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
     at processTicksAndRejections (native:7:39)
-2025-11-18T11:51:41.173Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
-2025-11-18T11:51:41.173Z [DEBUG] Found 0 hook matchers in settings
-2025-11-18T11:51:41.174Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
-2025-11-18T11:51:41.498Z [ERROR] Error streaming, falling back to non-streaming mode: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJjYTUMaq5x4A9b4z3E"}
-2025-11-18T11:51:41.510Z [ERROR] Error in non-streaming fallback: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJjZUjetJapUPb3oTRp"}
-2025-11-18T11:51:41.510Z [ERROR] Error: Error: 429 {"type":"error","error":{"type":"rate_limit_error","message":"This request would exceed your account's rate limit. Please try again later."},"request_id":"req_011CVFJjZUjetJapUPb3oTRp"}
-    at generate (/$bunfs/root/claude:389:18162)
-    at makeRequest (/$bunfs/root/claude:669:5356)
+    at request (/$bunfs/root/claude:66:2147)
     at processTicksAndRejections (native:7:39)
+2025-11-19T06:37:18.029Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/spartan/.local/share/claude/versions/2.0.46)
+2025-11-19T06:37:18.149Z [DEBUG] Failed to fetch Grove notice config: AxiosError: Request failed with status code 401
+2025-11-19T06:37:18.169Z [DEBUG] Passes: No cache, fetching eligibility
+2025-11-19T06:37:18.172Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238172
+2025-11-19T06:37:18.172Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.172Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:18.172Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.172Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238172 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.172Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.175Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2025-11-19T06:37:18.176Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:18.176Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2025-11-19T06:37:18.179Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:37:18.180Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:37:18.229Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238229
+2025-11-19T06:37:18.229Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.229Z [DEBUG] Temp file written successfully, size: 42870 bytes
+2025-11-19T06:37:18.229Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.229Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238229 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.229Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.230Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238230
+2025-11-19T06:37:18.230Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.230Z [DEBUG] Temp file written successfully, size: 42870 bytes
+2025-11-19T06:37:18.230Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.230Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238230 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.231Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.233Z [DEBUG] performStartupChecks called
+2025-11-19T06:37:18.233Z [DEBUG] Starting background plugin installations
+2025-11-19T06:37:18.233Z [DEBUG] performBackgroundPluginInstallations called
+2025-11-19T06:37:18.237Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-11-19T06:37:18.240Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238240
+2025-11-19T06:37:18.240Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.240Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:18.240Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.240Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238240 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.240Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.243Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2025-11-19T06:37:18.246Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2025-11-19T06:37:18.249Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2025-11-19T06:37:18.249Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:18.249Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2025-11-19T06:37:18.270Z [DEBUG] Getting matching hook commands for SubagentStart with query: Plan
+2025-11-19T06:37:18.270Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:18.271Z [DEBUG] Matched 0 unique hooks for query "Plan" (0 before deduplication)
+2025-11-19T06:37:18.300Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238300
+2025-11-19T06:37:18.301Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.301Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:18.301Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.301Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238300 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.301Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.476Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238476
+2025-11-19T06:37:18.476Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.476Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:18.476Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.477Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238476 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.477Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.517Z [DEBUG] Failed to fetch and cache passes eligibility
+2025-11-19T06:37:18.517Z [ERROR] AxiosError: Error
+    at lU (/$bunfs/root/claude:59:1143)
+    at <anonymous> (/$bunfs/root/claude:64:10054)
+    at emit (node:events:92:22)
+    at endReadableNT (internal:streams/readable:861:50)
+    at processTicksAndRejections (native:7:39)
+    at request (/$bunfs/root/claude:66:2147)
+    at processTicksAndRejections (native:7:39)
+2025-11-19T06:37:18.874Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534238874
+2025-11-19T06:37:18.874Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:18.874Z [DEBUG] Temp file written successfully, size: 42975 bytes
+2025-11-19T06:37:18.875Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:18.875Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534238874 to /Users/spartan/.claude.json
+2025-11-19T06:37:18.875Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:18.973Z [DEBUG] Checking for native installer update to version 2.0.46
+2025-11-19T06:37:19.310Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534239310
+2025-11-19T06:37:19.311Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:19.311Z [DEBUG] Temp file written successfully, size: 43004 bytes
+2025-11-19T06:37:19.311Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:19.311Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534239310 to /Users/spartan/.claude.json
+2025-11-19T06:37:19.312Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:19.760Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:20.764Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534240764
+2025-11-19T06:37:20.764Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:20.765Z [DEBUG] Temp file written successfully, size: 44002 bytes
+2025-11-19T06:37:20.765Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:20.765Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534240764 to /Users/spartan/.claude.json
+2025-11-19T06:37:20.766Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:21.160Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534241160
+2025-11-19T06:37:21.160Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:21.160Z [DEBUG] Temp file written successfully, size: 44047 bytes
+2025-11-19T06:37:21.160Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:21.160Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534241160 to /Users/spartan/.claude.json
+2025-11-19T06:37:21.161Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:21.161Z [DEBUG] AutoUpdaterWrapper: Installation type: native
+2025-11-19T06:37:21.162Z [DEBUG] Metadata string for init:
+2025-11-19T06:37:21.162Z [DEBUG] <command-message>init is analyzing your codebase…</command-message>
+<command-name>/init</command-name>
+2025-11-19T06:37:21.162Z [DEBUG] command-message tags in metadata: 1
+2025-11-19T06:37:21.173Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:37:21.173Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:37:21.176Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:37:21.176Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:37:21.185Z [DEBUG] processPromptSlashCommand creating 3 messages for init
+2025-11-19T06:37:21.185Z [DEBUG] Message 1: <command-message>init is analyzing your codebase…</command-message>
+<command-name>/init</command-name>
+2025-11-19T06:37:21.185Z [DEBUG] Message 2 [META]: [{"type":"text","text":"Please analyze this codebase and create a CLAUDE.md file, which will be given to future instances of Claude Code to operate in this repository.\n\nWhat to add:\n1. Commands tha
+2025-11-19T06:37:21.185Z [DEBUG] Message 3: [ATTACHMENT]
+2025-11-19T06:37:21.188Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-19T06:37:21.188Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:21.188Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T06:37:21.189Z [DEBUG] FileHistory: Added snapshot for 0c25cdeb-0fa6-4e64-8976-ce38778ca958, tracking 0 files
+2025-11-19T06:37:21.192Z [DEBUG] Rendering user message with 1 content blocks
+2025-11-19T06:37:21.192Z [DEBUG] Block 0: <command-message>init is analyzing your codebase…</command-message>
+<command-name>/init</command-nam...
+2025-11-19T06:37:21.192Z [DEBUG] UserCommandMessage rendering: "init is analyzing your codebase…" (args: "none")
+2025-11-19T06:37:21.192Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-11-19T06:37:21.202Z [DEBUG] Total plugin output styles loaded: 0
+2025-11-19T06:37:21.204Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:21.209Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:37:21.209Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:37:21.329Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:23.029Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:25.712Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-19T06:37:25.715Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-19T06:37:25.717Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-19T06:37:25.720Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-19T06:37:25.722Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-19T06:37:25.724Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-19T06:37:25.724Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.724Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.724Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-19T06:37:25.724Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.725Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.725Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-19T06:37:25.725Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.725Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.725Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-19T06:37:25.725Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.725Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.725Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-19T06:37:25.725Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.725Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-19T06:37:25.776Z [DEBUG] Writing to temp file: /Users/spartan/.claude.json.tmp.86927.1763534245776
+2025-11-19T06:37:25.776Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T06:37:25.776Z [DEBUG] Temp file written successfully, size: 44047 bytes
+2025-11-19T06:37:25.776Z [DEBUG] Applied original permissions to temp file
+2025-11-19T06:37:25.776Z [DEBUG] Renaming /Users/spartan/.claude.json.tmp.86927.1763534245776 to /Users/spartan/.claude.json
+2025-11-19T06:37:25.776Z [DEBUG] File /Users/spartan/.claude.json written atomically
+2025-11-19T06:37:25.778Z [DEBUG] No hook environment files found
+2025-11-19T06:37:25.781Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-19T06:37:25.781Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.781Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T06:37:25.793Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-19T06:37:25.794Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.794Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.806Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-19T06:37:25.806Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.806Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.825Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-19T06:37:25.825Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.825Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.840Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-19T06:37:25.840Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.840Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-19T06:37:25.867Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-19T06:37:25.867Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:25.867Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-19T06:37:25.884Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T06:37:25.884Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T06:37:25.886Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T06:37:25.886Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T06:37:25.895Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T06:37:25.895Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T06:37:25.978Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /Users/spartan/.local/share/claude/versions/2.0.46 (expected in multi-process scenarios)
+    at aq0 (/$bunfs/root/claude:2532:1516)
+    at N4A (/$bunfs/root/claude:2530:12601)
+    at async tp8 (/$bunfs/root/claude:2530:13807)
+    at async Ux (/$bunfs/root/claude:2532:236)
+    at async <anonymous> (/$bunfs/root/claude:2532:12383)
+    at processTicksAndRejections (native:7:39)
+2025-11-19T06:37:26.709Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-19T06:37:26.709Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T06:37:26.709Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T06:37:26.804Z [DEBUG] Stream started - received first chunk
+2025-11-19T06:37:28.171Z [DEBUG] Stream started - received first chunk
