@@ -1019,3 +1019,11 @@
 2025-11-19T06:51:15.882Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
 2025-11-19T06:51:15.882Z [DEBUG] Found 0 hook matchers in settings
 2025-11-19T06:51:15.884Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-19T07:07:22.410Z [DEBUG] Checking for native installer update to version 2.0.46
+2025-11-19T07:07:29.425Z [ERROR] Error: Error: NON-FATAL: Lock acquisition failed for /Users/spartan/.local/share/claude/versions/2.0.46 (expected in multi-process scenarios)
+    at aq0 (/$bunfs/root/claude:2532:1516)
+    at N4A (/$bunfs/root/claude:2530:12601)
+    at async tp8 (/$bunfs/root/claude:2530:13807)
+    at async Ux (/$bunfs/root/claude:2532:236)
+    at async <anonymous> (/$bunfs/root/claude:2532:12383)
+    at processTicksAndRejections (native:7:39)
