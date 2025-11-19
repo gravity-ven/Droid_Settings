@@ -1,5 +1,5 @@
 {
-  "timestamp": "2025-11-19T21:40:01.348593",
+  "timestamp": "2025-11-19T21:50:01.160251",
   "directory_status": {
     "droid": {
       "type": "file",
@@ -100,13 +100,13 @@
   },
   "sync_status": {
     "status": "active",
-    "last_health_check": "2025-11-19T21:40:01.306033",
+    "last_health_check": "2025-11-19T21:50:01.165091",
     "direction": "bidirectional"
   },
   "health_status": {
     "status": "healthy",
     "issues": [],
-    "free_space_mb": 81141
+    "free_space_mb": 81121
   },
   "optimizations": {
     "status": "not_optimized"
