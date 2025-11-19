@@ -1094,3 +1094,9 @@
     at async Ux (/$bunfs/root/claude:2532:236)
     at async <anonymous> (/$bunfs/root/claude:2532:12383)
     at processTicksAndRejections (native:7:39)
+2025-11-19T12:17:12.493Z [DEBUG] Checking for native installer update to version 2.0.46
+2025-11-19T12:34:11.244Z [DEBUG] Version 2.0.46 already installed, updating symlink
+2025-11-19T12:34:11.252Z [DEBUG] Successfully updated to version 2.0.46
+2025-11-19T12:51:05.675Z [DEBUG] Checking for native installer update to version 2.0.46
+2025-11-19T12:51:05.676Z [DEBUG] Version 2.0.46 already installed, updating symlink
+2025-11-19T12:51:05.677Z [DEBUG] Successfully updated to version 2.0.46
